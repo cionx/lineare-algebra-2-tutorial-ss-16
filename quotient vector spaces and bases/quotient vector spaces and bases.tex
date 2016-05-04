@@ -1,14 +1,136 @@
 \documentclass[a4paper,10pt]{article}
 %\documentclass[a4paper,10pt]{scrartcl}
 
-\usepackage{generalstyle}
+\usepackage{../generalstyle}
 
-\title{Basen und darstellende Matrizen für Quotientenvektorräume}
+\title{Basen und darstellende Matrizen \\ für Quotientenvektorräume}
 \author{Jendrik Stelzner}
 \date{\today}
 
 \begin{document}
 \maketitle
+
+
+
+
+
+Sofern nichts anderes angegeben ist, bezeichnet $K$ im folgenden einen beliebigen Körper.
+
+
+
+
+
+\section{Basen runterdrücken}
+
+\begin{lemma}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\mc{B} = (b_i)_{i \in I}$ eine Basis von $V$, so dass es eine Teilmenge $J \subseteq I$ gibt, so dass $(b_i)_{j \in J}$ eine Basis von $U$ ist.
+  Dann ist $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V/U$.
+\end{lemma}
+
+\begin{corollary}
+  Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum, so ist $V/U$ endlichdimensional mit
+  \[
+    \dim V/U = \dim V - \dim U.
+  \]
+\end{corollary}
+
+\begin{proposition}
+  Es seien $V$ ein endlichdimensionaler $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so dass $\mc{C} \coloneqq (v_1, \dotsc, v_s)$ eine Basis von $U$ ist.
+  Es sei $f \colon V \to V$ ein Endomorphismus von $V$ mit $f(U) \subseteq U$.
+  Es sei $m \coloneqq n-m$.
+  Dann gilt:
+  \begin{enumerate}
+    \item
+      Der Quotientenvektorraum $V/U$ hat $\mc{D} \coloneqq ([v_{s+1}], \dotsc, [v_n])$ als Basis.
+    \item
+      Der Endomorphismus $f$ induziert einen Endomorphismus
+      \[
+        f|_U \colon U \to U, \quad u \mapsto f(u)
+      \]
+      und einen Endomorphismus
+      \[
+        \bar{f} \colon V/U \to V/U, \quad [v] \mapsto [f(v)].
+      \]
+    \item
+      Ist $A = \Mat_{\mc{C}}(f|_U) \in \Mat(n \times n, K)$ und $C = \Mat_{\mc{D}}(\bar{f}) \in \Mat(m \times m, K)$, so ist
+      \[
+        \Mat_{\mc{B}}(f)
+        =
+        \begin{pmatrix}
+          A & B \\
+            & C
+        \end{pmatrix}
+      \]
+      mit $B \in \Mat(n \times m, K)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Ist $f \colon V \to V$ ein Endomorphismus mit $f(U) \subseteq U$, so gilt für die induzierten Endomorphismen $f|_U \colon U \to U$ und $\bar{f} \colon V/U \to V/U$, dass
+  \[
+    \det f = \det f|_U \cdot \det \bar{f}.
+  \]
+\end{corollary}
+
+
+
+
+
+\section{Basen hochziehen}
+
+\begin{lemma}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $(b_j)_{j \in J_1}$ eine Basis von $V/U$, und für jedes $j \in J_1$ sei $v_j \in V$ mit $b_j = [v_j]$.
+  Ferner sei $(v_j)_{j \in J_2}$ eine Basis von $U$, wobei die Indexmengen $J_1$ und $J_2$ disjunkt seien.
+  Dann ist $(v_i)_{i \in I}$ mit $I \coloneqq J_1 \cup J_2$ eine Basis von $V$.
+\end{lemma}
+
+\begin{remark}
+  Das obige Lemma besagt, grob gesagt, wie man Basen von $V/U$ zu Basen von $V$ zurückziehen kann:
+  Beginnt man mit einer Basis $(b_j)_{j \in J_1}$ von $V/U$, so wählt man für jedes Basiselement $b_j$ ein Urbild $v_j \in V$.
+  Die Familie $(v_j)_{j \in J_1}$ ist dann im Allgemeinen noch keine Basis von $V$, aber mit kann sie durch Hinzufügen einer Basis $(v_j)_{j \in J_2}$ des rausgeteilten Untervektorraums $U$ zu einer solchen ergänzen.
+\end{remark}
+
+\begin{corollary}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $U \subseteq V$ ein $K$-Untervektorraum.
+  Es sei $f \colon V \to V$ ein Endomorphismus mit $f(U) \subseteq U$, und es seien $f|_U \colon U \to U$ und $\bar{f} \colon V/U \to V/U$ die induzierten Endomorphismen.
+  Es sei $\mc{C} = (v_1, \dotsc, v_s)$ eine Basis von $U$, $\mc{C} = (b_1, \dotsc b_r)$ eine Basis von $U$, und $\mc{B} = (v_1, \dotsc, v_s, v_{s+1}, \dotsc, v_{r+s})$ mit $[v_{s+i}] = b_i$ eine Basis von $V$.
+  Für die darstellenden Matrizen $A = \Mat_\mc{C}(f|_U) \in \Mat(s \times s, K)$ und $C = \Mat_\mc{D}(\bar{f}) \in \Mat(r \times r, K)$ gilt dann
+  \[
+    \Mat_\mc{B}
+    =
+    \begin{pmatrix}
+      A & B \\
+        & C
+    \end{pmatrix}
+  \]
+  mit $B \in \Mat(s \times r, K)$.
+\end{corollary}
+
+
+\begin{corollary}
+  Ist $K$ algebraisch abgeschlossen, $V$ ein $K$-Vektorraum mit $V \neq 0$ und $f \colon V \to V$ ein Endomorphismus, so gibt es eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$, so dass $\Mat_\mc{B}(f)$ eine obere Dreiecksmatrix ist, d.h.\ $\Mat_\mc{B}(f)$ ist von der Form
+  \[
+    \Mat_\mc{B}(f)
+    =
+    \begin{pmatrix}
+      *       & \cdots  & \cdots  & *       \\
+      0       & \ddots  &         & \vdots  \\
+      \vdots  & \ddots  & \ddots  & \vdots  \\
+      0       & \cdots  & 0       & *
+    \end{pmatrix}.
+  \]
+\end{corollary}
+
+
+
+
+
+
+
 
 
 

@@ -37,8 +37,14 @@
 
 %%% THEOREMS AND COUNTERS
 
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
+\newcounter{everything}
+
+\newtheorem{corollary}[everything]{Korollar}
+\newtheorem{lemma}[everything]{Lemma}
+\newtheorem{proposition}[everything]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{remark}[everything]{Bemerkung}
 
 
 
@@ -64,3 +70,4 @@
 
 % functions and functors
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Mat}{M}
