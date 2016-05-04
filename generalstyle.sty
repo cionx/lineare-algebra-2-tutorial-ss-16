@@ -1,0 +1,66 @@
+%%% PACKAGES
+
+% XeLaTeX
+\usepackage{xltxtra}
+
+% math stuff
+\usepackage{
+  amsmath,
+  amssymb,
+  amsthm,
+  mathtools
+}
+
+% more arrows
+\usepackage{stmaryrd} % for mapsfrom
+\usepackage{extarrows} % for xlongrightarrow
+
+% more flexible enumerations
+\usepackage{enumitem}
+
+% for commutative diagrams
+\usepackage{tikz-cd}
+
+
+
+
+%%% FONTS
+
+% copied from the standard XeLaTeX template of kile
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+
+
+
+
+%%% THEOREMS AND COUNTERS
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+
+
+
+
+%%% MACROS
+
+% shortcuts for already defined commands
+\newcommand{\mc}[1]{\mathcal{#1}}
+
+% common sets of numbers
+\newcommand{\Nbb}{\ensuremath{\mathbb{N}}}
+\newcommand{\Zbb}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Qbb}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Rbb}{\ensuremath{\mathbb{R}}}
+\newcommand{\Cbb}{\ensuremath{\mathbb{C}}}
+
+
+% occuring spaces and sets
+\DeclareMathOperator{\coker}{coker}
+\newcommand{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\im}{im}
+
+% functions and functors
+\DeclareMathOperator{\id}{id}
