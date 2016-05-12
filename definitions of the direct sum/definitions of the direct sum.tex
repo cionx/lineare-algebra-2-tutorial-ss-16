@@ -1,0 +1,240 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Definitionen der \\ direkten Summe}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+  % TODO: Write abstract.
+\end{abstract}
+
+
+
+
+
+\begin{proposition}\label{prop: characterization of the inner direct sum}
+  Es sei $V$ ein $K$-Vektorraum und $(V_i)_{i \in I}$ eine Familie von Untervektorräumen $V_i \subseteq V$, so dass $V = \sum_{i \in I} V_i$.
+  Dann sind die folgenden Aussagen äquivalent:
+  \begin{enumerate}
+    \item\label{enum: unique sum representation}
+      Für jedes $v \in V$ ist die Darstellung $v = \sum_{i \in I} v_i$ mit $v_i \in V_i$ für alle $i \in I$ eindeutig.
+    \item\label{enum: unique sum representation of zero}
+      Ist $0 = \sum_{i \in I} v_i$ mit $v_i \in V_i$ für alle $i \in I$, so ist bereits $v_i = 0$ für jedes $i \in I$.
+    \item\label{enum: intersections are zero}
+      Für jedes $j \in I$ ist $V_j \cap \sum_{i \neq j} V_i = 0$.
+    \item\label{enum: universal property}
+      Ist $W$ ein beliebiger $K$-Vektorraum und $(f_i)_{i \in I}$ eine Familie von linearen Abbildungen \mbox{$f_i \colon V_i \to W$}, so gibt es eine eindeutige lineare Abbildung $f \colon V \to K$ mit $f|_{V_i} = f_i$ für jedes $i \in I$.
+  \end{enumerate}
+\end{proposition}
+
+
+\begin{proof}
+
+  (\ref{enum: intersections are zero} $\implies$ \ref{enum: unique sum representation of zero})
+  Es sei $0 = \sum_{i \in I} v_i$ mit $v_i \in V_i$ für jedes $i \in I$.
+  Für jedes $j \in I$ ist dann
+  \[
+        V_j
+    \ni v_j
+    =   \sum_{i \neq j} (-v_i)
+    \in \sum_{i \neq j} V_i,
+  \]
+  also $v_j \in V_j \cap \sum_{i \neq j} V_i = 0$.
+  Somit ist $v_j = 0$ für jedes $j \in I$.
+
+  (\ref{enum: unique sum representation of zero} $\implies$ \ref{enum: unique sum representation})
+  Es seien $\sum_{i \in I} v_i = \sum_{i \in I} v'_i$ zwei entsprechende Darstellungen.
+  Dann ist $\sum_{i \in I} (v_i - v'_i)$ eine entsprechende Darstellung von $0$.
+  Nach Annahme ist $v_i - v'_i = 0$ für jedes $i \in I$, also $v_i = v'_i$ für jedes $i \in I$.
+  
+  (\ref{enum: unique sum representation} $\implies$ \ref{enum: universal property})
+  Wir zeigen zunächst die Eindeutigkeit:
+  Hierfür sei $f \colon V \to W$ eine lineare Abbildung mit $f|_{V_i} = f_i$ für jedes $i \in I$.
+  Ist $v \in V$, so gibt es eine Darstellung $v = \sum_{i \in I} v_i$ mit $v_i \in V_i$ für jedes $i \in I$.
+  Es ist dann
+  \[
+      f(v)
+    = f\left( \sum_{i \in I} v_i \right)
+    = \sum_{i \in I} f(v_i)
+    = \sum_{i \in I} f|_{V_i}(v_i)
+    = \sum_{i \in I} f_i(v_i).
+  \]
+  Also ist $f$ durch die Familie $(f_i)_{i \in I}$ schon eindeutig bestimmt.
+  
+  Nun zeigen wir die Existenz:
+  Ist $v \in V$, so ist $v = \sum_{i \in I} v_i$ mit $v_i \in V_i$ für jedes $i \in I$.
+  Wir setzen
+  \[
+    f(v) \coloneqq \sum_{i \in I} f_i(v_i).
+  \]
+  Da $v_i = 0$ für fast alle $i \in I$ ist auch $f_i(v_i) = 0$ für fast alle $i \in I$, also die rechte Seite der obigen Gleichung wohldefiniert.
+  Da die genutzte Darstellung $v = \sum_{i \in I} v_i$ nach Annahme eindeutig ist, erhalten wir eine wohldefinierte Funktion $f \colon V \to W$.
+  
+  Die Abbildung $f$ ist linear:
+  Sind $v, v' \in V$ mit eindeutigen Darstellungen $v = \sum_{i \in I} v_i$ und $v' = \sum_{i \in I} v'_i$, so ist $v + v' = \sum_{i \in I} (v_i + v'_i)$ die eindeutige Darstellung von $v + v'$, und somit
+  \begin{align*}
+        f(v + v')
+     =  \sum_{i \in I} f_i(v_i + v'_i)
+    &=  \sum_{i \in I} ( f_i(v_i) + f_i(v'_i) ) \\
+    &=  \left( \sum_{i \in I} f_i(v_i) \right) + \left( \sum_{i \in I} f_i(v'_i) \right)
+     =  f(v) + f(v').
+  \end{align*}
+  Also ist $f$ additiv.
+  Die Homogenität ergibt sich ähnlich:
+  Ist $v \in V$ mit eindeutiger Darstellung $v = \sum_{i \in I} v_i$ und $\lambda \in K$, so ist $\lambda v = \sum_{i \in I} (\lambda v_i)$ die eindeutige Darstellung von $\lambda v$, und deshalb
+  \[
+      f(\lambda v)
+    = \sum_{i \in I} f_i(\lambda v_i)
+    = \sum_{i \in I} ( \lambda f_i(v_i) )
+    = \lambda \sum_{i \in I} f_i(v_i)
+    = \lambda f(v).
+  \]
+  Also ist $f$ homogen.
+  
+  (\ref{enum: universal property} $\implies$ \ref{enum: intersections are zero})
+  Für fixiertes $j \in I$ betrachten wir die Familie $(f_i)_{i \in I}$ von linearen Abbildungen $f_i \colon V_i \to V$ mit
+  \begin{itemize}
+    \item
+      $f_i = 0$ für alle $i \neq j$, und
+    \item
+      $f_j \colon V_j \to V$, $v \mapsto v$ ist die kanonische Inklusion.
+  \end{itemize}
+  Nach Annahme gibt es eine lineare Abbildung $f \colon V \to V$ mit $f|_{V_i} = f_i$ für jedes $i \in I$.
+  Da $f_i = 0$ für alle $i \neq j$ ist $f|_{V_i} = 0$ für alle $i \neq j$, und somit auch $f|_{\sum_{j \neq i} V_i} = 0$.
+  Für alle $v \in V_j \cap \sum_{i \neq j} V_i$ ist deshalb
+  \[
+      v
+    = f_j(v)
+    = f|_{V_j}(v)
+    = f(v)
+    = f|_{\sum_{i \neq j} V_i}(v)
+    = 0.
+  \]
+  Also ist $V_j \cap \sum_{i \neq j} V_i = 0$.
+\end{proof}
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum und $(V_i)_{i \in I}$ eine Familie von Untervektorräumen $V_i \subseteq V$.
+  Ist $V = \sum_{i \in I} V_i$ und eine (und damit alle) der Bedingungen von Proposition~\ref{prop: characterization of the inner direct sum} erfüllt, so heißt $V$ die \emph{(innere) direkte Summe} der Untervektorräume $V_i$.
+  Dies wird mit $V = \bigoplus_{i \in I} V_i$ notiert.
+\end{definition}
+
+
+\begin{remark}
+  Für eine Familie von $K$-Vektorräumen $(V_i)_{i \in I}$ (wobei die $V_i$ nicht notwendigerweise Untervektorräume eines gemeinsamen Vektorraums $V$ sind) gibt es auch den Begriff der \emph{äußeren direkten Summe $\bigoplus_{i \in I} V_i$}.
+  Mit diesem Begriff werden wir uns hier aber nicht beschäftigen.
+\end{remark}
+
+
+\begin{lemma}
+  Es sei $V$ ein $K$-Vektorraum und $(E_i)_{i \in I}$ eine Familie von Teilmengen $E_i \subseteq V$.
+  Dann ist
+  \[
+      \Ell\left( \bigcup_{i \in I} E_i \right)
+    = \sum_{i \in I} \Ell(E_i).
+  \]
+\end{lemma}
+
+
+\begin{proof}
+  Für alle $j \in I$ ist
+  \[
+    E_j \subseteq \Ell(E_j) \subseteq \sum_{i \in i} \Ell(E_i).
+  \]
+  Deshalb ist auch $\bigcup_{j \in I} E_j \subseteq \sum_{i \in I} \Ell(E_i)$.
+  Da $\sum_{i \in I} \Ell(E_i)$ ein Untervektorraum von $V$ ist, ergibt sich daraus, dass
+  \[
+              \Ell\left( \bigcup_{j \in I} E_j \right)
+    \subseteq \sum_{i \in I} \Ell(E_i).
+  \]
+  
+  Andererseits ist $E_i \subseteq \bigcup_{j \in I} E_j$ für jedes $i \in I$, und somit auch $\Ell(E_i) \subseteq \Ell( \bigcup_{j \in I} E_j )$ für jedes $i \in I$.
+  Da $\Ell( \bigcup_{j \in I} E_j )$ ein Untervektorraum von $V$ ist, ergibt sich daraus, dass
+  \[
+              \sum_{i \in I} \Ell(E_i)
+    \subseteq \Ell\left( \bigcup_{j \in i} E_j \right).
+  \]
+\end{proof}
+
+
+\begin{lemma}
+  Es sei $V$ ein $K$-Vektorraum und $(V_i)_{i \in I}$ eine Familie von Untervektorräumen $V_i \subseteq V$.
+  Für jedes $i \in I$ sei $B_i$ eine Basis von $V_i$.
+  Dann sind äquivalent:
+  \begin{enumerate}
+    \item\label{enum: direct sum}
+      $V = \bigoplus_{i \in I} V_i$
+    \item\label{enum: combining bases} 
+      Die Basen $B_i$ sind disjunkt (d.h.\ $B_i \cap B_j = \emptyset$ für alle $i,j \in I$ mit $i \neq j$), und $\bigcup_{i \in I} B_i$ ist eine Basis von $V$. 
+  \end{enumerate}
+\end{lemma}
+
+
+\begin{proof}
+  Im Folgenden sei abkürzend $B \coloneqq \bigcup_{i \in I} B_i$.
+
+  (\ref{enum: direct sum} $\implies$ \ref{enum: combining bases})
+  Für alle $i,j \in I$ mit $i \neq j$ ist $B_i \subseteq V_i$ und $B_j \subseteq V_j \subseteq \sum_{k \neq i} V_k$ und somit
+  \[
+              B_i \cap B_j
+    \subseteq V_i \cap \sum_{k \neq i} V_k
+    =         \{0\}.
+  \]
+  Die Basen $B_i$ und $B_j$ könnten also nur dann nicht-disjunkt sein, wenn $B_i \cap B_j = \{0\}$, wenn also $0 \in B_i$ und $0 \in B_j$.
+  Da $B_i$ und $B_j$ linear unabhängig sind, enthalten sie den Nullvektor aber nicht.
+  Somit ist $B_i \cap B_j = \emptyset$.
+  
+  Da $V = \bigoplus_{i \in I} V_i$ ist insbesondere $V = \sum_{i \in I} V_i$.
+  Deshalb ist
+  \[
+      \Ell(B)
+    = \Ell\left( \bigcup_{i \in I} B_i \right)
+    = \sum_{i \in I} \Ell(B_i)
+    = \sum_{i \in I} V_i
+    = V,
+  \]
+  wobei wir für die zweite Gleichheit nutzen, dass $B_i$ ein Erzeugendensystem von $V_i$ ist.
+  Das zeigt, dass $B$ ein Erzeugendensystem von $V$ ist.
+  
+  Es sei nun $\sum_{b \in B} \lambda_b b = 0$ für Koeffizienten $\lambda_b \in K$.
+  Da die Vereinigung $B = \bigcup_{i \in I} B_i$ disjunkt ist, ergibt sich daraus
+  \[
+      0
+    = \sum_{b \in B} \lambda_b b
+    = \sum_{b \in \bigcup_{i \in I} B_i} \lambda_b b
+    = \sum_{i \in I} \sum_{b \in B_i} \lambda_b b.
+  \]
+  Dabei nutzen wir, dass die Summanden $\lambda_b b$ für fast alle $b \in B$ verschwinden, und somit das Aufteilen der Summe möglich ist.
+  Setzen wir nun $v_i \coloneqq \sum_{b \in B_i} \lambda_b b$ für alle $i \in I$, so erhalten wir
+  \[
+    0 = \sum_{i \in I} v_i
+    \quad
+    \text{mit $v_i \in V_i$ für alle $i \in I$}.
+  \]
+  Da $V = \bigoplus_{i \in I} V_i$ folgt aus der obigen Gleichung, dass $v_i = 0$ für alle $i \in I$.
+  Es ist also $\sum_{b \in B_i} \lambda_b b = 0$ für alle $i \in I$.
+  Da $B_i$ jeweils eine Basis von $B$ ist, folgt daraus, dass $\lambda_b = 0$ für alle $i \in I$ und $b \in B_i$.
+  Dies bedeutet aber nichts anderes, als dass $\lambda_b = 0$ für alle $b \in \bigcup_{i \in I} B_i = B$.
+  Das zeigt, dass $B$ linear unabhängig ist.
+\end{proof}
+
+
+
+
+
+
+
+\end{document}

@@ -3,6 +3,9 @@
 % XeLaTeX
 \usepackage{xltxtra}
 
+% German
+\usepackage[ngerman]{babel}
+
 % math stuff
 \usepackage{
   amsmath,
@@ -39,6 +42,7 @@
 
 \newcounter{everything}
 
+\newtheorem{definition}[everything]{Definition}
 \newtheorem{corollary}[everything]{Korollar}
 \newtheorem{lemma}[everything]{Lemma}
 \newtheorem{proposition}[everything]{Proposition}
@@ -70,4 +74,5 @@
 
 % functions and functors
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ell}{\mathcal{L}}
 \DeclareMathOperator{\Mat}{M}
