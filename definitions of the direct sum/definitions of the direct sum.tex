@@ -21,7 +21,13 @@
 \end{abstract}
 
 
+\tableofcontents
 
+
+
+
+
+\section{Die Definition der direkten Summe}
 
 
 \begin{proposition}\label{prop: characterization of the inner direct sum}
@@ -38,6 +44,26 @@
       Ist $W$ ein beliebiger $K$-Vektorraum und $(f_i)_{i \in I}$ eine Familie von linearen Abbildungen \mbox{$f_i \colon V_i \to W$}, so gibt es eine eindeutige lineare Abbildung $f \colon V \to K$ mit $f|_{V_i} = f_i$ für jedes $i \in I$.
   \end{enumerate}
 \end{proposition}
+
+
+\begin{remark}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist die Indexmenge $I$ endlich, etwa $I = \{i_1, \dotsc, i_n\}$, so schreibt man auch
+      \[
+        V = V_{i_1} \oplus \dotsb \oplus V_{i_n}
+      \]
+      statt $V = \bigoplus_{i \in I} V_i$.
+      Die gewählte Reihenfolge der Indizes $i_1, \dotsc, i_n$ spielt dabei keine Rolle.
+    \item
+      Für zwei Untervektorräume $V_1, V_2 \subseteq V$ gilt insbesondere
+      \[
+        V = V_1 \oplus V_2
+        \iff
+        \text{$V = V_1 + V_2$ und $V_1 \cap V_2 = 0$}.
+      \]
+  \end{enumerate}
+\end{remark}
 
 
 \begin{proof}
@@ -230,6 +256,94 @@
   Dies bedeutet aber nichts anderes, als dass $\lambda_b = 0$ für alle $b \in \bigcup_{i \in I} B_i = B$.
   Das zeigt, dass $B$ linear unabhängig ist.
 \end{proof}
+
+
+\begin{corollary}
+  Ist $V$ ein endlichdimenisonaler $K$-Vektorraum und $(V_i)_{i \in I}$ eine Familie von Untervektorräumen mit $V = \bigoplus_{i \in I} V_i$, so ist $V_i = 0$ für fast alle $i \in I$ und
+  \[
+      \dim V
+    = \sum_{i \in I} \dim V_i.
+  \]
+\end{corollary}
+\begin{proof}
+  Für jedes $i \in I$ sei $B_i \subseteq V_i$ eine Basis von $V_i$.
+  Dann ist $B \coloneqq \bigcup_{i \in I} B_i$ eine Basis von $V$, und die Vereinigung ist disjunkt.
+  Da $V$ endlichdimensional ist, ist $B$ endlich.
+  Wegen der Disjunktheit der Vereinigung $B = \bigcup_{i \in I}$ muss deshalb $B_i = \emptyset$ für fast alle $i \in I$.
+  Außerdem ist deswegen
+  \[
+      \dim V
+    = |B|
+    = \sum_{i \in I} |B_i|
+    = \sum_{i \in I} \dim V_i.
+  \]
+  Dabei ergibt die Summe über $I$ Sinn, da jeweils fast alle Summanden verschwinden.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Konstruktionen von direkten Summen}
+
+
+\begin{proposition}
+  Es sei $V$ ein $K$-Vektorraum und $e \colon V \to V$ ein idempotenter Endomorphismus, d.h.\ es gilt $e^2 = e$.
+  Dann gilt
+  \[
+    V = \ker e \oplus \im e.
+  \]
+\end{proposition}
+
+
+\begin{proof}
+  Es gilt zu zeigen, dass $V = \ker e + \im e$ und $\ker e \cap \im e = 0$.
+  
+  Es sei $v \in \ker e \cap \im e$.
+  Da $v \in \im e$ gibt es $w \in V$ mit $v = e(w)$.
+  Deshalb ist
+  \[
+    v
+    = e(w)
+    = e^2(w)
+    = e(e(w))
+    = e(v)
+    = 0,
+  \]
+  wobei wir im letzten Schritt nutzen, dass $v \in \ker e$.
+  Dies zeigt, dass $\ker e \cap \im e = 0$.
+  
+  Für $v \in V$ sei $v_2 \coloneqq e(v)$ und $v_1 \coloneqq v - v_2$.
+  Dann ist $v_2 \in \im e$, und da
+  \[
+      e(v_1)
+    = e(v - v_2)
+    = e(v) - e(v_2)
+    = e(v) - e(e(v))
+    = e(v) - e^2(v)
+    = e(v) - e(v)
+    = 0
+  \]
+  ist $v_1 \in \ker e$.
+  Da $v = v_1 + v_2$ ist $v \in \ker e + \im e$.
+  Dies zeigt, dass $V = \ker e + \im e$.
+\end{proof}
+
+
+% TODO: Remark about e being diagonalizable.
+
+
+% TODO: Fitting Lemma
+
+
+
 
 
 
