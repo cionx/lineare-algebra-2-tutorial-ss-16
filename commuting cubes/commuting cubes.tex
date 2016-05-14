@@ -1,0 +1,169 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Alternative Lösungen \\ Zettel 3}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+
+\begin{abstract}
+  Wir geben alternative Lösungen für Zettel 3, Aufgaben 3, Teile (v) und (vi), in Form kommutativer Diagramme.
+\end{abstract}
+
+
+
+
+
+
+
+
+
+
+\section{Hilfsaussagen}
+
+Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
+
+\begin{lemma}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, und es sei $B = (b_i)_{i \in I}$ eine Basis von $V$.
+  Sind $f, g \colon V \to W$ linear mit $f(b_i) = g(b_i)$ für alle $i \in I$, so ist bereits $f = g$.
+\end{lemma}
+
+
+\begin{lemma}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$.
+  Dann gibt es genau eine lineare Abbildung $\Phi_{\mc{B}} \colon V \to K^n$ mit $\Phi_{\mc{B}}(b_i) = e_i$ für alle $1 \leq i \leq n$, wobei $(e_1, \dotsc, e_n)$ die Standardbasis des $K^n$ bezeichnet.
+  Außerdem ist $\Phi_{\mc{B}}$ ein Isomorphismus.
+\end{lemma}
+
+
+\begin{lemma}
+  Es seien $V$ und $W$ zwei endlichdimensionale $K$-Vektorräume.
+  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis von $W$.
+  Ist $f \colon V \to W$ eine lineare Abbildung, so gilt:
+  \begin{enumerate}
+  
+    \item
+      Es gibt eine eindeutige Matrix $A \in \Mat(m \times n, K)$, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}
+            V \arrow[r, "f"] \arrow[d, "\Phi_\mc{B}"']
+          & W \arrow[d, "\Phi_\mc{C}"]
+          \\
+            {K^n} \arrow[r, "A \cdot"]
+          & {K^m}
+        \end{tikzcd}
+      \]
+      (Hier bezeichnet $A \cdot$ die Multiplikation mit $A$ von links.)
+    
+    \item
+      Es gilt $A = \Mat_{\mc{C} \from \mc{B}}(f)$, d.h.\ $A$ ist die darstellende Matrix von $f$ bezüglich der Basen $\mc{B}$ und $\mc{C}$.
+  \end{enumerate}
+\end{lemma}
+
+
+
+\section{Setup}
+
+Wir erinnern an Notationen, die wir im Folgenden nutzen werden:
+
+Es seien $V$ und $W$ zwei endlichdimensionale $\Rbb$-Vektorräume.
+Es seien
+\[
+  \iota_V \colon V \to V_\Cbb,
+  \quad
+  v \mapsto v = v + i \cdot 0
+\]
+und $\iota_W \colon W \to W_\Cbb$ die kanonischen Inklusionen.
+(Hier nutzen wir bereits die Identifikation von $V$ mit dem reellen Untervektorraum $\iota_V(V) \subseteq V_\Cbb$.)
+Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine $\Rbb$-Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine $\Rbb$-Basis von $W$.
+Dann ist $\mc{B}$ eine $\Cbb$-Basis von $V_\Cbb$ und $\mc{C}$ eine $\Cbb$-Basis von $W_\Cbb$.
+(Hier nutzen wir die Identifikation von $V$ mit dem reellen Untervektorraum $\iota(V) \subseteq V_\Cbb$.
+Ohne diese Identifikation müssten wir hier sagen, dass
+\[
+    \iota_V(\mc{B})
+  = (\iota_V(b_1), \dotsc, \iota_V(b_n))
+  = ((b_1, 0), \dotsc, (b_n, 0))
+\]
+eine $\Cbb$-Basis von $V_\Cbb$ ist, und dass
+\[
+    \iota_W(\mc{C})
+  = (\iota_W(c_1), \dotsc, \iota_W(c_m))
+  = ((c_1, 0), \dotsc, (c_m, 0))
+\]
+eine $\Cbb$-Basis von $W_\Cbb$ ist.)
+
+
+
+
+
+
+\section{Alternative Lösung zu (v)}
+
+Es sei $f \colon V \to W$ eine $\Rbb$-lineare Abbildung, und $f_\Cbb \colon V_\Cbb \to W_\Cbb$ die induzierte $\Cbb$-lineare Abbildung.
+Die Abbildung $f_\Cbb$ bringt also das folgende Diagram von $\Cbb$-Vektorräumen zum kommutieren, und ist eindeutig mit dieser Eigenschaft:
+\[
+  \begin{tikzcd}
+      V       \arrow[r, "f"]      \arrow[d, "\iota_V"']
+    & W                           \arrow[d, "\iota_W"]
+    \\
+      V_\Cbb  \arrow[r, "f_\Cbb"]
+    & W_\Cbb
+  \end{tikzcd}
+\]
+Es sei $A \coloneqq M_{\mc{C} \from \mc{B}}(f) \in \Mat(m \times n, \Rbb)$ die darstellende Matrix von $f$ bezüglich der $\Rbb$-Basen $\mc{B}$ von $V$ und $\mc{C}$ von $W$.
+Es bringt also $A$ das folgende Diagram zum kommutieren, und ist die eindeutige ($m \times n$)-Matrix über $\Rbb$ mit dieser Eigenschaft:
+\[
+  \begin{tikzcd}
+      V      \arrow[r, "f"]       \arrow[d, "\Phi^\Rbb_\mc{B}"']
+    & W                           \arrow[d, "\Phi^\Rbb_\mc{C}"]
+    \\
+      \Rbb^n \arrow[r, "A \cdot"]
+    & \Rbb^m
+  \end{tikzcd}
+\]
+Dabei bezeichnen $\Phi^\Rbb_\mc{B} \colon V \to \Rbb^n$ und $\Phi^\Rbb_\mc{C} \colon W \to \Rbb^m$ die eindeutigen $\Rbb$-linearen Isomorphismen mit
+\[
+  \text{$\Phi^\Rbb_\mc{B}(b_j) = e_j$ für alle $1 \leq j \leq n$}
+  \quad\text{und}\quad
+  \text{$\Phi^\Rbb_\mc{C}(c_i) = e_i$ für alle $1 \leq i \leq m$}.
+\]
+
+Es gilt zu zeigen, dass $A = \Mat_{\mc{C} \from \mc{B}}(f_\Cbb)$.
+Dies bedeutet gerade, dass das folgende Diagram kommutieren soll:
+\[
+  \begin{tikzcd}
+      V_\Cbb  \arrow[r, "f_\Cbb"]   \arrow[d, "\Phi^\Cbb_\mc{B}"']
+    & W_\Cbb                        \arrow[d, "\Phi^\Cbb_\mc{C}"]
+    \\
+      \Cbb^n  \arrow[r, "A \cdot"]
+    & \Cbb^m
+  \end{tikzcd}
+\]
+Dabei bezeichnen $\Phi^\Cbb_\mc{B} \colon V_\Cbb \to \Cbb^n$ und $\Phi^\Cbb_\mc{C} \colon W \to \Cbb^m$ die eindeutigen $\Cbb$-linearen Isomorphismen mit
+\[
+  \text{$\Phi^\Cbb_\mc{B}(b_j) = e_j$ für alle $1 \leq j \leq n$}
+  \quad\text{und}\quad
+  \text{$\Phi^\Cbb_\mc{C}(c_i) = e_i$ für alle $1 \leq i \leq m$}.
+\]
+
+Wir wollen 
+
+
+\end{document}

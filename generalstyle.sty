@@ -23,7 +23,7 @@
 
 % for commutative diagrams
 \usepackage{tikz-cd}
-
+\usetikzlibrary{babel} % otherwise babel fucks tikzcd
 
 
 
@@ -58,6 +58,7 @@
 
 % shortcuts for already defined commands
 \newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\from}{\longleftarrow}
 
 % common sets of numbers
 \newcommand{\Nbb}{\ensuremath{\mathbb{N}}}
@@ -65,7 +66,6 @@
 \newcommand{\Qbb}{\ensuremath{\mathbb{Q}}}
 \newcommand{\Rbb}{\ensuremath{\mathbb{R}}}
 \newcommand{\Cbb}{\ensuremath{\mathbb{C}}}
-
 
 % occuring spaces and sets
 \DeclareMathOperator{\coker}{coker}
