@@ -41,9 +41,78 @@
 Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
 
 \begin{lemma}
-  Es seien $V$ und $W$ zwei $K$-Vektorräume, und es sei $B = (b_i)_{i \in I}$ eine Basis von $V$.
-  Sind $f, g \colon V \to W$ linear mit $f(b_i) = g(b_i)$ für alle $i \in I$, so ist bereits $f = g$.
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, und es sei $E \subseteq V$ ein Erzeugendensystem von $V$.
+  Sind $f, g \colon V \to W$ linear mit $f(e) = g(e)$ für alle $e \in E$, so ist bereits $f = g$.
 \end{lemma}
+
+
+\begin{corollary}
+  Es sei
+  \[
+    \begin{tikzcd}
+        X_1
+        \arrow[r, "f"]
+        \arrow[d, "s"']
+      & X_2
+        \arrow[d, "t"]
+      \\
+        Y_1
+        \arrow[r, "g"]
+      & Y_2
+    \end{tikzcd}
+  \]
+  ein Diagram von $K$-Vektorräumen, d.h.\ $X_1$, $X_2$, $Y_1$ und $Y_2$ sind $K$-Vektorräume und $f$, $g$, $s$ und $t$ sind $K$-lineare Abbildungen.
+  Ist $E \subseteq X_1$ ein Erzeugendensystem von $X_1$, so kommutiert das obige Diagram genau dann, wenn
+  \[
+    t(f(e)) = g(s(e))
+    \quad
+    \text{für alle $e \in E$}.
+  \]
+  (Die Kommutativität von Diagrammen lässt sich also auf Erzeugendensystemen, inbesondere also auf Basen, nachrechnen.)
+\end{corollary}
+
+
+\begin{definition}
+  Sind $V$ und $W$ zwei $\Cbb$-Vektorräume, so heißt eine Abbildung $f \colon V \to W$ \emph{($\Cbb$-)antilinear}, falls
+  \begin{enumerate}
+    \item
+      $f(v_1 + v_2) = f(v_1) + f(v_2)$ für alle $v_1, v_2 \in V$, und
+    \item
+      $f(\lambda v) = \overline{\lambda} f(v)$ für alle $\lambda \in \Cbb$ und $v \in V$.
+  \end{enumerate}
+\end{definition}
+
+
+\begin{lemma}
+  Es seien $V$ und $W$ zwei $\Cbb$-Vektorräume und $f \colon V \to W$ sei antilinear.
+  Ist $E \subseteq V$ ein Erzeugendensystem mit $f(e) = g(e)$ für alle $e \in E$, so ist bereits $f = g$.
+\end{lemma}
+
+
+
+\begin{corollary}
+  Es sei
+  \[
+    \begin{tikzcd}
+        X_1
+        \arrow[r, "f"]
+        \arrow[d, "s"']
+      & X_2
+        \arrow[d, "t"]
+      \\
+        Y_1
+        \arrow[r, "g"]
+      & Y_2
+    \end{tikzcd}
+  \]
+  ein Diagram, so dass $X_1$, $X_2$, $Y_1$ und $Y_2$ jeweils $\Cbb$-Vektorräume sind, und $f$, $g$, $s$ und $t$ jeweils $\Cbb$-linear oder $\Cbb$-antilinear.
+  Ist $E \subseteq X_1$ ein Erzeugendensystem, so kommutiert das obige Diagram genau dann, wenn
+  \[
+    t(f(e)) = g(s(e))
+    \quad
+    \text{für alle $e \in E$}.
+  \]
+\end{corollary}
 
 
 \begin{lemma}
@@ -57,7 +126,7 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
   Es seien $V$ und $W$ zwei endlichdimensionale $K$-Vektorräume.
   Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis von $W$.
   Ist $f \colon V \to W$ eine lineare Abbildung, so gilt:
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
   
     \item
       Es gibt eine eindeutige Matrix $A \in \Mat(m \times n, K)$, so dass das folgende Diagram kommutiert:
@@ -81,9 +150,9 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
 
 \section{Setup}
 
-Wir erinnern an Notationen, die wir im Folgenden nutzen werden:
-
+Wir erinnern an Notationen, die wir im Folgenden nutzen werden.
 Es seien $V$ und $W$ zwei endlichdimensionale $\Rbb$-Vektorräume.
+
 Es seien
 \[
   \iota_V \colon V \to V_\Cbb,
@@ -92,6 +161,24 @@ Es seien
 \]
 und $\iota_W \colon W \to W_\Cbb$ die kanonischen Inklusionen.
 (Hier nutzen wir bereits die Identifikation von $V$ mit dem reellen Untervektorraum $\iota_V(V) \subseteq V_\Cbb$.)
+
+Es sind komplexe Konjugationen
+\begin{gather*}
+  V_\Cbb \to V_\Cbb,
+  \quad
+  v_1 + i v_2 \mapsto v_1 - i v_2
+  \quad\text{für alle $v_1, v_2 \in V$},
+\shortintertext{und}
+  W_\Cbb \to W_\Cbb,
+  w_1 + i w_2 \mapsto w - i w_2
+  \quad
+  \text{für alle $w_1, w_2 \in W$}
+\end{gather*}
+gegeben.
+Diese Konjugationen sind $\Cbb$-antilinear.
+Insbesondere sind sie $\Rbb$-linear, für $V \neq 0$, bzw.\ $W \neq 0$ aber nicht $\Cbb$-linear.
+
+
 Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine $\Rbb$-Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine $\Rbb$-Basis von $W$.
 Dann ist $\mc{B}$ eine $\Cbb$-Basis von $V_\Cbb$ und $\mc{C}$ eine $\Cbb$-Basis von $W_\Cbb$.
 (Hier nutzen wir die Identifikation von $V$ mit dem reellen Untervektorraum $\iota(V) \subseteq V_\Cbb$.
@@ -108,6 +195,13 @@ eine $\Cbb$-Basis von $V_\Cbb$ ist, und dass
   = ((c_1, 0), \dotsc, (c_m, 0))
 \]
 eine $\Cbb$-Basis von $W_\Cbb$ ist.)
+
+Da $\mc{B} \subseteq V$ und $\mc{C} \subseteq W$ ist insbesondere $\overline{b_i} = b_i$ für alle $1 \leq i \leq n$ und $\overline{c_i} = c_i$ für alle $1 \leq i \leq m$.
+
+
+
+
+
 
 
 
@@ -163,7 +257,779 @@ Dabei bezeichnen $\Phi^\Cbb_\mc{B} \colon V_\Cbb \to \Cbb^n$ und $\Phi^\Cbb_\mc{
   \text{$\Phi^\Cbb_\mc{C}(c_i) = e_i$ für alle $1 \leq i \leq m$}.
 \]
 
-Wir wollen 
+Wir betrachten den folgenden Würfel:
+\[
+  \begin{tikzcd}[row sep = large, column sep = large]
+      {}
+    & V
+      \arrow[rr, "f"]
+      \arrow[ld, hookrightarrow, "\iota_V"']
+      \arrow[dd, "\Phi^\Rbb_\mc{B}" near start]
+    & 
+    & W
+      \arrow[ld, hookrightarrow, "\iota_W"']
+      \arrow[dd, "\Phi^\Rbb_\mc{C}", near start]
+    \\
+      V_\Cbb
+      \arrow[rr, crossing over, "f_\Cbb" near end]
+      \arrow[dd, "\Phi^\Cbb_\mc{B}" near start]
+    & 
+    & W_\Cbb
+    & 
+    \\
+      {}
+    & \Rbb^n
+      \arrow[ld, hookrightarrow, "\iota_n"']
+      \arrow[rr, "A \cdot" near start]
+    & 
+    & \Rbb^m
+      \arrow[ld, hookrightarrow, "\iota_m"']
+    \\
+      \Cbb^n
+      \arrow[rr, "A \cdot"]
+    & 
+    & \Cbb^m
+      \arrow[from=uu, crossing over, "\Phi^\Cbb_\mc{B}" near start]
+    & 
+  \end{tikzcd}
+\]
+Dabei bezeichnen $\iota_k \colon \Rbb^k \hookrightarrow \Cbb^k$, $x \mapsto x$ für $k \in \{n, m\}$ die kanonischen Inklusionen.
+
+Wir wissen bereits, dass die Rückseite des Würfels kommutiert, und wollen zeigen, dass auch die Vorderseite kommutiert.
+Hierfür zeigen wir zunächst, dass die übrigen vier Seiten des Würfels kommutieren:
+
+Der Deckel des Würfels kommutiert nach Definition von $f_\Cbb$.
+Dass der Boden des Würfels kommutiert ist klar.
+Die linke Seites des Würfels ist das folgende Diagram:
+\[
+  \begin{tikzcd}
+      V
+      \arrow[r, hookrightarrow, "\iota_V"]
+      \arrow[d, "\Phi^\Rbb_\mc{B}"']
+    & V_\Cbb
+      \arrow[d, "\Phi^\Cbb_\mc{B}"]
+    \\
+      \Rbb^n
+      \arrow[r, hookrightarrow, "\iota_n"]
+    & \Cbb^n
+  \end{tikzcd}
+\]
+Da alle Abbildungen in diesem Diagram $\Rbb$-linear sind, genügt es die Kommutativität des Diagrams auf einer $\Rbb$-Basis von $V$ nachzurechnen
+Für die $\Rbb$-Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$ ergibt sich, dass
+\[
+  \Phi^\Cbb(\iota_V(b_i))
+  = \Phi^\Cbb(b_i)
+  = e_i
+  = \Phi^\Rbb_\mc{B}(b_i)
+  = \iota_n(\Phi^\Rbb_\mc{B}(b_i)),
+\]
+bzw.\ das folgende „kommutative Diagram von Elementen“:
+\[
+  \begin{tikzcd}
+      b_i
+      \arrow[r, maps to, "\iota_V"]
+      \arrow[d, maps to, "\Phi^\Rbb_\mc{B}"']
+    & b_i
+      \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"]
+    \\
+      e_i
+      \arrow[r, maps to, "\iota_n"]
+    & e_i
+  \end{tikzcd}
+\]
+Also kommutiert die linke Seite des Würfels.
+Analog ergibt sich, dass auch die rechte Seite kommutiert.
+
+Wir können nun die Kommutativität der Vorderseite des Würfels aus der Kommutativität der anderen Seiten folgern:
+Hierfür bemerken wir zunächst, dass die beiden $\Cbb$-linearen Abbildungen
+\[
+  (A \cdot) \circ \Phi^\Cbb_\mc{B}, \;
+  \Phi^\Cbb_\mc{C} \circ f_\Cbb
+  \colon
+  V_\Cbb \to \Cbb^m
+\]
+nach Aufgabenteil (iv) genau dann gleich sind, wenn die beiden $\Rbb$-linearen Abbildungen
+\[
+    (A \cdot) \circ \Phi^\Cbb_\mc{B} \circ \iota_V, \;
+    \Phi^\Cbb_\mc{C} \circ f_\Cbb \circ \iota_V
+    \colon
+    V \to \Cbb^m
+\]
+übereinstimmen.
+Diese zu zeigende Gleichheit lässt sich mithilfe des Würfels sehr einfach ausdrücken:
+\[
+  \begin{tikzcd}
+      {}
+    & *
+      \arrow[rr]
+      \arrow[ld, red]
+      \arrow[dd]
+    & {}
+    & *
+      \arrow[ld]
+      \arrow[dd]
+    \\
+      *
+      \arrow[rr, crossing over, red]
+      \arrow[dd]
+    & {}
+    & *
+      \arrow[dd]
+    & {}
+    \\
+      {}
+    & *
+      \arrow[rr]
+      \arrow[ld]
+    & {}
+    & *
+      \arrow[ld]
+    \\
+      *
+      \arrow[rr]
+    & {}
+    & *
+      \arrow[from=uu, crossing over, red]
+    & {}
+  \end{tikzcd}
+  \quad=\quad
+  \begin{tikzcd}
+      {}
+    & *
+      \arrow[rr]
+      \arrow[ld, red]
+      \arrow[dd]
+    & {}
+    & *
+      \arrow[ld]
+      \arrow[dd]
+    \\
+      *
+      \arrow[rr, crossing over]
+      \arrow[dd, red]
+    & {}
+    & *
+      \arrow[dd]
+    & {}
+    \\
+      {}
+    & *
+      \arrow[rr]
+      \arrow[ld]
+    & {}
+    & *
+      \arrow[ld]
+    \\
+      *
+      \arrow[rr, red]
+    & {}
+    & *
+      \arrow[from=uu, crossing over]
+    & {}
+  \end{tikzcd}
+\]
+(Wir lässen hier zur Übersichtlichkeit die Bennenung der einzelnen Ecken und Kanten des Würfels weg.)
+Mithilfe dieser graphischen Notation und der Kommutativität der nicht-Vorderseiten lässt sich dies zeigen, indem wir um den Würfel herumwackeln:
+\[
+  \renewcommand{\arraystretch}{6}
+  \begin{array}{cccccccc}
+      &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld, red]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[ld]
+        \arrow[dd]
+      \\
+        *
+        \arrow[rr, crossing over, red]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+      & {}
+      & *
+        \arrow[ld]
+      \\
+        *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over, red]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr, red]
+        \arrow[ld]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[ld, red]
+        \arrow[dd]
+      \\
+        *
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+      & {}
+      & *
+        \arrow[ld]
+      \\
+        *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over, red]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr, red]
+        \arrow[ld]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[ld]
+        \arrow[dd, red]
+      \\
+        *
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+      & {}
+      & *
+        \arrow[ld, red]
+      \\
+        *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    \\
+      = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+        \arrow[dd, red]
+      & {}
+      & *
+        \arrow[ld]
+        \arrow[dd]
+      \\
+        *
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr, red]
+        \arrow[ld]
+      & {}
+      & *
+        \arrow[ld, red]
+      \\
+        *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+        \arrow[dd, red]
+      & {}
+      & *
+        \arrow[ld]
+        \arrow[dd]
+      \\
+        *
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld,red]
+      & {}
+      & *
+        \arrow[ld]
+      \\
+        *
+        \arrow[rr,red]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld, red]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[ld]
+        \arrow[dd]
+      \\
+        *
+        \arrow[rr, crossing over]
+        \arrow[dd, red]
+      & {}
+      & *
+        \arrow[dd]
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+        \arrow[ld]
+      & {}
+      & *
+        \arrow[ld]
+      \\
+        *
+        \arrow[rr,red]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+  \end{array}
+\]
+In Formeln besagt die obigen Gleichungskette, dass
+\[
+\begin{array}{clclcl}
+    & \Phi^\Cbb_\mc{C} \circ f_\Cbb \circ \iota_V
+  &=&  \Phi^\Cbb_\mc{C} \circ \iota_W \circ f
+  &=&  \iota_m \circ \Phi^\Rbb_\mc{C} \circ f \\
+   =&  \iota_m \circ (A \cdot) \circ \Phi^\Rbb_\mc{B}
+  &=&  (A \cdot) \circ \iota_n \circ \Phi^\Rbb_\mc{B}
+  &=&  (A \cdot) \circ \Phi^\Cbb_\mc{B} \circ \iota_V.
+\end{array}
+\]
+
+Damit erhalten wir also, dass auch Vorderseite des Würfels kommutiert.
+Ingesamt haben wir also einen kommutierenden Würfel.
+
+
+
+
+
+
+
+
+
+
+\section{Alternative Lösung für (vi)}
+
+Es sei $A \in \Mat(m \times n, \Cbb)$ und $f \colon V_\Cbb \to W_\Cbb$ die $\Cbb$-lineare Abbildung, die bezüglich der $\Cbb$-Basen $\mc{B}$ und $\mc{C}$ von $V_\Cbb$ und $W_\Cbb$ durch $A$ beschrieben wird.
+Also bringt $f_\Cbb$ das folgende Diagram zum kommutieren, und ist die eindeutige $\Cbb$-lineare Abbildung mit dieser Eigenschaft:
+\[
+  \begin{tikzcd}
+      V_\Cbb
+      \arrow[r, "f"]
+      \arrow[d, "\Phi^\Cbb_\mc{B}"']
+    & W_\Cbb
+      \arrow[d, "\Phi^\Cbb_\mc{C}"]
+    \\
+      \Cbb^n
+      \arrow[r, "A \cdot"]
+    & \Cbb^m
+  \end{tikzcd}
+\]
+Es gilt zu zeigen, dass die $\Cbb$-lineare Abbildung
+\[
+  g \colon V_\Cbb \to W_\Cbb,
+  \quad
+  x \mapsto \overline{f(\overline{x})}
+\]
+bezüglich der $\Cbb$-Basen $\mc{B}$ und $\mc{C}$ von $V_\Cbb$ und $W_\Cbb$ durch die Matrix $\overline{A}$ beschrieben wird.
+Es gilt also zu zeigen, dass das folgende Diagram kommutiert:
+\[
+  \begin{tikzcd}
+      V_\Cbb
+      \arrow[r, "g"]
+      \arrow[d, "\Phi^\Cbb_\mc{B}"']
+    & W_\Cbb
+      \arrow[d, "\Phi^\Cbb_\mc{C}"]
+    \\
+      \Cbb^n
+      \arrow[r, "\overline{A} \cdot"]
+    & \Cbb^m
+  \end{tikzcd}
+\]
+
+Wir betrachten hierfür den folgenden Würfel:
+\[
+  \begin{tikzcd}[row sep = large, column sep = large]
+      {}
+    & V_\Cbb
+      \arrow[rr, "f"]
+      \arrow[dd, "\Phi^\Cbb_\mc{B}" near start]
+    & {}
+    & W_\Cbb
+      \arrow[dl, "\overline{\,\cdot\,}"]
+      \arrow[dd, "\Phi^\Cbb_\mc{C}" near start]
+    \\
+      V_\Cbb
+      \arrow[ur, "\overline{\,\cdot\,}"]
+      \arrow[rr, crossing over, "g" near end]
+      \arrow[dd, "\Phi^\Cbb_\mc{B}" near start]
+    & {}
+    & W_\Cbb
+    & {}
+    \\
+      {}
+    & \Cbb^n
+      \arrow[rr, "A \cdot" near start]
+    & {}
+    & \Cbb^m
+      \arrow[dl, "\overline{\,\cdot\,}"]
+    \\
+      \Cbb^n
+      \arrow[ur, "\overline{\,\cdot\,}"]
+      \arrow[rr, "\overline{A} \cdot "]
+    & {}
+    & \Cbb^m
+      \arrow[from=uu, crossing over, "\Phi^\Cbb_\mc{C}" near start]
+    & {}
+  \end{tikzcd}
+\]
+Wir wissen bereits, dass die Rückseite kommutiert, und möchten zeigen, dass auch die Vorderseite kommutiert.
+Wir zeigen zunächst, dass alle anderen Seiten kommutieren:
+
+Der Deckel kommutiert nach Definition von $g$.
+Der Boden kommutiert, da
+\[
+    \overline{A \cdot \overline{x}}
+  = \overline{A} \cdot \overline{\overline{x}}
+  = \overline{A} \cdot x
+  \quad
+  \text{für alle $x \in \Cbb^n$}.
+\]
+Die linke Seite des Würfels ist das folgende Diagram:
+\[
+  \begin{tikzcd}
+      V_\Cbb
+      \arrow[r, "\overline{\,\cdot\,}"]
+      \arrow[d, "\Phi^\Cbb_\mc{B}"']
+    & V_\Cbb
+      \arrow[d, "\Phi^\Cbb_\mc{B}"]
+    \\
+      \Cbb^n
+      \arrow[r, "\overline{\,\cdot\,}"]
+    & \Cbb^n
+  \end{tikzcd}
+\]
+Da alle auftretenden Abbildungen $\Cbb$-linear oder -antilinear sind, lässt sich die Kommutativität des Diagrams auf einer $\Cbb$-Basis von $V_\Cbb$ nachrechnen.
+Für die Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $B$ erhalten wir das folgende „kommutative Diagram von Elementen“:
+\[
+  \begin{tikzcd}
+      b_i
+      \arrow[r, maps to, "\overline{\,\cdot\,}"]
+      \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"']
+    & b_i
+      \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"]
+    \\
+      e_i
+      \arrow[r, maps to, "\overline{\,\cdot\,}"]
+    & e_i
+  \end{tikzcd}
+\]
+In Formeln bedeutet dies, dass
+\[
+    \overline{\Phi^\Cbb_\mc{B}(b_i)}
+  = \overline{e_i}
+  = e_i
+  = \Phi^\Cbb_\mc{B}(b_i)
+  = \Phi^\Cbb_\mc{B}\left( \overline{b_i} \right).
+\]
+
+Damit wissen wir von allen Seiten des Würfels, bis auf die Vorderseite, dass sie kommutieren.
+Durch Herumwackeln um den Würfel folgt daraus, dass auch die Vorderseite kommutiert:
+\[
+  \begin{array}{cccccccc}
+        &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dl]
+        \arrow[dd]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr, crossing over, red]
+        \arrow[dd]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[dl]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over, red]
+      & {}
+    \end{tikzcd}
+    & = &
+   \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr, red]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dl, red]
+        \arrow[dd]
+      \\
+        *
+        \arrow[ur, red]
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[dl]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over, red]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr, red]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dl]
+        \arrow[dd, red]
+      \\
+        *
+        \arrow[ur, red]
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[dl, red]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    \\
+      = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[dd, red]
+      & {}
+      & *
+        \arrow[dl]
+        \arrow[dd]
+      \\
+        *
+        \arrow[ur, red]
+        \arrow[rr, crossing over]
+        \arrow[dd]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr, red]
+      & {}
+      & *
+        \arrow[dl, red]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dl]
+        \arrow[dd]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr, crossing over]
+        \arrow[dd, red]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr, red]
+      & {}
+      & *
+        \arrow[dl, red]
+      \\
+        *
+        \arrow[ur, red]
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+    & = &
+    \begin{tikzcd}[row sep = 10, column sep = 10]
+        {}
+      & *
+        \arrow[rr]
+        \arrow[dd]
+      & {}
+      & *
+        \arrow[dl]
+        \arrow[dd]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr, crossing over]
+        \arrow[dd, red]
+      & {}
+      & *
+      & {}
+      \\
+        {}
+      & *
+        \arrow[rr]
+      & {}
+      & *
+        \arrow[dl]
+      \\
+        *
+        \arrow[ur]
+        \arrow[rr, red]
+      & {}
+      & *
+        \arrow[from=uu, crossing over]
+      & {}
+    \end{tikzcd}
+  \end{array}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
