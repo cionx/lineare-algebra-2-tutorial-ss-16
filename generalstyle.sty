@@ -46,9 +46,11 @@
 \newtheorem{corollary}[everything]{Korollar}
 \newtheorem{lemma}[everything]{Lemma}
 \newtheorem{proposition}[everything]{Proposition}
+\newtheorem{theorem}[everything]{Theorem}
 
 \theoremstyle{definition}
 \newtheorem{remark}[everything]{Bemerkung}
+\newtheorem{warning}[everything]{Warnung}
 
 
 
@@ -74,5 +76,10 @@
 
 % functions and functors
 \DeclareMathOperator{\id}{id}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
 \DeclareMathOperator{\Ell}{\mathcal{L}}
 \DeclareMathOperator{\Mat}{M}
+
+% things with arguments
+\newcommand{\bil}[1]{\langle #1 \rangle}
