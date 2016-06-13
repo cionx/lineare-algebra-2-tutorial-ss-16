@@ -1,0 +1,168 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+
+\title{Simultane Diagonalisierbarkeit}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+
+\section{Endlich viele Endomorphismen}
+
+
+Zunächst wollen wir Notation einführen.
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum.
+  \begin{enumerate}
+    \item
+      Für jeden Endomorphismus $f \colon V \to V$ und Skalar $\lambda \in K$ sei
+      \[
+        V(f,\lambda) \coloneqq \{ v \in V \mid f(v) = v \}
+      \]
+      der \emph{Eigenraum} von $f$ zum Eigenwert $\lambda$.
+      Ein Element $v \in V(f, \lambda)$ mit $v \neq 0$ heißt \emph{Eigenvektor} von $f$ zum Eigenwert $\lambda$.
+    \item
+      Für Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ und paarweise verschiedene Skalare $\lambda_1, \dotsc, \lambda_n \in K$ sei
+      \[
+                  V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)
+        \coloneqq \{ v \in V \mid \text{$f_i(v) = \lambda_i v$ für alle $i = 1, \dotsc, n$} \}
+      \]
+      der \emph{gemeinsame Eigenraum} der Endomorphismen $f_1, \dotsc, f_n$ zu den (paarweise verschiedenen) Eigenwerten $\lambda_1, \dotsc, \lambda_n$.
+      Ein Element $v \in V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)$ mit $v \neq 0$ heißt \emph{gemeinsamer Eigenvektor} der Endomorphismen $f_1, \dotsc, f_n$ zu den Eigenwerten $\lambda_1, \dotsc, \lambda_n$.
+  \end{enumerate}
+\end{definition}
+
+
+\begin{proposition}\label{prop: basis of common eigenvectors equivalent to sum of common eigenspaces}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $f_1, \dotsc, f_n \colon V \to V$ Endomorphismen.
+  Dann sind die folgenden beiden Aussagen äquivalent:
+  \begin{enumerate}
+    \item
+      Es gibt eine Basis $\mc{B}$ von $V$, so dass jeder Endomorphismus $f_i$ bezüglich $\mc{B}$ durch eine Diagonalmatrix dargestellt wird.
+    \item
+      Es gibt eine Basis $\mc{B}$ von $V$ aus gemeinsamen Eigenvektoren der Endomorphismen $f_1, \dotsc, f_n$.
+    \item
+      Es ist
+      \[
+        V = \bigoplus_{\lambda_1, \dotsc, \lambda_n \in K} V(f_1, \lambda_1; \dotsc; f_n, \lambda_n).
+      \]
+  \end{enumerate}
+\end{proposition}
+
+
+\begin{remark}
+  Die Endlichdimensionalität in Proposition~\ref{prop: basis of common eigenvectors equivalent to sum of common eigenspaces} wird zur Existenz von Basen benötigt.
+  Nutzt man, dass nach dem Auswahlaxiom jeder Vektorraum eine Basis besitzt, so gilt die Aussage auch für unendlichdimensionale Vektorräume.
+\end{remark}
+
+
+\begin{lemma}
+  Es sei $V$ ein $K$-Vektorraum.
+  \begin{enumerate}
+    \item
+     Ist $(f_i)_{i \in I}$ eine Familie von Endomorphismen $f_i \colon V \to V$ und $g \colon V \to V$ ein Endomorphismus, der mit jedem der $f_i$ kommutiert (also $f_i g = g f_i$ für alle $i \in I$ erfüllt), so ist für jede Familie $(\lambda_i)_{i \in I}$ von Skalaren $\lambda_i \in K$ der gemeinsame Eigenraum $V((f_i)_{i \in I}, (\lambda_i)_{i \in I})$ invariant unter $g$.
+  \end{enumerate}
+\end{lemma}
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ein Endomorphismus $f \colon V \to V$ heißt \emph{diagonalisierbar} falls $V = \bigoplus_{\lambda \in K} V(f, \lambda)$.
+    \item
+      Mehrere Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ heißen \emph{simultan diagonalisierbar}, falls $V = \bigoplus_{\lambda_1, \dotsc, \lambda_n} V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)$.
+  \end{enumerate}
+\end{definition}
+
+
+\begin{theorem}
+  Es sei $V$ ein $K$-Vektorraum und es seien $f_1, \dotsc, f_n \colon V \to V$ Endomorphismen.
+  Dann sind die folgenden beiden Aussagen äquivalent:
+  \begin{enumerate}
+    \item
+      Die Endomorphismen $f_1, \dotsc, f_n$ sind simultan diagonalisierbar.
+    \item
+      Jeder Endomorphismus $f_i$ ist (einzeln) diagonalisierbar, und die Endomorphismen $f_1, \dotsc, f_n$ kommutieren paarweise miteinander (d.h.\ es ist $f_i f_j = f_j f_i$ für alle $1 \leq i,j \leq n$).
+  \end{enumerate}
+\end{theorem}
+
+
+\begin{corollary}
+  Für einen endlichdimensionalen $K$-Vektorraum $V$ und Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ sind die folgenden Bedingungen äquivalent:
+  \begin{enumerate}
+    \item
+      Es gibt eine Basis $\mc{B}$ von $V$, so dass jeder Endomorphismus $f_i$ bezüglich $\mc{B}$ durch eine Diagonalmatrix dargestellt wird.
+    \item
+      Es gibt eine Basis $\mc{B}$ aus gemeinsamen Eigenvektoren von $f_1, \dotsc, f_n$.
+    \item
+      Es ist $V = \bigoplus_{\lambda_1, \dotsc, \lambda_n \in K} V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)$.
+    \item
+      Jeder der Endomorphismen $f_i$ ist (einzeln) diagonalisierbar, und die Endomorphismen $f_1, \dotsc, f_n$ kommutieren paarweise miteinander.
+  \end{enumerate}
+\end{corollary}
+
+
+
+
+
+
+
+
+
+
+\section{Unendlich viele Endomorphismen}
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum und $(f_i)_{i \in I}$ eine Familie von Endomorphismen $f_i \colon V \to V$.
+  Für eine Familie $(\lambda_i)_{i \in I}$ von Skalaren $\lambda_i \in K$ ist
+  \[
+      V((f_i)_{i \in I}, (\lambda_i)_{i \in I})
+    = \{ v \in V \mid \text{$f_i(v) = \lambda_i v$ für alle $i \in I$} \}
+  \]
+  der \emph{gemeinsame Eigenraum} der Endomorphismen $(f_i)_{i \in I}$ zu den Eigenwerten $(\lambda_i)_{i \in I}$.
+  Ein Element $v \in V((f_i)_{i \in I}, (\lambda_i)_{i \in I})$ mit $v \neq 0$ heißt \emph{gemeinsamer Eigenvektor} der Endomorphismen $(f_i)_{i \in I}$ zu den Eigenwerten $(\lambda_i)_{i \in I}$.
+\end{definition}
+
+
+\begin{remark}
+  Für endlich viele Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ und Skalare $\lambda_1, \dotsc, \lambda_n \in K$ ist
+  \[
+      V((f_1, \dotsc, f_n), (\lambda_1, \dotsc, \lambda_n))
+    = V(f_1, \lambda_1; \dotsc; f_n, \lambda_n).
+  \]
+\end{remark}
+
+
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum und $H \subseteq \End_K(V)$ ein Untervektorraum.
+  Für jedes $\lambda \in H^*$ sei
+  \[
+              V_\lambda
+    \coloneqq \{v \in V \mid \text{$f(v) = \lambda(f) v$ für alle $f \in H$}\}
+  \]
+  der \emph{weight space} von $V$ bezüglich $\lambda$.
+\end{definition}
+
+
+
+
+
+\end{document}
