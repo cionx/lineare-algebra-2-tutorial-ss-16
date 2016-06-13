@@ -63,7 +63,7 @@
 
 
 
-% SCALAR PRODUCTS AND BILINEAR FORMS
+% SCALAR PRODUCTS
 
 
 \begin{question}
@@ -92,6 +92,143 @@
       Inwiefern ändern sich die obigen Resultate, wenn $V$ und $W$ unitäre Vektorräume sind?
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$.
+  Ferner sei $U \coloneqq \{f \in V \mid f(0) = 0\}$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $U$ ein Untervektorraum von $V$ ist.
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{f, g} \coloneqq \int_0^1 f(t) g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Zeigen Sie, dass $U^\perp = 0$.
+      Folgern Sie, dass $V \neq U \oplus U^\perp$.
+      (\emph{Hinweis}: Betrachten Sie für $g \in U^\perp$ die Funktion $h \colon [0,1] \to \Rbb$ mit $h(t) = t^2 g(t)$.)
+    \item
+      Zeigen Sie ferner, dass $V/(U \oplus U^\perp)$ eindimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei
+  \[
+    W = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
+  \]
+  der Vektorraum der beidseitigen reellwertigen Folgen.
+  Ferner sie
+  \[
+    V \coloneqq
+    \left\{
+      (a_n)_{n \in \Zbb} \in W
+    \,\middle|\,
+      \sum_{n \in \Zbb} |a_n|^2 < \infty
+   \right\}
+  \]
+  der Untervektorraum der quadratsummierbaren Folgen.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $V$ ein Untervektorraum von $W$ ist.
+    \item
+      Zeigen Sie für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$, dass
+      \[
+        \sum_{n \in \Zbb} a_n b_n < \infty.
+      \]
+      (\emph{Hinweis:} Zeigen sie zunächst, dass $ab \leq (a^2 + b^2)/2$ für alle $a, b \in \Rbb$.)
+    \item
+      Zeigen sie, dass
+      \[
+                  \bil{ (a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} }
+        \coloneqq \sum_{n \in \Zbb} a_n b_n
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Es sei
+      \[
+        R \colon V \to V,
+        \quad
+        (a_n)_{n \in \Zbb} \mapsto (a_{n-1})_{n \in \Zbb}
+      \]
+      der Rechtsshift-Operator.
+      Zeigen Sie, dass $R$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, unitär, bzw.\ normal ist.
+    \item
+      Zeigen Sie, dass $R$ keine Eigenwerte besitzt.
+    \item
+      Es sei
+      \[
+        S \colon V \to V,
+        \quad
+        (a_n)_{n \in \Nbb} \mapsto (a_{-n})_{n \in \Nbb}.
+      \]
+      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, unitär, bzw.\ normal ist.
+    \item
+      Zeigen Sie, dass $S$ diagonalisierbar ist.
+    \item
+      Es sei
+      \[
+        U \coloneqq \{(a_n)_{n \in \Zbb} \in V \mid \text{$a_n = 0$ für fast alle $n \in \Zbb$}\}.
+      \]
+      Bestimmen Sie $U^\perp$ und entscheiden Sie, ob $V = U \oplus U^\perp$.
+    \item
+      Bestimmen Sie eine Orthonormalbasis von $U$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass durch
+      \[
+        \sigma(A, B) \coloneqq \tr\left( A^T B \right)
+        \quad
+        \text{für alle $A, B \in \Mat_n(\Rbb)$}
+      \]
+      ein Skalarprodukt auf $\Mat_n(\Rbb)$ definiert wird.
+    \item
+      Zeigen Sie, dass die Standardbasis $(E_{ij})_{i,j=1,\dotsc,n}$ von $\Mat_n(\Rbb)$ mit
+      \[
+        (E_{ij})_{kl} \coloneqq \delta_{ik} \delta_{jl}
+        \quad
+        \text{für alle $1 \leq i,j,k,l \leq n$}
+      \]
+      eine Orthonormalbasis von $\Mat_n(\Rbb)$ bezüglich $\sigma$ bilden.
+    \item
+      Es sei
+      \[
+        S_+ \coloneqq \{A \in \Mat_n(\Rbb) \mid A^T = A\}
+      \]
+      der Untervektorraum der symmetrischen Matrizen, und
+      \[
+        S_- \coloneqq \{A \in \Mat_n(\Rbb) \mid A^T  = -A\}
+      \]
+      der Untervektorraum der schiefsymmetrischen Matrizen.
+      Zeigen Sie, dass
+      \[
+        \Mat_n(\Rbb) = S_+ \oplus S_-,
+      \]
+      und dass die Summe orthogonal ist.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+% BILINEAR FORMS
 
 
 \begin{question}
@@ -200,9 +337,6 @@
       \]
   \end{enumerate}
 \end{question}
-
-
-
 
 
 
