@@ -1,0 +1,225 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Alternative Lösungen \\ Zettel 3}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+Es sei $V$ ein euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
+Wir zeigen zunächst, dass sich dieses Skalarprodukt eindeutig auf $V_\Cbb$ fortsetzen lässt:
+
+\begin{proposition}
+  Es gibt ein eindeutiges (komplexes) Skalarprodukt $\bil{\cdot, \cdot}_\Cbb$ auf $V_\Cbb$, so dass
+  \[
+      \bil{v_1 + i \cdot 0, v_2 + i \cdot 0}_\Cbb
+    = \bil{v_1, v_2}
+    \quad
+    \text{für alle $v_1, v_2 \in V$},
+  \]
+  d.h.\ es gilt
+  \[
+    \bil{\iota(v_1), \iota(v_2)}_\Cbb = \bil{v_1, v_2}
+    \quad\text{für alle $v_1, v_2 \in V$},
+  \]
+  wobei $\iota \colon V \to V_\Cbb$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion bezeichnet.
+\end{proposition}
+
+
+\begin{proof}
+  Wenn sich $\bil{\cdot, \cdot}$ zu einem solchen komplexen Skalarprodukt $\bil{\cdot, \cdot}_\Cbb$ fortsetzen lässt, so ist $\bil{\cdot, \cdot}_\Cbb$ insbesondere sesquilinear (also linear im ersten Argument und antilinear im zweiten Argument).
+  Für alle $v_1, v_2, w_1, w_2 \in V$ ist dann
+  \[
+      \bil{v_1 + i v_2, w_1 + i w_2}
+    = ( \bil{v_1, w_1} + \bil{v_2, w_2} ) + i( \bil{v_2, w_1} - \bil{v_1, w_2} ).
+  \]
+  Somit ist $\bil{\cdot, \cdot}_\Cbb$ eindeutig.
+  
+  Zum Beweis der Existenz definieren wir
+  \[
+              \bil{v_1 + iv_2, w_1 + iw_2}
+    \coloneqq ( \bil{v_1, w_1} + \bil{v_2, w_2} ) + i(\bil{v_2, w_1} - \bil{v_1, w_2} )
+  \]
+  für alle $v_1, v_2, w_1, w_2 \in V$, und zeigen, dass dies ein komplexes Skalarprodukt auf $V_\Cbb$ ist.
+  
+  $\bil{\cdot, \cdot}_\Cbb$ is hermitsch, denn für alle $v_1, v_2, w_1, w_2 \in V$ ist
+  \begin{align*}
+      \overline{ \bil{w_1 + i w_2, v_1 + i v_2}_\Cbb }
+    &= \overline{ ( \bil{w_1, v_1} + \bil{w_2, v_2} ) + i( \bil{w_2, v_1} - \bil{w_1, v_2} ) } \\
+    &= ( \bil{w_1, v_1} + \bil{w_2, v_2} ) - i( \bil{w_2, v_1} - \bil{w_1, v_2} ) \\
+    &= ( \bil{w_1, v_1} + \bil{w_2, v_2} ) + i( \bil{w_1, v_2} - \bil{w_2, v_1} ) \\
+    &= ( \bil{v_1, w_1} + \bil{v_2, w_2} ) + i( \bil{v_2, w_1} - \bil{v_1, w_2} ) \\
+    &= \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb.
+  \end{align*}
+  Da $\bil{\cdot, \cdot}$ $\Rbb$-bilinear ist, ergibt sich, dass $\bil{\cdot, \cdot}_\Cbb$ im ersten Argument $\Rbb$-linear ist (und auch im zweiten).
+  Im ersten Argument gilt außerdem
+  \begin{align*}
+      \bil{i \cdot (v_1 + i v_2), w_1 + i w_2}_\Cbb
+    &= \bil{- v_2 + i v_1, w_1 + i w_2}_\Cbb  \\
+    &= (\bil{- v_2, w_1} + \bil{v_1, w_2}) + i(\bil{v_1, w_1} - \bil{-v_2, w_2}) \\
+    &= (\bil{v_1, w_2} - \bil{v_2, w_1}) + i(\bil{v_1, w_1} + \bil{v_2, w_2}) \\
+    &= i \cdot ( (\bil{v_1, w_1} + \bil{v_2, w_2}) + i (\bil{v_2, w_1} - \bil{v_1, w_2}) )  \\
+    &= i \cdot \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb.
+  \end{align*}
+  Zusammen mit der $\Rbb$-Linearität im ersten Argument ergibt sich damit, dass $\bil{\cdot, \cdot}_\Cbb$ im ersten Argument $\Cbb$-linear ist.
+  Da $\bil{\cdot, \cdot}_\Cbb$ hermitsch und im ersten Argument $\Cbb$-linear ist, ist $\bil{\cdot, \cdot}_\Cbb$ im zweiten Argument $\Cbb$-antilinear.
+  
+  Für alle $v_1, v_2 \in V$ ist
+  \begin{gather*}
+      \bil{v_1 + i v_2, v_1 + i v_2}_\Cbb
+    = \bil{v_1, v_1} + \bil{v_2, v_2}
+    = \|v_1\| + \|v_2\|,
+  \shortintertext{und somit}
+          \bil{v_1 + i v_2, v_1 + i v_2} = 0
+    \iff  v_1 = v_2 = 0
+    \iff  v_1 + i v_2 = 0.
+    \qedhere
+  \end{gather*}
+\end{proof}
+
+
+\begin{proposition}
+  Es sei $V$ ein euklidischer Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Dann ist
+  \[
+    (U^\perp)_\Cbb = (U_\Cbb)^\perp.
+  \]
+\end{proposition}
+
+
+\begin{proof}
+  Sind $v_1, v_2 \in U$ und $w_1, w_2 \in U^\perp$, so ist
+  \[
+      \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb
+    = (\bil{v_1, w_1} + \bil{v_2, w_2}) + i(\bil{v_2, w_1} - \bil{v_1, w_2})
+    = 0,
+  \]
+  da $\bil{v_i, w_j} = 0$ für alle $i,j \in \{1,2\}$.
+  Damit ist $(U^\perp)_\Cbb \subseteq (U_\Cbb)^\perp$.
+  
+  Andererseits seien $w_1, w_2 \in V$ mit $w_1 + i w_2 \in (U_\Cbb)^\perp$.
+  Für alle $v \in U$ ist dann $v + i \cdot 0 \in U_\Cbb$ und somit
+  \[
+      0
+    = \bil{v + i \cdot 0, w_1 + i w_2}
+    = \bil{v, w_1} - i \bil{v, w_2}.
+  \]
+  Also ist $\bil{v, w_1} = \bil{v, w_2} = 0$ für alle $v \in U$ und somit $w_1, w_2 \in U^\perp$.
+  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.
+\end{proof}
+
+
+\begin{proposition}
+  Es seien $V$ und $W$ euklidische Vektorräume und es sei $f \colon V \to W$ eine lineare Abbildung.
+  Dann ist
+  \[
+    (f^*)_{\Cbb} = (f_\Cbb)^*.
+  \]
+\end{proposition}
+
+
+\begin{proof}
+  Dies lässt sich etwa in Koordinaten durchrechnen:
+  Für alle $v_1, v_2, w_1, w_2$ ist
+  \begin{align*}
+     &\,  \bil{ f_\Cbb( v_1 + i v_2 ), w_1 + i w_2 }_\Cbb
+    =     \bil{ f(v_1) + i f(v_2), w_1 + i w_2}_\Cbb \\
+    =&\,  (\bil{f(v_1), w_1} + \bil{f(v_2), w_2}) + i(\bil{f(v_2), w_1} - \bil{f(v_1), w_2}) \\
+    =&\,  (\bil{v_1, f^*(w_1)} + \bil{v_2, f^*(w_2)}) + i(\bil{v_2, f^*(w_1)} - \bil{v_1, f^*(w_2)}) \\
+    =&\,  \bil{ v_1 + i v_2, f^*(w_1) + i f^*(w_2) }_\Cbb
+    =     \bil{ v_1 + i v_2, (f^*)_\Cbb( w_1 + i w_2 ) }_\Cbb,
+  \end{align*}
+  also hat $(f^*)_\Cbb$ die definierende Eigenschaft von $(f_\Cbb)^*$.
+\end{proof}
+
+
+\begin{corollary}\label{cor: complexification preserves normal}
+  Ist $V$ ein euklidischer Vektorraum und $f \colon V \to V$ ein normaler Endomorphismus, so ist $f_\Cbb$ ein normaler Endomorphismus von $V_\Cbb$.
+\end{corollary}
+
+
+\begin{proof}
+  Es ist
+  \[
+      f_\Cbb (f_\Cbb)^*
+    = f_\Cbb (f^*)_\Cbb
+    = (f f^*)_\Cbb
+    = (f^* f)_\Cbb
+    = (f^*)_\Cbb f_\Cbb
+    = (f_\Cbb)^* f_\Cbb.
+    \qedhere
+  \]
+\end{proof}
+
+
+\begin{theorem}\label{thrm: invariance for unitary}
+  Es sei $V$ ein endlichdimensionaler unitärer Vektorraum, $f \colon V \to V$ ein normaler Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Dann ist auch $U^\perp$ $f$-invariant.
+\end{theorem}
+
+
+\begin{proof}
+  Dies wurde auf dem sechsten Übungszettel gezeigt.
+\end{proof}
+
+
+\begin{lemma}\label{lem: invariance of induced subspaces}
+  Es sei $V$ ein $\Rbb$-Vektorraum, $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein Untervektorraum.
+  Dann ist $U$ genau dann $f$-invariant, wenn $U_\Cbb$ invariant unter $f_\Cbb$ ist.
+\end{lemma}
+
+
+\begin{proof}
+  Es gilt
+  \begin{align*}
+        &\, \text{$U_\Cbb$ ist $f_\Cbb$-invariant}                            \\
+    \iff&\, f_\Cbb(U_\Cbb) \subseteq U_\Cbb                                   \\
+    \iff&\, \text{$f_\Cbb(u_1 + i u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$} \\
+    \iff&\, \text{$f(u_1) + i f(u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$}   \\
+    \iff&\, \text{$f(u_1), f(u_2) \in U$ für alle $u_1, u_2 \in U$}           \\
+    \iff&\, \text{$f(u) \in U$ für alle $u \in U$}                            \\
+    \iff&\, f(U) \subseteq U                                                  \\
+    \iff&\, \text{$U$ ist $f$-invariant}.
+    \qedhere
+  \end{align*}
+\end{proof}
+
+
+\begin{corollary}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum, $f \colon V \to V$ ein normaler Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Dann ist $U^\perp$ ebenfalls $f$-invariant.
+\end{corollary}
+
+
+\begin{proof}
+  Wegen der Normalität von $f$ ist nach Korollar~\ref{cor: complexification preserves normal} auch $f_\Cbb \colon V_\Cbb \to V_\Cbb$ normal, und wegen der Endlichdimensionalität von $V$ ist auch $V_\Cbb$ endlichdimensional.
+  Wegen der $f$-Invarianz von $U$ ist nach Lemma~\ref{lem: invariance of induced subspaces} der induzierte Unterraum $U_\Cbb$ invariant unter $f_\Cbb$.
+  Nach Theorem~\ref{thrm: invariance for unitary} ist $(U_\Cbb)^\perp = (U^\perp)_\Cbb$ invariant unter $f_\Cbb$.
+  Nach Lemma~\ref{lem: invariance of induced subspaces} ist somit $U^\perp$ invariant unter $f$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
