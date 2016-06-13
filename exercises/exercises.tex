@@ -1,5 +1,5 @@
-\documentclass[a4paper,10pt]{article}
-%\documentclass[a4paper,10pt]{scrartcl}
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{scrartcl}
 
 \usepackage{../generalstyle}
 \usepackage{specificstyle}
@@ -16,14 +16,15 @@
 \maketitle
 
 
+
+
+
+
+
+
+
+
 % COMPLEXIFICATION
-
-
-
-
-
-
-
 
 
 \begin{question}
@@ -53,6 +54,135 @@
   Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
 \end{question}
+
+
+
+
+
+
+
+
+
+
+% Eigenstuff
+
+
+\begin{question}
+  Es sei $A \in \Mat_2(\Rbb)$ mit $\tr A = 0$ und $\tr A^2 = -2$.
+  Bestimmen Sie $\det A$.
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass es für $A \in \GL_n(K)$ ein Polynom $P \in K[T]$ mit $\deg P \leq n-1$ gibt, so dass $A^{-1} = P(A)$.
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein algebraisch abgeschlossener Körper mit $\ringchar K \notin \{2,3\}$.
+  Zeigen Sie, dass
+  \[
+    \det A = \frac{1}{6} (\tr A)^3 - \frac{1}{2} (\tr A^2)(\tr A) + \frac{1}{3} (\tr A^3)
+    \quad
+    \text{für jedes $A \in \Mat_3(K)$}.
+  \]
+  (\emph{Hinweis}: Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
+\end{question}
+
+
+
+\begin{question}
+  Für alle $\lambda_1, \dotsc, \lambda_n \in \Cbb$ sei
+  \[
+    \diag(\lambda_1, \dotsc, \lambda_n)
+    \coloneqq
+    \begin{pmatrix}
+      \lambda_1 &         &           \\
+                & \ddots  &           \\
+                &         & \lambda_n
+    \end{pmatrix}
+    \in \Mat_n(\Cbb).
+  \]
+  Es sei
+  \[
+    \Diagonal_n(\Cbb)
+    \coloneqq
+    \left\{
+      S \diag(\lambda_1, \dotsc, \lambda_n) S^{-1}
+    \,\middle|\,
+      S \in \GL_n(\Cbb),
+      \lambda_1, \dotsc, \lambda \in \Cbb
+    \right\}
+    \subseteq \Mat_n(\Cbb)
+  \]
+  die Menge der diagonalisierbaren komplexen $n \times n$-Matrizen.
+  Wir zeigen, dass $D_n(\Cbb) \subseteq \Mat_n(\Cbb)$ dicht ist, d.h.\ dass es für jede Matrix $A \in \Mat_n(\Cbb)$ und jedes $\varepsilon > 0$ eine diagonalisierbare Matrix $D \in \Diagonal_n(\Cbb)$ mit $\|A-D\| < \varepsilon$ gibt.
+  
+  Es sei $S \in \GL_n(\Cbb)$, so dass $S A S^{-1}$ eine obere Dreiecksmatrix mit Diagonaleinträgen $\lambda_1, \dotsc, \lambda_n$ ist, also
+  \[
+    S A S^{-1}
+    =
+    \begin{pmatrix}
+      \lambda_1 & *       & \cdots  & *         \\
+                & \ddots  & \ddots  & \vdots    \\
+                &         & \ddots  & *         \\
+                &         &         & \lambda_n
+    \end{pmatrix}.
+  \]
+  Es seien $z_1, \dotsc, z_n \in \Cbb$ paarweise verschieden und
+  \[
+    B(t)
+    \coloneqq
+    A + t S \diag(z_1, \dotsc, z_n) S^{-1}
+    \quad
+    \text{für alle $t \in \Rbb$}.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\mu_1(t), \dotsc, \mu_n(t) \in \Cbb$ mit
+      \[
+        \mu_i(t) \coloneqq \lambda_i + t z_i
+        \quad
+        \text{für $i = 1, \dotsc, n$}
+      \]
+      die Eigenwerte von $B(t)$ ist.
+    \item
+      Zeigen Sie, dass die Zahlen $\mu_1(t), \dotsc, \mu_n(t)$ für fast alle $t \in \Rbb$ paarweise verschieden sind.
+    \item
+      Folgern Sie, dass $B(t)$ für fast alle $t \in \Rbb$ diagonalisierbar ist.
+    \item
+      Folgern Sie, dass es ein $\delta > 0$ gibt, so dass alle $D \in B_\delta(A) \setminus \{A\}$ diagonalisierbar sind.
+    \item
+      Folgern Sie, dass es für alle $\varepsilon > 0$ ein $D \in \Diagonal_n(\Cbb)$ mit $\|A-D\| < \varepsilon$ gibt.
+  \end{enumerate}
+  Wir wollen die Dichtheit von $\Diagonal_n(\Cbb) \subseteq \Mat_n(\Cbb)$ nutzen, um den Satz von Cayley-Hamilton zu zeigen:
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        F \colon \Mat_n(\Cbb) \to \Mat_n(\Cbb),
+        \quad
+        A \mapsto \chi_A(A)
+      \]
+      stetig ist, wobei $\chi_A(T) \in \Cbb[T]$ das charakteristische Polynom von $A$ ist.
+    \item
+      Zeigen Sie, dass $F(D) = 0$ für jede Diagonalmatrix $D \in \Mat_n(\Cbb)$.
+    \item
+      Zeigen Sie, dass $P(SAS^{-1}) = S P(A) S^{-1}$ für alle $P \in \Cbb[T]$, $A \in \Mat_n(\Cbb)$ und $S \in \GL_n(\Cbb)$.
+      Folgern Sie, dass $F(D) = 0$ für jede Matrix $D \in \Diagonal_n(\Cbb)$.
+    \item
+      Folgern Sie, dass $F(A) = 0$ für alle $A \in \Mat_n(\Cbb)$.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,7 +403,11 @@
       \]
       ein Isomorphismus von $K$-Vektorräumen ist.
     \item
-      Geben Sie mithilfe der vorherigen Aufgabenteile explizit einen Isomorphismus $\Hom(V, W^*) \to \Hom(W, V^*)$ an.
+      Geben Sie mithilfe der vorherigen Aufgabenteile explizit einen Isomorphismus
+      \[
+        \Hom(V, W^*) \to \Hom(W, V^*)
+      \]
+      an.
   \end{enumerate}
   Wir betrachten nun den Fall $W = V^*$.
   \begin{enumerate}[resume]
