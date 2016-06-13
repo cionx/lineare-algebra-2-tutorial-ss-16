@@ -1,0 +1,210 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Übungen zu Lineare Algebra II}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+% COMPLEXIFICATION
+
+
+
+
+
+
+
+
+
+\begin{question}
+  Es sei $V$ ein reeller Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
+  Zeigen Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei reelle Vektorräume, und $f \colon V \to W$ sei $\Rbb$-linear.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\ker (f_\Cbb) = (\ker f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann injektiv ist, wenn $f$ injektiv ist.
+    \item
+      Folgern Sie ferner, dass $(V_\Cbb)_\lambda(f_\Cbb) = V_\lambda(f)_\Cbb$ für jedes $\lambda \in \Rbb$.
+    \item
+      Zeigen Sie, dass $\im (f_\Cbb) = (\im f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
+\end{question}
+
+
+
+
+
+
+
+
+
+
+% SCALAR PRODUCTS AND BILINEAR FORMS
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei endlichdimensionale euklidische Vektorräume.
+  Ferner sei $f \colon V \to W$ eine $\Rbb$-lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_V \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-, v}
+      \]
+      ein $\Rbb$-linearer Isomorphismus ist.
+    \item
+      Geben Sie die Definition der dualen Abbildung $f^* \colon W^* \to V^*$ an.
+      Zeigen Sie, dass $f^*$ $\Rbb$-linear ist.
+    \item
+      Zeigen Sie, dass die Abbildung $g \coloneqq \Phi_V^{-1} \circ f^* \circ \Phi_W$ $\Rbb$-linear ist, und dass
+      \[
+        \bil{f(v), w} = \bil{v, g(w)}
+        \quad
+        \text{für alle $v \in V$, $w \in W$}.
+      \]
+    \item
+      Inwiefern ändern sich die obigen Resultate, wenn $V$ und $W$ unitäre Vektorräume sind?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Für je zwei $K$-Vektorräume $V$ und $W$ sei
+  \[
+              \Bil(V, W)
+    \coloneqq \{b \colon V \times  W \to K \mid \text{$b$ ist bilinear}\}
+  \]
+  der Raum der Bilinearformen $V \times W \to K$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass die Flipabbildung
+      \[
+        F \colon \Bil(V, W) \to \Bil(W, V),
+        \quad
+        b \mapsto F(b)
+        \quad\text{mit}\quad
+        F(b)(w,v) = b(v,w)
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+    \item
+      Es sei $b \in \Bil(V, W)$ eine Bilinearform.
+      Zeigen Sie, dass $b$ ein lineare Abbildung
+      \[
+        \Phi_{V,W}(b) \colon V \to W^*,
+        \quad
+        v \mapsto b(v, -)
+      \]
+      induziert.
+      Dabei ist
+      \[
+        b(v, -) \colon W \to K,
+        \quad
+        w \mapsto b(v,w).
+      \]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_{V,W} \colon \Bil(V, W) \to \Hom(V, W^*),
+        \quad
+        b \mapsto \Phi_{V,W}(b)
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+    \item
+      Geben Sie mithilfe der vorherigen Aufgabenteile explizit einen Isomorphismus $\Hom(V, W^*) \to \Hom(W, V^*)$ an.
+  \end{enumerate}
+  Wir betrachten nun den Fall $W = V^*$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Evaluation
+      \[
+        e \colon V \times V^* \to K,
+        \quad
+        (v, \varphi) \mapsto \varphi(v)
+      \]
+      eine Bilinearform ist.
+   \item
+      Nach den vorherigen Aufgabenteilen entspricht die Bilinearform $e$ einer linearen Abbildung $V \to V^{**}$, sowie einer linearen Abbildung $V^* \to V^*$.
+      Bestimmen Sie diese Abbildungen.
+    \item
+      Woher kennen Sie diese Abbildung?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
+  \begin{enumerate}
+    \item
+      Geben Sie die Definition der dualen Abbildung $f^* \colon W^* \to V^*$ an, und zeigen sie ihre Linearität.
+    \item
+      Zeigen Sie für jeden $K$-Vektorraum $U$, dass die Abbildung
+      \[
+        \bil{\cdot, \cdot} \colon U \times U^* \to K,
+        \quad\text{mit}\quad
+        \bil{v, \varphi} = \varphi(v)
+      \]
+      eine Bilinearform ist.
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{f(v), \psi} = \bil{v, f^*(\psi)}
+        \quad
+        \text{für alle $v \in V$, $\psi \in W^*$}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \sigma \colon \Mat_n(K) \times \Mat_n(K) \to K
+        \quad\text{mit}\quad
+        \sigma(A, B) \coloneqq \tr(AB)
+      \]
+      eine symmetrische Bilinearform ist.
+    \item
+      Zeigen Sie, dass $\sigma$ in dem Sinne assoziativ ist, dass
+      \[
+        \sigma(AB, C) = \sigma(A, BC)
+        \quad
+        \text{für alle $A, B, C \in \Mat_n(K)$}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+\end{document}
