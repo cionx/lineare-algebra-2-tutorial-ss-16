@@ -7,7 +7,7 @@
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
 % \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 
-\title{Alternative Lösungen \\ Zettel 3}
+\title{Komplexifizierung euklidischer Vektorräume}
 \author{Jendrik Stelzner}
 \date{\today}
 
@@ -17,6 +17,77 @@
 
 Es sei $V$ ein euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
 Wir zeigen zunächst, dass sich dieses Skalarprodukt eindeutig auf $V_\Cbb$ fortsetzen lässt:
+
+
+\section{Vorbereitung}
+
+
+Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche Aussagen über die Komplexifizierung reeller Vektorräume.
+
+
+\begin{lemma}\label{lemma: commuting in complexification}
+  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume, und $f, g \colon V \to w$ $\Rbb$-lineare Abbildungen.
+  Dann ist genau dann $f = g$, wenn $f_\Cbb = g_\Cbb$.
+\end{lemma}
+
+
+\begin{proof}
+  Ist $f = g$, so ist auch $f_\Cbb = g_\Cbb$.
+  Ist andererseits $f_\Cbb = g_\Cbb$, so ist
+  \[
+    f(v) + i \cdot 0
+    = f_\Cbb(v + i \cdot 0)
+    = g_\Cbb(v + i \cdot 0)
+    = g(v) + i \cdot 0
+    \quad
+    \text{für alle $v \in V$},
+  \]
+  und somit $f(v) = g(v)$ für alle $v \in V$.
+\end{proof}
+
+
+\begin{corollary}
+  Sind $f, g \colon V \to V$ Endomorphismen eines $\Rbb$-Vektorraums $V$, so kommutieren $f$ und $g$ genau dann, wenn $f_\Cbb$ und $g_\Cbb$ kommutieren.
+\end{corollary}
+
+
+\begin{proof}
+  Da $(f \circ g)_\Cbb = g_\Cbb \circ f_\Cbb$ und $(g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb$ ist nach Lemma~\ref{lemma: commuting in complexification} genau dann $f \circ g = g \circ f$, wenn $f_\Cbb \circ g_\Cbb = g_\Cbb \circ f_\Cbb$.
+\end{proof}
+
+
+\begin{lemma}\label{lem: invariance of induced subspaces}
+  Es sei $V$ ein $\Rbb$-Vektorraum, $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein Untervektorraum.
+  Dann ist $U$ genau dann $f$-invariant, wenn $U_\Cbb$ invariant unter $f_\Cbb$ ist.
+\end{lemma}
+
+
+\begin{proof}
+  Es gilt
+  \begin{align*}
+        &\, \text{$U_\Cbb$ ist $f_\Cbb$-invariant}                            \\
+    \iff&\, f_\Cbb(U_\Cbb) \subseteq U_\Cbb                                   \\
+    \iff&\, \text{$f_\Cbb(u_1 + i u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$} \\
+    \iff&\, \text{$f(u_1) + i f(u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$}   \\
+    \iff&\, \text{$f(u_1), f(u_2) \in U$ für alle $u_1, u_2 \in U$}           \\
+    \iff&\, \text{$f(u) \in U$ für alle $u \in U$}                            \\
+    \iff&\, f(U) \subseteq U                                                  \\
+    \iff&\, \text{$U$ ist $f$-invariant}.
+    \qedhere
+  \end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+\section{Hauptteil}
+
 
 \begin{proposition}
   Es gibt ein eindeutiges (komplexes) Skalarprodukt $\bil{\cdot, \cdot}_\Cbb$ auf $V_\Cbb$, so dass
@@ -85,6 +156,31 @@ Wir zeigen zunächst, dass sich dieses Skalarprodukt eindeutig auf $V_\Cbb$ fort
     \qedhere
   \end{gather*}
 \end{proof}
+
+
+\begin{lemma}
+  Es sei $V$ ein euklidischer Vektorraum, und $\|\cdot\|_\Cbb$ die Norm die durch $\bil{\cdot, \cdot}$ induziert wird.
+  Dann gilt
+  \[
+    \|v_1 + i v_2\| = \sqrt{\|v_1\|^2 + \|v_2\|^2}
+    \quad
+    \text{für alle $v_1, v_2 \in V$}.
+  \]
+\end{lemma}
+
+
+\begin{proof}
+  Für alle $v_1, v_2 \in V$ ist
+  \begin{align*}
+        \|v_1 + i v_2\|_\Cbb^2
+    &=  \bil{ v_1 + i v_2, v_1 + i v_2}_\Cbb \\
+    &=  (\bil{v_1, v_1} + \bil{v_2, v_2}) + i(\bil{v_2, v_1} - \bil{v_1, v_2}) \\
+    &=  \bil{v_1, v_1} + \bil{v_2, v_2}
+     =  \|v_1\|^2 + \|v_2\|^2.
+    \qedhere
+  \end{align*}
+\end{proof}
+
 
 
 \begin{proposition}
@@ -169,28 +265,6 @@ Wir zeigen zunächst, dass sich dieses Skalarprodukt eindeutig auf $V_\Cbb$ fort
 
 \begin{proof}
   Dies wurde auf dem sechsten Übungszettel gezeigt.
-\end{proof}
-
-
-\begin{lemma}\label{lem: invariance of induced subspaces}
-  Es sei $V$ ein $\Rbb$-Vektorraum, $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein Untervektorraum.
-  Dann ist $U$ genau dann $f$-invariant, wenn $U_\Cbb$ invariant unter $f_\Cbb$ ist.
-\end{lemma}
-
-
-\begin{proof}
-  Es gilt
-  \begin{align*}
-        &\, \text{$U_\Cbb$ ist $f_\Cbb$-invariant}                            \\
-    \iff&\, f_\Cbb(U_\Cbb) \subseteq U_\Cbb                                   \\
-    \iff&\, \text{$f_\Cbb(u_1 + i u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$} \\
-    \iff&\, \text{$f(u_1) + i f(u_2) \in U_\Cbb$ für alle $u_1, u_2 \in U$}   \\
-    \iff&\, \text{$f(u_1), f(u_2) \in U$ für alle $u_1, u_2 \in U$}           \\
-    \iff&\, \text{$f(u) \in U$ für alle $u \in U$}                            \\
-    \iff&\, f(U) \subseteq U                                                  \\
-    \iff&\, \text{$U$ ist $f$-invariant}.
-    \qedhere
-  \end{align*}
 \end{proof}
 
 
