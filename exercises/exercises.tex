@@ -16,14 +16,108 @@
 \maketitle
 
 
+% GENERAL STUFF
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $f^2 = f$, so ist $V = \im f \oplus \ker f$, und es gilt $\im f = V_1(f)$ und $\ker f = V_0(f)$.
+    \item
+      Ist $f^2 = \id_V$, so ist $f$ diagonalisierbar mit (möglichen) Eigenwerten $1$ und $-1$.
+    \item
+      Sind $\lambda, \mu \in K$ mit $\lambda \neq \mu$ und $(f-\lambda)(f-\mu) = 0$, so ist $f$ diagonalisierbar mit (möglichen) Eigenwerten $\lambda$ und $\mu$.
+      Inwiefern sind die vorherigen beiden Aufgabenteile Sonderfälle hiervon?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  Zeigen Sie, dass die folgenden Aussagen allgemein gelten, oder geben Sie jeweils ein Gegenbeispiel an.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $V = V_1 \oplus V_2$ für Untervektorräume $V_1, V_2 \subseteq V$, so gilt für jeden Untervektorraum $U \subseteq V$ die Zerlegung
+      \[
+        U = (U \cap V_1) \oplus (U \cap V_2).
+      \]
+    \item
+      Ist $V = U_1 \oplus W_1 = U_2 \oplus W_2$ mit $W_1 \supseteq W_2$, so ist
+      \[
+        W_1 = (U_2 \cap W_1) \oplus W_2.
+      \]
+    \item
+      Ist $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein $f$-invarinter Untervektorraum, so gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+    \item
+      Für alle Untervektorräume $W, U_1, U_2 \subseteq V$ mit $U_1 \subseteq U_2$ gilt
+      \[
+        (U_1 + W) \cap U_2 =  U_1 + (W \cap U_2).
+      \]
+    \item
+      Ist $\mc{E} \subseteq V$ ein Erzeugendensystem und $U \subseteq V$ ein Untervektorraum, so ist die Einschränkung $\mc{E}' \coloneqq \mc{E} \cap U$ ein Erzeugendensystem von $U$.
+    \item
+      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für $i \neq j$, so ist $V = \bigoplus_{i \in I} U_i$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
+    \item
+      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
+    \item
+      $f$ induziert eine lineare Abbildung
+      \[
+        \bar{f} \colon V/U \to V/U,
+        \quad
+        [x] \mapsto [f(x)].
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
+  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $f$ ist diagonalisierbar.
+    \item
+      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\pi \colon V \to V/U$, $v \mapsto [v]$ die kanonische Projektion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, und für eine Teilmenge $J \subseteq I$ sei $(b_j)_{j \in J}$ eine Basis von $U$.
+      Zeigen Sie, dass $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V/U$ ist.
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V/U$, wobei $I \cap J = \emptyset$.
+      Für $j \in J$ sei $b_j \in V$ mit $\pi(b_j) = c_j$.
+      Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
 % COMPLEXIFICATION
-
-
-
-
-
-
-
 
 
 \begin{question}
@@ -34,7 +128,7 @@
 
 \begin{question}
   Es seien $V$ und $W$ zwei reelle Vektorräume, und $f \colon V \to W$ sei $\Rbb$-linear.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $\ker (f_\Cbb) = (\ker f)_\Cbb$.
     \item
@@ -53,6 +147,24 @@
   Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
 \end{question}
+
+
+\begin{question}
+  Es sei
+  \[
+    \iota \colon \Rbb[X] \to \Cbb[X],
+    \quad
+    \sum_{k=0}^n a_k X^k \mapsto \sum_{k=0}^n a_k X^k
+  \]
+  die Teilmengeninklusion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\iota$ $\Rbb$-linear ist.
+    \item
+      Zeigen Sie, dass $\iota$ einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
+  \end{enumerate}
+\end{question}
+
 
 
 
@@ -89,7 +201,7 @@
         \text{für alle $v \in V$, $w \in W$}.
       \]
     \item
-      Inwiefern ändern sich die obigen Resultate, wenn $V$ und $W$ unitäre Vektorräume sind?
+      Inwiefern ändern sich die obigen Resultate für denn fall $\Kbb = \Cbb$, wenn also $V$ und $W$ endlichdimensionale unitäre Vektorräume sind?
   \end{enumerate}
 \end{question}
 
@@ -97,7 +209,7 @@
 \begin{question}
   Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$.
   Ferner sei $U \coloneqq \{f \in V \mid f(0) = 0\}$.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $U$ ein Untervektorraum von $V$ ist.
     \item
@@ -124,7 +236,7 @@
     W = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
   \]
   der Vektorraum der beidseitigen reellwertigen Folgen.
-  Ferner sie
+  Ferner sei
   \[
     V \coloneqq
     \left\{
@@ -134,7 +246,7 @@
    \right\}
   \]
   der Untervektorraum der quadratsummierbaren Folgen.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $V$ ein Untervektorraum von $W$ ist.
     \item
@@ -148,6 +260,8 @@
       \[
                   \bil{ (a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} }
         \coloneqq \sum_{n \in \Zbb} a_n b_n
+        \quad
+        \text{für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$}
       \]
       ein Skalarprodukt auf $V$ definiert.
     \item
@@ -184,7 +298,7 @@
 
 
 \begin{question}
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass durch
       \[
@@ -220,6 +334,32 @@
 \end{question}
 
 
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und
+  \[
+    O(V) \coloneqq \{ f \in \End(V) \mid f f^* = \id \}.
+  \]
+  Zeigen Sie, dass $O(V)$ eine Untergruppe von $\GL(V)$ bildet.
+\end{question}
+
+
+\begin{question}
+Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $A$ ist invertierbar mit $A^{-1} = A^*$.
+    \item
+      $A A^* = I$.
+    \item
+      $A^* A = I$.
+    \item
+      Die Spalten von $A$ bilden eine Orthonormalbasis des $\Kbb^n$.
+    \item
+      Die Zeilen von $A$ bilden eine Orthonormalbasis des $\Kbb^n$.
+  \end{enumerate}
+\end{question}
+
+
 
 
 
@@ -238,7 +378,7 @@
     \coloneqq \{b \colon V \times  W \to K \mid \text{$b$ ist bilinear}\}
   \]
   der Raum der Bilinearformen $V \times W \to K$.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass die Flipabbildung
       \[
@@ -276,7 +416,7 @@
       Geben Sie mithilfe der vorherigen Aufgabenteile explizit einen Isomorphismus $\Hom(V, W^*) \to \Hom(W, V^*)$ an.
   \end{enumerate}
   Wir betrachten nun den Fall $W = V^*$.
-  \begin{enumerate}[resume]
+  \begin{enumerate}[resume, leftmargin=*]
     \item
       Zeigen Sie, dass die Evaluation
       \[
@@ -296,15 +436,16 @@
 
 \begin{question}
   Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Geben Sie die Definition der dualen Abbildung $f^* \colon W^* \to V^*$ an, und zeigen sie ihre Linearität.
     \item
       Zeigen Sie für jeden $K$-Vektorraum $U$, dass die Abbildung
       \[
-        \bil{\cdot, \cdot} \colon U \times U^* \to K,
+        \bil{\cdot, \cdot} \colon U \times U^* \to K
         \quad\text{mit}\quad
         \bil{v, \varphi} = \varphi(v)
+        \quad\text{für alle $v \in V$, $\varphi \in V^*$}
       \]
       eine Bilinearform ist.
     \item
