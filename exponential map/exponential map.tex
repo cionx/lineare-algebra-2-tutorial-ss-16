@@ -1,5 +1,5 @@
-\documentclass[a4paper, 10pt]{article}
-%\documentclass[a4paper, 10pt]{scrartcl}
+%\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper, 10pt, numbers=noenddot]{scrartcl}
 
 \usepackage{../generalstyle}
 \usepackage{specificstyle}
@@ -17,14 +17,14 @@
 
 
 \section{Topologisches Vorgeplänkel}
-Wir nutzen im Folgenden einige Aussagen über normierte Vektorräume, ohne diese explizit zu beweisen:
+Wir nutzen im Folgenden einige Aussagen über normierte Vektorräume, ohne diese explizit zu beweisen.
 
 \begin{lemma}
   Es sei $V$ ein endlichdimensionaler $\Kbb$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
       Es seien $\|\cdot\|_1$ und $\|\cdot\|_2$ zwei Normen auf $V$.
-      Dann sind $\|\cdot\|_1$ und $\|\cdot\|_2$ äquivalent, d.h.\ es gibt $C > 0$ mit
+      Dann sind $\|\cdot\|_1$ und $\|\cdot\|_2$ äquivalent, d.h.\ es gibt ein $C > 0$ mit
       \[
         \|\cdot\|_1 \leq C \|\cdot\|_2
         \quad\text{und}\quad
@@ -42,17 +42,17 @@ Wir nutzen im Folgenden einige Aussagen über normierte Vektorräume, ohne diese
     \item
       $V$ ist vollständig (bezüglich der durch $\|\cdot\|$ induzierten Norm), also ein Banachraum.
     \item
-      Jede absolut konvergente Reihe $\sum_{n=0}^\infty x_n$ in $V$ (d.h.\ die reelle Reihe $\sum_{n=0}^\infty \|x_n\|$ konvergiert) konvergiert.
+      Jede absolut konvergente Reihe $\sum_{n=0}^\infty x_n$ in $V$ ist konvergent. (Dabei heißt die Reihe $\sum_{n=0}^\infty x_n$ \emph{absolut konvergent} falls die reelle Reihe $\sum_{n=0}^\infty \|x_n\|$ konvergiert).
   \end{enumerate}
 \end{lemma}
 
 
 Dies erlaubt uns die Exponentialfunktion von Matrizen zu definieren:
-Wir wählen eine Norm $\|\cdot\|$ auf $\Mat_n(\Kbb)$.
+Wir wählen zunächst eine submultiplikative Norm $\|\cdot\|$ auf $\Mat_n(\Kbb)$ (die Submultiplikativität bedeutet, dass $\|A B\| \leq \|A\| \|B\|$ für alle $A, B \in \Mat_n(\Kbb)$; das es eine solche Norm gibt, wollen wir hier voraussetzen).
 Wegen der Vollständigkeit von $\Mat_n(\Kbb)$ konvergiert jede absolut konvergente Reihe in $\Mat_n(\Kbb)$.
-Für jede $A \in \Mat_n(\Kbb)$ ist die Reihe $\sum_{k=0}^\infty A^k/k!$ absolut konvergent, denn die Reihe $\sum_{k=0}^\infty \|A\|^k/k!$ konvergiert (gegen $\exp(\|A\|)$).
-Also konvergiert die Reihe $\sum_{k=0}^\infty A^k/k!$ für alle $A \in \Mat_n(\Kbb)$.
-Da alle Normen auf $V$ äquivalent sind, ist der Grenzwert unabhängig von der gewählten Norm $\|\cdot\|$.
+Für jede Matrix $A \in \Mat_n(\Kbb)$ ist die Reihe $\sum_{k=0}^\infty A^k/k!$ bezüglich $\|\cdot\|$ absolut konvergent, denn die reelle Reihe $\sum_{k=0}^\infty \|A\|^k/k!$ konvergiert (gegen $\exp(\|A\|)$).
+Also konvergiert die Reihe $\sum_{k=0}^\infty A^k/k!$ für alle $A \in \Mat_n(\Kbb)$ bezüglich $\|\cdot\|$.
+Da alle Normen auf $V$ äquivalent sind (da $\Mat_n(\Kbb)$ endlichdimensional über $\Kbb$ ist), ist der Grenzwert unabhängig von der gewählten Norm $\|\cdot\|$.
 
 Ist $V$ ein endlichdimensionaler $\Kbb$-Vektorraum, so können wir in der obigen Argumentation $\Mat_n(\Kbb)$ durch $\End(V)$ ersetzen, und damit die Exponentialfunktion auf $\End(V)$ defineren.
 
@@ -60,11 +60,11 @@ Ist $V$ ein endlichdimensionaler $\Kbb$-Vektorraum, so können wir in der obigen
   Sind $V$ und $W$ zwei endlichdimensionale normierte $\Kbb$-Vektorräume, so ist jede lineare Abbildung $V \to W$ stetig.
 \end{lemma}
 
-Damit ergibt sich inbesondere, dass sich die Exponentialfunktion von Endomorphismen mithilfe von Matrizen in Koordinaten berechnen lässt:
+Damit ergibt sich insbesondere, dass sich die Exponentialfunktion eines Endomorphismus mithilfe von Matrizen in Koordinaten berechnen lässt:
 
 \begin{corollary}\label{cor: exponential in coordinates}
-  Es sei $V$ ein endlichdimensional $\Kbb$-Vektorraum und $\mc{B}$ eine geordnete Basis von $V$.
-  Für jeden Endomorphismen ist
+  Es sei $V$ ein endlichdimensionaler $\Kbb$-Vektorraum und $\mc{B}$ eine geordnete Basis von $V$.
+  Für jeden Endomorphismus $f$ von $V$ ist dann
   \[
     \Mat_\mc{B}( \exp(f) ) = \exp( \Mat_\mc{B}(f) ).
   \]
@@ -78,11 +78,12 @@ Damit ergibt sich inbesondere, dass sich die Exponentialfunktion von Endomorphis
       \Mat_\mc{B}\left( \sum_{k=0}^n \frac{f^k}{k!} \right)
     = \sum_{k=0}^n \frac{A^k}{k!}.
   \]
-  Da die Abbildung $\Mat_\mc{B} \colon \End(V) \to \Mat_n(\Kbb)$ linear ist, ist sie nach Lemma~\ref{lem: linear implies continuous} stetig.
-  Ist $f = \exp(g)$, so ist deshalb
+  Da die Abbildung $\Mat_\mc{B} \colon \End(V) \to \Mat_n(\Kbb)$ linear ist, folgt aus Lemma~\ref{lem: linear implies continuous} ihre Stetigkeit.
+  Deshalb ist
   \begin{align*}
         \Mat_\mc{B}( \exp(f) )
-    &=  \Mat_\mc{B}\left( \lim_{n \to \infty} \sum_{k=0}^n \frac{f^k}{k!} \right)
+    &=  \Mat_\mc{B}\left( \sum_{k=0}^{\infty} \frac{f^k}{k!} \right)
+     =  \Mat_\mc{B}\left( \lim_{n \to \infty} \sum_{k=0}^n \frac{f^k}{k!} \right)
      =  \lim_{n \to \infty} \Mat_\mc{B}\left( \sum_{k=0}^n \frac{f^k}{k!} \right) \\
     &=  \lim_{n \to \infty} \sum_{k=0}^n \frac{A^k}{k!}
      =  \sum_{k=0}^\infty \frac{A^k}{k!}
@@ -160,7 +161,7 @@ Da die Addition, Skalarmultiplikation und Grenzwertbildung eintragsweise gescheh
 Dies geht etwa, wenn die Reihen eintragsweise bereits absolut konvergieren.
 
 Dass dies gilt, ergibt sich daraus, dass es eine Konstante $C > 0$ gibt (die nur von der auf $\Mat_n(\Kbb)$ gewählten Norm abhängt), so dass $|d_{ij}| \leq C \|D\|$ für jede Matrix $D \in \Mat_n(\Kbb)$.
-Dies wiederum ergibt sich daraus, dass die Aussage für die $\|\cdot\|_1$-Norm (mit $\|D\|_1 = \sum_{i,j} |d_{ij}|$) mit der Konstante $C = 1$ gilt, und alle Normen auf $\Mat_n(\Kbb)$ äquivalent sind.
+Dies wiederum ergibt sich daraus, dass die Aussage für die $\|\cdot\|_1$-Norm (mit $\|D\|_1 = \sum_{i,j} |D_{ij}|$) mit der Konstante $C = 1$ gilt, und alle Normen auf $\Mat_n(\Kbb)$ äquivalent sind.
 
 Außerdem haben wir in den letzten beiden Zeilen genutzt, dass für alle $E \in \Mat_n(\Kbb)$ die Abbildungen
 \begin{gather*}
@@ -172,7 +173,7 @@ Außerdem haben wir in den letzten beiden Zeilen genutzt, dass für alle $E \in 
   \quad
   D \mapsto ED
 \end{gather*}
-linear, und somit stetig sind.
+linear und somit stetig sind.
 
 
 
@@ -223,10 +224,9 @@ linear, und somit stetig sind.
 
 
 
-Da $A \in \Mat_n(\Kbb)$ trigonalisierbar über $\Cbb$ ist, gibt es $S \in \GL_n(\Cbb)$, so dass $S A S^{-1}$ in oberer Dreiecksform ist. Es ist also
+Da $A \in \Mat_n(\Kbb)$ trigonalisierbar über $\Cbb$ ist, gibt es ein $S \in \GL_n(\Cbb)$, so dass $S A S^{-1} \in \Mat_n(\Cbb)$ in oberer Dreiecksform ist. Es ist also
 \[
-            B
-  \coloneqq S A S^{-1}
+  S A S^{-1}
   =
   \begin{pmatrix}
     \lambda_1 & *       & \cdots  & *         \\
@@ -234,6 +234,8 @@ Da $A \in \Mat_n(\Kbb)$ trigonalisierbar über $\Cbb$ ist, gibt es $S \in \GL_n(
               &         & \ddots  & *         \\
               &         &         & \lambda_n
   \end{pmatrix}
+  \eqqcolon
+  B
 \]
 wobei $\lambda_1, \dotsc, \lambda_n \in \Cbb$ die Eigenwerte von $A$ sind.
 Deshalb ist
@@ -283,8 +285,10 @@ Deshalb ist $\exp(B)$ von der Form
 \end{align*}
 Also ist
 \[
-    \det(\exp(B))
-  = \exp(\lambda_1) \dotsm \exp(\lambda_n).
+    \det(\exp(A))
+  = \det(\exp(B))
+  = \exp(\lambda_1) \dotsm \exp(\lambda_n)
+  = \exp(\tr(A)).
 \]
 
 
@@ -292,7 +296,7 @@ Also ist
 
 
 \subsection{}
-Da $(AB)^* = B^* A^*$ ergibt sich für alle $k \geq 0$, dass $(A^k)^* = (A^*)^k$.
+Da $(AB)^* = B^* A^*$ für alle $A, B \in \Mat_n(\Kbb)$, ergibt sich für alle $k \geq 0$, dass $(A^k)^* = (A^*)^k$.
 Deshalb ist
 \[
     \exp(A^*)
@@ -301,7 +305,7 @@ Deshalb ist
   = \left( \sum_{k=0}^\infty \frac{A^k}{k!} \right)^*
   = \exp(A)^*.
 \]
-Dabei wurde für die letzte Gleichheit benutzt, dass die Abbildung
+Dabei haben wir genutzt, dass die Abbildung
 \[
   \Mat_n(\Kbb) \to \Mat_n(\Kbb),
   \quad
@@ -400,12 +404,19 @@ Für den Endomorphismus $g \colon V \to V$ mit
 ist also
 \[
   \Mat_\mc{B}(g) = \exp( \Mat_\mc{B}(f) ),
-\]
+\]a
 und somit nach Korollar~\ref{cor: exponential in coordinates} bereits $g = \exp(f)$.
-Da $\Mat_\mc{B}(g)$ eine Diagonalmatrix ist, und $\mc{B}$ eine Orthonormalbasis von $V$, ist $g$ selbstadjungiert.
+Da $\Mat_\mc{B}(g)$ eine Diagonalmatrix mit reellen Eintragen ist, und $\mc{B}$ eine Orthonormalbasis von $V$, gilt
+\[
+    \Mat_\mc{B}(g^*)
+  = \Mat_\mc{B}(g)^*
+  = \Mat_\mc{B}(g),
+\]
+und somit $g^* = g$.
+Also ist $g$ selbstadjungiert.
 
 
-\subsubsection{normale Endomorphismes}
+\subsubsection{normale Endomorphismen}
 Es sei $f \colon V \to V$ ein normaler, invertierbarer Endomorphismus.
 Da $f$ normal ist, gibt es eine Orthonormalbasis $\mc{B}$ von $V$ aus Eigenvektoren von $f$.
 Es ist also
@@ -454,7 +465,8 @@ Es ist also
   \end{pmatrix},
 \]
 wobei $\lambda_1, \dotsc, \lambda_n \in \Cbb$ die Eigenwerte von $f$ sind.
-Da $f$ unitär ist, gilt $|\lambda_j| = 1$ für alle $j = 1, \dotsc, n$, d.h.\ alle Eigenwerte von $f$ liegen auf dem Einheitskreis.
+Da $f$ unitär ist, sind diese Eigenwerte normiert, d.h.\ es ist $|\lambda_j| = 1$ für alle $j = 1, \dotsc, n$.
+Die Eigenwerte von $f$ liegen also alle auf dem Einheitskreis.
 Es gibt daher $\varphi_1, \dotsc, \varphi_n \in \Rbb$ mit $\lambda_j = \exp(i \varphi_j)$ für alle $j = 1, \dotsc, n$.
 Es sei $g \colon V \to V$ der Endomorphismus mit
 \[
