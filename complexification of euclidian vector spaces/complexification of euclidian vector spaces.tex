@@ -3,10 +3,6 @@
 
 \usepackage{../generalstyle}
 
-\setromanfont[Mapping=tex-text]{Linux Libertine O}
-% \setsansfont[Mapping=tex-text]{DejaVu Sans}
-% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
-
 \title{Komplexifizierung euklidischer Vektorräume}
 \author{Jendrik Stelzner}
 \date{\today}
@@ -15,19 +11,83 @@
 \maketitle
 
 
-Es sei $V$ ein euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
-Wir zeigen zunächst, dass sich dieses Skalarprodukt eindeutig auf $V_\Cbb$ fortsetzen lässt:
+\begin{abstract}
+  Wir geben einen kurzen Überblick über die Komplexifizierung euklidischer Vektorräume, und zeigen einige Kompatiblitäten von Orthogonalitäten und Adjungierten mit dieser Komplexifizierung an.
+  Anschließend folgern wir den Fall $\Kbb = \Rbb$ von für Aufgabe 5 von Zettel 6 aus dem Fall $\Kbb = \Cbb$.
+\end{abstract}
 
 
 \section{Vorbereitung}
 
 
 Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche Aussagen über die Komplexifizierung reeller Vektorräume.
+Im Folgenden seien $U$, $V$ und $W$ drei $\Rbb$-Vektorräume.
+
+
+\begin{proposition}\label{prop: functoriality of the complexification}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Sind $f \colon U \to V$ und $g \colon V \to W$ zwei $\Rbb$-lineare Abbildungen, so ist
+      \[
+        (g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb.
+      \]
+    \item
+      Es gilt $(\id_V)_\Cbb = \id_{V_\Cbb}$.
+  \end{enumerate}
+\end{proposition}
+
+
+\begin{proof}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Per Definition von $f_\Cbb$ und $g_\Cbb$ kommutiert das folgende Diagram:
+      \[
+      \begin{tikzcd}
+          U       \arrow[r, "f"]  \arrow[d, "\iota_U"]
+        & V       \arrow[r, "g"]  \arrow[d, "\iota_V"]
+        & W                       \arrow[d, "\iota_W"]
+        \\
+          U_\Cbb  \arrow[r, "f_\Cbb"]
+        & V_\Cbb  \arrow[r, "g_\Cbb"]
+        & W_\Cbb
+      \end{tikzcd}
+      \]
+      Dabei bezeichnen die vertikalen Pfeile die jeweiligen kanonische Inklusionen.
+      Indem wir den mittleren Teils des Diagrams weglassen, erhalten wir das folgende kommutative Diagram:
+      \[
+      \begin{tikzcd}[column sep=large]
+          U       \arrow[r, "g \circ f"]            \arrow[d, "\iota_U"]
+        & W                                         \arrow[d, "\iota_W"]
+        \\
+          U_\Cbb  \arrow[r, "g_\Cbb \circ f_\Cbb"]
+        & W_\Cbb
+      \end{tikzcd}
+      \]
+      Also erfüllt $f_\Cbb \circ g_\Cbb$ die definierene Eigenschaft von $(f \circ g)_\Cbb$.
+    \item
+      Die Abbildung $\id_{V_\Cbb}$ erfüllt die definierende Eigenschaft von $(\id_V)_\Cbb$, da das folgende Diagram kommutiert:
+      \[
+      \begin{tikzcd}
+          V       \arrow[r, "\id_V"]        \arrow[d, "\iota_V"]
+        & V                                 \arrow[d, "\iota_V"]
+        \\
+          V_\Cbb  \arrow[r, "\id_{V_\Cbb}"]
+        & V_\Cbb
+      \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{proof}
+
+
+\begin{remark}
+  Wegen den Eigenschaften aus Proposition~\ref{prop: functoriality of the complexification} bezeichnet man die Komplexifizierung als \emph{(kovariant) funktoriell}.
+  Man vergleiche dies etwa mit Aufgabe 1 vom 12.\ Zettel aus Lineare Algebra I.
+\end{remark}
+
 
 
 \begin{lemma}\label{lemma: commuting in complexification}
-  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume, und $f, g \colon V \to w$ $\Rbb$-lineare Abbildungen.
-  Dann ist genau dann $f = g$, wenn $f_\Cbb = g_\Cbb$.
+  Sind $f, g \colon V \to W$ zwei $\Rbb$-lineare Abbildungen, so ist genau dann $f = g$, wenn $f_\Cbb = g_\Cbb$.
 \end{lemma}
 
 
@@ -47,18 +107,18 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 
 
 \begin{corollary}
-  Sind $f, g \colon V \to V$ Endomorphismen eines $\Rbb$-Vektorraums $V$, so kommutieren $f$ und $g$ genau dann, wenn $f_\Cbb$ und $g_\Cbb$ kommutieren.
+  Sind $f, g \colon V \to V$ zwei Endomorphismen, so kommutieren $f$ und $g$ genau dann, wenn $f_\Cbb$ und $g_\Cbb$ kommutieren.
 \end{corollary}
 
 
 \begin{proof}
-  Da $(f \circ g)_\Cbb = g_\Cbb \circ f_\Cbb$ und $(g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb$ ist nach Lemma~\ref{lemma: commuting in complexification} genau dann $f \circ g = g \circ f$, wenn $f_\Cbb \circ g_\Cbb = g_\Cbb \circ f_\Cbb$.
+  Da $(f \circ g)_\Cbb = f_\Cbb \circ g_\Cbb$ und $(g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb$ ist nach Lemma~\ref{lemma: commuting in complexification} genau dann $f \circ g = g \circ f$, wenn $f_\Cbb \circ g_\Cbb = g_\Cbb \circ f_\Cbb$.
 \end{proof}
 
 
 \begin{lemma}\label{lem: invariance of induced subspaces}
-  Es sei $V$ ein $\Rbb$-Vektorraum, $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein Untervektorraum.
-  Dann ist $U$ genau dann $f$-invariant, wenn $U_\Cbb$ invariant unter $f_\Cbb$ ist.
+  Es sei $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein Untervektorraum.
+  Dann ist $U$ genau dann invariant unter $f$, wenn $U_\Cbb$ invariant unter $f_\Cbb$ ist.
 \end{lemma}
 
 
@@ -89,6 +149,9 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 \section{Hauptteil}
 
 
+Im Folgenden seien $V$ und $W$ zwei euklidische Vektorräume.
+
+
 \begin{proposition}
   Es gibt ein eindeutiges (komplexes) Skalarprodukt $\bil{\cdot, \cdot}_\Cbb$ auf $V_\Cbb$, so dass
   \[
@@ -113,7 +176,7 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
       \bil{v_1 + i v_2, w_1 + i w_2}
     = ( \bil{v_1, w_1} + \bil{v_2, w_2} ) + i( \bil{v_2, w_1} - \bil{v_1, w_2} ).
   \]
-  Somit ist $\bil{\cdot, \cdot}_\Cbb$ eindeutig.
+  Somit ist $\bil{\cdot, \cdot}_\Cbb$ durch $\bil{\cdot, \cdot}$ eindeutig bestimmt.
   
   Zum Beweis der Existenz definieren wir
   \[
@@ -122,15 +185,16 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
   \]
   für alle $v_1, v_2, w_1, w_2 \in V$, und zeigen, dass dies ein komplexes Skalarprodukt auf $V_\Cbb$ ist.
   
-  $\bil{\cdot, \cdot}_\Cbb$ is hermitsch, denn für alle $v_1, v_2, w_1, w_2 \in V$ ist
+  Dass $\bil{\cdot, \cdot}_\Cbb$ hermitsch ist, ergibt sich daraus, dass
   \begin{align*}
       \overline{ \bil{w_1 + i w_2, v_1 + i v_2}_\Cbb }
     &= \overline{ ( \bil{w_1, v_1} + \bil{w_2, v_2} ) + i( \bil{w_2, v_1} - \bil{w_1, v_2} ) } \\
     &= ( \bil{w_1, v_1} + \bil{w_2, v_2} ) - i( \bil{w_2, v_1} - \bil{w_1, v_2} ) \\
     &= ( \bil{w_1, v_1} + \bil{w_2, v_2} ) + i( \bil{w_1, v_2} - \bil{w_2, v_1} ) \\
     &= ( \bil{v_1, w_1} + \bil{v_2, w_2} ) + i( \bil{v_2, w_1} - \bil{v_1, w_2} ) \\
-    &= \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb.
+    &= \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb
   \end{align*}
+  für alle $v_1, v_2, w_1, w_2 \in V$.
   Da $\bil{\cdot, \cdot}$ $\Rbb$-bilinear ist, ergibt sich, dass $\bil{\cdot, \cdot}_\Cbb$ im ersten Argument $\Rbb$-linear ist (und auch im zweiten).
   Im ersten Argument gilt außerdem
   \begin{align*}
@@ -142,25 +206,29 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
     &= i \cdot \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb.
   \end{align*}
   Zusammen mit der $\Rbb$-Linearität im ersten Argument ergibt sich damit, dass $\bil{\cdot, \cdot}_\Cbb$ im ersten Argument $\Cbb$-linear ist.
-  Da $\bil{\cdot, \cdot}_\Cbb$ hermitsch und im ersten Argument $\Cbb$-linear ist, ist $\bil{\cdot, \cdot}_\Cbb$ im zweiten Argument $\Cbb$-antilinear.
+  Damit ist $\bil{\cdot, \cdot}$ im zweiten Argument $\Cbb$-antiliner, denn $\bil{\cdot, \cdot}$ ist hermitsch.
   
   Für alle $v_1, v_2 \in V$ ist
   \begin{gather*}
-      \bil{v_1 + i v_2, v_1 + i v_2}_\Cbb
-    = \bil{v_1, v_1} + \bil{v_2, v_2}
-    = \|v_1\| + \|v_2\|,
-  \shortintertext{und somit}
-          \bil{v_1 + i v_2, v_1 + i v_2} = 0
+          \bil{v_1 + i v_2, v_1 + i v_2}_\Cbb
+    =     \bil{v_1, v_1} + \bil{v_2, v_2}
+    =     \|v_1\|^2 + \|v_2\|^2
+    \geq  0,
+  \intertext{und insbesondere}
+          \bil{v_1 + i v_2, v_1 + i v_2}_\Cbb = 0
     \iff  v_1 = v_2 = 0
     \iff  v_1 + i v_2 = 0.
     \qedhere
   \end{gather*}
+  Also ist $\bil{\cdot, \cdot}$ positiv definit.
 \end{proof}
 
 
+Im Nachweis der positiven Definitheit von $\bil{\cdot, \cdot}_\Cbb$ haben wir gesehen, wie sich die Norm auf $V_\Cbb$ aus der Norm auf $V$ ergibt:
+
+
 \begin{lemma}
-  Es sei $V$ ein euklidischer Vektorraum, und $\|\cdot\|_\Cbb$ die Norm die durch $\bil{\cdot, \cdot}$ induziert wird.
-  Dann gilt
+  Ist $\|\cdot\|_\Cbb$ die Norm auf $V_\Cbb$, die durch $\bil{\cdot, \cdot}_\Cbb$ induziert wird, so gilt
   \[
     \|v_1 + i v_2\| = \sqrt{\|v_1\|^2 + \|v_2\|^2}
     \quad
@@ -182,10 +250,11 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 \end{proof}
 
 
+Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften, die im reellen mithilfe des Skalarproduktes definiert sind, auf die Komplexifizierung übertragen.
+
 
 \begin{proposition}
-  Es sei $V$ ein euklidischer Vektorraum und $U \subseteq V$ ein Untervektorraum.
-  Dann ist
+  Für jeden Untervektorraum $U \subseteq V$ gilt
   \[
     (U^\perp)_\Cbb = (U_\Cbb)^\perp.
   \]
@@ -193,54 +262,115 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 
 
 \begin{proof}
-  Sind $v_1, v_2 \in U$ und $w_1, w_2 \in U^\perp$, so ist
+  Sind $u_1, u_2 \in U$ und $v_1, v_2 \in U^\perp$, so ist
   \[
-      \bil{v_1 + i v_2, w_1 + i w_2}_\Cbb
-    = (\bil{v_1, w_1} + \bil{v_2, w_2}) + i(\bil{v_2, w_1} - \bil{v_1, w_2})
+      \bil{u_1 + i u_2, v_1 + i v_2}_\Cbb
+    = (\bil{u_1, v_1} + \bil{u_2, v_2}) + i(\bil{u_2, v_1} - \bil{u_1, v_2})
     = 0,
   \]
-  da $\bil{v_i, w_j} = 0$ für alle $i,j \in \{1,2\}$.
+  da $\bil{u_i, v_j} = 0$ für alle $i,j \in \{1,2\}$.
   Damit ist $(U^\perp)_\Cbb \subseteq (U_\Cbb)^\perp$.
   
-  Andererseits seien $w_1, w_2 \in V$ mit $w_1 + i w_2 \in (U_\Cbb)^\perp$.
-  Für alle $v \in U$ ist dann $v + i \cdot 0 \in U_\Cbb$ und somit
+  Andererseits seien $v_1, v_2 \in V$ mit $v_1 + i v_2 \in (U_\Cbb)^\perp$.
+  Für alle $u \in U$ ist dann $u + i \cdot 0 \in U_\Cbb$ und somit
   \[
       0
-    = \bil{v + i \cdot 0, w_1 + i w_2}
-    = \bil{v, w_1} - i \bil{v, w_2}.
+    = \bil{u + i \cdot 0, v_1 + i v_2}
+    = \bil{u, v_1} - i \bil{u, v_2}.
   \]
-  Also ist $\bil{v, w_1} = \bil{v, w_2} = 0$ für alle $v \in U$ und somit $w_1, w_2 \in U^\perp$.
-  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.
+  Also ist $\bil{u, v_1} = \bil{u, v_2} = 0$ für alle $u \in U$ und somit $v_1, v_2 \in U^\perp$.
+  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.a
 \end{proof}
 
 
-\begin{proposition}
-  Es seien $V$ und $W$ euklidische Vektorräume und es sei $f \colon V \to W$ eine lineare Abbildung.
-  Dann ist
-  \[
-    (f^*)_{\Cbb} = (f_\Cbb)^*.
-  \]
+\begin{proposition}\label{prop: complexification has adjoints}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zwei lineare Abbildungen $f \colon V \to W$ und $g \colon W \to V$ sind genau dann adjungiert zueinander, wenn $f_\Cbb$ und $g_\Cbb$ adjungiert zueinander sind.
+    \item
+      Wenn $f$ ein Adjungiertes $f^*$ besitzt, so hat auch $f_\Cbb$ ein Adjungiertes, und es gilt
+      \[
+        (f_\Cbb)^* = (f^*)_\Cbb.
+      \]
+  \end{enumerate}
 \end{proposition}
 
 
 \begin{proof}
-  Dies lässt sich etwa in Koordinaten durchrechnen:
-  Für alle $v_1, v_2, w_1, w_2$ ist
-  \begin{align*}
-     &\,  \bil{ f_\Cbb( v_1 + i v_2 ), w_1 + i w_2 }_\Cbb
-    =     \bil{ f(v_1) + i f(v_2), w_1 + i w_2}_\Cbb \\
-    =&\,  (\bil{f(v_1), w_1} + \bil{f(v_2), w_2}) + i(\bil{f(v_2), w_1} - \bil{f(v_1), w_2}) \\
-    =&\,  (\bil{v_1, f^*(w_1)} + \bil{v_2, f^*(w_2)}) + i(\bil{v_2, f^*(w_1)} - \bil{v_1, f^*(w_2)}) \\
-    =&\,  \bil{ v_1 + i v_2, f^*(w_1) + i f^*(w_2) }_\Cbb
-    =     \bil{ v_1 + i v_2, (f^*)_\Cbb( w_1 + i w_2 ) }_\Cbb,
-  \end{align*}
-  also hat $(f^*)_\Cbb$ die definierende Eigenschaft von $(f_\Cbb)^*$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Wir nehmen zunächst an, dass $f$ und $g$ adjungiert zueinander sind.
+      Für alle $v_1, v_2, w_1, w_2 \in V$ ist dann
+      \begin{align*}
+        &\,  \bil{ f_\Cbb( v_1 + i v_2 ), w_1 + i w_2 }_\Cbb
+        =     \bil{ f(v_1) + i f(v_2), w_1 + i w_2}_\Cbb \\
+        =&\,  (\bil{f(v_1), w_1} + \bil{f(v_2), w_2}) + i(\bil{f(v_2), w_1} - \bil{f(v_1), w_2}) \\
+        =&\,  (\bil{v_1, g(w_1)} + \bil{v_2, g(w_2)}) + i(\bil{v_2, g(w_1)} - \bil{v_1, g(w_2)}) \\
+        =&\,  \bil{ v_1 + i v_2, g(w_1) + i g(w_2) }_\Cbb
+        =     \bil{ v_1 + i v_2, g_\Cbb( w_1 + i w_2 ) }_\Cbb.
+      \end{align*}
+      Also sind $f_\Cbb$ und $g_\Cbb$ adjungiert zueinander.
+      
+      Wir nehmen nun an, dass $f_\Cbb$ und $g_\Cbb$ adjungiert zunander sind.
+      Für alle $v \in V$, $w \in W$ ist dann
+      \begin{align*}
+            \bil{f(v), w}
+        &=  \bil{f(v) + i \cdot 0, w + i \cdot 0}_\Cbb
+         =  \bil{f_\Cbb(v + i \cdot 0), w + i \cdot 0}_\Cbb \\
+        &=  \bil{v + i \cdot 0, g_\Cbb(w + i \cdot 0)}_\Cbb
+         =  \bil{v + i \cdot 0, g(w) + i \cdot 0}_\Cbb
+         =  \bil{v, g(w)}.
+      \end{align*}
+      Also sind $f$ und $g$ adjungiert zueinander.
+      
+    \item
+      Besitzt $f$ ein Adjungiertes $f^*$, so sind $f_\Cbb$ und $(f^*)_\Cbb$ nach dem vorherigen Teil adjungiert zueinander.
+      Also besitzt $f_\Cbb$ ein Adjungiertes $(f_\Cbb)^*$, nämlich $(f^*)_\Cbb$.
+  \end{enumerate}
 \end{proof}
 
 
-\begin{corollary}\label{cor: complexification preserves normal}
-  Ist $V$ ein euklidischer Vektorraum und $f \colon V \to V$ ein normaler Endomorphismus, so ist $f_\Cbb$ ein normaler Endomorphismus von $V_\Cbb$.
+\begin{remark}
+  Besitzt $f$ ein Adjungiertes, so schreiben wir im Folgenden meist nur $f^*_\Cbb$ statt $(f^*)_\Cbb$ oder $(f_\Cbb)^*$.
+\end{remark}
+
+
+\begin{corollary}\label{cor: complexification preserves normally stuff}
+  Es sei $f \colon V \to V$ ein Endomorphismus, der ein Adjungiertes besitzt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $f$ normal, so ist $f_\Cbb$ normal.
+    \item
+      Ist $f$ selbstadjungiert, so ist $f_\Cbb$ selbstadjungiert.
+    \item
+      Ist $f$ antiselbstadjungiert, so ist $f_\Cbb$ antiselbstadjungiert.
+    \item
+      Ist $f$ orthogonal, so ist $f_\Cbb$ unitär.
+  \end{enumerate}
 \end{corollary}
+
+
+\begin{proof}
+  Nach Proposition~\ref{prop: complexification has adjoints} ist $f^*_\Cbb = (f^*)_\Cbb$ adjungiert zu $f_\Cbb$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Da $f$ normal ist, gilt $f^* f = f^* f$.
+      Nach Lemma~\ref{lemma: commuting in complexification} ist deshalb $f^*_\Cbb f_\Cbb = f^*_\Cbb f$.
+      Also ist auch $f_\Cbb$ normal.
+    \item
+      Wegen der Selbstadjungiertheit von $f$ ist $f = f^*$.
+      Also ist $f_\Cbb = f^*_\Cbb$, und $f_\Cbb$ somit selbstadjungiert.
+    \item
+      Es gilt $f^* = -f$ und somit $f^*_\Cbb = (-f)_\Cbb = - f_\Cbb$.
+    \item
+      Die Orthogonalität von $f$ bedeutet, dass $f f^* = \id_V = f^* f$.
+      Durch Komplexifizieren ergibt sich, dass
+      \[
+        f_\Cbb f^*_\Cbb = \id_{V_\Cbb} = f^*_\Cbb f_\Cbb.
+      \]
+      Also ist $f_\Cbb$ orthogonal.
+  \end{enumerate}
+\end{proof}
 
 
 \begin{proof}
@@ -257,6 +387,20 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 \end{proof}
 
 
+
+
+
+
+
+
+
+
+\section{Zettel 6, Aufgabe 5}
+
+
+Wir erinnern an die folgende Aussage:
+
+
 \begin{theorem}\label{thrm: invariance for unitary}
   Es sei $V$ ein endlichdimensionaler unitärer Vektorraum, $f \colon V \to V$ ein normaler Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
   Dann ist auch $U^\perp$ $f$-invariant.
@@ -264,8 +408,11 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 
 
 \begin{proof}
-  Dies wurde auf dem sechsten Übungszettel gezeigt.
+  Dies wurde auf dem sechsten Übungszettel, bzw.\ im Tutorium gezeigt
 \end{proof}
+
+
+Mithilfe der Komplexifizierung lässt sich die analoge Aussage für endlichdimensionale euklidische Vektorräume nun direkt folgern:
 
 
 \begin{corollary}
@@ -275,7 +422,7 @@ Bevor wir uns dem eigentlichen Thema zuwenden, zeigen wir noch einige nützliche
 
 
 \begin{proof}
-  Wegen der Normalität von $f$ ist nach Korollar~\ref{cor: complexification preserves normal} auch $f_\Cbb \colon V_\Cbb \to V_\Cbb$ normal, und wegen der Endlichdimensionalität von $V$ ist auch $V_\Cbb$ endlichdimensional.
+  Wegen der Normalität von $f$ ist nach Korollar~\ref{cor: complexification preserves normally stuff} auch $f_\Cbb \colon V_\Cbb \to V_\Cbb$ normal, und wegen der Endlichdimensionalität von $V$ ist auch $V_\Cbb$ endlichdimensional.
   Wegen der $f$-Invarianz von $U$ ist nach Lemma~\ref{lem: invariance of induced subspaces} der induzierte Unterraum $U_\Cbb$ invariant unter $f_\Cbb$.
   Nach Theorem~\ref{thrm: invariance for unitary} ist $(U_\Cbb)^\perp = (U^\perp)_\Cbb$ invariant unter $f_\Cbb$.
   Nach Lemma~\ref{lem: invariance of induced subspaces} ist somit $U^\perp$ invariant unter $f$.
