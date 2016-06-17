@@ -24,7 +24,8 @@
 
 
 \begin{abstract}
-  Wir geben alternative Lösungen für Zettel 3, Aufgaben 3, Teile (v) und (vi), in Form kommutativer Diagramme.
+  Wir geben alternative Lösungen für Aufgaben 3, Teile (v) und (vi) von Zettel 3.
+  Dabei ersetzen wir explizite Rechnungen durch kommutative Diagramme.
 \end{abstract}
 
 
@@ -39,10 +40,11 @@
 \section{Hilfsaussagen}
 
 Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
+Beweise werden bewusst nicht angegeben
 
 \begin{lemma}
-  Es seien $V$ und $W$ zwei $K$-Vektorräume, und es sei $E \subseteq V$ ein Erzeugendensystem von $V$.
-  Sind $f, g \colon V \to W$ linear mit $f(e) = g(e)$ für alle $e \in E$, so ist bereits $f = g$.
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f, g \colon V \to W$ linear
+  Ist $E \subseteq V$ ein Erzeugendensystem von $V$, so ist genau dann $f = g$ wenn $f(e) = g(e)$ für alle $e \in E$.
 \end{lemma}
 
 
@@ -73,21 +75,31 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
 
 
 \begin{definition}
-  Sind $V$ und $W$ zwei $\Cbb$-Vektorräume, so heißt eine Abbildung $f \colon V \to W$ \emph{($\Cbb$-)antilinear}, falls
-  \begin{enumerate}
+  Es seien $V$ und $W$ zwei $\Cbb$-Vektorräume.
+  \begin{enumerate}[leftmargin=*]
+    \item 
+      Eine Abbildung $f \colon V \to W$ \emph{($\Cbb$-)antilinear}, falls
+      \begin{enumerate}
+        \item
+          $f(v_1 + v_2) = f(v_1) + f(v_2)$ für alle $v_1, v_2 \in V$, und
+        \item
+          $f(\lambda v) = \overline{\lambda} f(v)$ für alle $\lambda \in \Cbb$ und $v \in V$.
+      \end{enumerate}
     \item
-      $f(v_1 + v_2) = f(v_1) + f(v_2)$ für alle $v_1, v_2 \in V$, und
-    \item
-      $f(\lambda v) = \overline{\lambda} f(v)$ für alle $\lambda \in \Cbb$ und $v \in V$.
+      Sind $f, g \colon V \to W$ jeweils $\Cbb$-linear oder $\Cbb$-antilinear, so sagen wir, dass $f$ und $g$ die \emph{gleiche Parität} haben, wenn sie beide $\Cbb$-linear oder beide $\Cbb$-antilinear sind.
   \end{enumerate}
 \end{definition}
 
 
 \begin{lemma}
-  Es seien $V$ und $W$ zwei $\Cbb$-Vektorräume und $f \colon V \to W$ sei antilinear.
-  Ist $E \subseteq V$ ein Erzeugendensystem mit $f(e) = g(e)$ für alle $e \in E$, so ist bereits $f = g$.
+  Es seien $V$ und $W$ zwei $\Cbb$-Vektorräume und $f, g \colon V \to W$ seien $\Cbb$-antilinear.
+  Ist $E \subseteq V$ ein Erzeugendensystem, so ist genau dann $f = g$, wenn $f(e) = g(e)$ für alle $e \in E$.
 \end{lemma}
 
+
+\begin{remark}
+  Wenn $f$ und $g$ unterschiedliche Parität haben, so gilt die analoge Aussage nur für den trivalen Fall $f = g = 0$.
+\end{remark}
 
 
 \begin{corollary}
@@ -108,9 +120,7 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
   ein Diagram, so dass $X_1$, $X_2$, $Y_1$ und $Y_2$ jeweils $\Cbb$-Vektorräume sind, und $f$, $g$, $s$ und $t$ jeweils $\Cbb$-linear oder $\Cbb$-antilinear.
   Ist $E \subseteq X_1$ ein Erzeugendensystem, so kommutiert das obige Diagram genau dann, wenn
   \[
-    t(f(e)) = g(s(e))
-    \quad
-    \text{für alle $e \in E$}.
+    \text{$t(f(e)) = g(s(e))$ für alle $e \in E$ und $f$ und $g$ haben die gleiche Parität}.
   \]
 \end{corollary}
 
@@ -124,7 +134,7 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
 
 \begin{lemma}
   Es seien $V$ und $W$ zwei endlichdimensionale $K$-Vektorräume.
-  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis von $W$.
+  Es sei zum einen $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$ und zum anderen $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis von $W$.
   Ist $f \colon V \to W$ eine lineare Abbildung, so gilt:
   \begin{enumerate}[leftmargin=*]
   
@@ -150,26 +160,26 @@ Wir nennen hier explizit einige Aussagen die wir im Folgenden nutzen werden.
 
 \section{Setup}
 
-Wir erinnern an Notationen, die wir im Folgenden nutzen werden.
-Es seien $V$ und $W$ zwei endlichdimensionale $\Rbb$-Vektorräume.
+Wir erinnern an Notationen und Ergebnisse auf vorherigen Aufgabenteilen, die wir im Folgenden nutzen werden.
 
-Es seien
-\[
+Es seien $V$ und $W$ zwei endlichdimensionale $\Rbb$-Vektorräume und
+\begin{gather*}
   \iota_V \colon V \to V_\Cbb,
   \quad
-  v \mapsto v = v + i \cdot 0
-\]
-und $\iota_W \colon W \to W_\Cbb$ die kanonischen Inklusionen.
-(Hier nutzen wir bereits die Identifikation von $V$ mit dem reellen Untervektorraum $\iota_V(V) \subseteq V_\Cbb$.)
-
-Es sind komplexe Konjugationen
+  v \mapsto v + i \cdot 0
+\shortintertext{und}
+  \iota_W \colon W \to W_\Cbb,
+  \quad
+  w \mapsto w + i \cdot 0
+\end{gather*}
+die kanonischen Inklusionen. Es sind komplexe Konjugationen
 \begin{gather*}
   V_\Cbb \to V_\Cbb,
   \quad
   v_1 + i v_2 \mapsto v_1 - i v_2
   \quad\text{für alle $v_1, v_2 \in V$},
 \shortintertext{und}
-  W_\Cbb \to W_\Cbb,
+  W_\Cbb \to W_\Cbb, \quad
   w_1 + i w_2 \mapsto w - i w_2
   \quad
   \text{für alle $w_1, w_2 \in W$}
@@ -180,23 +190,8 @@ Insbesondere sind sie $\Rbb$-linear, für $V \neq 0$, bzw.\ $W \neq 0$ aber nich
 
 
 Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine $\Rbb$-Basis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine $\Rbb$-Basis von $W$.
-Dann ist $\mc{B}$ eine $\Cbb$-Basis von $V_\Cbb$ und $\mc{C}$ eine $\Cbb$-Basis von $W_\Cbb$.
-(Hier nutzen wir die Identifikation von $V$ mit dem reellen Untervektorraum $\iota(V) \subseteq V_\Cbb$.
-Ohne diese Identifikation müssten wir hier sagen, dass
-\[
-    \iota_V(\mc{B})
-  = (\iota_V(b_1), \dotsc, \iota_V(b_n))
-  = ((b_1, 0), \dotsc, (b_n, 0))
-\]
-eine $\Cbb$-Basis von $V_\Cbb$ ist, und dass
-\[
-    \iota_W(\mc{C})
-  = (\iota_W(c_1), \dotsc, \iota_W(c_m))
-  = ((c_1, 0), \dotsc, (c_m, 0))
-\]
-eine $\Cbb$-Basis von $W_\Cbb$ ist.)
-
-Da $\mc{B} \subseteq V$ und $\mc{C} \subseteq W$ ist insbesondere $\overline{b_i} = b_i$ für alle $1 \leq i \leq n$ und $\overline{c_i} = c_i$ für alle $1 \leq i \leq m$.
+Dann ist $\iota_V(\mc{B})$ eine $\Cbb$-Basis von $V_\Cbb$ und $\iota_w(\mc{C})$ eine $\Cbb$-Basis von $W_\Cbb$.
+Die Basen $\iota_V(\mc{B})$ und $\iota_W(\mc{B})$ sind punktweise invariant unter der der Konjugation auf den jeweiligen Komplexifizierungen.
 
 
 
@@ -221,7 +216,7 @@ Die Abbildung $f_\Cbb$ bringt also das folgende Diagram von $\Cbb$-Vektorräumen
     & W_\Cbb
   \end{tikzcd}
 \]
-Es sei $A \coloneqq M_{\mc{C} \from \mc{B}}(f) \in \Mat(m \times n, \Rbb)$ die darstellende Matrix von $f$ bezüglich der $\Rbb$-Basen $\mc{B}$ von $V$ und $\mc{C}$ von $W$.
+Es sei $A \coloneqq M_{\mc{C} \from \mc{B}}(f) \in \Mat(m \times n, \Rbb)$ die darstellende Matrix von $f$ bezüglich der $\Rbb$-Basis $\mc{B}$ von $V$ und $\mc{C}$ von $W$.
 Es bringt also $A$ das folgende Diagram zum kommutieren, und ist die eindeutige ($m \times n$)-Matrix über $\Rbb$ mit dieser Eigenschaft:
 \[
   \begin{tikzcd}
@@ -251,11 +246,11 @@ Dies bedeutet gerade, dass das folgende Diagram kommutieren soll:
   \end{tikzcd}
 \]
 Dabei bezeichnen $\Phi^\Cbb_\mc{B} \colon V_\Cbb \to \Cbb^n$ und $\Phi^\Cbb_\mc{C} \colon W \to \Cbb^m$ die eindeutigen $\Cbb$-linearen Isomorphismen mit
-\[
-  \text{$\Phi^\Cbb_\mc{B}(b_j) = e_j$ für alle $1 \leq j \leq n$}
-  \quad\text{und}\quad
-  \text{$\Phi^\Cbb_\mc{C}(c_i) = e_i$ für alle $1 \leq i \leq m$}.
-\]
+\begin{align*}
+  &\text{$\Phi^\Cbb_\mc{B}(b_j + i \cdot 0) = e_j$ für alle $1 \leq j \leq n$}
+\shortintertext{und}
+  &\text{$\Phi^\Cbb_\mc{C}(c_j + i \cdot 0) = e_j$ für alle $1 \leq j \leq m$}.
+\end{align*}
 
 Wir betrachten den folgenden Würfel:
 \[
@@ -315,26 +310,28 @@ Die linke Seites des Würfels ist das folgende Diagram:
   \end{tikzcd}
 \]
 Da alle Abbildungen in diesem Diagram $\Rbb$-linear sind, genügt es die Kommutativität des Diagrams auf einer $\Rbb$-Basis von $V$ nachzurechnen
-Für die $\Rbb$-Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$ ergibt sich, dass
+Für die $\Rbb$-Basis $\mc{B}$ von $V$ ergibt sich, dass
 \[
-  \Phi^\Cbb(\iota_V(b_i))
-  = \Phi^\Cbb(b_i)
-  = e_i
-  = \Phi^\Rbb_\mc{B}(b_i)
-  = \iota_n(\Phi^\Rbb_\mc{B}(b_i)),
+  \Phi^\Cbb(\iota_V(b_j))
+  = \Phi^\Cbb(b_j + i \cdot 0)
+  = e_j
+  = \Phi^\Rbb_\mc{B}(b_j)
+  = \iota_n(\Phi^\Rbb_\mc{B}(b_j))
+  \quad
+  \text{für alle $1 \leq j \leq n$},
 \]
 bzw.\ das folgende „kommutative Diagram von Elementen“:
 \[
   \begin{tikzcd}
-      b_i
+      b_j
       \arrow[r, maps to, "\iota_V"]
       \arrow[d, maps to, "\Phi^\Rbb_\mc{B}"']
-    & b_i
+    & b_j + i \cdot 0
       \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"]
     \\
-      e_i
+      e_j
       \arrow[r, maps to, "\iota_n"]
-    & e_i
+    & e_j
   \end{tikzcd}
 \]
 Also kommutiert die linke Seite des Würfels.
@@ -429,7 +426,7 @@ Diese zu zeigende Gleichheit lässt sich mithilfe des Würfels sehr einfach ausd
   \end{tikzcd}
 \]
 (Wir lässen hier zur Übersichtlichkeit die Bennenung der einzelnen Ecken und Kanten des Würfels weg.)
-Mithilfe dieser graphischen Notation und der Kommutativität der nicht-Vorderseiten lässt sich dies zeigen, indem wir um den Würfel herumwackeln:
+Mithilfe dieser graphischen Notation und der Kommutativität der nicht-Vorderseiten lässt sich die obige Gleichheit zeigen, indem wir um den Würfel herumwackeln:
 \[
   \renewcommand{\arraystretch}{6}
   \begin{array}{cccccccc}
@@ -745,6 +742,7 @@ Wir betrachten hierfür den folgenden Würfel:
     & {}
   \end{tikzcd}
 \]
+Dabei bezeichnet $\overline{\,\cdot\,}$ die jeweilige Konjugationsabbildung.
 Wir wissen bereits, dass die Rückseite kommutiert, und möchten zeigen, dass auch die Vorderseite kommutiert.
 Wir zeigen zunächst, dass alle anderen Seiten kommutieren:
 
@@ -772,27 +770,27 @@ Die linke Seite des Würfels ist das folgende Diagram:
   \end{tikzcd}
 \]
 Da alle auftretenden Abbildungen $\Cbb$-linear oder -antilinear sind, lässt sich die Kommutativität des Diagrams auf einer $\Cbb$-Basis von $V_\Cbb$ nachrechnen.
-Für die Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $B$ erhalten wir das folgende „kommutative Diagram von Elementen“:
+Für die Basis $\iota_V(\mc{B})$ von $V_\Cbb$ erhalten wir das folgende „kommutative Diagram von Elementen“:
 \[
   \begin{tikzcd}
-      b_i
+      b_j + i \cdot 0
       \arrow[r, maps to, "\overline{\,\cdot\,}"]
       \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"']
-    & b_i
+    & b_j + i \cdot 0
       \arrow[d, maps to, "\Phi^\Cbb_\mc{B}"]
     \\
-      e_i
+      e_j
       \arrow[r, maps to, "\overline{\,\cdot\,}"]
-    & e_i
+    & e_j
   \end{tikzcd}
 \]
 In Formeln bedeutet dies, dass
 \[
-    \overline{\Phi^\Cbb_\mc{B}(b_i)}
-  = \overline{e_i}
-  = e_i
-  = \Phi^\Cbb_\mc{B}(b_i)
-  = \Phi^\Cbb_\mc{B}\left( \overline{b_i} \right).
+    \overline{\Phi^\Cbb_\mc{B}(b_j + i \cdot 0)}
+  = \overline{e_j}
+  = e_j
+  = \Phi^\Cbb_\mc{B}(b_j + i \cdot 0)
+  = \Phi^\Cbb_\mc{B}\left( \overline{b_j + i \cdot 0} \right).
 \]
 
 Damit wissen wir von allen Seiten des Würfels, bis auf die Vorderseite, dass sie kommutieren.
