@@ -1,0 +1,542 @@
+\documentclass[a4paper, 10pt]{article}
+%\documentclass[a4paper, 10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+
+\title{Lösung zu Zettel 7, Aufgabe 4}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{Topologisches Vorgeplänkel}
+Wir nutzen im Folgenden einige Aussagen über normierte Vektorräume, ohne diese explizit zu beweisen:
+
+\begin{lemma}
+  Es sei $V$ ein endlichdimensionaler $\Kbb$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $\|\cdot\|_1$ und $\|\cdot\|_2$ zwei Normen auf $V$.
+      Dann sind $\|\cdot\|_1$ und $\|\cdot\|_2$ äquivalent, d.h.\ es gibt $C > 0$ mit
+      \[
+        \|\cdot\|_1 \leq C \|\cdot\|_2
+        \quad\text{und}\quad
+        \|\cdot\|_2 \leq C \|\cdot\|_1.
+      \]
+    \item
+      Ist $\|\cdot\|$ eine Norm auf $V$, so ist $V$ vollständig (bezüglich der durch $\|\cdot\|$ induzierten Metrik).
+  \end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+  Es sei $V$ ein normierter Vektorraum.
+  Dann sind äquivalent:
+  \begin{enumerate}
+    \item
+      $V$ ist vollständig (bezüglich der durch $\|\cdot\|$ induzierten Norm), also ein Banachraum.
+    \item
+      Jede absolut konvergente Reihe $\sum_{n=0}^\infty x_n$ in $V$ (d.h.\ die reelle Reihe $\sum_{n=0}^\infty \|x_n\|$ konvergiert) konvergiert.
+  \end{enumerate}
+\end{lemma}
+
+
+Dies erlaubt uns die Exponentialfunktion von Matrizen zu definieren:
+Wir wählen eine Norm $\|\cdot\|$ auf $\Mat_n(\Kbb)$.
+Wegen der Vollständigkeit von $\Mat_n(\Kbb)$ konvergiert jede absolut konvergente Reihe in $\Mat_n(\Kbb)$.
+Für jede $A \in \Mat_n(\Kbb)$ ist die Reihe $\sum_{k=0}^\infty A^k/k!$ absolut konvergent, denn die Reihe $\sum_{k=0}^\infty \|A\|^k/k!$ konvergiert (gegen $\exp(\|A\|)$).
+Also konvergiert die Reihe $\sum_{k=0}^\infty A^k/k!$ für alle $A \in \Mat_n(\Kbb)$.
+Da alle Normen auf $V$ äquivalent sind, ist der Grenzwert unabhängig von der gewählten Norm $\|\cdot\|$.
+
+Ist $V$ ein endlichdimensionaler $\Kbb$-Vektorraum, so können wir in der obigen Argumentation $\Mat_n(\Kbb)$ durch $\End(V)$ ersetzen, und damit die Exponentialfunktion auf $\End(V)$ defineren.
+
+\begin{lemma}\label{lem: linear implies continuous}
+  Sind $V$ und $W$ zwei endlichdimensionale normierte $\Kbb$-Vektorräume, so ist jede lineare Abbildung $V \to W$ stetig.
+\end{lemma}
+
+Damit ergibt sich inbesondere, dass sich die Exponentialfunktion von Endomorphismen mithilfe von Matrizen in Koordinaten berechnen lässt:
+
+\begin{corollary}\label{cor: exponential in coordinates}
+  Es sei $V$ ein endlichdimensional $\Kbb$-Vektorraum und $\mc{B}$ eine geordnete Basis von $V$.
+  Für jeden Endomorphismen ist
+  \[
+    \Mat_\mc{B}( \exp(f) ) = \exp( \Mat_\mc{B}(f) ).
+  \]
+  Ist $g \colon V \to V$ ein Endomorphismus mit $\Mat_\mc{B}(g) = \exp(\Mat_\mc{B}(f))$, so ist deshalb $g = \exp(f)$.
+\end{corollary}
+
+\begin{proof}
+  Es sei $A \coloneqq \Mat_\mc{B}(f)$.
+  Für alle $n \in \Nbb$ ist dann
+  \[
+      \Mat_\mc{B}\left( \sum_{k=0}^n \frac{f^k}{k!} \right)
+    = \sum_{k=0}^n \frac{A^k}{k!}.
+  \]
+  Da die Abbildung $\Mat_\mc{B} \colon \End(V) \to \Mat_n(\Kbb)$ linear ist, ist sie nach Lemma~\ref{lem: linear implies continuous} stetig.
+  Ist $f = \exp(g)$, so ist deshalb
+  \begin{align*}
+        \Mat_\mc{B}( \exp(f) )
+    &=  \Mat_\mc{B}\left( \lim_{n \to \infty} \sum_{k=0}^n \frac{f^k}{k!} \right)
+     =  \lim_{n \to \infty} \Mat_\mc{B}\left( \sum_{k=0}^n \frac{f^k}{k!} \right) \\
+    &=  \lim_{n \to \infty} \sum_{k=0}^n \frac{A^k}{k!}
+     =  \sum_{k=0}^\infty \frac{A^k}{k!}
+     =  \exp(A)
+     =  \exp( \Mat_\mc{B}(f) ).
+  \end{align*}
+  Der letzte Teil der Aussage folgt nun aus
+  \[
+      \Mat_\mc{B}(g)
+    = \exp( \Mat_\mc{B}(f) )
+    = \Mat_\mc{B}( \exp(f) )
+  \]
+  und der Bijektivität der Abbildung $\End(V) \to \Mat_n(\Kbb)$, $h \mapsto \Mat_\mc{B}(h)$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Aufgabe 4}
+
+
+
+
+
+\subsection{}
+Für jede Matrix $A \in \Mat_n(\Kbb)$ und invertierbare Matrix $S \in \GL_n(\Kbb)$ ist
+\begin{align*}
+      \exp(S A S^{-1})
+  &=  \sum_{k=0}^\infty \frac{(S A S^{-1})^k}{k!}
+   =  \sum_{k=0}^\infty \left( S \frac{A^k}{k!} S^{-1} \right)
+   =  \lim_{n \to \infty} \sum_{k=0}^n \left( S \frac{A^k}{k!} S^{-1} \right) \\
+  &=  \lim_{n \to \infty} \left( S \left( \sum_{k=0}^n \frac{A^k}{k!} \right) S^{-1} \right)
+   =  S \left( \lim_{n \to \infty} \left( \sum_{k=0}^n \frac{A^k}{k!} \right) \right) S^{-1} \\
+  &=  S \left( \sum_{k=0}^\infty \frac{A^k}{k!} \right) S^{-1}
+   =  S \exp(A) S^{-1}.
+\end{align*}
+Dabei haben wir in der zweiten Zeile die Stetigkeit der Abbildung
+\[
+  \Mat_n(\Kbb) \to \Mat_n(\Kbb),
+  \quad
+  B \mapsto S B S^{-1}
+\]
+genutzt.
+
+
+
+
+
+\subsection{}
+Da $A$ und $B$ kommutieren gilt
+\begin{align*}
+      \exp(A+B)
+  &=  \sum_{k=0}^\infty \frac{(A+B)^k}{k!}
+   =  \sum_{k=0}^\infty \frac{1}{k!} \sum_{\ell=0}^k \binom{k}{\ell} A^\ell B^{k-\ell}
+   =  \sum_{k=0}^\infty \sum_{\ell=0}^k \frac{A^\ell B^{k-\ell}}{\ell! (k-\ell)!} \\
+  &=  \sum_{n=0}^\infty \sum_{m=0}^\infty \frac{A^n B^m}{n! m!}
+   =  \sum_{n=0}^\infty \left( \frac{A^n}{n!} \left( \sum_{m=0}^\infty \frac{B^m}{m!} \right) \right) \\
+  &=  \left( \sum_{n=0}^\infty \frac{A^n}{n!} \right) \left( \sum_{\ell=0}^\infty \frac{B^\ell}{\ell!} \right)
+   =  \exp(A) \exp(B).
+\end{align*}
+Die genutzen Umordnungen der Reihen lassen sich etwa wie folgt begründen:
+
+Da die Addition, Skalarmultiplikation und Grenzwertbildung eintragsweise geschehen, genügt es, die Umordnungen jeweils eintragsweise durchführen zu können.
+Dies geht etwa, wenn die Reihen eintragsweise bereits absolut konvergieren.
+
+Dass dies gilt, ergibt sich daraus, dass es eine Konstante $C > 0$ gibt (die nur von der auf $\Mat_n(\Kbb)$ gewählten Norm abhängt), so dass $|d_{ij}| \leq C \|D\|$ für jede Matrix $D \in \Mat_n(\Kbb)$.
+Dies wiederum ergibt sich daraus, dass die Aussage für die $\|\cdot\|_1$-Norm (mit $\|D\|_1 = \sum_{i,j} |d_{ij}|$) mit der Konstante $C = 1$ gilt, und alle Normen auf $\Mat_n(\Kbb)$ äquivalent sind.
+
+Außerdem haben wir in den letzten beiden Zeilen genutzt, dass für alle $E \in \Mat_n(\Kbb)$ die Abbildungen
+\begin{gather*}
+  \Mat_n(\Kbb) \to \Mat_n(\Kbb),
+  \quad
+  D \mapsto DE
+\shortintertext{und}
+  \Mat_n(\Kbb) \to \Mat_n(\Kbb),
+  \quad
+  D \mapsto ED
+\end{gather*}
+linear, und somit stetig sind.
+
+
+
+
+
+\subsection{}
+
+
+\begin{lemma}
+  Es sei $K$ ein Körper.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Für alle $A, B \in \Mat_n(K)$ ist
+      \[
+        \tr(AB) = \tr(BA).
+      \]
+    \item
+      Für alle $A \in \Mat_n(K)$ und $S \in \GL_n(K)$ ist
+      \[
+        \tr(S A S^{-1}) = \tr(A).
+      \]
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es ist
+      \begin{align*}
+            \tr(AB)
+        &=  \sum_{i=1}^n (AB)_{ii}
+         =  \sum_{i=1}^n \sum_{j=1}^n A_{ij} B_{ji}
+         =  \sum_{i=1}^n \sum_{j=1}^n B_{ji} A_{ij}  \\
+        &=  \sum_{j=1}^n \sum_{i=1}^n B_{ji} A_{ij}
+         =  \sum_{j=1}^n (BA)_{jj}
+         =  \tr(BA).
+      \end{align*}
+    \item
+      Nach dem ersten Teil des Lemmas ist
+      \[
+          \tr(S A S^{-1})
+        = \tr(S \cdot A S^{-1})
+        = \tr(A S^{-1} \cdot S)
+        = \tr(A).
+        \qedhere
+      \]
+  \end{enumerate}
+\end{proof}
+
+
+
+Da $A \in \Mat_n(\Kbb)$ trigonalisierbar über $\Cbb$ ist, gibt es $S \in \GL_n(\Cbb)$, so dass $S A S^{-1}$ in oberer Dreiecksform ist. Es ist also
+\[
+            B
+  \coloneqq S A S^{-1}
+  =
+  \begin{pmatrix}
+    \lambda_1 & *       & \cdots  & *         \\
+              & \ddots  & \ddots  & \vdots    \\
+              &         & \ddots  & *         \\
+              &         &         & \lambda_n
+  \end{pmatrix}
+\]
+wobei $\lambda_1, \dotsc, \lambda_n \in \Cbb$ die Eigenwerte von $A$ sind.
+Deshalb ist
+\[
+    \exp(\tr(A))
+  = \exp(\tr(S A S^{-1}))
+  = \exp(\lambda_1 + \dotsb + \lambda_n)
+  = \exp(\lambda_1) \dotsm \exp(\lambda_n).
+\]
+Andererseits ist
+\[
+    \det(\exp(A))
+  = \det(S \exp(A) S^{-1})
+  = \det( \exp(S A S^{-1}) )
+  = \det( \exp(B) ).
+\]
+Da beim Multiplizieren zweier oberer Dreiecksmatrizen die Diagonaleinträge multipliziert werden, ergibt sich, dass $B^k$ für alle $k \geq 0$ von der Form
+\[
+  B^k
+  =
+  \begin{pmatrix}
+    \lambda_1^k & *       & \cdots  & *           \\
+                & \ddots  & \ddots  & \vdots      \\
+                &         & \ddots  & *           \\
+                &         &         & \lambda_n^k
+  \end{pmatrix}
+\]
+ist.
+Deshalb ist $\exp(B)$ von der Form
+\begin{align*}
+      \exp(B)
+  =  \sum_{k=0}^\infty
+      \frac{1}{k!}
+      \begin{pmatrix}
+        \lambda_1^k  & *      & \cdots  & *             \\
+                     & \ddots & \ddots  & \vdots        \\
+                     &        & \ddots  & *             \\
+                     &        &         & \lambda_n^k
+      \end{pmatrix}
+  =
+      \begin{pmatrix}
+        \exp(\lambda_1) & *       & \cdots  & *               \\
+                        & \ddots  & \ddots  & \vdots          \\
+                        &         & \ddots  & *               \\
+                        &         &         & \exp(\lambda_n)
+      \end{pmatrix}.
+\end{align*}
+Also ist
+\[
+    \det(\exp(B))
+  = \exp(\lambda_1) \dotsm \exp(\lambda_n).
+\]
+
+
+
+
+
+\subsection{}
+Da $(AB)^* = B^* A^*$ ergibt sich für alle $k \geq 0$, dass $(A^k)^* = (A^*)^k$.
+Deshalb ist
+\[
+    \exp(A^*)
+  = \sum_{k=0}^\infty \frac{(A^*)^k}{k!}
+  = \sum_{k=0}^\infty \left( \frac{A^k}{k!} \right)^*
+  = \left( \sum_{k=0}^\infty \frac{A^k}{k!} \right)^*
+  = \exp(A)^*.
+\]
+Dabei wurde für die letzte Gleichheit benutzt, dass die Abbildung
+\[
+  \Mat_n(\Kbb) \to \Mat_n(\Kbb),
+  \quad
+  B \mapsto B^*
+\]
+$\Rbb$-linear und somit stetig ist.
+(Denn jede $\Kbb$-Norm ist inbesondere eine $\Rbb$-Norm.)
+
+
+
+\subsection{}
+Es ist $0^0 = I$ und $0^k = 0$ für alle $k \geq 1$, und deshalb
+\[
+    \exp(0)
+  = \sum_{k=0}^\infty \frac{0^k}{k!}
+  = \frac{I}{0!} + \sum_{k=1}^\infty \underbrace{ \frac{0^k}{k!} }_{=0}
+  = I.
+\]
+
+
+
+
+
+\subsection{}
+Ist $A$ selbstadjungiert, also $A = A^*$, so ist
+\[
+  \exp(A)^* = \exp(A^*) = \exp(A),
+\]
+also auch $\exp(A)$ selbstadjungiert.
+Ist $A$ normal, so kommutieren $A$ und $A^*$.
+Deshalb ist dann
+\begin{align*}
+      \exp(A) \exp(A)^*
+  &=  \exp(A) \exp(A^*) 
+   =  \exp(A + A^*)
+   =  \exp(A^* + A)     \\
+  &=  \exp(A^*) \exp(A)
+   =  \exp(A)^* \exp(A),
+\end{align*}
+also auch $\exp(A)$ normal.
+Dabei haben wir den zweiten Aufgabenteil genutzt.
+
+
+
+
+
+\subsection{}
+Ist $A$ antiselbstadjungiert, so ist $A^* = -A$.
+Da $A$ und $-A$ kommutieren, ist dann
+\begin{align*}
+      \exp(A) \exp(A)^*
+  &=  \exp(A) \exp(A^*)
+   =  \exp(A) \exp(-A)  \\
+  &=  \exp(A-A)
+   =  \exp(0)
+   =  I,
+\end{align*}
+und analog auch $\exp(A)^* \exp(A) = I$.
+Also ist $\exp(A)$ unitär.
+Dabei haben wir auch hier den zweiten Aufgabenteil genutzt.
+
+
+
+
+
+\subsection{}
+Es sei $V$ ein endlichdimensionaler unitärer Vektorraum.
+
+
+\subsubsection{selbstadjungierte Endomorphismen}
+Es sei $f \colon V \to V$ ein selbstadjungierter Endomorphismen mit positiven Eigenwerten.
+Da $f$ normal ist, gibt es eine Orthonormalbasis $\mc{B}$ von $V$ aus Eigenvektoren von $f$.
+Es ist also
+\[
+  \Mat_\mc{B}(f)
+  =
+  \begin{pmatrix}
+    \lambda_1 &         &           \\
+              & \ddots  &           \\
+              &         & \lambda_n
+  \end{pmatrix},
+\]
+wobei $\lambda_1, \dotsc, \lambda_n > 0$ die Eigenwerte von $f$ sind.
+Wegen der Positivität der Eigenwerte gibt es für jedes $i = 1, \dotsc, n$ ein $\mu_i \in \Rbb$ mit $\lambda_i = \exp(\mu_i)$.
+Für den Endomorphismus $g \colon V \to V$ mit
+\[
+  \Mat_\mc{B}(g)
+  =
+  \begin{pmatrix}
+    \mu_1 &         &       \\
+          & \ddots  &       \\
+          &         & \mu_n
+  \end{pmatrix}
+  \in \Mat_n(\Rbb)
+\]
+ist also
+\[
+  \Mat_\mc{B}(g) = \exp( \Mat_\mc{B}(f) ),
+\]
+und somit nach Korollar~\ref{cor: exponential in coordinates} bereits $g = \exp(f)$.
+Da $\Mat_\mc{B}(g)$ eine Diagonalmatrix ist, und $\mc{B}$ eine Orthonormalbasis von $V$, ist $g$ selbstadjungiert.
+
+
+\subsubsection{normale Endomorphismes}
+Es sei $f \colon V \to V$ ein normaler, invertierbarer Endomorphismus.
+Da $f$ normal ist, gibt es eine Orthonormalbasis $\mc{B}$ von $V$ aus Eigenvektoren von $f$.
+Es ist also
+\[
+  \Mat_\mc{B}(f)
+  =
+  \begin{pmatrix}
+    \lambda_1 &         &           \\
+              & \ddots  &           \\
+              &         & \lambda_n
+  \end{pmatrix},
+\]
+wobei $\lambda_1, \dotsc, \lambda_n \in \Cbb$ die Eigenwerte von $f$ sind.
+Wegen der Invertierbarkeit von $f$ ist $0$ kein Eigenwert von $f$, also $\lambda_j \neq 0$ für alle $j = 1, \dotsc, n$.
+Wegen der Surjektivität der Exponentialabbildung $\exp \colon \Cbb \to \Cbb \smallsetminus \{0\}$ gibt es $\mu_1, \dotsc, \mu_n \in \Cbb$ mit $\lambda_j = \exp(\mu_j)$ für alle $j = 1, \dotsc, n$.
+Es sei $g \colon V \to V$ der Endomorphismus mit
+\[
+  \Mat_\mc{B}(g)
+  =
+  \begin{pmatrix}
+    \mu_1 &         &       \\
+          & \ddots  &       \\
+          &         & \mu_n
+  \end{pmatrix}.
+\]
+Dann ist
+\[
+  \Mat_\mc{B}(g) = \exp( \Mat_\mc{B}(f) ).
+\]
+und nach Korollar~\ref{cor: exponential in coordinates} somit $f = \exp(g)$.
+Die Matrix $\Mat_\mc{b}(g)$ ist eine Diagonalmatrix, und somit normal.
+Da $\mc{B}$ eine Orthonormalbasis ist, ist deshalb $g$ ein normaler Endomorphismus.
+
+
+\subsubsection{unitäre Endomorphismen}
+Es sei $f \colon V \to V$ ein unitärer Endomorphismus.
+Da $f$ normal ist, gibt es eine Orthonormalbasis $\mc{B}$ von $V$ aus Eigenvektoren von $f$.
+Es ist also
+\[
+  \Mat_\mc{B}(f)
+  =
+  \begin{pmatrix}
+    \lambda_1 &         &           \\
+              & \ddots  &           \\
+              &         & \lambda_n
+  \end{pmatrix},
+\]
+wobei $\lambda_1, \dotsc, \lambda_n \in \Cbb$ die Eigenwerte von $f$ sind.
+Da $f$ unitär ist, gilt $|\lambda_j| = 1$ für alle $j = 1, \dotsc, n$, d.h.\ alle Eigenwerte von $f$ liegen auf dem Einheitskreis.
+Es gibt daher $\varphi_1, \dotsc, \varphi_n \in \Rbb$ mit $\lambda_j = \exp(i \varphi_j)$ für alle $j = 1, \dotsc, n$.
+Es sei $g \colon V \to V$ der Endomorphismus mit
+\[
+  \Mat_\mc{B}(g)
+  =
+  \begin{pmatrix}
+    i \varphi_1 &         &             \\
+                & \ddots  &             \\
+                &         & i \varphi_n
+  \end{pmatrix}.
+\]
+Dann ist
+\[
+  \Mat_\mc{B}(g) = \exp( \Mat_\mc{B}(f) ),
+\]
+also $g = \exp(f)$ nach Korollar~\ref{cor: exponential in coordinates}.
+Da
+\begin{align*}
+  \Mat_\mc{B}(g^*)
+  =
+  \Mat_\mc{B}(g)^*
+  &=
+  \begin{pmatrix}
+    i \varphi_1 &         &             \\
+                & \ddots  &             \\
+                &         & i \varphi_n
+  \end{pmatrix}^*
+  =
+  \begin{pmatrix}
+    - i \varphi_1 &         &               \\
+                  & \ddots  &               \\
+                  &         & - i \varphi_n
+  \end{pmatrix}
+  \\
+  &=
+  -
+  \begin{pmatrix}
+    i \varphi_1 &         &             \\
+                & \ddots  &             \\
+                &         & i \varphi_n
+  \end{pmatrix}
+  =
+  -\Mat_\mc{B}(g)
+  =
+  \Mat_\mc{B}(-g)
+\end{align*}
+und $\mc{B}$ eine Orthonormalbasis von $V$ ist, folgt $g^* = -g$.
+Also ist $g$ antiselbstadjungiert.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
