@@ -18,6 +18,14 @@
 \end{abstract}
 
 
+
+
+
+
+
+
+
+
 \section{Vorbereitung}
 
 
@@ -231,7 +239,7 @@ Im Nachweis der positiven Definitheit von $\bil{\cdot, \cdot}_\Cbb$ haben wir ge
 \begin{lemma}
   Ist $\|\cdot\|_\Cbb$ die Norm auf $V_\Cbb$, die durch $\bil{\cdot, \cdot}_\Cbb$ induziert wird, so gilt
   \[
-    \|v_1 + i v_2\| = \sqrt{\|v_1\|^2 + \|v_2\|^2}
+    \|v_1 + i v_2\|_\Cbb = \sqrt{\|v_1\|^2 + \|v_2\|^2}
     \quad
     \text{für alle $v_1, v_2 \in V$}.
   \]
@@ -251,7 +259,7 @@ Im Nachweis der positiven Definitheit von $\bil{\cdot, \cdot}_\Cbb$ haben wir ge
 \end{proof}
 
 
-Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften, die im reellen mithilfe des Skalarproduktes definiert sind, auf die Komplexifizierung übertragen.
+Wir wollen nun einige Resultate darüber angeben, wie sich Eigenschaften, die im Reellen mithilfe des Skalarproduktes definiert sind, auf die Komplexifizierung übertragen.
 
 
 \begin{proposition}
@@ -280,8 +288,13 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
     = \bil{u, v_1} - i \bil{u, v_2}.
   \]
   Also ist $\bil{u, v_1} = \bil{u, v_2} = 0$ für alle $u \in U$ und somit $v_1, v_2 \in U^\perp$.
-  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.a
+  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.
 \end{proof}
+
+
+\begin{warning}
+  Die Orthogonalität zweier $x, y \in V_\Cbb$ steht in keinem Zusammenhang zur Orthogonalität der jeweiligen Realteile $\Re(x)$ und $\Re(y)$, sowie der Orthogonalität der Imaginärteile $\Im(x)$ und $\Im(y)$ in $V$.
+\end{warning}
 
 
 \begin{proposition}\label{prop: complexification has adjoints}
@@ -327,12 +340,15 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
     \item
       Besitzt $f$ ein Adjungiertes $f^*$, so sind $f_\Cbb$ und $(f^*)_\Cbb$ nach dem vorherigen Teil adjungiert zueinander.
       Also besitzt $f_\Cbb$ ein Adjungiertes $(f_\Cbb)^*$, nämlich $(f^*)_\Cbb$.
+    \qedhere
   \end{enumerate}
 \end{proof}
 
 
 \begin{remark}
-  Besitzt $f$ ein Adjungiertes, so schreiben wir im Folgenden meist nur $f^*_\Cbb$ statt $(f^*)_\Cbb$ oder $(f_\Cbb)^*$.
+  Während im Unendlichdimensionalen alle linearen Abbildungen ein adjungiertes besitzen, ist dies im Unendlichdimensionalen nicht der Fall.
+  Dieses Problem umgehen wir im Folgenden, indem wir die Existenz eines Adjungierten jeweils voraussetzen.
+  Im Endlichlichdimensionalen stellt dies keine Einschränkung da, so dass wir die entsprechenden Sätze dort anwenden können.
 \end{remark}
 
 
@@ -352,15 +368,15 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
 
 
 \begin{proof}
-  Nach Proposition~\ref{prop: complexification has adjoints} ist $f^*_\Cbb = (f^*)_\Cbb$ adjungiert zu $f_\Cbb$.
+  Nach Proposition~\ref{prop: complexification has adjoints} ist $(f^*)_\Cbb$ adjungiert zu $f_\Cbb$.
   \begin{enumerate}[leftmargin=*]
     \item
-      Die Normalität von $f^*$ ist äquivalent zu $f f^* = f^* f$, und die Normalität von $f_\Cbb$ ist äquivalent zu $f_\Cbb (f^*)_\Cbb = (f^*)_\Cbb f_\Cbb$.
-      Nach Korollar~\ref{cor: commuting in complexification} sind diese Bedingungen äquivalent.
+      Die Normalität von $f^*$ ist äquivalent zu $f f^* = f^* f$, und die Normalität von $f_\Cbb$ ist äquivalent zu $f_\Cbb (f_\Cbb)^* = (f_\Cbb)^* f_\Cbb$.
+      Da $(f_\Cbb)^* = (f^*)_\Cbb$ sind diese Bedingungen nach Korollar~\ref{cor: commuting in complexification} äquivalent.
     \item
       Da $(f_\Cbb)^* = (f^*)_\Cbb$ ist nach Lemma~\ref{lemma: complexification is faithful} genau dann $f_\Cbb = (f_\Cbb)^*$, wenn $f = f^*$.
     \item
-      Es gilt $(f_\Cbb)^* = (f^*)_\Cbb$ und $-(f_\Cbb) = (-f)_\Cbb$, und nach Lemma~\ref{lemma: complexification is faithful} somit genau dann $f^* = -f$, wenn $(f_\Cbb)^* = -f_\Cbb$.
+      Es gilt $(f_\Cbb)^* = (f^*)_\Cbb$ und $-f_\Cbb = (-f)_\Cbb$, und nach Lemma~\ref{lemma: complexification is faithful} ist deshalb genau dann $f^* = -f$, wenn $(f_\Cbb)^* = -f_\Cbb$.
     \item
       Die Orthogonalität von $f$ ist äquivalent zu $f f^* = \id_V = f^* f$.
       Nach Lemma~\ref{lemma: complexification is faithful} ist dies äquivalent dazu, dass $f_\Cbb (f^*)_\Cbb = \id_{V_\Cbb} = (f^*)_\Cbb f_\Cbb$.
