@@ -26,7 +26,7 @@
 \section{Existenz des Eigenvektors}
 
 
-Wir bemerken zunächst, dass der Term $\bil{S(x),x}/\|x^2\|$ reell ist, da $\bil{S(x), x}$ wegen
+Wir bemerken zunächst, dass der Term $\bil{S(x),x}/\|x\|^2$ reell ist, da $\bil{S(x), x}$ wegen
 \[
     \bil{S(x),x}
   = \bil{x, S(x)}
@@ -34,7 +34,7 @@ Wir bemerken zunächst, dass der Term $\bil{S(x),x}/\|x^2\|$ reell ist, da $\bil
 \]
 reell ist, wobei wir für die erste Gleichheit die Selbstadjungiertheit von $S$ nutzen.
 
-Es sei $y \in V$ beliebig aber fest.
+Zum Nachweis, dass $x$ ein Eigenvektor zum Eigenwert $\bil{S(x),x}/\|x\|^2$ ist, sei nun $y \in V$ beliebig aber fest.
 Da $x \neq 0$ gibt es ein $\varepsilon > 0$ mit $\|x+ty\| \neq 0$ für alle $t \in \Rbb$ mit $|t| < \varepsilon$.
 (Denn nach der umgekehrten Dreiecksungleichung gilt $\|x+ty\| \geq \|x\| - t \|y\|$ für alle $t \in \Rbb$.)
 Deshalb können wir die Funktion
@@ -46,16 +46,17 @@ Deshalb können wir die Funktion
   \quad\text{für alle $t \in (-\varepsilon, \varepsilon)$}
 \]
 definieren.
+(Wir wackeln also ein wenig an $x$ in Richtung $y$.)
 Die Abbildung $h$ ist differenzierbar, denn
 \[
     h(t)
   = \frac{\bil{S(x+ty),x+ty}}{\|x+ty\|^2}
-  = \frac{\bil{S(x),x)} + t (\bil{S(y),x} + \bil{S(x), y}) + t^2 \bil{S(y), y}}{\|x\|^2 + 2 t \Re( \bil{x,y} ) + t^2 \|y\|^2}
+  = \frac{\bil{S(x),x} + t (\bil{S(y),x} + \bil{S(x), y}) + t^2 \bil{S(y), y}}{\|x\|^2 + 2 t \Re( \bil{x,y} ) + t^2 \|y\|^2}
 \]
 ist eine rationale Funktion in $t$.
 Dabei muss $h'(0) = 0$, da $h$ nach Wahl von $x$ ein lokales (und sogar globales) Maximum an $t = 0$ hat.
 
-Zur Berechnung von $h'$ setzen wir $a = \bil{S(x), x}$, $b = \bil{S(y), x} + \bil{S(x), y}$, $c = \bil{S(y), y}$, $d = \|x^2\|$, $e = \Re( \bil{x,y})$ und $f = \|y\|^2$, also
+Zur Berechnung von $h'$ setzen wir $a = \bil{S(x), x}$, $b = \bil{S(y), x} + \bil{S(x), y}$, $c = \bil{S(y), y}$, $d = \|x\|^2$, $e = \Re( \bil{x,y})$ und $f = \|y\|^2$, also
 \[
   h(t) = \frac{a + b t + c t^2}{d + 2 e t + f t^2}
   \quad
@@ -72,7 +73,7 @@ womit insbesondere
 \[
   h'(0) = \frac{b d - 2 a e}{d^2}.
 \]
-Also ist $h'(0) = 0$ äqivalent dazu, dass
+Also ist $h'(0) = 0$ äquivalent dazu, dass
 \[
   (\bil{S(y), x} + \bil{S(x), y}) \|x\|^2 = 2 \bil{S(x), x} \Re( \bil{x,y}).
 \]
@@ -97,7 +98,7 @@ und somit
   \Re\left( \left\langle S(x) - \frac{\bil{S(x),x}}{\|x\|^2} x, y \right\rangle \right) = 0.
 \]
 
-Wegen der Beliebigkeit von $y$ gilt dies insbesondere für $S(x) - (\bil{S(x),x}/\|x\|^2) x$.
+Wegen der Beliebigkeit von $y$ gilt dies insbesondere für $y = S(x) - (\bil{S(x),x}/\|x\|^2) x$.
 Damit erhalten wir, dass
 \[
   \left\| S(x) - \frac{\bil{S(x),x}}{\|x\|^2} x \right\|^2 = 0,
@@ -122,9 +123,9 @@ gilt.
 
 Die Folgerung, dass $S$ diagonalisierbar mit reellen Eigenwerten ist, ergibt sich nun per Induktion über $\dim V$:
 
-Ist $\dim V = 0$ oder $\dim V = 1$, so ist dies ohnehin klar.
+Für $\dim V = 0$ ist klar.
 
-Es sei also $\dim V \geq 2$, und die Aussage gelte für alle selbstadjungierten Endomorphismen von Skalarprodukträume echt kleinerer  Dimension.
+Es sei also $\dim V > 0$, und die Aussage gelte für alle selbstadjungierten Endomorphismen von Skalarprodukträume echt kleinerer  Dimension.
 Da die Abbildung
 \[
   h \colon V \to \Rbb,
@@ -137,8 +138,8 @@ stetig ist, ergibt sich aus der Kompaktheit der Einheitssphäre von $V$, dass es
 \]
 Für alle $y \in V$ mit $y \neq 0$ ist $\| y/\|y\| \| = 1$, und somit
 \[
-        \frac{S(y), y}{\|y\|^2}
-  =     \bil{ S( \frac{y}{\|y\|} ), \frac{y}{\|y\|} }
+        \frac{\bil{S(y), y}}{\|y\|^2}
+  =     \left\langle S\left( \frac{y}{\|y\|} \right), \frac{y}{\|y\|} \right\rangle
   =     h\left( \frac{y}{\|y\|} \right)
   \leq  h(b_1)
   =     \bil{S(b_1), b_1}
@@ -149,7 +150,7 @@ Folglich ist
     \frac{ \bil{S(b_1), b_1} }{ \|b_1\|^2 }
   = \max_{y \in V, y \neq 0} \frac{ \bil{S(y), y} }{ \|y\|^2 }.
 \]
-Nach dem vorherigen Aufgabenteil ist daher $b_1$ ein Eigenvektor von $S$ zum reellen Eigwert $\lambda_1 = \bil{S(b_1), b_1}$.
+Nach dem vorherigen Aufgabenteil ist daher $b_1$ ein Eigenvektor von $S$ zum reellen Eigwert $\lambda_1 \coloneqq \bil{S(b_1), b_1}$.
 Per Konstruktion ist $b_1$ auch normiert.
 
 Es sei nun $L \coloneqq \Kbb b_1$ der eindimensionale Span von $b_1$.
@@ -157,7 +158,7 @@ Da $b_1$ ein Eigenvektor von $S$ ist, ist $L$ invariant unter $S = S^*$.
 Damit ist auch das orthogonale Komplement $L^\perp$ invariant unter $S^* = S$.
 Da deshalb $(S|_{L^\perp})^* = (S^*)|_{L^\perp} = S|_{L^\perp}$ ist auch die Einschränkung $S|_{L^\perp}$ selbstadjungiert.
 
-Nach Induktionsvoraussetzung gibt es eine Orthonormalbasis $(b_2, \dotsc, b_n)$ von $L^\perp$, bestehend aus Eigenvektoren von $S|_{L^\perp}$ zu reellen Eigenwerten $\lambda_2, \dotsc, \lambda_n$.
+Nach Induktionsvoraussetzung gibt es eine Orthonormalbasis $(b_2, \dotsc, b_n)$ von $L^\perp$, die aus Eigenvektoren von $S|_{L^\perp}$ zu reellen Eigenwerten $\lambda_2, \dotsc, \lambda_n$ besteht.
 Wegen der Orthogonalität von $L$ und $L^\perp$ ist deshalb $(b_1, b_2, \dotsc, b_n)$ eine Orthonormalbasis von $V$, wobei $b_i$ ein Eigenvektor von $S$ zum reellen Eigenwert $\lambda_i$ ist.
 
 
@@ -173,9 +174,8 @@ Wegen der Orthogonalität von $L$ und $L^\perp$ ist deshalb $(b_1, b_2, \dotsc, 
 \section{Idee hinter dem Vorgehen}
 Die Idee hinter der gegebene Konstruktion ist relativ einfach:
 
-Aus abstrakten Gründen ergibt sich, dass selbstadjungierte Endomorphismen im Endlichdimensionalen für den Fall $\Kbb = \Cbb$ über eine Orthonormalbasis aus Eigenvektoren verfügen (denn selbstadjungierte Endomorphismen sind normal).
-Eine mögliche Argumentation ist die folgende:
-Wegen der Selbstadjungiertheit von $S$ muss aber für jeden Eigenwert $\lambda$ mit zugehörigen Eigenvektor $x \in V$ die Gleihheit
+Im Fall $\Kbb = \Cbb$ ergibt sich aus abstrakten Gründen, dass selbstadjungierte Endomorphismen im Endlichdimensionalen über eine Orthonormalbasis aus Eigenvektoren verfügen (denn selbstadjungierte Endomorphismen sind normal).
+Wegen der Selbstadjungiertheit von $S$ muss für jeden Eigenwert $\lambda$ mit zugehörigen Eigenvektor $x \in V$ die Gleihheit
 \[
     \lambda \|x\|^2
   = \lambda \bil{x,x}
@@ -189,12 +189,12 @@ Wegen der Selbstadjungiertheit von $S$ muss aber für jeden Eigenwert $\lambda$ 
 gelten, und wegen $x \neq 0$ somit $\lambda = \overline{\lambda}$. Selbstadjungierte Endomorphismen haben also nur reelle Eigenwerte.
 
 Für den Fall $\Kbb = \Rbb$ ergibt sich durch Komplexifizierung, dass wegen $(S_\Cbb)^* = (S^*)_\Cbb$ auch $S_\Cbb$ selbstadjungiert ist.
-Also hat $S_\Cbb$ ist $S$ diagonalisierbar mit reellen Eigenwerten.
-Dann ist auch schon $S$ diagonalisierbar (mit den gleichen reellen Eigenwerten).
-Da die Eigenräume von $S$ orthogonal zueinander sind (da $S$ normal ist), ist $V$ die orthogonale Summe der Eigenräume von $S$.
+Also ist $S_\Cbb$ diagonalisierbar mit reellen Eigenwerten.
+Deshalb ist auch schon $S$ diagonalisierbar (mit den gleichen reellen Eigenwerten).
+Da die Eigenräume von $S$ orthogonal zueinander sind (denn $S$ ist normal), ist $V$ die orthogonale Summe der Eigenräume von $S$.
 Damit erhalten wir auch für den Fall $\Kbb = \Rbb$ eine Orthonormalbasis aus Eigenvektoren.
 
-Weiß man nun aus abstrakten Gründen, dass $S$ diagonalisierbar (mit reelllen Eigenwerten) sein muss, so lässt ein Verfahren zum Ermitteln eines Eigenvektors konstruieren:
+Weiß man nun aus abstrakten Gründen, dass $S$ diagonalisierbar (mit reellen Eigenwerten) sein muss, so lässt ein Verfahren zum Ermitteln eines Eigenwerts und entsprechenden Eigenvektors konstruieren:
 Ist nämlich $(b_1, \dotsc, b_n)$ eine Orthonormalbasis aus Eigenvektoren von $S$ zu den Eigenwerten $\lambda_1 \geq \dotsb \geq \lambda_n$, so ist gilt für $x = a_1 b_1 + \dotsb + a_n b_n$ mit $a_1, \dotsc, a_n \in \Kbb$, dass
 \begin{gather*}
     \|x\|^2
@@ -215,7 +215,7 @@ und somit
 Gleihheit gilt dabei genau dann, wenn $a_i = 0$ für all jene $1 \leq i \leq n$, für die $\lambda_i$ nicht der maximale Eigenwert ist.
 In anderen Worten: Gleihheit gilt genau für die Eigenvektoren zum maximalen Eigenwert, und in diesem Fall ist $\bil{S(x),x}/\|x\|^2$ dieser maximale Eigenwert.
 
-Das in dieser Aufgabe angegeben Verfahren ermittelt also für einen selbstadjungierten Endomorphismen einen Eigenvektoren zum maximalen auftretenden Eigenwert.
+Das in dieser Aufgabe angegeben Verfahren ermittelt also für einen selbstadjungierten Endomorphismen den maximalen auftretenden Eigenwert, sowie einen dazugehörigen Eigenvektor.
 Iteration dieses Verfahrens liefert deshalb eine Basis aus Eigenvektoren, so dass die Eigenvektoren nach der Größes des zugehörigen Eigenwertes geordnet sind.
 
 

@@ -29,13 +29,15 @@ Dass $f,g,h \in C^\infty(\Rbb, \Rbb)$ Lösungen der angegebenen Differenzialglei
   }_{\eqqcolon A}
   \vect{f \\ g \\ h}.
 \]
-Die Lösungen der Gleichung $y' = A y$ für eine Funktion $y \in C^\infty(\Rbb, \Rbb^3)$ sind durch
+Die Lösungen der Gleichung $y' = A y$ mit $y \in C^\infty(\Rbb, \Rbb^3)$ sind durch
 \[
   y(t) = \exp(At) C
+  \quad
+  \text{für alle $t \in \Rbb$}
 \]
-gegeben, wobei $C \in \Rbb^3$.
+gegeben, wobei $C \in \Rbb^3$ nicht von $t$ abhängt.
 Der Lösungsraum wird also von den Spalten der Matrix $\exp(At)$ aufgespannt.
-(Da $\exp(At)$ für alle $t \in \Rbb$, sind diese Spalten für alle $t \in \Rbb$ linear unabhängig, weshalb auch die entsprechenden Funktionen linear unabhängig sind.
+(Da $\exp(At)$ für alle $t \in \Rbb$ invertierbar ist, sind diese Spalten zu jedem Zeitpunkt $t \in \Rbb$ linear unabhängig, weshalb auch die entsprechenden Funktionen linear unabhängig sind.
 Also sind die Spalten von $\exp(At)$ bereits eine Basis des Lösungsraums, und für eine fest vorgegebene Lösung $y$ der entsprechende Konstantenvektor $C \in \Rbb^3$ eindeutig.)
 Zum Lösen der Differentialgleichung müssen wir also $\exp(At)$ berechen.
 
@@ -65,7 +67,7 @@ wobei die Basisvektoren bereits so gewählt sind, dass
   = \vect{4 \\ 3 \\ 2}
   = \vect{1 \\ 3 \\ 2}+ 3 \vect{1 \\ 0 \\ 0}.
 \]
-Es handelt es sich also bereits um eine Jordan-Basis des Hauptraums.
+Es handelt es sich also bereits um eine Jordanbasis des Hauptraums.
 Für die Matrix
 \[
   S
@@ -212,6 +214,16 @@ und damit
        2t &   e^{2t} +   t - 1  & -3 e^{2t} - 4 t + 4
   \end{pmatrix}.
 \]
+
+Der Lösungsraum der gegebenen Differentialgleichung hat also eine Basis $(b_1, b_2, b_3)$ mit den drei Funktionen $b_1, b_2, b_3 \colon \Rbb \to \Rbb^3$, die durch
+\begin{gather*}
+  b_1(t) = e^{3t} \vect{1+t \\ 3t \\ 2t},
+  \quad
+  b_2(t) = e^{3t} \vect{t \\ 4 e^{2t} + 3 t - 3 \\ e^{2t} + t - 1},     \\
+  b_3(t) = e^{3t} \vect{-2t \\ e^{2t} + t - 1 \\ -3 e^{2t} - 4 t + 4}.
+\end{gather*}
+gegeben sind.
+
 
 
 
