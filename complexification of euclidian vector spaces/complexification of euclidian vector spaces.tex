@@ -1,7 +1,8 @@
-\documentclass[a4paper,10pt]{article}
-%\documentclass[a4paper,10pt]{scrartcl}
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,numbers=noenddot]{scrartcl}
 
 \usepackage{../generalstyle}
+\usepackage{specificstyle}
 
 \title{Komplexifizierung euklidischer Vektorräume}
 \author{Jendrik Stelzner}
@@ -15,6 +16,14 @@
   Wir geben einen kurzen Überblick über die Komplexifizierung euklidischer Vektorräume, und zeigen einige Kompatiblitäten von Orthogonalitäten und Adjungierten mit dieser Komplexifizierung an.
   Anschließend folgern wir den Fall $\Kbb = \Rbb$ von für Aufgabe 5 von Zettel 6 aus dem Fall $\Kbb = \Cbb$.
 \end{abstract}
+
+
+
+
+
+
+
+
 
 
 \section{Vorbereitung}
@@ -86,7 +95,7 @@ Im Folgenden seien $U$, $V$ und $W$ drei $\Rbb$-Vektorräume.
 
 
 
-\begin{lemma}\label{lemma: commuting in complexification}
+\begin{lemma}\label{lemma: complexification is faithful}
   Sind $f, g \colon V \to W$ zwei $\Rbb$-lineare Abbildungen, so ist genau dann $f = g$, wenn $f_\Cbb = g_\Cbb$.
 \end{lemma}
 
@@ -106,13 +115,13 @@ Im Folgenden seien $U$, $V$ und $W$ drei $\Rbb$-Vektorräume.
 \end{proof}
 
 
-\begin{corollary}
+\begin{corollary}\label{cor: commuting in complexification}
   Sind $f, g \colon V \to V$ zwei Endomorphismen, so kommutieren $f$ und $g$ genau dann, wenn $f_\Cbb$ und $g_\Cbb$ kommutieren.
 \end{corollary}
 
 
 \begin{proof}
-  Da $(f \circ g)_\Cbb = f_\Cbb \circ g_\Cbb$ und $(g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb$ ist nach Lemma~\ref{lemma: commuting in complexification} genau dann $f \circ g = g \circ f$, wenn $f_\Cbb \circ g_\Cbb = g_\Cbb \circ f_\Cbb$.
+  Da $(f \circ g)_\Cbb = f_\Cbb \circ g_\Cbb$ und $(g \circ f)_\Cbb = g_\Cbb \circ f_\Cbb$ ist nach Korollar~\ref{cor: commuting in complexification} genau dann $f \circ g = g \circ f$, wenn $f_\Cbb \circ g_\Cbb = g_\Cbb \circ f_\Cbb$.
 \end{proof}
 
 
@@ -230,7 +239,7 @@ Im Nachweis der positiven Definitheit von $\bil{\cdot, \cdot}_\Cbb$ haben wir ge
 \begin{lemma}
   Ist $\|\cdot\|_\Cbb$ die Norm auf $V_\Cbb$, die durch $\bil{\cdot, \cdot}_\Cbb$ induziert wird, so gilt
   \[
-    \|v_1 + i v_2\| = \sqrt{\|v_1\|^2 + \|v_2\|^2}
+    \|v_1 + i v_2\|_\Cbb = \sqrt{\|v_1\|^2 + \|v_2\|^2}
     \quad
     \text{für alle $v_1, v_2 \in V$}.
   \]
@@ -250,7 +259,7 @@ Im Nachweis der positiven Definitheit von $\bil{\cdot, \cdot}_\Cbb$ haben wir ge
 \end{proof}
 
 
-Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften, die im reellen mithilfe des Skalarproduktes definiert sind, auf die Komplexifizierung übertragen.
+Wir wollen nun einige Resultate darüber angeben, wie sich Eigenschaften, die im Reellen mithilfe des Skalarproduktes definiert sind, auf die Komplexifizierung übertragen.
 
 
 \begin{proposition}
@@ -279,8 +288,13 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
     = \bil{u, v_1} - i \bil{u, v_2}.
   \]
   Also ist $\bil{u, v_1} = \bil{u, v_2} = 0$ für alle $u \in U$ und somit $v_1, v_2 \in U^\perp$.
-  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.a
+  Damit ist auch $(U_\Cbb)^\perp \subseteq (U^\perp)_\Cbb$.
 \end{proof}
+
+
+\begin{warning}
+  Die Orthogonalität zweier $x, y \in V_\Cbb$ steht in keinem Zusammenhang zur Orthogonalität der jeweiligen Realteile $\Re(x)$ und $\Re(y)$, sowie der Orthogonalität der Imaginärteile $\Im(x)$ und $\Im(y)$ in $V$.
+\end{warning}
 
 
 \begin{proposition}\label{prop: complexification has adjoints}
@@ -300,7 +314,7 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
   \begin{enumerate}[leftmargin=*]
     \item
       Wir nehmen zunächst an, dass $f$ und $g$ adjungiert zueinander sind.
-      Für alle $v_1, v_2, w_1, w_2 \in V$ ist dann
+      Dann gilt für alle $v_1, v_2, w_1, w_2 \in V$, dass
       \begin{align*}
         &\,  \bil{ f_\Cbb( v_1 + i v_2 ), w_1 + i w_2 }_\Cbb
         =     \bil{ f(v_1) + i f(v_2), w_1 + i w_2}_\Cbb \\
@@ -326,12 +340,15 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
     \item
       Besitzt $f$ ein Adjungiertes $f^*$, so sind $f_\Cbb$ und $(f^*)_\Cbb$ nach dem vorherigen Teil adjungiert zueinander.
       Also besitzt $f_\Cbb$ ein Adjungiertes $(f_\Cbb)^*$, nämlich $(f^*)_\Cbb$.
+    \qedhere
   \end{enumerate}
 \end{proof}
 
 
 \begin{remark}
-  Besitzt $f$ ein Adjungiertes, so schreiben wir im Folgenden meist nur $f^*_\Cbb$ statt $(f^*)_\Cbb$ oder $(f_\Cbb)^*$.
+  Während im Unendlichdimensionalen alle linearen Abbildungen ein adjungiertes besitzen, ist dies im Unendlichdimensionalen nicht der Fall.
+  Dieses Problem umgehen wir im Folgenden, indem wir die Existenz eines Adjungierten jeweils voraussetzen.
+  Im Endlichlichdimensionalen stellt dies keine Einschränkung da, so dass wir die entsprechenden Sätze dort anwenden können.
 \end{remark}
 
 
@@ -339,51 +356,33 @@ Wir wollen nun noch ein paar Resultate darüber angeben, wie sich Eigenschaften,
   Es sei $f \colon V \to V$ ein Endomorphismus, der ein Adjungiertes besitzt.
   \begin{enumerate}[leftmargin=*]
     \item
-      Ist $f$ normal, so ist $f_\Cbb$ normal.
+      $f$ ist genau dann normal, wenn $f_\Cbb$ normal ist.
     \item
-      Ist $f$ selbstadjungiert, so ist $f_\Cbb$ selbstadjungiert.
+      $f$ ist genau dann selbstadjungiert, wenn $f_\Cbb$ selbstadjungiert ist.
     \item
-      Ist $f$ antiselbstadjungiert, so ist $f_\Cbb$ antiselbstadjungiert.
+      $f$ ist genau dann antiselbstadjungiert, wenn $f_\Cbb$ antiselbstadjungiert ist.
     \item
-      Ist $f$ orthogonal, so ist $f_\Cbb$ unitär.
+      $f$ ist genau dann orthogonal, wenn $f_\Cbb$ unitär ist.
   \end{enumerate}
 \end{corollary}
 
 
 \begin{proof}
-  Nach Proposition~\ref{prop: complexification has adjoints} ist $f^*_\Cbb = (f^*)_\Cbb$ adjungiert zu $f_\Cbb$.
+  Nach Proposition~\ref{prop: complexification has adjoints} ist $(f^*)_\Cbb$ adjungiert zu $f_\Cbb$.
   \begin{enumerate}[leftmargin=*]
     \item
-      Da $f$ normal ist, gilt $f^* f = f^* f$.
-      Nach Lemma~\ref{lemma: commuting in complexification} ist deshalb $f^*_\Cbb f_\Cbb = f^*_\Cbb f$.
-      Also ist auch $f_\Cbb$ normal.
+      Die Normalität von $f^*$ ist äquivalent zu $f f^* = f^* f$, und die Normalität von $f_\Cbb$ ist äquivalent zu $f_\Cbb (f_\Cbb)^* = (f_\Cbb)^* f_\Cbb$.
+      Da $(f_\Cbb)^* = (f^*)_\Cbb$ sind diese Bedingungen nach Korollar~\ref{cor: commuting in complexification} äquivalent.
     \item
-      Wegen der Selbstadjungiertheit von $f$ ist $f = f^*$.
-      Also ist $f_\Cbb = f^*_\Cbb$, und $f_\Cbb$ somit selbstadjungiert.
+      Da $(f_\Cbb)^* = (f^*)_\Cbb$ ist nach Lemma~\ref{lemma: complexification is faithful} genau dann $f_\Cbb = (f_\Cbb)^*$, wenn $f = f^*$.
     \item
-      Es gilt $f^* = -f$ und somit $f^*_\Cbb = (-f)_\Cbb = - f_\Cbb$.
+      Es gilt $(f_\Cbb)^* = (f^*)_\Cbb$ und $-f_\Cbb = (-f)_\Cbb$, und nach Lemma~\ref{lemma: complexification is faithful} ist deshalb genau dann $f^* = -f$, wenn $(f_\Cbb)^* = -f_\Cbb$.
     \item
-      Die Orthogonalität von $f$ bedeutet, dass $f f^* = \id_V = f^* f$.
-      Durch Komplexifizieren ergibt sich, dass
-      \[
-        f_\Cbb f^*_\Cbb = \id_{V_\Cbb} = f^*_\Cbb f_\Cbb.
-      \]
-      Also ist $f_\Cbb$ orthogonal.
-  \end{enumerate}
-\end{proof}
-
-
-\begin{proof}
-  Es ist
-  \[
-      f_\Cbb (f_\Cbb)^*
-    = f_\Cbb (f^*)_\Cbb
-    = (f f^*)_\Cbb
-    = (f^* f)_\Cbb
-    = (f^*)_\Cbb f_\Cbb
-    = (f_\Cbb)^* f_\Cbb.
+      Die Orthogonalität von $f$ ist äquivalent zu $f f^* = \id_V = f^* f$.
+      Nach Lemma~\ref{lemma: complexification is faithful} ist dies äquivalent dazu, dass $f_\Cbb (f^*)_\Cbb = \id_{V_\Cbb} = (f^*)_\Cbb f_\Cbb$.
+      Da $(f^*)_\Cbb = (f_\Cbb)^*$ ist dies äquivalent dazu, dass $f_\Cbb$ unitär ist.
     \qedhere
-  \]
+  \end{enumerate}
 \end{proof}
 
 

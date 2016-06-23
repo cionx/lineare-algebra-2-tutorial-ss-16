@@ -1,7 +1,8 @@
-\documentclass[a4paper,10pt]{article}
-%\documentclass[a4paper,10pt]{scrartcl}
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,numbers=noenddot]{scrartcl}
 
 \usepackage{../generalstyle}
+\usepackage{specificstyle}
 
 \setromanfont[Mapping=tex-text]{Linux Libertine O}
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
@@ -120,7 +121,7 @@ Beweise werden bewusst nicht angegeben
   ein Diagram, so dass $X_1$, $X_2$, $Y_1$ und $Y_2$ jeweils $\Cbb$-Vektorräume sind, und $f$, $g$, $s$ und $t$ jeweils $\Cbb$-linear oder $\Cbb$-antilinear.
   Ist $E \subseteq X_1$ ein Erzeugendensystem, so kommutiert das obige Diagram genau dann, wenn
   \[
-    \text{$t(f(e)) = g(s(e))$ für alle $e \in E$ und $f$ und $g$ haben die gleiche Parität}.
+    \text{$t(f(e)) = g(s(e))$ für alle $e \in E$, und $f$ und $g$ haben die gleiche Parität}.
   \]
 \end{corollary}
 
@@ -426,7 +427,7 @@ Diese zu zeigende Gleichheit lässt sich mithilfe des Würfels sehr einfach ausd
   \end{tikzcd}
 \]
 (Wir lässen hier zur Übersichtlichkeit die Bennenung der einzelnen Ecken und Kanten des Würfels weg.)
-Mithilfe dieser graphischen Notation und der Kommutativität der nicht-Vorderseiten lässt sich die obige Gleichheit zeigen, indem wir um den Würfel herumwackeln:
+Mithilfe dieser graphischen Notation und der Kommutativität der nicht-Vor\-der\-sei\-ten lässt sich die obige Gleichheit zeigen, indem wir um den Würfel herumwackeln:
 \[
   \renewcommand{\arraystretch}{6}
   \begin{array}{cccccccc}
