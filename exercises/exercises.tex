@@ -21,6 +21,21 @@
 
 
 \begin{question}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{lokal nilpotent}, falls es für jedes $v \in V$ ein $n \in \Nbb$ mit $f^n(v) = 0$ gibt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder nilpotente Endomorphismus auch lokal nilpotent ist.
+    \item
+      Zeige Sie, dass $0$ der einzige mögliche Eigenwert eines lokal nilpotenten Endomorphismus ist.
+    \item
+      Geben Sie ein Beispiel für einen Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, so dass $f$ zwar lokal nilpotent, nicht aber nilpotent ist.
+    \item
+      Zeigen Sie, dass jeder lokal nilpotente Endomorphismus eines endlichdimensionalen Vektorraums bereits nilpotent ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
   Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Zeigen Sie:
   \begin{enumerate}[leftmargin=*]
@@ -62,6 +77,42 @@
       Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für $i \neq j$, so ist $V = \bigoplus_{i \in I} U_i$.
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{algebraisch (über $K$)}, falls es ein Polynom $P \in K[T]$ mit $P \neq 0$ gibt, so dass $P(f) = 0$ gilt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder Endomorphismus eines endlichdimensionalen Vektorraums algebraisch ist.
+    \item
+      Geben Sie ein Beispiel für einen $K$-Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, der nicht algebraisch ist.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+% QUOTIENTS
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein $K$-Untervektorraum.
+  Konstruieren Sie für den Annihilator
+  \[
+      U^\circ
+    = \{ \varphi \in V^* \mid \varphi|_U = 0 \}
+  \]
+  einen Isomorphismus $F \colon U^\circ \to (V/U)^*$.
+\end{question}
+
 
 
 \begin{question}
@@ -289,6 +340,13 @@
 
 
 \begin{question}
+  Es sei $V$ ein $K$-Vektorraum, wobei $V \neq 0$ und $K$ algebraisch abgeschlossen ist.
+  Es seien $f_1, \dotsc, f_n \colon V \to V$ paarweise kommutierende Endomorphismen.
+  Zeigen Sie, dass die Endomorphismen $f_1, \dotsc, f_n$ einen gemeinsamen Eigenvektor besitzen, d.h.\ dass es ein $v \in V$ gibt, das für jedes $f_i$ eine Eigenvektor ist.
+\end{question}
+
+
+\begin{question}
   Es sei $A \in \Mat_2(\Rbb)$ mit $\tr A = 0$ und $\tr A^2 = -2$.
   Bestimmen Sie $\det A$.
 \end{question}
@@ -375,6 +433,8 @@
       Folgern Sie, dass es ein $\delta > 0$ gibt, so dass alle $D \in B_\delta(A) \setminus \{A\}$ diagonalisierbar sind.
     \item
       Folgern Sie, dass es für alle $\varepsilon > 0$ ein $D \in \Diagonal_n(\Cbb)$ mit $\|A-D\| < \varepsilon$ gibt.
+    \item
+      Folgern Sie außerdem, dass $\Diagonal_n(\Cbb) \subseteq \Mat_n(\Cbb)$ eine offene Teilmenge ist.
   \end{enumerate}
   Wir wollen die Dichtheit von $\Diagonal_n(\Cbb) \subseteq \Mat_n(\Cbb)$ nutzen, um den Satz von Cayley-Hamilton zu zeigen:
   \begin{enumerate}[resume]
@@ -475,7 +535,7 @@
     W = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
   \]
   der Vektorraum der beidseitigen reellwertigen Folgen.
-  Ferner sei
+  Wir betrachten den Untervektorraum
   \[
     V \coloneqq
     \left\{
@@ -484,7 +544,7 @@
       \sum_{n \in \Zbb} |a_n|^2 < \infty
    \right\}
   \]
-  der Untervektorraum der quadratsummierbaren Folgen.
+  der quadratsummierbaren Folgen.
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $V$ ein Untervektorraum von $W$ ist.
@@ -511,7 +571,7 @@
         (a_n)_{n \in \Zbb} \mapsto (a_{n-1})_{n \in \Zbb}
       \]
       der Rechtsshift-Operator.
-      Zeigen Sie, dass $R$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, unitär, bzw.\ normal ist.
+      Zeigen Sie, dass $R$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, orthogonal, bzw.\ normal ist.
     \item
       Zeigen Sie, dass $R$ keine Eigenwerte besitzt.
     \item
@@ -521,7 +581,7 @@
         \quad
         (a_n)_{n \in \Nbb} \mapsto (a_{-n})_{n \in \Nbb}.
       \]
-      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, unitär, bzw.\ normal ist.
+      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, orthogonal, bzw.\ normal ist.
     \item
       Zeigen Sie, dass $S$ diagonalisierbar ist.
     \item
@@ -597,6 +657,18 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Die Zeilen von $A$ bilden eine Orthonormalbasis des $\Kbb^n$.
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $A \in \Mat_n(\Cbb)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass es eindeutige hermitsche Matrizen $B, C \in \Mat_n(\Cbb)$ mit $A = B + i C$ gibt.
+    \item
+      Zeigen Sie, dass $A$ genau dann normal ist, wenn $B$ und $C$ kommutieren.
+  \end{enumerate}
+\end{question}
+
 
 
 
@@ -721,6 +793,124 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       \]
   \end{enumerate}
 \end{question}
+
+
+
+
+
+
+
+
+
+
+% Lie Stuff
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $m \colon V \times V \to V$ eine bilineare Abbildung.
+  Eine lineare Abbildung $D \colon V \to V$ heißt \emph{$m$-Derivation}, falls
+  \[
+    D(m(x,y))
+    = m(D(x), y) + m(x, D(y))
+    \quad
+    \text{für alle $x, y \in V$}.
+  \]
+  Es sei
+  \[
+              \Der(m)
+    \coloneqq \{ D \colon V \to V \mid \text{$D$ ist eine $m$-Derivation} \}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für den Fall $V = K[X]$ und die Multiplikation
+      \[
+        m(p,q) \coloneqq p \cdot q
+        \quad
+        \text{für alle $p, q \in K[X]$},
+      \]
+      dass die Ableitung
+      \[
+        D \colon K[X] \to K[X],
+        \quad
+        \sum_{d=0}^n a_d X^d  \mapsto \sum_{d=1}^n a_d d X^{d-1} 
+      \]
+      eine $m$-Derivation ist.
+      Unter welchem Namen ist dieser Umstand für gewöhnlich bekannt?
+    \item
+      Zeigen Sie, dass $\Der(m)$ ein Untervektorraum von $\End(V)$ ist.
+    \item
+      Zeigen Sie, dass $\Der(m)$ eine Lie-Unteralgebra von $\End(V)$ ist, d.h.\ dass für alle $D_1, D_2 \in \Der(m)$ auch $[D_1, D_2] \in \Der(m)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorrraum und $[-,-] \colon V \times V \to V$ eine alternierend bilineare Abbildung.
+  Für jedes $x \in V$ sei
+  \[
+    \ad_x \coloneqq [x,-] \colon V \to V, \quad y \mapsto [x,y].
+  \]
+  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $[-,-]$ erfüllt die Jacobi-Identität, d.h.\ es ist
+      \[
+        [[x,y],z] + [[y,z],x] + [[z,y],x] = 0
+        \quad
+        \text{für alle $x, y, z \in V$}.
+      \]
+    \item
+      Es gilt
+      \[
+          \ad_x([y,z])
+        = [\ad_x(y), z] + [x, \ad_y(z)]
+        \quad
+        \text{für alle $x, y, z \in V$}.
+      \]
+      (Für jedes $x \in V$ ist also $\ad_x$ eine Derivation bezüglich $[-,-]$.)
+  \end{enumerate}
+\end{question}
+
+
+
+\begin{question}
+  Es seien $E$ und $H$ zwei Endomorphismen eines $\Cbb$-Vektorraums $V$, so dass $[H,E] = 2E$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $E(V_\lambda(H)) \subseteq V_{\lambda + 2}(H)$ für alle $\lambda \in K$.
+    \item
+      Folgern Sie: Ist $V$ endlichdimensional und $H$ diagonalisierbar, so ist $E$ nilpotent.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Für einen endlichdimensionalen $\Kbb$-Vektorraum $V$ und eine Bilinearform $\beta \colon V \times V \to \Kbb$ sei
+  \[
+              O(\beta)
+    \coloneqq \{ \phi \in \GL(V) \mid \text{$\beta(\phi(x), \phi(y)) = \beta(x,y)$ für alle $x,y \in V$} \}
+  \]
+  die Isometriegruppe von $\beta$, und
+  \[
+              \gLie(\beta)
+    \coloneqq \{ f \in \End(V) \mid \text{$\beta(f(x),y) + \beta(x, f(y)) = 0$ für alle $x, y \in V$} \}
+  \]
+  die assoziierte Lie-Algebra.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $O(\beta)$ eine Untergruppen von $\GL(V)$ ist.
+    \item
+      Zeigen Sie, dass $\gLie(\beta)$ eine Lie-Unteralgebra von $\gl(V)$ ist, d.h.\ dass $[f,g] \in \gLie(\beta)$ für alle $f, g \in \gLie(\beta)$.
+    \item
+      Zeigen Sie, dass $\exp(f) \in O(\beta)$ für alle $f \in \gLie(\beta)$.
+    \item
+      Es sei $\Kbb = \Rbb$ und $\bil{\cdot, \cdot}$ ein Skalarprodukt auf $V$.
+      Unter welchen Begriffen sind die Elemente aus $G(\bil{\cdot, \cdot})$ und $\gLie(\bil{\cdot, \cdot})$ bekannt?
+  \end{enumerate}
+\end{question}
+
+
+
 
 
 
