@@ -119,12 +119,120 @@
 
 
 
+% QUOTIENTS
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
+  \begin{enumerate}
+    \item
+      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
+      Zeigen Sie, dass $V$ eine lineare Abbildung
+      \[
+        \bar{f} \colon V/U \to W, \quad [v] \mapsto f(u)
+      \]
+      induziert.
+    \item
+      Zeigen Sie, dass $\im \bar{f} = \im f$.
+      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+    \item
+      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
+      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits $U = \ker f$ gilt.
+    \item
+      Folgern Sie, dass $f$ einen Isomorphismus
+      \[
+        V/(\ker f) \to \im f,
+        \quad
+        [v] \mapsto f(v)
+      \]
+      induziert.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
+  Es sei $W$ ein $K$-Vektorraum mit Basis $\{b_e\}_{e \in E} \subseteq W$.
+  Konstruieren Sie einen Isomorphismus $V/U \to W$ für einen passenden Untervektorraum $U \subseteq W$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es seien $f \colon V \to V$ ein Endomorphismus, so dass $U$ invariant unter $f$ ist (d.h.\ es ist $f(U) \subseteq U$).
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $f$ einen Endomorphismus
+      \[
+        \bar{f} \colon V/U \to V/U,
+        \quad
+        [v] \mapsto [f(v)]
+      \]
+    induziert.
+  \end{enumerate}
+  Es sei nun $g \colon V \to V$ ein weiterer Endomorphismus, so dass $U$ invariant unter $g$ ist, und es sei $\bar{g} \colon V/U \to V/U$ der induzierte Endomorphismus.
+  \begin{enumerate}[resume]
+    \item
+      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
+      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+
 % COMPLEXIFICATION
 
 
 \begin{question}
+  Zeigen Sie, dass die Inklusion $\Rbb \to \Cbb$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum.
+  Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
+  (\emph{Hinweis}: Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume.
+  Konstruieren Sie einen Isomorphismus
+  \[
+    \Hom_\Cbb(V_\Cbb, W_\Cbb) \to \Hom_\Rbb(V, W)_\Cbb
+  \]
+  von $\Cbb$-Vektorräumen.
+\end{question}
+
+
+\begin{question}
   Es sei $V$ ein reeller Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
-  Zeigen Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gilt
+      \[
+          \left( \bigcap_{i \in I} U_i \right)_\Cbb
+        = \bigcap_{i \in I} (U_i)_\Cbb
+      \]
+    \item
+      Es gilt
+      \[
+          \left( \sum_{i \in I} U_i \right)_\Cbb
+        = \sum_{i \in I} (U_i)_\Cbb.
+      \]
+    \item
+      Folgern Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
+  \end{enumerate}
 \end{question}
 
 
@@ -177,7 +285,7 @@
 
 
 
-% Eigenstuff
+% EIGENSTUFF
 
 
 \begin{question}
