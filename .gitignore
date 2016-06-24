@@ -1,4 +1,5 @@
 *.aux
+*.auxlock
 *.backup
 *.log
 *.synctex.gz

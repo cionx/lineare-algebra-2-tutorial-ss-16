@@ -135,11 +135,58 @@
   \end{enumerate}
 \end{question}
 
-% TODO: Commuting Cube for Complexification of Hom-Spaces
+
+\begin{question}
+  Es seien $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass sich durch jeden idempotenten Endomorphismus $e \colon V \to V$ (d.h.\ $e^2 = e$) eine Zerlegung
+      \[
+        V = \im e \oplus \ker e
+      \]
+      ergibt, wobei
+      \[
+        e(v + w) = v
+        \quad
+        \text{für alle $v \in \im e$ und $w \in \ker e$}.
+      \]
+    \item
+      Es sei $(U_1, U_2)$ ein Paar von Untervektorräumen $U_1, U_2 \subseteq V$ mit $V = U_1 \oplus U_2$.
+      Zeigen Sie, dass es einen eindeutigen Endomorphismus $p_{U_1, U_2} \colon V \to V$ gibt, so dass
+      \[
+          p_{U_1, U_2}(u_1 + u_2)
+        = u_1
+        \quad
+        \text{für alle $u_1 \in U_1$ und $u_2 \in U_2$}.
+      \]
+    \item
+      Zeigen Sie, dass die obigen Konstruktionen eine Bijektion
+      \begin{align*}
+        \left\{
+          (U_1, U_2)a
+          \,\middle|\,
+          \begin{tabular}{c}
+            $U_1, U_2 \subseteq V$ sind \\
+            Untervektorräume            \\
+            mit $V = U_1 \oplus U_2$
+          \end{tabular}
+        \right\}
+        &\longleftrightarrow
+        \{ e \in \End(V) \mid \text{$e$ ist idempotent} \},
+      \\
+        (U_1, U_2) &\longmapsto p_{U_1, U_2}
+      \\
+        (\im e, \ker e) &\longmapsfrom e
+      \end{align*}
+      ergeben.
+    \item
+      Auf der linken Seite der obigen Bijektion gibt es eine Involution $(U_1, U_2) \mapsto (U_2, U_1)$.
+      Geben Sie an, wie die entsprechende Involution auf der rechten Seite aussieht.
+  \end{enumerate}
+\end{question}
+
 
 % TODO: 1 + (lokal nilpotent) ist invertierbar
-
-% TODO: Bijektion zwischen Idempotenten und Bijektionen
 
 % TODO: Bijektion zwischen Idempotenten und Involutiven mit gleicher Zerlegung
 
@@ -298,6 +345,56 @@
 
 
 \begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Für alle $k \in \Nbb$ sei
+  \[
+    R_k \coloneqq \im f^k
+    \quad\text{und}\quad
+    N_k \coloneqq \ker f^k.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $R_0 = V$, und dass $R_i \supseteq R_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine absteigende Kette
+      \[
+        V = R_0 \supseteq R_1 \supseteq R_2 \supseteq R_3 \supseteq R_4 \supseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie für $i \in \Nbb$ mit $R_i = R_{i+1}$, dass auch $R_{i+1} = R_{i+2}$.
+    \item
+      Folgern Sie:
+      Gilt in der obigen absteigenden Kette einmal Gleichheit, also $R_i = R_{i+1}$, so stabilisiert die Kette bereits, d.h.\ es gilt $R_j = R_i$ für alle $j \geq i$.
+    \item
+      Zeigen Sie, dass $N_0 = 0$, und dass $N_i \subseteq N_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine aufsteigende Kette
+      \[
+        0 = N_0 \subseteq N_1 \subseteq N_2 \subseteq N_3 \subseteq N_4 \subseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie, dass für $i \in \Nbb$ mit $N_i = N_{i+1}$ auch $N_{i+1} = N_{i+2}$.
+    \item
+      Folgern Sie:
+      Gilt in der obigen aufsteigende Kette einmal Gleichheit, also $N_i = N_{i+1}$, so stabilisiert die Kette bereits, d.h.\ es gilt $N_j = N_i$ für alle $j \geq i$.
+  \end{enumerate}
+
+\end{question}
+
+
+
+
+
+
+
+
+
+
+
+% QUOTIENTS
+
+
+\begin{question}
   Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
   Es sei $\pi \colon V \to V/U$, $v \mapsto [v]$ die kanonische Projektion.
   \begin{enumerate}[leftmargin=*]
@@ -310,17 +407,6 @@
       Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
   \end{enumerate}
 \end{question}
-
-
-
-
-
-
-
-
-
-
-% QUOTIENTS
 
 
 \begin{question}
@@ -469,7 +555,6 @@
 \end{question}
 
 
-
 \begin{question}
   Zeigen Sie, dass die $\Rbb$-lineare Inklusion $\Rbb \to \Cbb$, $x \mapsto x$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
 \end{question}
@@ -548,6 +633,141 @@
   Zeigen Sie, dass die kanonische Inklusion $\iota \colon \Rbb[X] \to \Cbb[X]$, $x \mapsto x$ $\Rbb$-linear ist, und einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
 \end{question}
 
+
+\begin{question}
+  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis eines $\Rbb$-Vektorraums $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis eines $\Rbb$-Vektorraums $W$.
+  Es seien
+  \[
+    \mc{B}_\Cbb \coloneqq (b_1 + i \cdot 0, \dotsc, b_n + i \cdot 0)
+    \quad\text{und}\quad
+    \mc{C}_\Cbb \coloneqq (c_1 + i \cdot 0, \dotsc, c_m + i \cdot 0)
+  \]
+  die entsprechenden $\Cbb$-Basen der Komplexifizierungen $V_\Cbb$ und $W_\Cbb$.
+  Es seiena
+  \begin{gather*}
+    \Phi^\Rbb \colon \Hom_\Rbb(V,W) \to \Mat(m \times n, \Rbb),
+    \quad
+    f \mapsto \Mat_{\mc{B}, \mc{C}}(f)
+  \shortintertext{und}
+    \Phi^\Cbb \colon \Hom_\Cbb(V_\Cbb, W_\Cbb) \to \Mat(m \times n, \Cbb),
+    \quad
+    g \mapsto \Mat_{\mc{B}, \mc{C}}(g).
+  \end{gather*}
+  Es seien
+  \begin{align*}
+    \iota_1 \colon \Hom_\Rbb(V, W) \to \Hom_\Rbb(V,W)_\Cbb,
+    &\quad
+    f \mapsto f + i \cdot 0,
+    \\
+    \iota_2 \colon \Hom_\Rbb(V,W) \to \Hom_\Cbb(V_\Cbb, W_\Cbb),
+    &\quad
+    f \mapsto f_\Cbb
+    \\
+    \iota_3 \colon \Mat(m \times n, \Rbb) \to \Mat(m \times n, \Rbb)_\Cbb,
+    &\quad
+    A \mapsto A + i \cdot 0,
+    \\
+    \iota_4 \colon \Mat(m \times n, \Rbb) \to \Mat(m \times n, \Cbb),
+    &\quad
+    A \mapsto A,
+  \end{align*}
+  die jeweiligen kanonischen Inklusionen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \Hom_\Rbb(V, W)           \arrow{r}{\iota_2}
+                                          \arrow[swap]{d}{\Phi^\Rbb}
+            \&  \Hom_\Cbb(V_\Cbb, W_\Cbb) \arrow{d}{\Phi^\Cbb}
+          \\
+                \Mat(m \times n, \Rbb)    \arrow{r}{\iota_4}
+            \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+      Folgern Sie, dass $\iota_4$ tatsächlich injektiv ist, wie der oben verwendete Begriff \emph{Inklusion} vermuten lässt.
+    \item
+      Zeigen Sie, dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \Hom_\Rbb(V, W)             \arrow{r}{\iota_1}
+                                            \arrow[swap]{d}{\Phi^\Rbb}
+            \&  \Hom_\Rbb(V, W)_\Cbb        \arrow{d}{(\Phi^\Rbb)_\Cbb}
+          \\
+                \Mat(m \times n, \Rbb)      \arrow{r}{\iota_3}
+            \&  \Mat(m \times n, \Rbb)_\Cbb
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass die Inklusion $\iota_1$ eine eindeutige $\Cbb$-lineare Abbildung
+      \[
+        \Psi_1 \colon \Hom_\Rbb(V,W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
+      \]
+      induziert, die das folgende Diagram zum kommutieren bringt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Hom_\Rbb(V,W)            \arrow[swap]{ld}{\iota_2}
+                                            \arrow{rd}{\iota_1}
+              \&  {}
+          \\
+                  \Hom_\Rbb(V,W)_\Cbb       \arrow{rr}{\Phi_1}
+              \&  {}
+              \&  \Hom_\Cbb(V_\Cbb, W_\Cbb).
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie auf analoge Weise, dass die Inklusion $\iota_2$ eine eindeutige $\Cbb$-lineare Abbildung
+      \[
+        \Psi_2 \colon \Mat(m \times n, \Rbb)_\Cbb \to \Mat(m \times n, \Cbb)
+      \]
+      induziert, die das folgende Diagram zum kommutieren bringt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Mat(m \times n, \Rbb)      \arrow[swap]{ld}{\iota_4}
+                                              \arrow{rd}{\iota_3}
+              \&  {}
+          \\
+                  \Mat(m \times n, \Rbb)_\Cbb \arrow{rr}{\Phi_2}
+              \&  {}
+              \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+    \item
+      Wir haben nun das folgende Diagram:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Hom_\Rbb(V, W)               \arrow[swap]{ld}{\iota_2}
+                                                \arrow{rd}{\iota_1}
+                                                \arrow[near end, swap]{dd}{\Phi^\Rbb}
+              \&  {}
+          \\
+                  \Hom_\Rbb(V, W)_\Cbb          \arrow[crossing over, near start]{rr}{\Psi_1}
+                                                \arrow[swap]{dd}{(\Phi^\Rbb)_\Cbb}
+              \&  {}
+              \&  \Hom_\Cbb(V_\Cbb, W_\Cbb)     \arrow{dd}{\Phi^\Cbb}
+          \\
+                  {}
+              \&  \Mat(m \times n, \Rbb)        \arrow[swap]{ld}{\iota_4}
+                                                \arrow{rd}{\iota_3}
+              \&  {}
+          \\
+                  \Mat(m \times n, \Rbb)_\Cbb   \arrow{rr}{\Psi_2}
+              \&  {}
+              \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+      Von diesem Diagram wissen wir bereits, dass Deckel, Boden und beide Rückseiten kommutieren.
+      Zeigen Sie damit, dass auch die Vorderseite kommutiert.
+      (\emph{Hinweis}: Nutzen Sie, dass zwei $\Cbb$-lineare Abbildung $f, g \colon \Hom_\Rbb(V, W)_\Cbb \to \Mat(m \times n, \Cbb)$ genau dann übereinstimmen, wenn die Kompositionen $f \circ \iota_2$ und $g \circ \iota_2$ übereinstimmen.)
+    \item
+      Zeigen Sie, dass $\Psi_2$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
+    \item
+      Folgen Sie, dass auch $\Psi_1$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
+  \end{enumerate}
+\end{question}
 
 
 
