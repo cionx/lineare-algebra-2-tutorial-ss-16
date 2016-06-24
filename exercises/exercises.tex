@@ -51,6 +51,63 @@
 
 
 \begin{question}
+  Zeigen Sie im folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
+  \begin{enumerate}
+    \item
+      Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der Vektorraum der ($n \times n$)-Matrizen über $K$,
+      \[
+        U_1 \coloneqq \{ A \in \Mat_n(K) \mid A^T = A \}
+      \]
+      der Untervektorraum der symmetrischen Matrizen, und
+      \[
+        U_2 \coloneqq \{ A \in \Mat_n(K) \mid A^T = -A \}
+      \]
+      der Untervektorraum der schiefsymmetrischen Matrizen.
+    \item
+      Es sei $V \coloneqq \{ f \mid f \colon \Rbb \to \Rbb \}$ der Vektorraum der reellwertigen Folgen auf $\Rbb$, sowie
+      \[
+        U_1 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+      \]
+      der Untervektorraum der geraden Funktionen und
+      \[
+        U_2 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+      \]
+      der Untervektorraum der ungeraden Funktionen.
+    \item
+      Die Ebene $V = \Rbb^2$ und als Untervektorräume die beiden Geraden
+      \[
+        U_1 \coloneqq \Rbb \vect{1 \\  1}
+        \quad\text{und}\quad
+        U_2 \coloneqq \Rbb \vect{1 \\ -1}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+% TODO: Bijektion zwischen Idempotenten und Bijektionen
+
+% TODO: Bijektion zwischen Idempotenten und Involutiven mit gleicher Zerlegung
+
+% TODO: Multiplikative Jordanzerlegungung für GL_n
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, und $f \colon V \to W$ eine lineare Abbildung, die ein Rechtsinverses $g \colon W \to V$ besitzt.
+  Zeigen Sie, dass
+  \[
+    V = \ker f \oplus \im g
+  \]
+  auf die folgenden beiden Weisen:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Durch explizites Nachrechnen, dass $V = \ker f + \im g$ und $\ker f \cap \im g = 0$.
+    \item
+      Mithilfe des Endomorphismus $gf$ von $V$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
   Es sei $V$ ein $K$-Vektorraum.
   Zeigen Sie, dass die folgenden Aussagen allgemein gelten, oder geben Sie jeweils ein Gegenbeispiel an.
   \begin{enumerate}[leftmargin=*]
@@ -88,8 +145,6 @@
       Geben Sie ein Beispiel für einen $K$-Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, der nicht algebraisch ist.
   \end{enumerate}
 \end{question}
-
-
 
 
 
@@ -244,7 +299,100 @@
 
 
 \begin{question}
-  Zeigen Sie, dass die Inklusion $\Rbb \to \Cbb$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
+  Es sei $V$ ein $\Rbb$-Vektorraum und $W$ ein $\Cbb$-Vektorraum.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ gibt genau eine $\Cbb$-lineare Abbildung $f_\Cbb \colon V_\Cbb \to W_\Cbb$, die das folgende Diagram kommutieren lässt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
+                V       \arrow{d}[swap]{\iota}
+                        \arrow{rd}{f}
+            \&  {}
+          \\
+                V_\Cbb  \arrow{r}[swap]{f_\Cbb}
+            \&  W_\Cbb
+        \end{tikzcd}
+      \]
+    \item
+      Für je zwei $\Cbb$-lineare Abbildungen $g_1, g_2 \colon V_\Cbb \to W$ die Äquivalenz
+      \[
+        g_1 = g_2
+        \iff
+        g_1 \circ \iota = g_2 \circ \iota
+      \]
+      gilt.
+    \item
+      Für jeden $\Cbb$-Vektorraum $W'$ gilt für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ und jede $\Cbb$-lineare Abbildung $g \colon W \to W'$ die Gleichheit
+      \[
+        (g \circ f)_\Cbb = g \circ f_\Cbb.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass für jedes $\Rbb$-Vektorraum $V$ und $\Cbb$-Vektorraum $W$ die Abbildung
+      \[
+        \Phi_{V,W} \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W),
+        \quad
+        f \mapsto f_\Cbb
+      \]
+      ein Isomorphismus von $\Rbb$-Vektorräumen ist.
+      Geben Sie auch $\Phi_{V,W}^{-1}$ an.
+    \item
+      Es seien vier $K$-Vektorräume $V, V', W, W'$ und zwei $K$-lineare Abbildungen $f \colon V \to V'$ und $g \colon W \to W'$ gegeben.
+      Zeigen Sie, dass die beidseitige Komposition
+      \[
+        g \circ - \circ f
+        \colon
+        \Hom_K(V, W) \to \Hom_K(V', W'),
+        \quad
+        h \mapsto g \circ h \circ f
+      \]
+      eine $K$-lineare Abbildung ist.
+    \item
+      Zeigen Sie, dass die Isomorphismen $\Phi_{V,W}$ in dem folgenden Sinne \emph{natürlich} sind:
+      Es seien $V$ und $V'$ zwei $\Rbb$-Vektorräume und es sei $f \colon V \to V'$ eine $\Rbb$-lineare Abbildung.
+      Es seien $W$ und $W'$ zwei $\Cbb$-Vektorräume und es sei $g \colon W \to W'$ eine $\Cbb$-lineare Abbildung.
+      Dann kommutiert das folgende Diagram von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
+                \Hom_\Rbb(V, W)         \arrow[swap]{d}{g \circ - \circ f}
+                                        \arrow{r}{\Phi_{V,W}}
+            \&  \Hom_\Cbb(V_\Cbb, W)    \arrow{d}{g \circ - \circ f_\Cbb}
+          \\
+                \Hom_\Rbb(V', W')       \arrow{r}{\Phi_{V',W'}}
+            \&  \Hom_\Cbb(V'_\Cbb, W')
+        \end{tikzcd}
+      \]
+
+  \end{enumerate}
+\end{question}
+
+
+
+\begin{question}
+  Zeigen Sie, dass die $\Rbb$-lineare Inklusion $\Rbb \to \Cbb$, $x \mapsto x$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume.
+  Zeigen Sie, dass die $\Rbb$-lineare Abbildung
+  \[
+    \varphi \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W_\Cbb),
+    \quad
+    f \mapsto f_\Cbb
+  \]
+  einen Isomorphismus von $\Cbb$-Vektorräumen
+  \[
+    \Phi \colon \Hom_\Rbb(V, W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
+  \]
+  induziert.
+  (\emph{Hinweis}: Beachten Sie, dass $V$ und $W$ nicht notwendigerweise endlichdimensional sind.)
 \end{question}
 
 
@@ -252,16 +400,6 @@
   Es sei $V$ ein $\Rbb$-Vektorraum.
   Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
   (\emph{Hinweis}: Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
-\end{question}
-
-
-\begin{question}
-  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume.
-  Konstruieren Sie einen Isomorphismus
-  \[
-    \Hom_\Cbb(V_\Cbb, W_\Cbb) \to \Hom_\Rbb(V, W)_\Cbb
-  \]
-  von $\Cbb$-Vektorräumen.
 \end{question}
 
 
@@ -311,19 +449,7 @@
 
 
 \begin{question}
-  Es sei
-  \[
-    \iota \colon \Rbb[X] \to \Cbb[X],
-    \quad
-    \sum_{k=0}^n a_k X^k \mapsto \sum_{k=0}^n a_k X^k
-  \]
-  die Teilmengeninklusion.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass $\iota$ $\Rbb$-linear ist.
-    \item
-      Zeigen Sie, dass $\iota$ einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
-  \end{enumerate}
+  Zeigen Sie, dass die kanonische Inklusion $\iota \colon \Rbb[X] \to \Cbb[X]$, $x \mapsto x$ $\Rbb$-linear ist, und einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
 \end{question}
 
 
@@ -478,6 +604,19 @@
 
 
 \begin{question}
+  Es seien $V$ und $W$ zwei $\Kbb$-Skalarprodukträume und $f \colon V \to W$ eine lineare Abbildung.
+  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Orthonormalbasis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Orthonormalbasis von $W$.
+  Zeigen Sie die Gleichheit
+  \[
+      \Mat_{\mc{B}, \mc{C}}(f^*)
+    = \Mat_{\mc{C}, \mc{B}}(f)^*.
+  \]
+\end{question}
+
+
+
+
+\begin{question}
   Es seien $V$ und $W$ zwei endlichdimensionale euklidische Vektorräume.
   Ferner sei $f \colon V \to W$ eine $\Rbb$-lineare Abbildung.
   \begin{enumerate}[leftmargin=*]
@@ -506,8 +645,10 @@
 
 
 \begin{question}
-  Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$.
-  Ferner sei $U \coloneqq \{f \in V \mid f(0) = 0\}$.
+  Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$, und es sei
+  \[
+    U \coloneqq \{ f \in V \mid f(0) = 0 \}.
+  \]
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $U$ ein Untervektorraum von $V$ ist.
@@ -668,6 +809,89 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $A$ genau dann normal ist, wenn $B$ und $C$ kommutieren.
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$, und es sei $G \subseteq \GL(V)$ eine endliche Untergruppe.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{x,y}_G \coloneqq \frac{1}{|G|} \sum_{\phi \in G} \bil{\phi(x), \phi(y)}
+        \quad
+        \text{für alle $x, y \in V$}
+      \]
+      ein Skalarprodukt auf $G$ definiert.
+    \item
+      Zeigen Sie, dass $\bil{\cdot, \cdot}_G$ in dem Sinne $G$-invariant ist, dass
+      \[
+        \bil{\phi(x), \phi(y)} = \bil{x,y}
+        \quad
+        \text{für alle $x, y \in V$ und $\phi \in G$}.
+      \]
+    \item
+      Folgern Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $M_\mc{B}(\phi)$ für alle $\phi \in G$ eine orthogonale Matrix ist.
+    \item
+      Folgern Sie damit, dass es für $n = \dim V$ einen injektiven Gruppenhomomorphismus $\Phi \colon G \to O_n(\Rbb)$ gibt, $G$ also isomorph zu der Untergruppe $\im \Phi$ von $O_n(\Rbb)$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum.
+  Für jedes $\alpha \in V$ mit $\alpha \neq 0$ sei
+  \[
+    s_\alpha \colon V \to V,
+    \quad\text{mit}\quad
+              s_\alpha(x)
+    \coloneqq x - 2 \frac{\bil{x, \alpha}}{\|\alpha\|^2} \alpha.
+  \]
+  Ferner seien
+  \[
+    L_\alpha \coloneqq \Rbb \alpha
+    \quad\text{und}\quad
+    H_\alpha \coloneqq L_\alpha^\perp = \alpha^\perp.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $s_\alpha^2 = \id_V$, und dass $s_{\lambda \alpha} = s_\alpha$ für alle $\lambda \in \Rbb^\times$.
+    \item
+      Zeigen Sie, dass $s_\alpha$ diagonalisierbar ist, und dass
+      \[
+        V_{-1}(s_\alpha) = L_\alpha
+        \quad\text{und}\quad
+        V_1(s_\alpha) = H_\alpha.
+      \]
+    \item
+      Interpretieren Sie $V$ geometrisch anschaulich.
+    \item
+      Es sei $s' \colon V \to V$ ein Endomorphismus mit $s'(\alpha) = -\alpha$ und $s'(x) = x$ für alle $x \in H_\alpha$.
+      Zeigen Sie, dass bereits $s' = s_\alpha$ gilt.
+    \item
+      Zeigen Sie, dass für jede orthogonale Isomorphismus $t \colon V \to V$ die Identität
+      \[
+        t s_\alpha t^{-1} = s_{t(\alpha)}
+      \]
+      gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler unitärer Vektorraum.
+  Zeigen Sie, dass für eine lineare Abbildung $S \colon V \to V$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $S$ ist normal.
+    \item
+      $V$ hat eine Orthonormalbasis aus Eigenvektoren von $S$.
+    \item
+      Für jeden $S$-invarianten Untervektorraum $U \subseteq V$ ist auch das orthogonale Komplement $U^\perp$ invariant unter $S$.
+  \end{enumerate}
+\end{question}
+
+
+
 
 
 
