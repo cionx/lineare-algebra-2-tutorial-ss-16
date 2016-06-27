@@ -17,7 +17,52 @@
 
 
 
+
+% TODO: 1 + (lokal nilpotent) ist invertierbar
+
+% TODO: Matrixexponentialszeugs, allgemein Lie-Algebra -> Exponential
+
+
+
+
+
+
+
+
+
+
 % GENERAL STUFF
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien zwei Endomorphismen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $f \circ g = \id_V$ und $V$ sei endlichdimensional.
+      Zeigen Sie, dass auch $g \circ f = \id_V$.
+    \item
+      Zeigen Sie, dass die Aussage nicht mehr notwendigerweise gilt, wenn $V$ unendlichdimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Geben Sie einen Körper $K$ und ein Polynom $p \in K[X]$ an, so dass $p \neq 0$ und $p(\lambda) = 0$ für alle $\lambda \in K$.
+    \item
+      Folgern Sie, dass jeder algebraisch abgeschlossene Körper unendlich ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, so dass $V$ endlichdimensional ist, und $f \colon V \to W$ eine lineare Abbildung.
+  Zeigen Sie die Dimensionsformel
+  \[
+    \dim V = \dim \ker V + \dim \im V.
+  \]
+\end{question}
 
 
 \begin{question}
@@ -36,6 +81,139 @@
 
 
 \begin{question}
+  Es sei $K$ ein Körper.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für alle $A, B \in \Mat_n(K)$ die Gleichheit $\tr(AB) = \tr(BA)$.
+    \item
+      Folgern Sie, dass die Spur invariant unter Konjugation ist, d.h.\ dass
+      \[
+        \tr(S A S^{-1}) = \tr(A)
+        \quad
+        \text{für all $S \in \GL_n(K)$}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{algebraisch (über $K$)}, falls es ein Polynom $P \in K[T]$ mit $P \neq 0$ gibt, so dass $P(f) = 0$ gilt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder Endomorphismus eines endlichdimensionalen Vektorraums algebraisch ist.
+    \item
+      Geben Sie ein Beispiel für einen $K$-Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, der nicht algebraisch ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Für alle $k \in \Nbb$ sei
+  \[
+    R_k \coloneqq \im f^k
+    \quad\text{und}\quad
+    N_k \coloneqq \ker f^k.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $R_0 = V$, und dass $R_i \supseteq R_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine absteigende Kette
+      \[
+        V = R_0 \supseteq R_1 \supseteq R_2 \supseteq R_3 \supseteq R_4 \supseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie, dass für $i \in \Nbb$ mit $R_i = R_{i+1}$ auch $R_{i+1} = R_{i+2}$ gilt.
+    \item
+      Folgern Sie:
+      Gilt in der obigen absteigenden Kette einmal Gleichheit, also $R_i = R_{i+1}$ für ein $i \in \Nbb$, so stabilisiert die Kette bereits, d.h.\ es gilt $R_j = R_i$ für alle $j \geq i$.
+    \item
+      Zeigen Sie, dass $N_0 = 0$, und dass $N_i \subseteq N_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine aufsteigende Kette
+      \[
+        0 = N_0 \subseteq N_1 \subseteq N_2 \subseteq N_3 \subseteq N_4 \subseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie, dass für $i \in \Nbb$ mit $N_i = N_{i+1}$ auch $N_{i+1} = N_{i+2}$ gilt.
+    \item
+      Folgern Sie:
+      Gilt in der obigen aufsteigende Kette einmal Gleichheit, also $N_i = N_{i+1}$ für ein $i \in \Nbb$, so stabilisiert die Kette bereits, d.h.\ es gilt $N_j = N_i$ für alle $j \geq i$.
+    \item
+      Folgern Sie:
+      Ist $V$ endlichdimensional, so stabilisieren beiden Kette.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Automorphismus und $U \subseteq V$ ein Untervektorraum, der invariant unter $f$ ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie:
+      Ist $U$ endlichdimensional, so ist $U$ auch invariant unter $f^{-1}$.
+    \item
+      Zeigen Sie, dass die Aussage nicht gelten muss, falls $U$ unendlichdimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $f \colon V \to V$ Endomorphismus eines $\Cbb$-Vektorraums und $\lambda \in \Cbb$.
+  Zeigen Sie, dass die Einschränkung $(f - \lambda {\id_V})|_{V^\sim_\lambda(f)}$ nicht notwendigerweise nilpotent ist.
+\end{question}
+
+
+\begin{question}
+  Es seien $f, g \colon V \to V$ zwei Endomorphismen eines $K$-Vektorraums $V$.
+  Beweisen Sie entweder, dass die folgenden Aussagen im Allgemeinen gelten, oder geben Sie ein Gegenbeispiel an.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Sind $f$ und $g$ diagonalisierbar, so ist auch $f \circ g$ diagonalisierbar.
+    \item
+      Kommutieren $f$ und $g$ und ist $f \circ g$ diagonalisierbar, so sind $f$ und $g$ diagonalisierbar.
+    \item
+      Sind $f$ und $g$ diagonalisierbar, so ist auch $f + g$ diagonalisierbar.
+    \item
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist auch $f + g$ diagonalisierbar.
+    \item
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist $f \circ g$ invertierbar.
+    \item
+      Ist $f$ diagonalisierbar, so ist für jedes $p \in K[X]$ auch $p(f)$ diagonalisierbar.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Formulieren Sie den Satz von Cayley-Hamilton.
+    \item
+      Zeigen Sie den Satz für ($2 \times 2$)-Matrizen durch explizites Nachrechnen.
+    \item
+      Zeigen Sie den Satz für Diagonalmatrizen.
+    \item
+      Folgern Sie den Satz für diagonalisierbare Matrizen.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+
+% DIRECT SUM DECOMPOSITIONS, DIAGONALIZABLE
+
+
+\begin{question}
   Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Zeigen Sie:
   \begin{enumerate}[leftmargin=*]
@@ -51,7 +229,7 @@
 
 
 \begin{question}
-  Zeigen Sie im folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
+  Zeigen Sie im folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
   \begin{enumerate}[leftmargin=*]
     \item
       Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der Vektorraum der ($n \times n$)-Matrizen über $K$,
@@ -95,13 +273,14 @@
       der Untervektorraum der symmetrischen Bilinearformen, und
       \[
                   U_2
-        \coloneqq \{ a \in V \mid \text{$a$ ist alternierend} \}
+        \coloneqq \{ a \in V \mid \text{$a$ ist antisymmetrisch} \}
       \]
       der Untervektorraum der alternierenden Bilinearformen.
     \item
       Der Vektorraum $V \coloneqq \Cbb(I, \Rbb)$ der stetigen reellwertigen Funktionen auf dem Einheitsintervall $I = [0,1]$ mit den Untervektorräumen
       \[
         U_1 \coloneqq \{f \in V \mid f(0) = 0\}
+        \quad\text{und}\quad
         U_2 \coloneqq \{f \in V \mid \text{$f$ ist konstant}\}.
       \]
     \item
@@ -131,7 +310,9 @@
       \]
       der spurlosen Matrizen und der Skalarmatrizen.
     \item
-      Es sei $V$ ein diagonalisierbarer Endomorphismus mit zwei verschiedenen Eigenwerten $\lambda, \mu \in K$ und $U_1 \coloneqq V_\lambda(f)$ und $U_2 \coloneqq V_\mu(f)$.
+      Es sei $V$ ein beliebiger $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus, so dass $(f-\lambda)(f-\mu) = 0$ für $\lambda, \mu \in K$ und $\lambda \neq \mu$.
+      Es seien $U_1 = V_\lambda(f)$ und $U_2 = V_\mu(f)$.
+      (\emph{Hinweis}: Die Behauptung ist also, dass $f$ diagonalisier mit Eigenwerten $\lambda$ und $\mu$ ist.)
   \end{enumerate}
 \end{question}
 
@@ -186,17 +367,8 @@
 \end{question}
 
 
-% TODO: 1 + (lokal nilpotent) ist invertierbar
-
-% TODO: Bijektion zwischen Idempotenten und Involutiven mit gleicher Zerlegung
-
-% TODO: Matrixexponentialszeugs, allgemein Lie-Algebra -> Exponential
-
-% TODO: X ist diagonalisierbar ==> ad(X) ist diagonalisierbar
-
-
 \begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus mit $f^2 = 1$.
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie für $\ringchar K \neq 2$, dass $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist.
@@ -217,7 +389,7 @@
     \item
       Durch explizites Nachrechnen, dass $V = \ker f + \im g$ und $\ker f \cap \im g = 0$.
     \item
-      Mithilfe des Endomorphismus $gf \colon V \to V$.
+      Durch Betrachtung des Endomorphismus $gf \colon V \to V$.
   \end{enumerate}
 \end{question}
 
@@ -252,16 +424,91 @@
 
 
 \begin{question}
-  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{algebraisch (über $K$)}, falls es ein Polynom $P \in K[T]$ mit $P \neq 0$ gibt, so dass $P(f) = 0$ gilt.
-  \begin{enumerate}[leftmargin=*]
+  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
+  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
+  \begin{enumerate}
     \item
-      Zeigen Sie, dass jeder Endomorphismus eines endlichdimensionalen Vektorraums algebraisch ist.
+      $f$ ist diagonalisierbar.
     \item
-      Geben Sie ein Beispiel für einen $K$-Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, der nicht algebraisch ist.
+      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
   \end{enumerate}
 \end{question}
 
 
+% \begin{question}
+%   Es sei $V$ ein $K$-Vektorraum.f
+%   \begin{enumerate}[leftmargin=*]
+%     \item
+%       Es seien $e_1, \dotsc, e_n \in \End(V)$ Endomorphismen mit den folgenden Eigenschaften:
+%       \begin{itemize}
+%         \item
+%           Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+%         \item
+%           Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
+%         \item
+%           Es gilt $\id_V = e_1 + \dotsb + e_n$.
+%       \end{itemize}
+%       Man sagt, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist.
+%       Zeigen Sie, dass dann $V = \im e_1 \oplus \dotsb \oplus \im e_n$ gilt.
+%   \end{enumerate}
+%   Es sei nun $f \colon V \to V$ ein Endomorphismus.
+%   \begin{enumerate}[leftmargin=*, resume]
+%     \item
+%       Zeigen Sie:
+%       Ist $f$ diagonalisierbar mit Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$, so ist
+%       \[
+%         (f - \lambda_1) \dotsm (f - \lambda_n) = 0.
+%       \]
+%     \item
+%       Es sei $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ mit $\lambda_1, \dotsc, \lambda_n \in K$ .
+%       Zeigen Sie:
+%       \begin{enumerate}
+%         \item
+%           Die Endomorphismen $e_1, \dotsc, e_n \in \End(V)$ mit
+%           \[
+%             e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+%             \quad
+%             \text{für alle $i = 1, \dotsc, n$}
+%           \]
+%           sind ein \emph{complete set of orthogonal idempotents}.
+%         \item
+%           Für alle $1 \leq i \leq n$ ist $\im e_i \subseteq V_{\lambda_i}(f)$.
+%         \item
+%           Der Endomorphismus $f$ ist diagonalisierbar mit möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n$.
+%       \end{enumerate}
+%       Ist $f \colon V \to V$ diagonalsierbar mit Eigenwertein $\lambda_1, \dotsc, \lambda_n$, so sind die Endomorphismen $e_1, \dotsc, e_n \in \End(V)$ mit
+%       \[
+%         e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+%         \quad
+%         \text{für alle $i = 1, \dotsc, n$},
+%       \]
+%       dass die Eigenräume $V_{\lambda_1}(f), \dotsc, V_{\lambda_n(f)}$ invariant unter den Endomorphismen $e_1, \dotsc, e_n$ sind, und dass
+%       \[
+%         e_i|_{V_{\lambda_j}(f)}
+%         =
+%         \begin{cases}
+%           \id_{V_{\lambda_j}(f)}  & \text{für $i = j$},   \\
+%           0                       & \text{für $i \neq j$}.
+%         \end{cases}
+%       \]
+%       Folgern Sie, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist, so dass
+%       \[
+%         \im e_i = V_{\lambda_i}(f)
+%         \quad
+%         \text{für alle $i = 1, \dotsc, n$}.
+%       \]
+%     \item
+%       Es sei $f \colon V \to V$ ein Endomorphismus, so dass
+%       \[
+%         (f - \lambda_1) \dotsm (f - \lambda_n) = 0
+%       \]
+%       für paarweise verschieden $\lambda_1, \dotsc, \lambda_n \in K$.
+%       Für alle $i = 1, \dotsc, n$ sei
+%       \[
+%         e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}.
+%       \]
+%   \end{enumerate}
+% \end{question}
 
 
 
@@ -270,26 +517,74 @@
 
 
 
-% QUOTIENTS
+
+
+
+% QUOTIENTS AND INVARIANTS SUBSPACES
 
 
 \begin{question}
-  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
-  Zeigen Sie:
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\pi \colon V \to V/\!U$, $v \mapsto [v]$ die kanonische Projektion.
   \begin{enumerate}[leftmargin=*]
     \item
-      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
+      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, und für eine Teilmenge $J \subseteq I$ sei $(b_j)_{j \in J}$ eine Basis von $U$.
+      Zeigen Sie, dass $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V\!/U$ ist.
     \item
-      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
-    \item
-      $f$ induziert eine lineare Abbildung
+      Folgern Sie die folgenden Di\-men\-si\-ons\-for\-meln für einen end\-lich\-di\-men\-si\-o\-na\-len $K$-Vek\-tor\-raum $V$:
+      Ist $U \subseteq V$ ein Untervektorraum, so ist
       \[
-        \bar{f} \colon V/U \to V/U,
-        \quad
-        [x] \mapsto [f(x)].
+        \dim V\!/U = \dim V - \dim U.
       \]
+      Ist $f \colon V \to W$ eine lineare Abbildung in einen weiteren $K$-Vektorraum $W$, so ist
+      \[
+        \dim V = \dim \ker f + \dim \im f.
+      \]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V/\!U$, wobei $I \cap J = \emptyset$.
+      Für $j \in J$ sei $b_j \in V$ mit $\pi(b_j) = c_j$.
+      Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
   \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
+      Zeigen Sie, dass $V$ eine lineare Abbildung
+      \[
+        \bar{f} \colon V\!/U \to W, \quad [v] \mapsto f(u)
+      \]
+      induziert.
+    \item
+      Zeigen Sie, dass $\im \bar{f} = \im f$.
+      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+    \item
+      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
+      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits $U = \ker f$ gilt.
+    \item
+      Folgern Sie, dass $f$ einen Isomorphismus
+      \[
+        V/(\ker f) \to \im f,
+        \quad
+        [v] \mapsto f(v)
+      \]
+      induziert.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ genau dann ein Untervektorraum ist, wenn es einen $K$-Vektorraum $W$ und eine lineare Abbildung $f \colon V \to W$ gibt, so dass $U = \ker f$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
+  Es sei $W$ ein $K$-Vektorraum mit Basis $\{b_e\}_{e \in E} \subseteq W$.
+  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
 \end{question}
 
 
@@ -300,7 +595,7 @@
       U^\circ
     = \{ \varphi \in V^* \mid \varphi|_U = 0 \}
   \]
-  einen Isomorphismus $F \colon U^\circ \to (V/U)^*$.
+  einen Isomorphismus $F \colon U^\circ \to (V\!/U)^*$.
 \end{question}
 
 
@@ -331,119 +626,6 @@
 \end{question}
 
 
-
-\begin{question}
-  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
-  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
-  \begin{enumerate}
-    \item
-      $f$ ist diagonalisierbar.
-    \item
-      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  Für alle $k \in \Nbb$ sei
-  \[
-    R_k \coloneqq \im f^k
-    \quad\text{und}\quad
-    N_k \coloneqq \ker f^k.
-  \]
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $R_0 = V$, und dass $R_i \supseteq R_{i+1}$ für alle $i \in \Nbb$.
-      Es gibt also eine absteigende Kette
-      \[
-        V = R_0 \supseteq R_1 \supseteq R_2 \supseteq R_3 \supseteq R_4 \supseteq \dotsb
-      \]
-      von Untervektorräumen.
-    \item
-      Zeigen Sie für $i \in \Nbb$ mit $R_i = R_{i+1}$, dass auch $R_{i+1} = R_{i+2}$.
-    \item
-      Folgern Sie:
-      Gilt in der obigen absteigenden Kette einmal Gleichheit, also $R_i = R_{i+1}$, so stabilisiert die Kette bereits, d.h.\ es gilt $R_j = R_i$ für alle $j \geq i$.
-    \item
-      Zeigen Sie, dass $N_0 = 0$, und dass $N_i \subseteq N_{i+1}$ für alle $i \in \Nbb$.
-      Es gibt also eine aufsteigende Kette
-      \[
-        0 = N_0 \subseteq N_1 \subseteq N_2 \subseteq N_3 \subseteq N_4 \subseteq \dotsb
-      \]
-      von Untervektorräumen.
-    \item
-      Zeigen Sie, dass für $i \in \Nbb$ mit $N_i = N_{i+1}$ auch $N_{i+1} = N_{i+2}$.
-    \item
-      Folgern Sie:
-      Gilt in der obigen aufsteigende Kette einmal Gleichheit, also $N_i = N_{i+1}$, so stabilisiert die Kette bereits, d.h.\ es gilt $N_j = N_i$ für alle $j \geq i$.
-  \end{enumerate}
-
-\end{question}
-
-
-
-
-
-
-
-
-
-
-
-% QUOTIENTS
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
-  Es sei $\pi \colon V \to V/U$, $v \mapsto [v]$ die kanonische Projektion.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, und für eine Teilmenge $J \subseteq I$ sei $(b_j)_{j \in J}$ eine Basis von $U$.
-      Zeigen Sie, dass $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V/U$ ist.
-    \item
-      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V/U$, wobei $I \cap J = \emptyset$.
-      Für $j \in J$ sei $b_j \in V$ mit $\pi(b_j) = c_j$.
-      Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
-  \begin{enumerate}
-    \item
-      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
-      Zeigen Sie, dass $V$ eine lineare Abbildung
-      \[
-        \bar{f} \colon V/U \to W, \quad [v] \mapsto f(u)
-      \]
-      induziert.
-    \item
-      Zeigen Sie, dass $\im \bar{f} = \im f$.
-      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
-    \item
-      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
-      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits $U = \ker f$ gilt.
-    \item
-      Folgern Sie, dass $f$ einen Isomorphismus
-      \[
-        V/(\ker f) \to \im f,
-        \quad
-        [v] \mapsto f(v)
-      \]
-      induziert.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
-  Es sei $W$ ein $K$-Vektorraum mit Basis $\{b_e\}_{e \in E} \subseteq W$.
-  Konstruieren Sie einen Isomorphismus $V/U \to W$ für einen passenden Untervektorraum $U \subseteq W$.
-\end{question}
-
-
 \begin{question}
   Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
   Es seien $f \colon V \to V$ ein Endomorphismus, so dass $U$ invariant unter $f$ ist (d.h.\ es ist $f(U) \subseteq U$).
@@ -451,19 +633,169 @@
     \item
       Zeigen Sie, dass $f$ einen Endomorphismus
       \[
-        \bar{f} \colon V/U \to V/U,
+        \bar{f} \colon V\!/U \to V\!/U,
         \quad
         [v] \mapsto [f(v)]
       \]
     induziert.
   \end{enumerate}
-  Es sei nun $g \colon V \to V$ ein weiterer Endomorphismus, so dass $U$ invariant unter $g$ ist, und es sei $\bar{g} \colon V/U \to V/U$ der induzierte Endomorphismus.
+  Es sei nun $g \colon V \to V$ ein weiterer Endomorphismus, so dass $U$ invariant unter $g$ ist, und es sei $\bar{g} \colon V\!/U \to V\!/U$ der induzierte Endomorphismus.
   \begin{enumerate}[resume]
     \item
       Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
       Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
+    \item
+      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $e_1, \dotsc, e_n \in \End(V)$ mit den folgenden Eigenschaften:
+  \begin{itemize}
+    \item
+      Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+    \item
+      Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
+    \item
+      Es gilt $\id_V = e_1 + \dotsb + e_n$.
+  \end{itemize}
+  Man sagt, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $V = \im e_1 \oplus \dotsb \oplus \im e_n$ gilt.
+    \item
+      Zeigen Sie für alle $i = 1, \dotsc, n$, dass $\im e_i = V_1(e_i)$ und $\bigoplus_{j \neq i} \im e_j = \ker e_i$ gelten.
+    \item
+      Folgern Sie, dass es für jeden idempotenten Endomorphismus $e \colon V \to V$ eine Zerlegung
+      \[
+        V = \im e \oplus \ker e
+      \]
+      mit $\im e = V_1(e)$ gibt.
+    \item
+      Für alle $i = 1, \dotsc, n$ sei $E_{ii} \in \Mat_n(K)$ die Matrix mit $1$ als $i$-ten Diagonaleintrag, und alle anderen Einträge sind $0$.
+      Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ mit
+      \[
+        e_i \colon \Mat_n(K) \to \Mat_n(K),
+        \quad
+        A \mapsto A E_{ii}
+      \]
+      ein \emph{complete set of orthogonal idempotents} bildet, und bestimmen Sie die Zerlegung
+      \[
+        \Mat_n(K) = \im e_1 \oplus \dotsb \oplus \im e_n.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents}, falls die folgenden Bedingungen erfüllt sind:
+  \begin{itemize}
+    \item
+      Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+    \item
+      Für alle $1 \leq i \neq j \leq n$ ist $e_i e_j = 0$.
+    \item
+      Es gilt $\id_V = e_1 + \dotsb + e_n$.
+  \end{itemize}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $e_1, \dotsc, e_n \colon V \to V$ ein \emph{complete set of orthogonal idempotents}.
+      Zeigen Sie, dass
+      \[
+        V = \im e_1 \oplus \dotsb \oplus \im e_n.
+      \]
+    \item
+      Es seien $U_1, \dotsc, U_n \subseteq V$ Untervektorräume mit $V = U_1 \oplus \dotsb \oplus U_n$.
+      Zeigen Sie, dass es für alle $i = 1, \dotsc, n$ einen eindeutigen Endomorphismus $p^{(i)}_{U_1, \dotsc, U_n} \colon V \to V$ mit
+      \[
+          p^{(i)}_{U_1, \dotsc, U_n}(u_1 + \dotsb + u_n)
+        = u_i
+        \quad
+        \text{für alle $u_1 \in U_1, \dotsc, u_n \in U_n$},
+      \]
+      und $p^{(1)}_{U_1, \dots, U_n}, \dotsc, p^{(n)}_{U_1, \dotsc, U_n}$ ist ein \emph{complete set of orthogonal idempotents}.
+    \item
+      Zeigen Sie, dass sich wie folgt eine Bijektion ergibt:
+      \begin{align*}
+        \left\{
+          (U_1, \dotsc, U_n)
+          \,\middle|\,
+          \begin{tabular}{c}
+            $U_1, \dotsc, U_n \subseteq V$      \\
+            sind UVR mit                        \\
+            $U = U_1 \oplus \dotsb \oplus U_n$
+          \end{tabular}
+        \right\}
+        &\longleftrightarrow
+        \left\{
+          (e_1, \dotsc, e_n)
+          \,\middle|\,
+          \begin{tabular}{c}
+            $e_1, \dotsc, e_n \in \End(V)$  \\
+            ist ein \emph{complete set}     \\
+            \emph{of orthogonal}            \\
+            \emph{idempotents}
+          \end{tabular}
+        \right\}
+        \\
+        (U_1, \dotsc, U_n)
+        &\longmapsto
+        \left( p^{(1)}_{U_1, \dotsc, U_n}, \dotsc, p^{(n)}_{U_1, \dotsc, U_n} \right)
+        \\
+        (\im e_1, \dotsc, \im e_n)
+        &\longmapsfrom
+        (e_1, \dotsc, e_n)
+      \end{align*}
+    \item
+      Es sei $f \colon V \to V$ ein diagonalisierbarer Endomorphismus mit Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$.
+      Es sei $e_1, \dotsc, e_n \in K$ das \emph{complete set of orthogonal idempotents}, dass der Zerlegung
+      \[
+        V = V_{\lambda_1}(f) \oplus \dotsb \oplus V_{\lambda_n}(f)
+      \]
+      entspricht, d.h.\ für alle $i = 1, \dotsc, n$ sei $e_i = p^{(i)}_{V_{\lambda_1}(f), \dots, V_{\lambda_n}(f)}$.
+      Geben Sie eine Formel an, durch die sich $e_i$ aus $f$ ergibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Kbb$-Vektorraum.
+  Eine Abbildung $[\,\cdot\,] \colon V \to V$ heißt \emph{Seminorm}, falls
+  \begin{itemize}
+    \item
+      $[\lambda x] = |\lambda| [x]$ für alle $\lambda \in \Kbb$ und $x \in V$ (Homogenität), und
+    \item
+      $[x + y] \leq [x] + [y]$ für alle $x, y \in V$ (Dreiecksungleichung).
+  \end{itemize}
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Teilmenge $N \coloneqq \{x \in V \mid [x] = 0\}$ ist ein Untervektorraum von $V$.
+    \item
+      Die Seminorm $[\,\cdot\,]$ induziert durch
+      \[
+        \| \overline{x} \| \coloneqq [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+      eine Norm auf $V\!/N$ (wobei $\overline{x} = x + N$ die Äquivalenzklasse von $x$ bezeichnet).
+  \end{enumerate}
+\end{question}
+
+
 
 
 
@@ -553,6 +885,13 @@
 
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum mit $\Rbb$-Basis $\mc{B} = (v_j)_{j \in J}$.
+  Zeigen Sie, dass dann $\mc{B}_\Cbb = (v_j + i \cdot 0)_{j \in J}$ eine $\Cbb$-Basis von $V_\Cbb$ ist.
+\end{question}
+
 
 
 \begin{question}
@@ -816,9 +1155,15 @@
     \item
       Es sei nun $V$ endlichdimensional und $H \subseteq \End(V)$ ein Untervektorraum aus diagonalisierbaren und paarweise kommutierenden Endomorphismen.
       Zeigen Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $\Mat_\mc{B}(f)$ für jedes $f \in H$ eine Diagonalmatrix ist.
+      (\emph{Hinweis}: Nutzen Sie, dass $\End(V)$ endlichdimensioal ist.)
   \end{enumerate}
 \end{question}
 
+
+\begin{question}
+  Es sei $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $\Cbb$-Vektorraums $V$.
+  Drücken Sie $\tr f$ und $\det f$ durch die  mit (nicht notwendigerweise verschiedenen) Eigenwerten $\lambda_1, \dotsc, \lambda_n \in \Cbb$ von $f$ aus.
+\end{question}
 
 
 \begin{question}
@@ -828,7 +1173,13 @@
 
 
 \begin{question}
-  Zeigen Sie, dass es für $A \in \GL_n(K)$ ein Polynom $P \in K[T]$ mit $\deg P \leq n-1$ gibt, so dass $A^{-1} = P(A)$.
+  Es sei $A \in \GL_n(K)$ und $\chi_A(T)$ das charakteristische Polynom von $A$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass der konstante Term von $\chi_A(T)$ nicht verschwindet.
+    \item
+      Zeigen Sie, dass es ein Polynom $P \in K[T]$ gibt, so dass $A^{-1} = P(A)$.
+  \end{enumerate}
 \end{question}
 
 
@@ -844,8 +1195,192 @@
 \end{question}
 
 
+\begin{question}
+  Es sei $f \colon V \to V$ ein Endomorphismus eines $n$-dimensionalen $K$-Vektorraums $V$ und $\{ v_1, \dotsc, v_{n+1} \} \subseteq V$ eine Teilmenge aus Eigenvektoren von $f$, so dass jede $n$-elementige Teilmenge linear unabhängig ist.
+  Zeigen Sie, dass $f$ bereits ein skalares Vielfaches der Identität ist.
+\end{question}
 
-% JORDANSTUFF
+
+
+
+
+
+
+
+
+
+
+% JORDANSTUFF AND GENERALIZED EIGENSPACES
+
+
+\begin{question}
+  Bestimmen Sie für die folgenden komplexen Matrizen jeweils eine Jordannormalform, inklusiver entsprechender Basiswechselmatrizen:
+  \begin{gather*}
+    \begin{pmatrix*}[r]
+      2 & 2 &  -5 \\
+      3 & 7 & -15 \\
+      1 & 2 &  -4
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      0 & 0 &  1 \\
+      1 & 0 & -3 \\
+      0 & 1 &  3
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      1 & 0 & 1 & -1  \\
+      0 & 1 & 1 &  0  \\
+      0 & 0 & 1 &  1  \\
+      0 & 0 & 0 &  1
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      3 & -4  &  0  &  2  \\
+      4 & -5  & -2  &  4  \\
+      0 &  0  &  3  & -2  \\
+      0 &  0  &  2  & -1
+    \end{pmatrix*},
+  \\
+    \begin{pmatrix*}[r]
+       3  &  3  &  1  &  5  \\
+       0  & -2  &  2  & -8  \\
+      -1  & -2  &  0  & -3  \\
+       0  &  2  & -1  &  6
+    \end{pmatrix*}
+  \end{gather*}
+\end{question}
+\begin{solution}
+  \begin{enumerate}leftmargin=*]
+    \item
+      \[
+        \begin{pmatrix}
+          1 &   &   \\
+            & 1 &   \\
+            &   & 3
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          5 & -2  & 1 \\
+          0 &  1  & 3 \\
+          1 &  0  & 1
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          1 &   &   \\
+          1 & 1 &   \\
+            & 1 & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+           1  & -1  & 1 \\
+          -2  &  1  & 0 \\
+           1  &  0  & 0
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          1 & 0 & 0 & 0 \\
+            & 1 & 1 & 0 \\
+            &   & 1 & 1 \\
+            &   & 0 & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          1 & 1 & -1 & 0  \\
+          0 & 1 &  0 & 0  \\
+          0 & 0 &  1 & 0  \\
+          0 & 0 &  0 & 1
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          -1  &  1  &   &   \\
+              & -1  &   &   \\
+              &     & 1 & 1 \\
+              &     &   & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          1 & \frac{1}{4} & 1 & \frac{1}{2} \\
+          1 & 0           & 1 & 0           \\
+          0 & 0           & 1 & \frac{1}{2} \\
+          0 & 0           & 1 & 0
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix}
+          1 &   &   &   \\
+            & 2 & 1 &   \\
+            &   & 2 & 1 \\
+            &   &   & 2
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix}
+           0  &  1  &  2  &  7  \\
+          -2  & -2  &  0  & -1  \\
+           1  &  0  & -1  & -2  \\
+           1  &  1  &  0  &  0
+        \end{pmatrix}
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $n \colon V \to V$ ein nilpotenter Endomorphismus.
+      Zeigen Sie, dass ${\id_V} + n$ invertierbar ist.
+    \item
+      Zeigen, bzw.\ folgern Sie allgemeiner, dass $\lambda {\id_V} + n$ für alle $\lambda \in K^\times$ invertierbar ist.
+    \item
+      Es sei $f \colon V \to V$ ein beliebiger Endomorphismus.
+      Zeigen Sie für alle $\lambda, \mu \in K$ mit $\lambda \neq \mu$, dass $V^\sim_\lambda(f)$ invariant unter $f - \mu {\id_V}$ ist, und dass die Einschränkung $(f - \mu {\id_V})|_{V^\sim_\lambda(f)}$ invertierbar ist.
+    \item
+      Folgern Sie:
+      Ist $(f - \lambda_1)^{n_1} \dotsm (f - \lambda_k)^{n_k} = 0$ mit $\lambda_1, \dotsc, \lambda_k \in K$ paarweise verschieden, so sind $\lambda_1, \dotsc, \lambda_k$ die möglichen Eigenwerte von $f$, und für alle $1 \leq i \leq k$ ist $\dim V^\sim_{\lambda_i}(f) \leq n_i$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie in den Folgenden alle Möglichkeiten der Jordannormalform von $A \in \Mat_n(\Cbb)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+     Es ist $\chi_A(T) = (T-3)^4 (T-5)^4$ und $(A - 3I)^2 (A - 5I)^2 = 0$.
+    \item
+      Es ist $A^3 = 0$ und alle Eigenräume von $A$ sind eindimensional.
+    \item
+      Es ist $\chi_A(T) = (T-2)(T+2)^3$ und $(A - 2I)(A + 2I) = 0$.
+    \item
+      Es ist $\chi_A(T) = T(T-1)(T+1)$.
+    \item
+      Es ist $\chi_A(T) = (T-2)^2(T-3)^2$ und alle Eigenräume von $A$ sind entweder null-\ oder eindimensional.
+    \item
+      Es ist $A^2 = A$ und alle Eigenräume von $A$ sind zweidimensional.
+    \item
+      Es ist $\chi_A(T) = T^5$ und alle Eigenräume von $A$ sind entweder null-\ oder eindimensional.
+    \item
+      Es ist $\chi_A(T) = (T+3)^3 T^2$ und $A$ hat keine zweidimensionalen Eigenräume.
+  \end{enumerate}
+\end{question}
 
 
 \begin{question}
@@ -885,8 +1420,23 @@
 \end{question}
 
 
+\begin{question}
+  Bestimmen Sie die Potenz $A^{10}$ der Matrix
+  \[
+    A
+    \coloneqq
+    \begin{pmatrix}
+       3  & 4 &  3  \\
+      -1  & 0 & -1  \\
+       1  & 2 &  3
+    \end{pmatrix}
+    \in \Mat_n(\Cbb).
+  \]
+\end{question}
+
 
 \begin{question}
+  Es sei $\|\cdot\|$ eine Norm auf $\Mat_n(\Cbb)$.
   Für alle $\lambda_1, \dotsc, \lambda_n \in \Cbb$ sei
   \[
     \diag(\lambda_1, \dotsc, \lambda_n)
@@ -977,16 +1527,49 @@
 
 
 
-
-
-
-
-
-
-
-
-
 % SCALAR PRODUCTS
+
+
+\begin{question}
+  Definieren Sie die Begriffe eines reellen, bzw.\ komplexen Skalarprodukts, sowie eines reellen, bzw.\ komplexen Hilbertraums.
+\end{question}
+
+
+\begin{question}
+  Formulieren und Beweisen Sie die Cauchy-Schwarz-Ungleichung.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum.
+  Zeigen Sie für Endomorphismen $f, g_1, g_2 \colon V \to V$ Endomorphismen die folgende Kürzungsregel:
+  Falls $f^*$ existiert und $f^* f g_1 = f^* f g_2$, dann ist bereits $f g_1 = f g_2$.
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass jeder endlichdimensionale Skalarproduktraum eine Orthonormalbasis besitzt.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Kbb$-Vektorraum mit abzählbarer Orthonormalbasis $(e_i)_{i \in \Nbb}$.
+  Es sei $T \colon V \to V$ die eindeutige lineare Abbildung mit $T(e_i) = e_1$ für alle $i \in \Nbb$.
+  Zeigen Sie, dass $T$ kein Adjungiertes besitzt.
+\end{question}
+
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $v_1, \dotsc, v_n \in V$ seien paarweise orthogonal zueinander.
+  Zeigen Sie: Ist $v_1, \dotsc, v_n \neq 0$, so ist die Familie $(v_1, \dotsc, v_n)$ linear unabhängig.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $f \colon V \to V$ ein normaler Endomorphismus.
+  Zeigen Sie, dass die Eigenräume $V_\lambda(f)$ und $V_\mu(f)$ für alle $\lambda \neq \mu$ orthogonal sind.
+\end{question}
 
 
 \begin{question}
@@ -1001,17 +1584,171 @@
 
 
 \begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein normaler Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\|f(v)\| = \|f^*(v)\|$ für alle $v \in V$.
+    \item
+      Zeigen Sie, dass $V_\lambda(f) = V_{\overline{\lambda}}(f^*)$ und $V^\sim_\lambda(f) = V^\sim_{\overline{\lambda}}(f^*)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $v_1, \dotsc, v_n \in V$ seien Einheitsvektoren.
+  Zeigen Sie, dass die folgenden beiden Aussage äquivalent sind:
+  \begin{enumerate}
+    \item
+      $(v_1, \dotsc, v_n)$ ist eine Orthonormalbasis von $V$.
+    \item
+      Für alle $v \in V$ ist $\| v \|^2 = \sum_{i=1}^n |\bil{v, v_i}|^2$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $f \colon V \to V$ ein selbstadjungierter, nilpotenter Endomorphismus.
+  Zeigen Sie, dass $f = 0$.
+\end{question}
+
+
+\begin{question}
+  Es sei $\pi \in S_n$ eine Permutation und $P_\pi \colon \Rbb^n \to \Rbb^n$ die eindeutige lineare Abbildung mit
+  \[
+    P_\pi(e_i) = e_{\pi(i)}
+    \quad
+    \text{für alle $i = 1, \dotsc, n$},
+  \]
+  wobei $(e_1, \dotsc, e_n)$ die Standardbasis von $\Rbb^n$ ist.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $P_\pi$ orthogonal ist.
+    \item
+      Bestimmen Sie die möglichen Eigenwerte von $P_\pi$.
+    \item
+      Geben Sie ein Beispiel an, bei dem alle möglichen Eigenwerte auftreten.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $U \subseteq V$ ein Untervektorraum mit Orthonormalbasis $(u_1, \dotsc, u_n)$.
+  Zeigen Sie, dass die lineare Abbildung
+  \[
+    P \colon V \to V,
+    \quad
+    v \mapsto \sum_{i=1}^n \bil{v, u_i} u_i
+  \]
+  die orthogonale Projektion auf $U$ ist.
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie die Signatur $(n_0, n_+, n_-)$ der folgenden quadratischen Formen auf $\Rbb^n$:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      $
+          q(x_1, x_2)
+        = 2 x_1^2 - 3 x_2^2 + 2 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2)
+        = - x^1 + x_2 + a x_1 x_2
+      $
+      mit $a \in \Rbb$
+    \item
+      $
+          q(x_1, x_2)
+        = x_1^2 + 15 x_2^2 + 6 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2)
+        = 2 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2, x_3)
+        = x_1^2 + 2 x_1 x_2 - 2 x_1 x_3 + x_2^2 - 2 x_2 x_3 - x_3^2
+      $
+    \item
+      $
+          q(x_1, x_2, x_3, x_4)
+        = x_1^2 - 7 x_2^2 - x_3^2 - x_4^2 + 2 x_1 x_2 - 6 x_2 x_3 + 6 x_2 x_4 + 2 x_3 x_4.
+      $
+  \end{enumerate}
+\end{question}
+\begin{solution}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Signatur ist $(0,1,-1)$.
+    \item
+      Die Signatur ist $(0,1,-1)$.
+    \item
+      Die Signatur ist $(0,2,0)$.
+    \item
+      Die Signatur ist $(0,1,-1)$
+    \item
+      Die Signatur ist $(1,1,1)$.
+    \item
+      Die Signatur ist $(1,2,1)$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $V \neq 0$ ein $\Kbb$-Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
+  Für alle $\lambda \in \Kbb$ sei
+  \[
+    \bil{x, y}_\lambda \coloneqq \lambda \bil{x, y}
+    \quad
+    \text{für alle $x, y \in V$}.
+  \]
+  Bestimmen Sie alle $\lambda \in \Kbb$, für die $\bil{\cdot, \cdot}_\lambda$ ein Skalarprodukt auf $V$ ist.
+\end{question}
+
+
+\begin{question}
   Es sei $V$ ein endlichdimensionaler unitärer Vektorraum und $f \colon V \to V$ ein normaler Endomorphismus.
   Zeigen Sie:
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       $f$ ist genau dann unitär, wenn alle Eigenwerte von $f$ Betrag $1$ haben.
     \item
       $f$ ist genau dann selbstadjungiert, wenn alle Eigenwerte von $f$ reell sind.
     \item
-      $f$ ist genau dann antiselbstadjungiert, wenn alle Eigenweret von $f$ rein imaginär sind.
+      $f$ ist genau dann antiselbstadjungiert, wenn alle Eigenwerte von $f$ rein imaginär sind.
     \item
       $f$ ist genau dann eine Orthogonalprojektion, wenn $0$ und $1$ die einzigen Eigenwerte von $f$ sind.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Bestimmen Sie für die Matrix
+      \[
+        A \coloneqq
+        \begin{pmatrix*}[r]
+          2  & -1  & 1 \\
+          -1  &  2  & 1 \\
+          1  &  1  & 2
+        \end{pmatrix*}
+        \in \Mat_n(\Rbb)
+      \]
+      eine orthogonale Matrix $S \in \Orthogonal(3)$, so dass $S^T A S$ eine Diagonalmatrix ist.
+    \item
+      Bestimmen Sie für die symmetrische Bilinearform $\beta \colon \Rbb^2 \times \Rbb^2 \to \Rbb$ mit
+      \[
+        \beta\left( \vect{x_1 \\ x_2}, \vect{y_1 \\ y_2} \right)
+        \coloneqq
+        x_1 y_2 + x_2 y_1
+        \quad
+        \text{für alle $\vect{x_1 \\ x_2}, \vect{y_1 \\ y_2} \in \Rbb^2$}
+      \]
+      eine Basis $\mc{B}$ von $\Rbb^2$, so dass $\beta$ bezüglich $\mc{B}$ durch eine Diagonalmatrix mit möglichen Diagonaleinträgen $0, 1, -1$ dargestellt wird.
   \end{enumerate}
 \end{question}
 
@@ -1055,6 +1792,112 @@
 \end{question}
 
 
+\begin{question}
+  Es sei $x \in \Rbb^n$ ein normierter Spaltenvektor und
+  \[
+    A \coloneqq x x^T \in \Mat(n \times n, \Rbb).
+  \]
+  Zeigen Sie, dass die Abbildung
+  \[
+    P \colon \Rbb^n \to \Rbb^n,
+    \quad
+    y \mapsto Ay
+  \]
+  die orthogonale Projektion auf die Gerade $\Rbb x$ ist.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei endlichdimensionale euklidische Vektorräume.
+  Für jeden Untervektorraum $U \subseteq V$ sei
+  \[
+              U^\perp
+    \coloneqq \{ v \in V \mid \text{$\bil{u, v} = 0$ für alle $u \in U$} \}
+  \]
+  das orthogonale Komplement von $U$, und
+  \[
+              U^\circ
+    \coloneqq \{ \varphi \in V^* \mid \text{$\varphi(u) = 0$ für alle $u \in U$}
+  \]
+  der Annihilator von $U$.
+  Für jeden Endomorphismus $f \colon V \to W$ sei $f^* \colon W \to V$ die Adjungierte von $f$, und
+  \[
+    f^T \colon W^* \to V^*,
+    \quad
+    \varphi \mapsto \varphi \circ f
+  \]
+  die zu $f$ duale Abbildung.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_V \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-, v}
+      \]
+      ein Isomorphismus ist.
+    \item
+      Zeigen Sie, dass für jeden Untervektorraum $U \subseteq V$ die Gleichheit $\Phi_V(U^\perp) = U^\circ$ gilt.
+    \item
+      Zeigen Sie, dass $f^T \circ \Phi_W = \Phi_V \circ f^*$, dass alsa das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                V   \arrow[swap]{d}{\Phi_V}
+            \&  W   \arrow[swap]{l}{f^*}
+                    \arrow{d}{\Phi_W}
+          \\
+                V^* 
+            \&  W^* \arrow{l}{f^T}
+        \end{tikzcd}
+      \]
+      Folgern Sie, dass $f^* = \Phi_V^{-1} \circ f^T \circ \Phi_W$.
+  \end{enumerate}
+  In Linear Algebra I wurde gezeigt, dass
+  \[
+      \ker f^T
+    = (\im f)^\circ
+    \quad\text{und}\quad
+      \im f^T
+    = (\ker f )^\circ,
+  \]
+  und dass für je zwei Untervektorräume $U_1, U_2 \subseteq V$ die Gleichheiten
+  \[
+      (U_1 + U_2)^\circ
+    = U_1^\circ \cap U_2^\circ
+    \quad\text{und}\quad
+      (U_1 \cap U_2)^\circ
+    = U_1^\circ + U_2^\circ
+  \]
+  gelten.
+  \begin{enumerate}[resume]
+    \item
+      Folgen Sie aus den vorherigen Aufgabenteilen und den Aussagen aus Lineare Algebra I, dass für alle Untervektorräume $U_1, U_2 \subseteq V$ die Gleichheiten
+      \[
+          (U_1 + U_2)^\perp
+        = U_1^\perp \cap U_2^\perp
+        \quad\text{und}\quad
+          (U_1 \cap U_2)^\perp
+        = U_1^\perp + U_2^\perp
+      \]
+      gelten.
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\Phi_V$ ein Isomorphismus ist.)
+    \item
+      Folgen Sie aus den vorherigen Aufgabenteilen und den Aussagen aus Lineare Algebra I, dass
+      \[
+          \ker f^*
+        = (\im f)^\perp
+        \quad\text{und}\quad
+          \im f^*
+        = (\ker f)^\perp.
+      \]
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\Phi_V$ und $\Phi_W$ Isomorphismen sind.)
+  \end{enumerate}
+\end{question}
+
 
 \begin{question}
   Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$, und es sei
@@ -1077,7 +1920,119 @@
       Folgern Sie, dass $V \neq U \oplus U^\perp$.
       (\emph{Hinweis}: Betrachten Sie für $g \in U^\perp$ die Funktion $h \colon [0,1] \to \Rbb$ mit $h(t) = t^2 g(t)$.)
     \item
-      Zeigen Sie ferner, dass $V/U$ eindimensional ist.
+      Zeigen Sie ferner, dass $V\!/U$ eindimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum und $f \colon V \to V$ ein selbstadjungierter, orthogonaler Endomorphismus mit nur positiven Eigenwerten.
+  Zeigen Sie, dass bereits $f = \id_V$ gilt.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Entscheiden Sie, welche der folgenden Aussagen sich implizieren.
+  \begin{enumerate}
+    \item
+      $f$ ist selbstadjungiert mit positiven Eigenwerten.
+    \item
+      $f$ ist orthogonal, und alle Eigenwerte von $f$ sind positiv.
+    \item
+      $f$ ist normal mit $\det f > 0$.
+    \item
+      Es gibt einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$.
+    \item
+      $f$ ist selbstadjungiert und orthogonal.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ der reelle Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$, und für alle $n \in \Nbb$ sei $V_n \subseteq V$ der Untervektorraum der Polynomfunktionen von Grad $\leq n$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      
+      Zeigen Sie, dass
+      \[
+                  \bil{f, g}
+        \coloneqq \int_{-1}^1 f(t) g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Zeigen Sie, dass die lineare Abbildung $\psi \colon V \to V$ mit
+      \[
+        \psi(f)(t) \coloneqq (t^2 - 1) f''(t) + 2t f'(t)
+        \quad
+        \text{für alle $f \in V$ und $t \in \Rbb$}
+      \]
+      selbstadjungiert bezüglich $\bil{\cdot, \cdot}$ ist.
+  \end{enumerate}
+  Es sei $\mc{G} \coloneqq (p_n)_{n \geq 0}$ die Orthonormalbasis von $V$, die durch Anwenden des Gram-Schmidt-Verfahrens auf die Standardbasis $\mc{B} \coloneqq (x^n)_{n \geq 0}$ ensteht.
+  \begin{enumerate}[resume, leftmargin=*]
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $V_n$ invariant unter $\psi$ ist.
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $\mc{G}_n \coloneqq (p_0, \dotsc, p_n)$ eine Basis von $V_n$ ist.
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $\Mat_{\mc{G}_n}(\psi|_{V_n})$ eine obere Dreiecksmatrix ist.
+      Betrachten Sie hierfür die Filtration
+      \[
+        0 \subseteq V_0 \subseteq V_1 \subseteq V_2 \subseteq V_3 \subseteq \dotsb \subseteq V_n,
+      \]
+      und nutzen Sie, dass $V_i = \Ell(\mc{G}_i)$ invariant unter $\psi$ ist.
+    \item
+      Folgen Sie mithilfe der Selbstadjungiertheit von $\psi$, dass $\Mat_{\mc{G}_n}(\psi|_{V_n})$ für alle $n \geq 0$ bereits eine Diagonalmatrix ist.
+      Folgern Sie, dass $\mc{G}$ eine Basis aus Eigenvektoren von $\psi$ ist.
+    \item
+      Bestimmen Sie für alle $n \geq 0$ die Eigenwerte der Einschränkung $\psi|_{V_n}$, indem Sie die darstellende Matrix bezüglich der Basis $\mc{B}_n = (1, x, \dotsc, x^n)$ von $V_n$ bestimmen.
+    \item
+      Geben Sie den zu $p_n$ gehörigen Eigenwert von $\psi$ an.
+    \item
+      Berechnen Sie $\mc{G}_4$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gilt $\exp(f)^* = \exp(f^*)$.
+    \item
+      Ist $f$ normal, so ist auch $f^*$ normal.
+    \item
+      Ist $f$ selbstadjungiert, so ist auch $\exp(f)$ selbstadjungiert.
+    \item
+      Ist $f$ antiselbstadjungiert, so ist $\exp(f)$ orthogonal ($\Kbb = \Rbb$), bzw.\ unitär ($\Kbb = \Cbb$).
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein Endomorphismus.
+  \newline
+  Zeigen Sie die folgenden Äquivalenzen für den Fall $\Kbb = \Cbb$:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist.
+    \item
+      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ unitär ist.
+    \item
+      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven Eigenwerten ist.
+  \end{enumerate}
+  Zeigen Sie die folgenden Aussagen für den Fall $\Kbb = \Rbb$:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist, und alle (reellen) Eigenwerte von $g$ gerade Vielfachheit haben.
+    \item
+      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ orthogonal ist und alle negativen (reellen) Eigenwerte von $f$ gerade Vielfachheit haben.
+    \item
+      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven (reellen) Eigenwerten ist.
   \end{enumerate}
 \end{question}
 
@@ -1189,9 +2144,9 @@
 \begin{question}
   Es sei $V$ ein Skalarproduktraum und
   \[
-    O(V) \coloneqq \{ f \in \End(V) \mid f f^* = \id \}.
+    \Orthogonal(V) \coloneqq \{ f \in \End(V) \mid f f^* = \id \}.
   \]
-  Zeigen Sie, dass $O(V)$ eine Untergruppe von $\GL(V)$ bildet.
+  Zeigen Sie, dass $\Orthogonal(V)$ eine Untergruppe von $\GL(V)$ bildet.
 \end{question}
 
 
@@ -1244,8 +2199,14 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Folgern Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $M_\mc{B}(\phi)$ für alle $\phi \in G$ eine orthogonale Matrix ist.
     \item
-      Folgern Sie damit, dass es für $n = \dim V$ einen injektiven Gruppenhomomorphismus $\Phi \colon G \to O_n(\Rbb)$ gibt, $G$ also isomorph zu der Untergruppe $\im \Phi$ von $O_n(\Rbb)$ ist.
+      Folgern Sie damit, dass es für $n = \dim V$ einen injektiven Gruppenhomomorphismus $\Phi \colon G \to \Orthogonal(n)$ gibt, $G$ also isomorph zu der Untergruppe $\im \Phi$ von $\Orthogonal(n)$ ist.
   \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $F$ und $G$ zwei selbstadjungierte Endomorphismen eines Skalarproduktraums $V$.
+  Zeigen Sie, dass $F \circ G$ genau dann selbstadjungierti ist, wenn $F$ und $G$ kommutieren.
 \end{question}
 
 
@@ -1284,12 +2245,22 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Es sei $s' \colon V \to V$ ein Endomorphismus mit $s'(\alpha) = -\alpha$ und $s'(x) = x$ für alle $x \in H_\alpha$.
       Zeigen Sie, dass bereits $s' = s_\alpha$ gilt.
     \item
-      Zeigen Sie, dass für jeden orthogonalen Isomorphismus $t \colon V \to V$ die Identität
+      Es sei $t \colon V \to V$ ein orthogonaler Isomorphismus. Zeigen Sie die Gleichheit
       \[
-        t s_\alpha t^{-1} = s_{t(\alpha)}
+        t s_\alpha t^{-1} = s_{t(\alpha)}.
       \]
-      gilt.
   \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ euklidische Vektorräume, und $f \colon V \to V$ eine surjektive Funktion (!) mit
+  \[
+    \bil{f(v_1), f(v_2)} = \bil{v_1, v_2}
+    \quad
+    \text{für alle $v_1, v_2 \in V$}.
+  \]
+  Zeigen Sie, dass $f$ ein Isomorphismus ist.
 \end{question}
 
 
@@ -1319,7 +2290,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 \begin{question}
   Es sei $\det \colon \Mat_n(\Cbb) \to \Cbb^\times$ die Determinantenabbildung, wobei $\Cbb^\times$ die multiplikative Gruppe des Körpers bezeichnet.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $\det$ ein surjektiver Gruppenhomomorphismus ist.
     \item
@@ -1327,9 +2298,9 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\GL_n(\Rbb)}$.
     \item
-      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{U_n}$.
+      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Unitary_n}$.
     \item
-      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{O_n}$.
+      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Orthogonal_n}$.
   \end{enumerate}
 \end{question}
 
@@ -1337,21 +2308,21 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 \begin{question}
   Es sei
   \[
-    \Phi \colon SU_2 \to S^3,
+    \Phi \colon \SUnitary(2) \to S^3,
     \quad
     \begin{pmatrix}
       a & b \\
-      c & 
+      c & d
     \end{pmatrix}
     \mapsto
-    \vect{a \\ b}
+    \vect{a \\ c}
   \]
   die Abbildung auf die erste Spalte, wobei
   \[
               S^3
     \coloneqq \left\{ \vect{z_1 \\ z_2} \in \Cbb^2 \,\middle|\, |z_1|^2 + |z_2|^2 = 1 \right\}.
   \]
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $\Phi$ wohldefiniert ist.
     \item
@@ -1361,7 +2332,34 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 
 \begin{question}
-  Zeigen Sie, dass die drei Gruppen $SO_2$, $S^1$ und $U_1$ isomorph sind.
+  Zeigen Sie, dass die drei Gruppen $\SOrthogonal(2)$, $S^1$ und $\Unitary(1)$ isomorph sind.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum, und die Abbildung $P \colon V \to V$ sei orthogonal und eine Orthogonalprojektion.
+  Bestimmen Sie $P$.
+\end{question}
+
+
+\begin{question}
+  Es sei $A \in \Unitary(n)$.
+  Zeigen Sie, dass $|\tr A| \leq n$.
+  Wann gilt Gleichheit?
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $z_1, \dotsc, z_n \in \Cbb$ paarweise verschieden Punkte.
+      Zeigen Sie, dass es für beliebige Werte $w_1, \dotsc, w_n \in \Cbb$ ein Polynom $P \in \Cbb[T]$ mit $P(z_j) = w_j$ für alle $j = 1, \dotsc, n$ gibt.
+    \item
+      Es sei $f \colon V \to V$ ein normaler Endomorphismus eines endlichdimensionalen unitären Vektorraums $V$.
+      Zeigen Sie, dass es ein Polynom $P \in \Cbb[T]$ mit $f^* = P(f)$ gibt.
+      
+      (\emph{Hinweis}: $f$ ist diagonalisierbar.)
+  \end{enumerate}
 \end{question}
 
 
@@ -1376,6 +2374,134 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 
 % BILINEAR FORMS
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum, $\beta \colon V \times V \to K$ eine symmetrische Bilinearform und $q \colon V \to K$ die zugehörige quadratische Form.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für den Fall $\ringchar K \neq 2$ mithilfe einer Polarisationsformel, dass $\beta$ durch $q$ bereits eindeutig bestimmt ist.
+    \item
+      Folgern Sie:
+      Ist $\ringchar K \neq 2$, $V \neq 0$ und $\beta$ nicht entartet, d.h.\ für jedes $v \in V$ mit $v \neq 0$ gibt es ein $w \in V$ mit $\beta(v, w) \neq 0$, so gibt es ein $v \in V$ mit $\beta(v,v) \neq 0$.
+    \item
+      Zeigen Sie für den Fall $\ringchar K = 2$, dass es verschieden symmetrische Bilinearformen mit gleicher quadratische Form geben kann.
+      Geben Sie auch ein explizites Beispiel hierfür an.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ eine reeller Vektorraum und $\bil{\cdot, \cdot} \colon V \times V \to \Rbb$ eine symmetrische Bilinearform.
+  Zeigen Sie, dass die folgenden Aussagen im Allgemeinen gelten, oder geben Sie jeweils ein Gegenbeispiel an:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $\bil{v, v} \geq 0$ für alle $v \in V$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b, b} > 0$ für alle $b \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b_1, b_2} > 0$ für alle $b_1, b_2 \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Die Teilmenge
+      \[
+        U \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}
+      \]
+      ist ein Untervektorraum von $V$.
+    \item
+      Die Teilmengen
+      \[
+        U_+ \coloneqq \{ v \in V \mid \bil{v, v} \geq 0 \}
+        \quad\text{und}\quad
+        U_- \coloneqq \{ v \in V \mid \bil{v, v} \leq 0 \}
+      \]
+      sind Untervektorräume von $V$.
+    \item
+      Die Teilmenge
+      \[
+        U_0 \coloneqq \{ v \in V \mid \bil{v, v} = 0 \}
+      \]
+      ist ein Untervektorraum von $V$.
+    \item
+      Für jeden Untervektorraum $U \subseteq V$ ist
+      \[
+        \dim V = \dim U + \dim U^\perp.
+      \]
+    \item
+      Ist $U \subseteq V$ ein Untervektorraum mit $(U^\perp)^\perp = V$, so ist $U = V$.
+    \item
+      Für alle Untervektorräume $U_1 \subseteq U_2$ gilt
+      \[
+        (U_1 + U_2)^\perp = U_1^\perp \cap U_2^\perp.
+      \]
+    \item
+      Für
+      \[
+                  U_0
+        \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}
+      \]
+      und jeden Untervektorraum $U \subseteq V$ gilt
+      \[
+        (U^\perp)^\perp = U + U_0.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Falsch, siehe Nullbilinearform.
+    \item
+      Falsch, siehe
+      \[
+        \begin{pmatrix}
+          0 & 1
+          1 & 0
+        \end{pmatrix}.
+      \]
+    \item
+      Falsch, siehe
+      \[
+        \begin{pmatrix}
+          1 & 2 \\
+          2 & 1
+        \end{pmatrix}
+      \]
+    \item
+      Wahr.
+    \item
+      Falsch, für
+      \[
+        \begin{pmatrix}
+          1 & 2 \\
+          2 & 1
+        \end{pmatrix}
+      \]
+      sind $e_1$ und $e_2$ in $U_+$, aber $e_1 - e_2$ nicht.
+    \item
+      Nein, siehe
+      \[
+        \begin{pmatrix}
+          0 & 1 \\
+          1 & 0
+        \end{pmatrix}
+      \]
+    \item
+      Nein, siehe Nullbilinearform.
+    \item
+      Falsch, siehe den Span von $e_2$ und
+      \[
+        \begin{pmatrix}
+          0 & 0 \\
+          0 & 1
+        \end{pmatrix}.
+      \]
+    \item
+      Die Aussage gilt.
+    \item
+      Falsch: Nehme ein Skalarprodukt auf einem unendlichdimensionalen Raum, und einen dichten, echten Unterraum.
+  \end{enumerate}
+\end{solution}
 
 
 \begin{question}
@@ -1439,7 +2565,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       ein Untervektorraum von $V$ ist.
       (Man bezeichnet $\rad(\beta)$ als das \emph{Radikal} von $\beta$.)
     \item
-      Zeigen Sie, dass $\beta$ eine symmetrische Bilinearform $\bar{\beta} \colon (V/U) \times (V/U) \to K$ mit
+      Zeigen Sie, dass $\beta$ eine symmetrische Bilinearform $\bar{\beta} \colon (V\!/ \rad(\beta)) \times (V\!/\rad(\beta)) \to K$ mit
       \[
         \bar{\beta}([v], [w])
         \coloneqq
@@ -1452,7 +2578,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $\bar{\beta}$ nicht entartet ist, d.h.\ dass für das Radikal
       \[
                   \rad(\bar{\beta})
-        \coloneqq \{ x \in V/U \mid \text{$\bar{\beta}(x,y) = 0$ für alle $y \in V/U$} \}
+        \coloneqq \{ x \in V\!/U \mid \text{$\bar{\beta}(x,y) = 0$ für alle $y \in V\!/U$} \}
       \]
       bereits $\rad(\bar{\beta}) = 0$ gilt.
     \item
@@ -1461,6 +2587,36 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
         W \coloneqq \{v \in V \mid \beta(v,v) = 0\}
       \]
       ersetzt?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+   Es sei $V$ ein $K$-Vektorraum und $b \colon V \times V \to K$ eine Bilinearform.
+  \begin{enumerate}
+    \item
+      Zeigen Sie für $\ringchar K \neq 2$, dass es eindeutige Bilinearformen $b_s, b_a \colon V \times V \to K$ gibt, so dass
+      \begin{itemize}
+        \item
+          $b = b_s + b_a$
+        \item
+          $b_s$ ist symmetrisch und $a$ ist antisymmetrisch
+      \end{itemize}
+    \item
+      Zeigen Sie durch Angabe eines Gegenbeispiels, dass die Aussage für $\ringchar K = 2$ nicht mehr gilt.
+  \end{enumerate}
+  Es sei nun $V$ der Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$, und für alle $n \geq 0$ sei $V_n \subseteq V$ der Untervektorraum der Polynomfunktionen vom Grad $\leq n$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Abbildung $b \colon V \times V \to \Rbb$ mit
+      \[
+        b(p, q) \coloneqq \int_{-1}^1 p(t) q'(t) \dd{t}
+      \]
+      eine Bilinearform ist.
+    \item
+      Geben Sie den symmtrischen Anteil $b_s$ in einer Form an, in der kein Integral vorkommt.
+%     \item
+%       Geben Sie eine Basis von $V_n$ an, bezüglich der $b_s$ durch eine Diagonalmatrix mit Einträgen $0, 1, -1$ beschrieben wird, und bestimmen Sie die Signatur von $b_s$ auf $V_n$.
   \end{enumerate}
 \end{question}
 
@@ -1578,6 +2734,22 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Zeigen sie, dass $\sigma$ nicht entartet ist, d.h.\ dass es für jedes $A \in \Mat_n(K)$ mit $A \neq 0$ ein $B \in \Mat_n(K)$ mit $\sigma(A, B) \neq 0$ gibt.
   \end{enumerate}
+  Es sei nun
+  \[
+    S_+ \coloneqq \{ A \in \Mat_n(K) \mid A^T = A \}
+  \]
+  der Untervektorraum der symmetrischen Matrizen und
+  \[
+    S_- \coloneqq \{ A \in \Mat_n(K) \mid A^T = -A \}
+  \]
+  der Untervektorraum der schiefsymmetrischen Matrizen.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Ist $\ringchar K \neq 2$, so sind $S_+$ und $S_-$ bezüglich $\sigma$ orthogonal zueinander.
+    \item
+      Ist $K = \Rbb$, so ist die Einschränkung von $\sigma$ auf $S_+$ positiv definit, und die Einschränkung auf $S_-$ negativ definit.
+  \end{enumerate}
 \end{question}
 
 
@@ -1611,6 +2783,96 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 % LIE STUFF AND COMMUTATORS
 
+
+\begin{question}
+  Für jede Matrix $X \in \Mat_n(K)$ sei
+  \[
+    \lambda_X \colon \Mat_n(K) \to \Mat_n(K),
+    \quad
+    A \mapsto XA
+  \]
+  die Linksmultiplikation mit $X$,
+  \[
+    \rho_X \colon \Mat_n(K) \to \Mat_n(K),
+    \quad
+    A \mapsto AX
+  \]
+  die Rechtsmultiplikation mit $X$, und
+  \[
+    \ad_X = [X, -] \colon \Mat_n(K) \to \Mat_n(K),
+    \quad
+    A \mapsto [X, A] = XA - AX
+  \]
+  der Kommutator mit $X$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie:
+      Ist $X$ nilpotent, so sind auch $\lambda_X$ und $\rho_X$ nilpotent.
+    \item
+      Folgern Sie:
+      Ist $X$ nilpotent, so ist auch $\ad_X$ nilpotent.
+      (\emph{Hinweis}: Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
+    \item
+      Zeigen Sie:
+      Ist $X$ diagonalisierbar, so sind auch $\lambda_X$ und $\rho_X$ diagonalisierbar.
+      (\emph{Hinweis}: Betrachten Sie zunächst den Fall, dass $X$ eine Diagonalmatrix ist.)
+    \item
+      Folgern Sie:
+      Ist $X$ diagonalisierbar, so ist auch $\ad_X$ diagonalisierbar.
+      (\emph{Hinweis}: Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein Körper und
+  \[
+              \slLie_n(K)
+    \coloneqq \{ A \in \Mat_n(K) \mid \tr A = 0 \}.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $\slLie_n(K)$ ein Untervektorraum von $\Mat_n(K)$ mit $\dim \slLie_n(K) = n^2 - 1$ ist.
+    \item
+      Zeigen Sie, dass
+      \[
+        \mc{B}
+        \coloneqq
+              \{ E_{ij} \mid 1 \leq i \neq j \leq n \}
+        \cup  \{ E_{11} - E_{ii} \mid 2 \leq i \leq n \}
+      \]
+      eine Basis von $\slLie_n(K)$ ist, wobei $E_{ij} \in \Mat_n(K)$ die Matrix ist, deren $(i,j)$-ter Eintrag $1$ ist, und für die alle anderen Einträge $0$ sind.
+  \end{enumerate}
+  Es sei nun $C \coloneqq \Ell( [A,B] \mid A, B \in \Mat_n(K) )$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $\tr([A,B]) = 0$ für alle $A, B \in \Mat_n(K)$.
+      Folgern Sie, dass $C \subseteq \slLie_n(K)$.
+    \item
+      Zeigen Sie, dass $\slLie_n(K) \subseteq C$, indem Sie jedes der Basiselement aus $\mc{B}$ also Kommutator schreiben.
+      (\emph{Hinweis}:
+      Überlegen Sie zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
+  \end{enumerate}
+  Es ist also $\slLie_n(K) = \Ell( [A,B] \mid A, B \in \Mat_n(K) )$ ein ($n^2 - 1$)-dimensionaler Untervektorraum.
+  Es sei nun $f \colon \Mat_n(K) \to K$ eine lineare Abbildung mit $f(AB) = f(BA)$ für alle $A, B \in \Mat_n(K)$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $f$ eine eindeutige lineare Abbildung
+      \[
+        \overline{f} \colon \Mat_n(K) / \slLie_n(K) \to K,
+        \quad
+        [A] \mapsto f(A)
+      \]
+      induziert.
+      Zeigen Sie, dass $\overline{\tr} \neq 0$.
+    \item
+      Zeigen Sie, dass $\Mat_n(K) / \slLie(K)$ eindimensional ist.
+      Folgern Sie, dass es ein eindeutiges $\lambda \in K$ mit $\overline{f} = \lambda \overline{\tr}$ gibt.
+    \item
+      Folgern Sie, dass bereits $f = \lambda \tr$ gilt.
+      (Die Spur ist also durch die Eigenschaft, dass $\tr(AB) = \tr(BA)$ für alle $A, B \in \Mat_n(K)$, bis auf skalares Vielfaches eindeutig bestimmt.)
+  \end{enumerate}
+\end{question}
 
 
 \begin{question}
@@ -1662,45 +2924,6 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 \end{question}
 
 
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $m \colon V \times V \to V$ eine bilineare Abbildung.
-  Eine lineare Abbildung $D \colon V \to V$ heißt \emph{$m$-Derivation}, falls
-  \[
-    D(m(x,y))
-    = m(D(x), y) + m(x, D(y))
-    \quad
-    \text{für alle $x, y \in V$}.
-  \]
-  Es sei
-  \[
-              \Der(m)
-    \coloneqq \{ D \colon V \to V \mid \text{$D$ ist eine $m$-Derivation} \}.
-  \]
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie für den Fall $V = K[X]$ und die Multiplikation
-      \[
-        m(p,q) \coloneqq p \cdot q
-        \quad
-        \text{für alle $p, q \in K[X]$},
-      \]
-      dass die Ableitung
-      \[
-        D \colon K[X] \to K[X],
-        \quad
-        \sum_{d=0}^n a_d X^d  \mapsto \sum_{d=1}^n a_d d X^{d-1} 
-      \]
-      eine $m$-Derivation ist.
-      Unter welchem Namen ist dieser Umstand für gewöhnlich bekannt?
-    \item
-      Zeigen Sie, dass $\Der(m)$ ein Untervektorraum von $\End(V)$ ist.
-    \item
-      Zeigen Sie, dass $\Der(m)$ eine Lie-Unteralgebra von $\End(V)$ ist, d.h.\ dass für alle $D_1, D_2 \in \Der(m)$ auch $[D_1, D_2] \in \Der(m)$.
-  \end{enumerate}
-\end{question}
-
-
 \begin{question}
   Es sei $V$ ein $K$-Vektorrraum und $[-,-] \colon V \times V \to V$ eine alternierend bilineare Abbildung.
   Für jedes $x \in V$ sei
@@ -1712,7 +2935,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       $[-,-]$ erfüllt die Jacobi-Identität, d.h.\ es ist
       \[
-        [[x,y],z] + [[y,z],x] + [[z,y],x] = 0
+        [x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0
         \quad
         \text{für alle $x, y, z \in V$}.
       \]
@@ -1724,10 +2947,9 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
         \quad
         \text{für alle $x, y, z \in V$}.
       \]
-      (Für jedes $x \in V$ ist also $\ad_x$ eine Derivation bezüglich $[-,-]$.)
+      (Man sagt, dass $\ad_x$ eine Derivation bezüglich $[-,-]$ ist.)
   \end{enumerate}
 \end{question}
-
 
 
 \begin{question}
@@ -1737,6 +2959,32 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $E(V_\lambda(H)) \subseteq V_{\lambda + 2}(H)$ für alle $\lambda \in K$.
     \item
       Folgern Sie: Ist $V$ endlichdimensional und $H$ diagonalisierbar, so ist $E$ nilpotent.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $B \in \Mat_n(\Kbb)$.
+  Es seien
+  \[
+              \Orthogonal(B)
+    \coloneqq \{ S \in \GL_n(\Kbb) \mid S^T B S = B \}
+  \]
+  und
+  \[          \gLie(B)
+    \coloneqq \{ A \in \Mat_n(\Kbb) \mid A^T B = - B A \}
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\Orthogonal(B)$ eine Untergruppe von $\GL_n(\Kbb)$ ist.
+    \item
+      Zeigen Sie, dass $\gLie(B)$ eine Lie-Unteralgebra von $\gl_n(\Kbb)$ ist, dass also $[A_1, A_2] \in \gLie(B)$ für alle $A_1, A_2 \in \gLie(B)$.
+    \item
+      Zeigen Sie, dass $\exp(A) \in \Orthogonal(B)$ für alle $A \in \gLie(B)$.
+      (\emph{Hinweis}: Zeigen Sie zunächst, dass $\exp(A)^T B = B \exp(-A)$.)
+    \item
+      Geben Sie für $\Kbb = \Rbb$ eine Matrix $B \in \Mat_n(\Rbb)$ an, so dass $\Orthogonal(B) = \Orthogonal(n)$.
+      Was sind dann die Elemente von $\gLie(B)$?
   \end{enumerate}
 \end{question}
 
@@ -1760,12 +3008,66 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $\gLie(\beta)$ eine Lie-Unteralgebra von $\gl(V)$ ist, d.h.\ dass für alle $f, g \in \gLie(\beta)$ auch $[f,g] \in \gLie(\beta)$.
     \item
       Zeigen Sie, dass $\exp(f) \in O(\beta)$ für alle $f \in \gLie(\beta)$.
-      (\emph{Hinweis}: Die bilineare Abbildung $\beta$ ist in beiden Argumenten stetig.)
+      (\emph{Hinweis}:
+      Zeigen Sie zunächst, dass $\beta(\exp(f)(x) ,y) = \beta(x, \exp(-f)(y))$ für alle $x, y \in V$.
+      Nutzen Sie hierfür, dass die bilineare Abbildung $\beta$ in beiden Argumenten stetig ist.)
     \item
       Es sei $\Kbb = \Rbb$ und $\bil{\cdot, \cdot}$ ein Skalarprodukt auf $V$.
       Unter welchen Begriffen sind die Elemente aus $G(\bil{\cdot, \cdot})$ und $\gLie(\bil{\cdot, \cdot})$ bekannt?
   \end{enumerate}
 \end{question}
+
+
+% \begin{question}
+%   Es sei $V$ ein $K$-Vektorraum und $m \colon V \times V \to V$ eine bilineare Abbildung.
+%   Eine lineare Abbildung $D \colon V \to V$ heißt \emph{$m$-Derivation}, falls
+%   \[
+%     D(m(x,y))
+%     = m(D(x), y) + m(x, D(y))
+%     \quad
+%     \text{für alle $x, y \in V$}.
+%   \]
+%   Es sei
+%   \[
+%               \Der(m)
+%     \coloneqq \{ D \colon V \to V \mid \text{$D$ ist eine $m$-Derivation} \}.
+%   \]
+%   \begin{enumerate}[leftmargin=*]
+%     \item
+%       Zeigen Sie für den Fall $V = K[X]$ und die Multiplikation
+%       \[
+%         m(p,q) \coloneqq p \cdot q
+%         \quad
+%         \text{für alle $p, q \in K[X]$},
+%       \]
+%       dass die Ableitung
+%       \[
+%         D \colon K[X] \to K[X],
+%         \quad
+%         \sum_{d=0}^n a_d X^d  \mapsto \sum_{d=1}^n a_d d X^{d-1} 
+%       \]
+%       eine $m$-Derivation ist.
+%       Unter welchem Namen ist dieser Umstand für gewöhnlich bekannt?
+%     \item
+%       Zeigen Sie, dass $\Der(m)$ ein Untervektorraum von $\End(V)$ ist.
+%     \item
+%       Zeigen Sie, dass $\Der(m)$ eine Lie-Unteralgebra von $\End(V)$ ist, d.h.\ dass für alle $D_1, D_2 \in \Der(m)$ auch $[D_1, D_2] \in \Der(m)$.
+%   \end{enumerate}
+% \end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
