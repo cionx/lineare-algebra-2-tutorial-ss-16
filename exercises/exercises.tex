@@ -4,9 +4,6 @@
 \usepackage{../generalstyle}
 \usepackage{specificstyle}
 
-\setromanfont[Mapping=tex-text]{Linux Libertine O}
-% \setsansfont[Mapping=tex-text]{DejaVu Sans}
-% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 
 \title{Übungen zu Lineare Algebra II}
 \author{Jendrik Stelzner}
@@ -298,7 +295,9 @@
         t \mapsto (1-t)x + ty = x + t(y-x)
       \]
       die affin lineare Funktion mit den Randwerten $x$ und $y$ ist.
-      (\emph{Hinweis}: Es hilft, sich diese Zerlegung anschaulich vorzustellen.)
+      
+      (\emph{Hinweis}:
+       Es hilft, sich diese Zerlegung anschaulich vorzustellen.)
     \item
       Für einen Körper mit $\ringchar K \nmid n$ die Zerlegung von $V \coloneqq \Mat_n(K)$ in die Untervektorräume
       \[
@@ -310,7 +309,9 @@
     \item
       Es sei $V$ ein beliebiger $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus, so dass $(f-\lambda)(f-\mu) = 0$ für $\lambda, \mu \in K$ und $\lambda \neq \mu$.
       Es seien $U_1 = V_\lambda(f)$ und $U_2 = V_\mu(f)$.
-      (\emph{Hinweis}: Die Behauptung ist also, dass $f$ diagonalisier mit Eigenwerten $\lambda$ und $\mu$ ist.)
+      
+      (\emph{Hinweis}:
+       Die Behauptung ist also, dass $f$ diagonalisier mit Eigenwerten $\lambda$ und $\mu$ ist.)
   \end{enumerate}
 \end{question}
 
@@ -522,6 +523,7 @@
       Folgern Sie durch Einsetzen von $f$, dass $\id_V = \sum_{i=1}^n e_i$.
     \item
       Zeigen Sie, dass $\im e_i \subseteq V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+      
       (\emph{Hinweis}:
        Überlegen sie sich, dass $(f - \lambda_i) e_i = 0$.)
     \item
@@ -545,7 +547,6 @@
       \end{itemize}
   \end{enumerate}
 \end{question}
-
 
 
 
@@ -893,7 +894,7 @@
       ein Isomorphismus von $\Rbb$-Vektorräumen ist.
       Geben Sie auch $\Phi_{V,W}^{-1}$ an.
     \item
-      Es seien vier $K$-Vektorräume $V, V', W, W'$ und zwei $K$-lineare Abbildungen $f \colon V \to V'$ und $g \colon W \to W'$ gegeben.
+      Es seien  $V, V', W, W'$ vier $K$-Vektorräume und $f \colon V \to V'$ und $g \colon W \to W'$ zwei $K$-lineare Abbildungen.
       Zeigen Sie, dass die beidseitige Komposition
       \[
         g \circ - \circ f
@@ -948,14 +949,18 @@
     \Phi \colon \Hom_\Rbb(V, W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
   \]
   induziert.
-  (\emph{Hinweis}: Beachten Sie, dass $V$ und $W$ nicht notwendigerweise endlichdimensional sind.)
+  
+  (\emph{Hinweis}:
+   Beachten Sie, dass $V$ und $W$ nicht notwendigerweise endlichdimensional sind.)
 \end{question}
 
 
 \begin{question}
   Es sei $V$ ein $\Rbb$-Vektorraum.
   Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
-  (\emph{Hinweis}: Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
+  
+  (\emph{Hinweis}:
+   Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
 \end{question}
 
 
@@ -1136,7 +1141,9 @@
       \]
       Von diesem Diagram wissen wir bereits, dass Deckel, Boden und beide Rückseiten kommutieren.
       Zeigen Sie damit, dass auch die Vorderseite kommutiert.
-      (\emph{Hinweis}: Nutzen Sie, dass zwei $\Cbb$-lineare Abbildung $f, g \colon \Hom_\Rbb(V, W)_\Cbb \to \Mat(m \times n, \Cbb)$ genau dann übereinstimmen, wenn die Kompositionen $f \circ \iota_2$ und $g \circ \iota_2$ übereinstimmen.)
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass zwei $\Cbb$-lineare Abbildung $f, g \colon \Hom_\Rbb(V, W)_\Cbb \to \Mat(m \times n, \Cbb)$ genau dann übereinstimmen, wenn die Kompositionen $f \circ \iota_2$ und $g \circ \iota_2$ übereinstimmen.)
     \item
       Zeigen Sie, dass $\Psi_2$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
     \item
@@ -1157,7 +1164,7 @@
 
 
 \begin{question}
-  Es sei $V$ ein $K$-Vektorraum, wobei $V \neq 0$ und $K$ algebraisch abgeschlossen ist.
+  Es sei $V \neq 0$ ein $K$-Vektorraum, wobei $K$ algebraisch abgeschlossen ist.
   Es seien $f_1, \dotsc, f_n \colon V \to V$ paarweise kommutierende Endomorphismen.
   Zeigen Sie, dass die Endomorphismen $f_1, \dotsc, f_n$ einen gemeinsamen Eigenvektor besitzen, d.h.\ dass es ein $v \in V$ gibt, das für jedes $f_i$ eine Eigenvektor ist.
 \end{question}
@@ -1165,7 +1172,7 @@
 
 \begin{question}
   Es sei $V$ ein $K$-Vektorraum.
-  Für alle Endomorphismen $f_1, \dotsc, f_n \in \End(V)$ und Skalare $\lambda_1, \dotsc, \lambda_n \in K$ sei
+  Für alle Endomorphismen $f_1, \dotsc, f_n \colon V  \to V$ und Skalare (Eigenwerte) \mbox{$\lambda_1, \dotsc, \lambda_n \in K$} sei
   \[
               V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)
     \coloneqq \{ v \in V \mid \text{$f_i(v) = \lambda_i v$ für alle $i = 1, \dotsc, n$} \}
@@ -1183,7 +1190,7 @@
       Es seien $f_1, \dotsc, f_n, g \in \End(V)$ Endomorphismen, so dass $g$ mit jedem $f_i$ kommutiert.
       Zeigen sie, dass der gemeinsame Eigenraum $V(f_1, \lambda_1; \dots; f_n, \lambda_n)$ für alle $\lambda_1, \dotsc, \lambda_n \in K$ invariant unter $g$ ist.
     \item
-      Zeigen Sie: Sind die Endomorphismen $f_1, \dotsc, f_n \in \End(V)$ diagonalisierbar (d.h.\ es ist $V = \bigoplus_{\lambda \in K} V(f_i, \lambda)$ für alle $i = 1, \dotsc, n$) und paarweise kommutierend, so sind die Endomorphismen \emph{simultan diagonalisierbar}, d.h.\ es ist
+      Zeigen Sie: Sind die Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ diagonalisierbar (d.h.\ für alle $i = 1, \dotsc, n$ ist $V = \bigoplus_{\lambda \in K} V(f_i, \lambda)$ ) und paarweise kommutierend, so sind die Endomorphismen \emph{simultan diagonalisierbar}, d.h.\ es ist
       \[
           V
         = \bigoplus_{\lambda_1, \dotsc, \lambda_n \in K}  V(f_1, \lambda_1; \dotsc; f_n, \lambda_n).
@@ -1191,7 +1198,9 @@
     \item
       Es sei nun $V$ endlichdimensional und $H \subseteq \End(V)$ ein Untervektorraum aus diagonalisierbaren und paarweise kommutierenden Endomorphismen.
       Zeigen Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $\Mat_\mc{B}(f)$ für jedes $f \in H$ eine Diagonalmatrix ist.
-      (\emph{Hinweis}: Nutzen Sie, dass $\End(V)$ endlichdimensioal ist.)
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\End(V)$ endlichdimensioal ist.)
   \end{enumerate}
 \end{question}
 
@@ -1227,7 +1236,9 @@
     \quad
     \text{für jedes $A \in \Mat_3(K)$}.
   \]
-  (\emph{Hinweis}: Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
+  
+  (\emph{Hinweis}:
+   Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
 \end{question}
 
 
@@ -1812,6 +1823,7 @@
       Folgern Sie, dass $\ker f = \ker f^*$.
     \item
       Folgern Sie damit aus den obigen Gleichheiten, dass $V = \im f \oplus \ker f$ gilt, und dass die Summe orthogonal ist.
+      
       (\emph{Hinweis}:
        Zeigen Sie zuerst, dass $\im f$ und $\ker f$ orthogonal sind, und nutzen Sie dann die Endlichdimensionalität von $V$.)
   \end{enumerate}
@@ -2014,7 +2026,9 @@
     \item
       Zeigen Sie, dass $U^\perp = 0$.
       Folgern Sie, dass $V \neq U \oplus U^\perp$.
-      (\emph{Hinweis}: Betrachten Sie für $g \in U^\perp$ die Funktion $h \colon [0,1] \to \Rbb$ mit $h(t) = t^2 g(t)$.)
+      
+      (\emph{Hinweis}:
+       Betrachten Sie für $g \in U^\perp$ die Funktion $h \colon [0,1] \to \Rbb$ mit $h(t) = t^2 g(t)$.)
     \item
       Zeigen Sie ferner, dass $V\!/U$ eindimensional ist.
   \end{enumerate}
@@ -2157,7 +2171,9 @@
       \[
         \sum_{n \in \Zbb} a_n b_n < \infty.
       \]
-      (\emph{Hinweis:} Zeigen sie zunächst, dass $ab \leq (a^2 + b^2)/2$ für alle $a, b \in \Rbb$.)
+      
+      (\emph{Hinweis}:
+       Zeigen sie zunächst, dass $ab \leq (a^2 + b^2)/2$ für alle $a, b \in \Rbb$.)
     \item
       Zeigen sie, dass
       \[
@@ -2454,7 +2470,8 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Es sei $f \colon V \to V$ ein normaler Endomorphismus eines endlichdimensionalen unitären Vektorraums $V$.
       Zeigen Sie, dass es ein Polynom $P \in \Cbb[T]$ mit $f^* = P(f)$ gibt.
       
-      (\emph{Hinweis}: $f$ ist diagonalisierbar.)
+      (\emph{Hinweis}:
+       $f$ ist diagonalisierbar.)
   \end{enumerate}
 \end{question}
 
@@ -2498,11 +2515,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b_1, b_2} > 0$ für alle $b_1, b_2 \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
     \item
-      Die Teilmenge
-      \[
-        U \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}
-      \]
-      ist ein Untervektorraum von $V$.
+      Die Teilmenge $U \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}$ ist ein Untervektorraum von $V$.
     \item
       Die Teilmengen
       \[
@@ -2512,30 +2525,15 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       \]
       sind Untervektorräume von $V$.
     \item
-      Die Teilmenge
-      \[
-        U_0 \coloneqq \{ v \in V \mid \bil{v, v} = 0 \}
-      \]
-      ist ein Untervektorraum von $V$.
+      Die Teilmenge $U_0 \coloneqq \{ v \in V \mid \bil{v, v} = 0 \}$ ist ein Untervektorraum von $V$.
     \item
-      Für jeden Untervektorraum $U \subseteq V$ ist
-      \[
-        \dim V = \dim U + \dim U^\perp.
-      \]
+      Für jeden Untervektorraum $U \subseteq V$ ist $\dim V = \dim U + \dim U^\perp$.
     \item
       Ist $U \subseteq V$ ein Untervektorraum mit $(U^\perp)^\perp = V$, so ist $U = V$.
     \item
-      Für alle Untervektorräume $U_1 \subseteq U_2$ gilt
-      \[
-        (U_1 + U_2)^\perp = U_1^\perp \cap U_2^\perp.
-      \]
+      Für alle Untervektorräume $U_1 \subseteq U_2$ gilt $(U_1 + U_2)^\perp = U_1^\perp \cap U_2^\perp$.
     \item
-      Für
-      \[
-                  U_0
-        \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}
-      \]
-      und jeden Untervektorraum $U \subseteq V$ gilt
+      Für $U_0 \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}$ und jeden Untervektorraum $U \subseteq V$ gilt
       \[
         (U^\perp)^\perp = U + U_0.
       \]
@@ -2633,7 +2631,9 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       ein Isomorphismus ist.
     \item
       Folgern Sie, dass es für jede Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$ genau eine Basis $\mc{B}^\circ = (b_1^\circ, \dotsc, b_n^\circ)$ von $V$ gibt, die bezüglich $\bil{\cdot, \cdot}$ dual zu $\mc{B}$ ist.
-      (\emph{Hinweis}: Formulieren Sie die Aussage, dass $\mc{C}$ dual zu $\mc{B}$ ist, mithilfe von $\Phi$ um.)
+      
+      (\emph{Hinweis}:
+       Formulieren Sie die Aussage, dass $\mc{C}$ dual zu $\mc{B}$ ist, mithilfe von $\Phi$ um.)
     \item
       Zeigen Sie, dass für jede Basis $\mc{B}$ von $V$ die Gleichheit $(\mc{B}^\circ)^\circ = \mc{B}$ gilt.
       Folgern Sie, dass die Abbildung
@@ -2696,12 +2696,12 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
         \item
           $b = b_s + b_a$
         \item
-          $b_s$ ist symmetrisch und $a$ ist antisymmetrisch
+          $b_s$ ist symmetrisch und $b_a$ ist antisymmetrisch
       \end{itemize}
     \item
-      Zeigen Sie durch Angabe eines Gegenbeispiels, dass die Aussage für $\ringchar K = 2$ nicht mehr gilt.
+      Zeigen Sie durch Angabe eines Gegenbeispiels, dass die Aussage für $\ringchar K = 2$ nicht gilt.
   \end{enumerate}
-  Es sei nun $V$ der Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$, und für alle $n \geq 0$ sei $V_n \subseteq V$ der Untervektorraum der Polynomfunktionen vom Grad $\leq n$.
+  Es sei nun $V$ der Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$.
   \begin{enumerate}[resume]
     \item
       Zeigen Sie, dass die Abbildung $b \colon V \times V \to \Rbb$ mit
@@ -2907,15 +2907,21 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Folgern Sie:
       Ist $X$ nilpotent, so ist auch $\ad_X$ nilpotent.
-      (\emph{Hinweis}: Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
+      
+      (\emph{Hinweis}:
+      Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
     \item
       Zeigen Sie:
       Ist $X$ diagonalisierbar, so sind auch $\lambda_X$ und $\rho_X$ diagonalisierbar.
-      (\emph{Hinweis}: Betrachten Sie zunächst den Fall, dass $X$ eine Diagonalmatrix ist.)
+      
+      (\emph{Hinweis}:
+      Betrachten Sie zunächst den Fall, dass $X$ eine Diagonalmatrix ist.)
     \item
       Folgern Sie:
       Ist $X$ diagonalisierbar, so ist auch $\ad_X$ diagonalisierbar.
-      (\emph{Hinweis}: Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\ad_X = \lambda_X - \rho_X$.)
   \end{enumerate}
 \end{question}
 
@@ -2946,8 +2952,9 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Folgern Sie, dass $C \subseteq \slLie_n(K)$.
     \item
       Zeigen Sie, dass $\slLie_n(K) \subseteq C$, indem Sie jedes der Basiselement aus $\mc{B}$ also Kommutator schreiben.
+      
       (\emph{Hinweis}:
-      Überlegen Sie zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
+       Überlegen Sie zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
   \end{enumerate}
   Es ist also $\slLie_n(K) = \Ell( [A,B] \mid A, B \in \Mat_n(K) )$ ein ($n^2 - 1$)-dimensionaler Untervektorraum.
   Es sei nun $f \colon \Mat_n(K) \to K$ eine lineare Abbildung mit $f(AB) = f(BA)$ für alle $A, B \in \Mat_n(K)$.
@@ -2988,10 +2995,14 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $D_n(K) \subseteq Z(\Mat_n(K))$.
     \item
       Zeigen Sie für $A \in Z(\Mat_n(K))$, dass $A$ eine Diagonalmatrix ist.
-      (\emph{Hinweis}: Betrachten Sie die Matrizen $E_{ii}$ für $1 \leq i \leq n$.)
+      
+      (\emph{Hinweis}:
+       Betrachten Sie die Matrizen $E_{ii}$ für $1 \leq i \leq n$.)
     \item
       Zeigen Sie ferner, dass alle Diagonaleinträge von $A$ bereits gleich sind.
-      (\emph{Hinweis}: Betrachten Sie die Matrizen $E_{ij}$ mit $1 \leq i,j \leq n$.)
+      
+      (\emph{Hinweis}:
+       Betrachten Sie die Matrizen $E_{ij}$ mit $1 \leq i,j \leq n$.)
     \item
       Folgern Sie, dass $Z(\Mat_n(K)) = D_n(K)$.
   \end{enumerate}
@@ -3077,7 +3088,8 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass $\gLie(B)$ eine Lie-Unteralgebra von $\gl_n(\Kbb)$ ist, dass also $[A_1, A_2] \in \gLie(B)$ für alle $A_1, A_2 \in \gLie(B)$.
     \item
       Zeigen Sie, dass $\exp(A) \in \Orthogonal(B)$ für alle $A \in \gLie(B)$.
-      (\emph{Hinweis}: Zeigen Sie zunächst, dass $\exp(A)^T B = B \exp(-A)$.)
+      (\emph{Hinweis}:
+       Zeigen Sie zunächst, dass $\exp(A)^T B = B \exp(-A)$.)
     \item
       Geben Sie für $\Kbb = \Rbb$ eine Matrix $B \in \Mat_n(\Rbb)$ an, so dass $\Orthogonal(B) = \Orthogonal(n)$.
       Was sind dann die Elemente von $\gLie(B)$?
@@ -3101,12 +3113,13 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     \item
       Zeigen Sie, dass $O(\beta)$ eine Untergruppen von $\GL(V)$ ist.
     \item
-      Zeigen Sie, dass $\gLie(\beta)$ eine Lie-Unteralgebra von $\gl(V)$ ist, d.h.\ dass für alle $f, g \in \gLie(\beta)$ auch $[f,g] \in \gLie(\beta)$.
+      Zeigen Sie, dass $\gLie(\beta)$ eine Lie-Unteralgebra von $\gl(V)$ ist, d.h.\ dass $[f,g] \in \gLie(\beta)$ für alle $f, g \in \gLie(\beta)$.
     \item
       Zeigen Sie, dass $\exp(f) \in O(\beta)$ für alle $f \in \gLie(\beta)$.
+      
       (\emph{Hinweis}:
-      Zeigen Sie zunächst, dass $\beta(\exp(f)(x) ,y) = \beta(x, \exp(-f)(y))$ für alle $x, y \in V$.
-      Nutzen Sie hierfür, dass die bilineare Abbildung $\beta$ in beiden Argumenten stetig ist.)
+       Zeigen Sie zunächst, dass $\beta(\exp(f)(x) ,y) = \beta(x, \exp(-f)(y))$ für alle $x, y \in V$.
+       Nutzen Sie hierfür, dass die bilineare Abbildung $\beta$ in beiden Argumenten stetig ist.)
     \item
       Es sei $\Kbb = \Rbb$ und $\bil{\cdot, \cdot}$ ein Skalarprodukt auf $V$.
       Unter welchen Begriffen sind die Elemente aus $G(\bil{\cdot, \cdot})$ und $\gLie(\bil{\cdot, \cdot})$ bekannt?
