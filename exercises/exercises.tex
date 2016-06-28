@@ -20,8 +20,6 @@
 
 % TODO: 1 + (lokal nilpotent) ist invertierbar
 
-% TODO: Matrixexponentialszeugs, allgemein Lie-Algebra -> Exponential
-
 
 
 
@@ -435,80 +433,118 @@
 \end{question}
 
 
-% \begin{question}
-%   Es sei $V$ ein $K$-Vektorraum.f
-%   \begin{enumerate}[leftmargin=*]
-%     \item
-%       Es seien $e_1, \dotsc, e_n \in \End(V)$ Endomorphismen mit den folgenden Eigenschaften:
-%       \begin{itemize}
-%         \item
-%           Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
-%         \item
-%           Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
-%         \item
-%           Es gilt $\id_V = e_1 + \dotsb + e_n$.
-%       \end{itemize}
-%       Man sagt, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist.
-%       Zeigen Sie, dass dann $V = \im e_1 \oplus \dotsb \oplus \im e_n$ gilt.
-%   \end{enumerate}
-%   Es sei nun $f \colon V \to V$ ein Endomorphismus.
-%   \begin{enumerate}[leftmargin=*, resume]
-%     \item
-%       Zeigen Sie:
-%       Ist $f$ diagonalisierbar mit Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$, so ist
-%       \[
-%         (f - \lambda_1) \dotsm (f - \lambda_n) = 0.
-%       \]
-%     \item
-%       Es sei $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ mit $\lambda_1, \dotsc, \lambda_n \in K$ .
-%       Zeigen Sie:
-%       \begin{enumerate}
-%         \item
-%           Die Endomorphismen $e_1, \dotsc, e_n \in \End(V)$ mit
-%           \[
-%             e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
-%             \quad
-%             \text{für alle $i = 1, \dotsc, n$}
-%           \]
-%           sind ein \emph{complete set of orthogonal idempotents}.
-%         \item
-%           Für alle $1 \leq i \leq n$ ist $\im e_i \subseteq V_{\lambda_i}(f)$.
-%         \item
-%           Der Endomorphismus $f$ ist diagonalisierbar mit möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n$.
-%       \end{enumerate}
-%       Ist $f \colon V \to V$ diagonalsierbar mit Eigenwertein $\lambda_1, \dotsc, \lambda_n$, so sind die Endomorphismen $e_1, \dotsc, e_n \in \End(V)$ mit
-%       \[
-%         e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
-%         \quad
-%         \text{für alle $i = 1, \dotsc, n$},
-%       \]
-%       dass die Eigenräume $V_{\lambda_1}(f), \dotsc, V_{\lambda_n(f)}$ invariant unter den Endomorphismen $e_1, \dotsc, e_n$ sind, und dass
-%       \[
-%         e_i|_{V_{\lambda_j}(f)}
-%         =
-%         \begin{cases}
-%           \id_{V_{\lambda_j}(f)}  & \text{für $i = j$},   \\
-%           0                       & \text{für $i \neq j$}.
-%         \end{cases}
-%       \]
-%       Folgern Sie, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist, so dass
-%       \[
-%         \im e_i = V_{\lambda_i}(f)
-%         \quad
-%         \text{für alle $i = 1, \dotsc, n$}.
-%       \]
-%     \item
-%       Es sei $f \colon V \to V$ ein Endomorphismus, so dass
-%       \[
-%         (f - \lambda_1) \dotsm (f - \lambda_n) = 0
-%       \]
-%       für paarweise verschieden $\lambda_1, \dotsc, \lambda_n \in K$.
-%       Für alle $i = 1, \dotsc, n$ sei
-%       \[
-%         e_i \coloneqq \frac{\prod_{j \neq i} (f - \lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}.
-%       \]
-%   \end{enumerate}
-% \end{question}
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $e_1, \dotsc, e_n \in \End(V)$ Endomorphismen mit den folgenden Eigenschaften:
+      \begin{itemize}
+        \item
+          Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+        \item
+          Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
+        \item
+          Es gilt $\id_V = e_1 + \dotsb + e_n$.
+      \end{itemize}
+      Man sagt, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist.
+      Zeigen Sie, dass dann $V = \im e_1 \oplus \dotsb \oplus \im e_n$ gilt.
+  \end{enumerate}
+  Es sei nun $f \colon V \to V$ ein Endomorphismus.
+  Wir nehmen zunächst an, dass $f$ diagonalisierbar mit paarweise verschiedenen Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$ ist.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$.
+    \item
+      Folgern Sie aus der Eigenraumzerlegung $V = V_{\lambda_1}(f) \oplus \dotsb \oplus V_{\lambda_n}(f)$, dass es für alle $i = 1, \dotsc, n$ eine eindeutige lineare Abbildung $e_i \colon V \to V$ gibt, so dass
+      \[
+          e_i(v_1 + \dotsb + v_n)
+        = v_i
+        \quad
+        \text{für alle $v_1 \in V_{\lambda_1}(f), \dotsc, v_n \in V_{\lambda_n}(f)$}.
+      \]
+      (Die Abbildungen $e_1, \dotsc, e_n$ sind also die Projektionen auf die einzelnen Eigenräume bezüglich der Eigenraumzerlegung.)
+    \item
+      Zeigen Sie, dass die Abbildungen $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} bilden.
+    \item
+      Zeigen Sie, dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+      Die Zerlegung $V = \im e_1 \oplus \dotsb \oplus e_n$ stimmt also mit der Eigenraumzerlegung von $f$ überein.
+    \item
+      Zeigen Sie, dass
+      \[
+          e_i
+        = \prod_{j \neq i} \frac{f - \lambda_j}{\lambda_i - \lambda_j}
+        = \frac{\prod_{j \neq i} (f-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+        \quad
+        \text{für alle $i = 1 \dotsc, n$}.
+      \]
+      
+      (\emph{Hinweis}:
+       Wenden Sie den rechten Ausdruck auf einen Eigenvektor an.)
+  \end{enumerate}
+  Wir nehmen nun umgekehrt an, dass $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ für paarweise verschiedene $\lambda_1, \dotsc, \lambda_n \in K$.
+  Für alle $i = 1, \dotsc, n$ sei
+  \[
+              e_i
+    \coloneqq \prod_{j \neq i} \frac{f - \lambda_j}{\lambda_i - \lambda_j}
+    =         \frac{\prod_{j \neq i} (f-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}.
+  \]
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ idempotent sind, indem Sie zeigen, dass
+      \[
+        e_i^2 - e_i = 0
+        \quad
+        \text{für alle $i = 1, \dotsc, n$}.
+      \]
+    \item
+      Zeigen Sie, dass die idempotenten Endomorphismen $e_1, \dotsc, e_n$ orthogonal sind.
+    \item
+      Zeigen Sie, dass $\id_V = e_1 + \dotsb + e_n$.
+      Gehen Sie hierfür wie folgt vor:
+      
+      Für alle $i = 1, \dotsc, n$ sei
+      \[
+                  P_i(T)
+        \coloneqq \prod_{j \neq i} \frac{T - \lambda_j}{\lambda_i - \lambda_j}
+        =         \frac{\prod_{j \neq i} (T-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+        \in K[T].
+      \]
+      Zeigen Sie, dass $e_i = P_i(f)$ für alle $i = 1, \dotsc, n$.
+      Zeigen Sie, dass $P_i$ ein Polynom vom Grad $n-1$ ist, und dass $P_i(\lambda_i) = 1$ und $P_i(\lambda_j) = 0$ für alle $1 \leq j \neq i \leq n$.
+      
+      Folgern Sie für das Polynom $P(T) \coloneqq 1 - \sum_{i=1}^n P_i(T)$, dass $\deg P \leq n-1$, und dass $P(\lambda_i) = 0$ für alle $i = 1, \dotsc, n$.
+      Folgern Sie, dass $P = 0$ und deshalb
+      \[
+          1
+        = \sum_{i=1}^n P_i(T)
+      \]
+      
+      Folgern Sie durch Einsetzen von $f$, dass $\id_V = \sum_{i=1}^n e_i$.
+    \item
+      Zeigen Sie, dass $\im e_i \subseteq V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+      (\emph{Hinweis}:
+       Überlegen sie sich, dass $(f - \lambda_i) e_i = 0$.)
+    \item
+      Folgern Sie mithilfe der Zerlegung $V = \im e_1 \oplus \dotsb \oplus \im e_n$, dass $V$ diagonalisierbar ist, und dass $\im e_i = V_{\lambda_i}$ für alle $i = 1, \dotsc, n$.
+  \end{enumerate}
+  Ingesamt zeigt dies, dass $f$ genau dann diagonalisierbar mit paarweise verschiedenen möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n$ ist, wenn $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$.
+  \begin{enumerate}[resume]
+    \item 
+      Es sei nun $K = \Cbb$.
+      Folgern Sie, dass $f$ in den folgenden Fällen diagonalisierbar ist, und bestimmen Sie jeweils die möglichen Eigenwerte:
+      \begin{itemize}
+        \item
+          $f^2 = f$
+
+        \item
+          $f^3 = f$
+        \item
+          $f^3 = -f$.
+        \item
+          $f^n = \id_V$ für ein $n \geq 1$
+      \end{itemize}
+  \end{enumerate}
+\end{question}
 
 
 
@@ -1425,12 +1461,40 @@
   \[
     A
     \coloneqq
-    \begin{pmatrix}
-       3  & 4 &  3  \\
-      -1  & 0 & -1  \\
+    \begin{pmatrix*}[r]
+       3  & 4 &  3      \\
+      -1  & 0 & -1      \\
        1  & 2 &  3
-    \end{pmatrix}
+    \end{pmatrix*}
     \in \Mat_n(\Cbb).
+  \]
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Gleichungsssysteme mit $f, g, h \in C^\infty(\Rbb)$:
+  \[
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - 6g, \\
+        g'  & = & 2f  & + 6g,
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - g,  \\
+        g'  & = & 2f  & + g,
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrrr}
+        f'  & = & 2f  & + 2g  & + 3h, \\
+        g'  & = &  f  & + 3g  & + 3h, \\
+        h'  & = & -f  & - 2f  & - 2h.
+      \end{array}
+    \right.
   \]
 \end{question}
 
@@ -1620,7 +1684,7 @@
     \text{für alle $i = 1, \dotsc, n$},
   \]
   wobei $(e_1, \dotsc, e_n)$ die Standardbasis von $\Rbb^n$ ist.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $P_\pi$ orthogonal ist.
     \item
@@ -1726,6 +1790,35 @@
 
 
 \begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktsraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\ker f^* \subseteq (\im f)^\perp$.
+    \item
+      Folgern Sie daraus, dass $\im f^* \subseteq (\ker f)^\perp$.
+    \item
+      Folgern Sie aus den beiden Inklusionen $\ker f^* \subseteq (\im f)^\perp$ und $\im f^* \subseteq (\ker f)^\perp$ mithilfe der Endlichdimensionalität von $V$, dass bereits Gleichheiten gelten, dass also
+      \[
+        \ker f^* = (\im f)^\perp
+        \quad\text{und}\quad
+        \im f^* = (\ker f)^\perp.
+      \]
+  \end{enumerate}
+  Von nun an sei $f$ normal.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass $\|f(x)\| = \|f^*(x)\|$ für alle $x \in V$.
+    \item
+      Folgern Sie, dass $\ker f = \ker f^*$.
+    \item
+      Folgern Sie damit aus den obigen Gleichheiten, dass $V = \im f \oplus \ker f$ gilt, und dass die Summe orthogonal ist.
+      (\emph{Hinweis}:
+       Zeigen Sie zuerst, dass $\im f$ und $\ker f$ orthogonal sind, und nutzen Sie dann die Endlichdimensionalität von $V$.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
   \begin{enumerate}[leftmargin=*]
     \item
       Bestimmen Sie für die Matrix
@@ -1775,6 +1868,9 @@
         \quad
         \text{für alle $v \in V$, $w \in W$}.
       \]
+    \item
+      Zeigen Sie:
+      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann eine Orthonormalbasis, wenn die Basis $\Phi_V(\mc{B}) = (\Phi_V(v_1), \dotsc, \Phi_V(v_n))$ von $V^*$ die duale Basis $\mc{B}^*$ ist.
     \item
       Inwiefern ändern sich die obigen Resultate für denn Fall $\Kbb = \Cbb$, wenn also $V$ und $W$ endlichdimensionale unitäre Vektorräume sind?
   \end{enumerate}
