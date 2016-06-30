@@ -537,7 +537,6 @@
       \begin{itemize}
         \item
           $f^2 = f$
-
         \item
           $f^3 = f$
         \item
@@ -545,155 +544,6 @@
         \item
           $f^n = \id_V$ für ein $n \geq 1$
       \end{itemize}
-  \end{enumerate}
-\end{question}
-
-
-
-
-
-
-
-
-
-
-% QUOTIENTS AND INVARIANTS SUBSPACES
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
-  Es sei $\pi \colon V \to V/\!U$, $v \mapsto [v]$ die kanonische Projektion.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, und für eine Teilmenge $J \subseteq I$ sei $(b_j)_{j \in J}$ eine Basis von $U$.
-      Zeigen Sie, dass $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V\!/U$ ist.
-    \item
-      Folgern Sie die folgenden Di\-men\-si\-ons\-for\-meln für einen end\-lich\-di\-men\-si\-o\-na\-len $K$-Vek\-tor\-raum $V$:
-      Ist $U \subseteq V$ ein Untervektorraum, so ist
-      \[
-        \dim V\!/U = \dim V - \dim U.
-      \]
-      Ist $f \colon V \to W$ eine lineare Abbildung in einen weiteren $K$-Vektorraum $W$, so ist
-      \[
-        \dim V = \dim \ker f + \dim \im f.
-      \]
-    \item
-      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V/\!U$, wobei $I \cap J = \emptyset$.
-      Für $j \in J$ sei $b_j \in V$ mit $\pi(b_j) = c_j$.
-      Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
-      Zeigen Sie, dass $V$ eine lineare Abbildung
-      \[
-        \bar{f} \colon V\!/U \to W, \quad [v] \mapsto f(u)
-      \]
-      induziert.
-    \item
-      Zeigen Sie, dass $\im \bar{f} = \im f$.
-      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
-    \item
-      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
-      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits $U = \ker f$ gilt.
-    \item
-      Folgern Sie, dass $f$ einen Isomorphismus
-      \[
-        V/(\ker f) \to \im f,
-        \quad
-        [v] \mapsto f(v)
-      \]
-      induziert.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Zeigen Sie, dass eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ genau dann ein Untervektorraum ist, wenn es einen $K$-Vektorraum $W$ und eine lineare Abbildung $f \colon V \to W$ gibt, so dass $U = \ker f$.
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
-  Es sei $W$ ein $K$-Vektorraum mit Basis $\{b_e\}_{e \in E} \subseteq W$.
-  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein $K$-Untervektorraum.
-  Konstruieren Sie für den Annihilator
-  \[
-      U^\circ
-    = \{ \varphi \in V^* \mid \varphi|_U = 0 \}
-  \]
-  einen Isomorphismus $F \colon U^\circ \to (V\!/U)^*$.
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum mit zwei Untervektorräumen $U_1, U_2 \subseteq V$.
-  Zeigen Sie die folgenden beiden Isomorphiesätze:
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Die Inklusion $U_1 \to U_1 + U_2$, $x \mapsto x$ induziert einen isomorphismus
-      \[
-        U_1 / (U_1 \cap U_2) \to (U_1 + U_2) / U_2,
-        \quad
-        [x] \mapsto [x]
-        \quad
-        \text{für alle $x \in V$}.
-      \]
-    \item
-      Ist $U_1 \subseteq U_2$, so ist $U_2 / U_1$ ein Untervektorraum von $V / U_1$, und die Abbildung
-      \[
-        (V / U_1) / (U_2 / U_1) \to V / U_2,
-        \quad
-        [[x]] \mapsto [x]
-        \quad
-        \text{für alle $x \in V$}.
-      \]
-      ist ein wohldefinierter Isomorphismus.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
-  Es seien $f \colon V \to V$ ein Endomorphismus, so dass $U$ invariant unter $f$ ist (d.h.\ es ist $f(U) \subseteq U$).
-  \begin{enumerate}
-    \item
-      Zeigen Sie, dass $f$ einen Endomorphismus
-      \[
-        \bar{f} \colon V\!/U \to V\!/U,
-        \quad
-        [v] \mapsto [f(v)]
-      \]
-    induziert.
-  \end{enumerate}
-  Es sei nun $g \colon V \to V$ ein weiterer Endomorphismus, so dass $U$ invariant unter $g$ ist, und es sei $\bar{g} \colon V\!/U \to V\!/U$ der induzierte Endomorphismus.
-  \begin{enumerate}[resume]
-    \item
-      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
-      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
-  Zeigen Sie:
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
-    \item
-      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
   \end{enumerate}
 \end{question}
 
@@ -808,6 +658,92 @@
 \end{question}
 
 
+
+
+
+
+
+
+
+% QUOTIENTS AND INVARIANTS SUBSPACES
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\pi \colon V \to V/\!U$, $v \mapsto [v]$ die kanonische Projektion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, und für eine Teilmenge $J \subseteq I$ sei $(b_j)_{j \in J}$ eine Basis von $U$.
+      Zeigen Sie, dass $([b_i])_{i \in I \smallsetminus J}$ eine Basis von $V\!/U$ ist.
+    \item
+      Folgern Sie die folgenden Di\-men\-si\-ons\-for\-meln für einen end\-lich\-di\-men\-si\-o\-na\-len $K$-Vek\-tor\-raum $V$:
+      Ist $U \subseteq V$ ein Untervektorraum, so ist
+      \[
+        \dim V\!/U = \dim V - \dim U.
+      \]
+      Ist $f \colon V \to W$ eine lineare Abbildung in einen weiteren $K$-Vektorraum $W$, so ist
+      \[
+        \dim V = \dim \ker f + \dim \im f.
+      \]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V/\!U$, wobei $I \cap J = \emptyset$.
+      Für $j \in J$ sei $b_j \in V$ mit $\pi(b_j) = c_j$.
+      Zeigen Sie, dass $(b_l)_{l \in L}$ für $L \coloneqq I \cap J$ ist eine Basis von $V$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
+      Zeigen Sie, dass $V$ eine lineare Abbildung
+      \[
+        \bar{f} \colon V\!/U \to W, \quad [v] \mapsto f(u)
+      \]
+      induziert.
+    \item
+      Zeigen Sie, dass $\im \bar{f} = \im f$.
+      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+    \item
+      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
+      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits $U = \ker f$ gilt.
+    \item
+      Folgern Sie, dass $f$ einen Isomorphismus
+      \[
+        V/(\ker f) \to \im f,
+        \quad
+        [v] \mapsto f(v)
+      \]
+      induziert.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ genau dann ein Untervektorraum ist, wenn es einen $K$-Vektorraum $W$ und eine lineare Abbildung $f \colon V \to W$ gibt, so dass $U = \ker f$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
+  Es sei $W$ ein $K$-Vektorraum mit Basis $\{b_e\}_{e \in E} \subseteq W$.
+  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein $K$-Untervektorraum.
+  Konstruieren Sie für den Annihilator
+  \[
+      U^\circ
+    = \{ \varphi \in V^* \mid \varphi|_U = 0 \}
+  \]
+  einen Isomorphismus $F \colon U^\circ \to (V\!/U)^*$.
+\end{question}
+
+
 \begin{question}
   Es sei $V$ ein $\Kbb$-Vektorraum.
   Eine Abbildung $[\,\cdot\,] \colon V \to V$ heißt \emph{Seminorm}, falls
@@ -831,6 +767,124 @@
       eine Norm auf $V\!/N$ (wobei $\overline{x} = x + N$ die Äquivalenzklasse von $x$ bezeichnet).
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit zwei Untervektorräumen $U_1, U_2 \subseteq V$.
+  Zeigen Sie die folgenden beiden Isomorphiesätze:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Inklusion $U_1 \to U_1 + U_2$, $x \mapsto x$ induziert einen isomorphismus
+      \[
+        U_1 / (U_1 \cap U_2) \to (U_1 + U_2) / U_2,
+        \quad
+        [x] \mapsto [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+    \item
+      Ist $U_1 \subseteq U_2$, so ist $U_2 / U_1$ ein Untervektorraum von $V / U_1$, und die Abbildung
+      \[
+        (V / U_1) / (U_2 / U_1) \to V / U_2,
+        \quad
+        [[x]] \mapsto [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+      ist ein wohldefinierter Isomorphismus.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es seien $f \colon V \to V$ ein Endomorphismus, so dass $U$ invariant unter $f$ ist (d.h.\ es ist $f(U) \subseteq U$).
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $f$ einen Endomorphismus
+      \[
+        \bar{f} \colon V\!/U \to V\!/U,
+        \quad
+        [v] \mapsto [f(v)]
+      \]
+    induziert.
+  \end{enumerate}
+  Es sei nun $g \colon V \to V$ ein weiterer Endomorphismus, so dass $U$ invariant unter $g$ ist, und es sei $\bar{g} \colon V\!/U \to V\!/U$ der induzierte Endomorphismus.
+  \begin{enumerate}[resume]
+    \item
+      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
+      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
+    \item
+      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to V$ eine lineare Abbildung.
+  Es sei
+  \[
+    i \colon \ker f \to V,
+    \quad
+    v \mapsto v
+  \]
+  die kanonische Inklusion und
+  \[
+    p \colon W \to \coker f,
+    \quad
+    w \mapsto [w]
+  \]
+  die kanonische Projektion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $f \circ i = 0$ und $p \circ f = 0$.
+    \item
+      Zeigen Sie, dass es für jeden $K$-Vektorraum und jede lineare Abbildung $h \colon U \to V$ mit $f \circ h = 0$ eine eindeutige lineare Abbildung $\bar{h} \colon U \to \ker f$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \ker f  \arrow{r}{i}
+            \&  V       \arrow{r}{f}
+            \&  W
+          \\
+                U       \arrow[swap]{ru}{h}
+                        \arrow[dashed]{u}{\bar{h}}
+            \&  {}
+            \&  {}
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass es für jeden $K$-Vektorraum und jede lineare Abbildung $g \colon W \to U$ mit $g \circ f = 0$ eine eindeutige lineare Abbildnug $\bar{g} \colon \coker f \to U$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                {}
+            \&  {}
+            \&  U
+          \\
+                V         \arrow{r}{f}
+            \&  W         \arrow{r}{p}
+                          \arrow{ru}{g}
+            \&  \coker f  \arrow[swap, dashed]{u}{\bar{g}}
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
 
 
 
@@ -1258,6 +1312,12 @@
 
 
 % JORDANSTUFF AND GENERALIZED EIGENSPACES
+
+
+\begin{question}
+  Bestimmen Sie alle nicht-diagonalierbaren $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
+\end{question}
+
 
 
 \begin{question}
@@ -2042,6 +2102,54 @@
 
 
 \begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-,v}
+      \]
+      ein Isomorphismus ist.
+    \item
+      Zeigen Sie:
+      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann eine Orthonormalbasis, wenn
+      \[
+          \varphi
+        = \sum_{i=1}^n \varphi(v_i) \bil{-,v_i}
+        \quad
+        \text{für alle $\varphi \in V^*$}.
+      \]
+  \end{enumerate}
+  Es sei nun $V$ der Vektorraum der Polynomsfunktionen $\Rbb \to \Rbb$ vom Grad $\leq 2$.
+  Für $a \in \Rbb$ sei $\varphi_a \in V^*$ durch $\varphi_a(f) = f(a)$ definiert.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{f, g} \coloneqq \int_{-1}^1 f(t)g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Bestimmen Sie eine Orthonormalbasis von $V$.
+    \item
+      Zeigen Sie, dass es für alle $a \in \Rbb$ ein eindeutiges $g_a \in V$ gibt, so dass
+      \[
+          f(a)
+        = \int_{-1}^1 f(t) g_a(t) \dd{t}
+        \quad
+        \text{für alle $f \in V$}.
+      \]
+    \item
+      Bestimmen Sie $g_a$ für beliebiges $a \in \Rbb$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
   Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Entscheiden Sie, welche der folgenden Aussagen sich implizieren.
   \begin{enumerate}
@@ -2063,7 +2171,6 @@
   Es sei $V$ der reelle Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$, und für alle $n \in \Nbb$ sei $V_n \subseteq V$ der Untervektorraum der Polynomfunktionen von Grad $\leq n$.
   \begin{enumerate}[leftmargin=*]
     \item
-      
       Zeigen Sie, dass
       \[
                   \bil{f, g}
@@ -2462,6 +2569,19 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 
 \begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $\mc{B} = (b_1, \dotsc, b_n)$ und $\mc{C} = (c_1, \dotsc, c_n)$ seien zwei geordnete Basen von $V$.
+  \begin{enumerate}
+    \item
+      Die Basis $\mc{C}$ sei genau die Orthonormalbasis von $V$, die aus $\mc{B}$ durch Anwendung des Gram-Schmidt-Verfahrens entstehen.
+      Zeigen Sie, dass die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ (von $\mc{C}$ nach $\mc{B}$) eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen ist.
+    \item
+      Zeigen oder widerlegen Sie die umgekehrte Aussage:
+      Ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen, so ist $\mc{C}$ notwendigerweise die Orthonormalbasis von $V$, die durch das Gram-Schmidt-Verfahren aus $\mc{B}$ entsteht.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
   \begin{enumerate}[leftmargin=*]
     \item
       Es seien $z_1, \dotsc, z_n \in \Cbb$ paarweise verschieden Punkte.
@@ -2474,6 +2594,110 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
        $f$ ist diagonalisierbar.)
   \end{enumerate}
 \end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum und $\omega \colon V^3 \to K$ eine Trilinearform.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass es für alle $u, v \in V$ ein eindeutiges Element $\times_\omega \in V$ gibt, so dass
+      \[
+          \omega(u, v, w)
+        = \bil{u \times_\omega v, w}
+        \quad
+        \text{für alle $u, v, w \in V$}.
+      \]
+    \item
+      Zeigen Sie, dass die Abbildung $\times_\omega \colon V \times V \to V$ bilinear ist.
+    \item
+      Zeigen Sie:
+      Ist $\omega$ symmetrisch, bzw.\ alternierend, so ist auch $\times_\omega$ symmetrisch, bzw.\ alternierend.
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Tril(V, V, V; K) \mapsto \Bil(V, V; V),
+        \omega
+        \mapsto
+        \times_\omega
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+  \end{enumerate} 
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $\beta \colon V \times V \to K$ eine nicht-entartete Bilinearform.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass es für jede Bilinearform $\gamma \colon V \times V \to K$ eine eindeutige lineare Abbildung $f \colon V \to V$ gibt, so dass
+      \[
+        \gamma(x,y) = \beta(f(x), y)
+        \quad
+        \text{für alle $x,y \in V$}.
+      \]
+    \item
+      Zeigen oder widerlegen Sie, dass es für jede nicht-entartete Bilinearform $\gamma \colon V \times V \to K$ einen eindeutigen Skalar $c \in K$ mit $\gamma = c \beta$ gibt.
+  \end{enumerate}
+\end{question}
+
+
+
+\begin{question}
+  Zeigen oder widerlegen Sie, dass der Kommutator
+  \[
+    [-, -] \colon \Mat_n(K) \times \Mat_n(K) \to \Mat_n(K)
+  \]
+  in dem folgenden Sinne universell ist:
+  Für jeden $K$-Vektorraum $V$ und jede bilineare Abbildung $\beta \colon \Mat_n(K) \times \Mat_n(K) \to V$ gibt es eine eindeutige $K$-lineare Abbildung $\varphi \colon \Mat_n(K) \to V$, so dass das folgende Diagram kommutiert:
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+            {}
+        \&  \Mat_n(K) \times \Mat_n(K)  \arrow{ru}{[-,-]}
+                                        \arrow{lu}{\beta}
+        \&  {}
+      \\
+        \&  \Mat_n(K)                   \arrow{rr}{\varphi}
+        \&  {}
+            V
+    \end{tikzcd}
+  \]
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $\beta \colon V \times V \to W$ eine bilineare Abbildung.
+  Zeigen oder widerlegen Sie, dass $\im \beta$ notwendigerweise ein Untervektorraum von $W$ ist.
+\end{question}
+
+
+\begin{question}
+  Es sei $m \colon K^n \times K^n \to \Mat_n(K)$ mit
+  \[
+    m(x,y) = x y^T
+    \quad
+    \text{für alle $x,y \in K^n$}.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass $m$ bilinear ist.
+    \item
+      Zeigen Sie, dass $m$ im folgenden Sinne universell ist:
+      Für jeden Vektorraum $V$ und jede bilineare Abbildung $b \colon K^n \times K^n \to V$ gibt es eine eindeutige lineare Abbildung $\varphi \colon \Mat_n(K) \to V$ mit $b = \varphi \circ m$, dass also das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+              {}
+          \&  K^n \times K^n  \arrow{ru}{m}
+                              \arrow{lu}{b}
+          \&  {}
+          \\
+              \Mat_n(K)       \arrow{rr}{\varphi}
+          \&  {}
+          \&  V
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{question}
+
 
 
 
@@ -2867,6 +3091,41 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       \]
       (Beachten Sie, dass auf der linken Seite die darstellende Matrix einer Bilinearform steht, und auf der rechten Seite die darstellende Matrix einer linearen Abbildung.)
   \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+% MULTILINEAR FORMS
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum mit Basis $\mc{B} = (b_1, \dotsc, b_n)$ und $\omega \colon V^n \to K$ eine alternierende Multilinearform.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass genau dann $\omega \neq 0$, wenn $\omega(b_1, \dotsc, b_n) \neq 0$.
+    \item
+      Es sei $f \colon V \to V$ ein Endomorphismus und
+      \[
+        \omega_f \coloneqq \omega \circ f^{\times n} \colon V^n \to V,
+      \]
+      Zeigen Sie, dass $\omega_f$ ebenfalls multilinear und alternierend ist.
+    \item
+      Zeigen Sie, dass $\omega_f = \det(f) \omega$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $n \coloneqq \dim V$.
+  Es sei $\omega \colon V^m \to V$ eine alternierende Multilinearform.
+  Zeigen Sie, dass $\omega = 0$.
 \end{question}
 
 
