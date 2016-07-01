@@ -1,0 +1,451 @@
+\emph{Direkte Summen}
+
+
+\begin{question}
+  Es seien $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass sich durch jeden idempotenten Endomorphismus $e \colon V \to V$ (d.h.\ $e^2 = e$) eine Zerlegung
+      \[
+        V = \im e \oplus \ker e
+      \]
+      ergibt, und dass
+      \[
+        e(v + w) = v
+        \quad
+        \text{für alle $v \in \im e$ und $w \in \ker e$}.
+      \]
+    \item
+      Zeigen, Sie, dass für jeden idempotenten Endomorphismus $e \colon V \to V$ auch $\id_V - e$ idempotent ist, und dass $\im (\id_V - e) = \ker e$ und $\ker (\id_V - e) = \im e$.
+    \item
+      Es sei $(U_1, U_2)$ ein Paar von Untervektorräumen $U_1, U_2 \subseteq V$ mit $V = U_1 \oplus U_2$.
+      Zeigen Sie, dass es einen eindeutigen Endomorphismus $p_{U_1, U_2} \colon V \to V$ gibt, so dass
+      \[
+          p_{U_1, U_2}(u_1 + u_2)
+        = u_1
+        \quad
+        \text{für alle $u_1 \in U_1$ und $u_2 \in U_2$}.
+      \]
+    \item
+      Zeigen Sie, dass die obigen Konstruktionen eine Bijektion
+      \begin{align*}
+        \left\{
+          (U_1, U_2)
+          \,\middle|\,
+          \begin{tabular}{c}
+            $U_1, U_2 \subseteq V$ sind \\
+            Untervektorräume            \\
+            mit $V = U_1 \oplus U_2$
+          \end{tabular}
+        \right\}
+        &\longleftrightarrow
+        \{ e \in \End(V) \mid \text{$e$ ist idempotent} \},
+      \\
+        (U_1, U_2) &\longmapsto p_{U_1, U_2}
+      \\
+        (\im e, \ker e) &\longmapsfrom e
+      \end{align*}
+      ergeben.
+    \item
+      Auf der linken Seite der obigen Bijektion gibt es eine Involution $(U_1, U_2) \mapsto (U_2, U_1)$.
+      Zeigen Sie, dass dies unter der gegebenen Bijektion der Involutions $e \mapsto \id_V - e$ auf der rechten Seite entspricht.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus mit $f^2 = 1$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für $\ringchar K \neq 2$, dass $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist, dass also $V = V_1(f) \oplus V_{-1}(f)$.
+    \item
+      Zeigen Sie, dass die Aussage für $\ringchar K = 2$ nicht mehr gelten muss.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, und $f \colon V \to W$ eine lineare Abbildung, die ein Rechtsinverses $g \colon W \to V$ besitzt.
+  Zeigen Sie auf die folgenden beiden Weisen, dass
+  \[
+    V = \ker f \oplus \im g
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Durch explizites Nachrechnen, dass $V = \ker f + \im g$ und $\ker f \cap \im g = 0$.
+    \item
+      Durch geschickte Betrachtung des Endomorphismus $gf \colon V \to V$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie im Folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der Vektorraum der ($n \times n$)-Matrizen über $K$,
+      \[
+        U_1 \coloneqq \{ A \in \Mat_n(K) \mid A^T = A \}
+      \]
+      der Untervektorraum der symmetrischen Matrizen, und
+      \[
+        U_2 \coloneqq \{ A \in \Mat_n(K) \mid A^T = -A \}
+      \]
+      der Untervektorraum der schiefsymmetrischen Matrizen.
+    \item
+      Es sei $V \coloneqq \{ f \mid f \colon \Rbb \to \Rbb \}$ der Vektorraum der reellwertigen Folgen auf $\Rbb$, sowie
+      \[
+        U_1 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+      \]
+      der Untervektorraum der geraden Funktionen und
+      \[
+        U_2 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+      \]
+      der Untervektorraum der ungeraden Funktionen.
+    \item
+      Die Ebene $V = \Rbb^2$ und als Untervektorräume die beiden Geraden
+      \[
+        U_1 \coloneqq \Rbb \vect{1 \\  1}
+        \quad\text{und}\quad
+        U_2 \coloneqq \Rbb \vect{1 \\ -1}.
+      \]
+%     \item
+%       Für $\ringchar K \neq 2$ und einen Vektorraum $W$ sei
+%       \[
+%                   V
+%         \coloneqq \{b \colon W \times W \to K \mid \text{$b$ ist bilinear}\}
+%       \]
+%       der Vektorraum der Bilinearformen auf $W$.
+%       Es sei
+%       \[
+%                   U_1
+%         \coloneqq \{ s \in V \mid \text{$s$ ist symmetrisch} \}
+%       \]
+%       der Untervektorraum der symmetrischen Bilinearformen, und
+%       \[
+%                   U_2
+%         \coloneqq \{ a \in V \mid \text{$a$ ist antisymmetrisch} \}
+%       \]
+%       der Untervektorraum der alternierenden Bilinearformen.
+    \item
+      Der reelle Vektorraum $V \coloneqq \Cbb(I, \Rbb)$ der stetigen reellwertigen Funktionen auf dem Einheitsintervall $I = [0,1]$ mit den Untervektorräumen
+      \[
+        U_1 \coloneqq \{f \in V \mid f(0) = 0\}
+        \quad\text{und}\quad
+        U_2 \coloneqq \{f \in V \mid \text{$f$ ist konstant}\}.
+      \]
+%     \item
+%       Es sei erneut $V \coloneqq \Cbb(I, \Rbb)$ der Vektorraum der stetigen reellwertigen Funktionen auf dem Einheitsintervall $I = [0,1]$.
+%      Es sei nun
+%       \[
+%         U_1 \coloneqq \{ f \in V \mid f(0) = f(1) = 0 \}
+%       \]
+%       der Untervektorraum der Funktion mit Nullrandwerten, und
+%       \[
+%         U_2 \coloneqq \{ h_{x,y} \mid x, y \in \Rbb \}
+%       \]
+%       der Untervektorraum der affin-linearen Funktionen, wobei
+%       \[
+%         h_{x,y} \colon I \to \Rbb,
+%         \quad
+%         t \mapsto (1-t)x + ty = x + t(y-x)
+%       \]
+%       die affin lineare Funktion mit den Randwerten $x$ und $y$ ist.
+%       
+%       (\emph{Hinweis}:
+%        Es hilft, sich diese Zerlegung anschaulich vorzustellen.)
+    \item
+      Für einen Körper mit $\ringchar K \nmid n$ der Vektorraum $V \coloneqq \Mat_n(K)$ der $(n \times n)$-Matrizen über $K$, und die Untervektorräume
+      \[
+        U_1 \coloneqq \slLie_n(K) = \{ A \in \Mat_n(K) \mid \tr A  = 0 \}
+        \quad\text{und}\quad
+        U_2 \coloneqq K I = \{ \lambda I \mid \lambda \in K \}
+      \]
+      der spurlosen Matrizen und der Skalarmatrizen.
+    \item
+      Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus, so dass es $\lambda, \mu \in K$ mit $\lambda \neq \mu$ und $(f-\lambda)(f-\mu) = 0$ gibt.
+      Es seien $U_1 = V_\lambda(f)$ und $U_2 = V_\mu(f)$.
+      
+      (\emph{Hinweis}:
+       Die Behauptung ist also, dass $f$ diagonalisierbar mit Eigenwerten $\lambda$ und $\mu$ ist.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  Zeigen Sie, dass die folgenden Aussagen allgemein gelten, oder geben Sie jeweils ein Gegenbeispiel an.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $V = U \oplus W_1 = U \oplus W_2$ für Untervektorräume $U, W_1, W_2 \subseteq V$, so ist $W_1 = W_2$.
+    \item
+      Ist $V = V_1 \oplus V_2$ für Untervektorräume $V_1, V_2 \subseteq V$, so gilt für jeden Untervektorraum $U \subseteq V$ die Zerlegung
+      \[
+        U = (U \cap V_1) \oplus (U \cap V_2).
+      \]
+    \item
+      Ist $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum, so gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+    \item
+      Für alle Untervektorräume $W, U_1, U_2 \subseteq V$ mit $U_1 \subseteq U_2$ gilt
+      \[
+        (U_1 + W) \cap U_2 =  U_1 + (W \cap U_2).
+      \]
+    \item
+      Sind $U_1, U_2, W \subseteq V$ Untervektorräume mit $U_1 \subseteq U_2$ und $V = U_1 \oplus W$, so ist
+      \[
+        U_2 = U_1 \oplus (W \cap U_2).
+      \]
+    \item
+      Ist $\mc{E} \subseteq V$ ein Erzeugendensystem von $V$ und $U \subseteq V$ ein Untervektorraum, so ist der Schnitt $\mc{E} \cap U$ ein Erzeugendensystem von $U$.
+    \item
+      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für $i \neq j$, so ist $V = \bigoplus_{i \in I} U_i$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein diagonalisierbarer Endomorphismus von $V$ (d.h.\ es gilt \mbox{$V = \bigoplus_{\lambda \in K} V_\lambda(f)$}).
+  Dann ist für jeden $f$-invarianten Untervektorraum $U \subseteq V$ die Einschränkung $f|_U \colon U \to U$ diagonalisierbar, und es gilt $U_\lambda(f|_U) = U \cap V_\lambda(f)$ für alle $\lambda \in K$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents}, falls die folgenden Bedingungen erfüllt sind:
+  \begin{itemize}
+    \item
+      Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$ (\emph{idempotents}).
+    \item
+      Für alle $1 \leq i \neq j \leq n$ ist $e_i e_j = 0$ (\emph{orthogonal}).
+    \item
+      Es gilt $\id_V = e_1 + \dotsb + e_n$ (\emph{complete}).
+  \end{itemize}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $e_1, \dotsc, e_n \colon V \to V$ ein \emph{complete set of orthogonal idempotents}.
+      Zeigen Sie, dass
+      \[
+        V = \im e_1 \oplus \dotsb \oplus \im e_n.
+      \]
+    \item
+      Es seien $U_1, \dotsc, U_n \subseteq V$ Untervektorräume mit $V = U_1 \oplus \dotsb \oplus U_n$.
+      Zeigen Sie, dass es für alle $i = 1, \dotsc, n$ einen eindeutigen Endomorphismus $p^{(i)}_{U_1, \dotsc, U_n} \colon V \to V$ mit
+      \[
+          p^{(i)}_{U_1, \dotsc, U_n}(u_1 + \dotsb + u_n)
+        = u_i
+        \quad
+        \text{für alle $u_1 \in U_1, \dotsc, u_n \in U_n$},
+      \]
+      gibt.
+      Zeigen Sie ferner, dass $p^{(1)}_{U_1, \dots, U_n}, \dotsc, p^{(n)}_{U_1, \dotsc, U_n}$ ein \emph{complete set of orthogonal idempotents} ist.
+    \item
+      Zeigen Sie, dass die obigen Konstruktionen wie folgt eine Bijektion ergeben:
+      \begin{align*}
+        \left\{
+          (U_1, \dotsc, U_n)
+          \,\middle|\,
+          \begin{tabular}{c}
+            $U_1, \dotsc, U_n \subseteq V$      \\
+            sind Untervek-                      \\
+            torräume mit                        \\
+            $U = U_1 \oplus \dotsb \oplus U_n$
+          \end{tabular}
+        \right\}
+        &\longleftrightarrow
+        \left\{
+          (e_1, \dotsc, e_n)
+          \,\middle|\,
+          \begin{tabular}{c}
+            $e_1, \dotsc, e_n \in \End(V)$  \\
+            ist ein \emph{complete set}     \\
+            \emph{of orthogonal}            \\
+            \emph{idempotents}
+          \end{tabular}
+        \right\}
+        \\
+        (U_1, \dotsc, U_n)
+        &\longmapsto
+        \left( p^{(1)}_{U_1, \dotsc, U_n}, \dotsc, p^{(n)}_{U_1, \dotsc, U_n} \right)
+        \\
+        (\im e_1, \dotsc, \im e_n)
+        &\longmapsfrom
+        (e_1, \dotsc, e_n)
+      \end{align*}
+    \item
+      Es sei $f \colon V \to V$ ein diagonalisierbarer Endomorphismus mit Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$.
+      Es sei $e_1, \dotsc, e_n \in K$ das \emph{complete set of orthogonal idempotents}, dass der Zerlegung
+      \[
+        V = V_{\lambda_1}(f) \oplus \dotsb \oplus V_{\lambda_n}(f)
+      \]
+      entspricht, d.h.\ für alle $i = 1, \dotsc, n$ sei $e_i = p^{(i)}_{V_{\lambda_1}(f), \dots, V_{\lambda_n}(f)}$.
+      Geben Sie eine Formel an, durch die sich $e_i$ aus $f$ ergibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
+  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $f$ ist diagonalisierbar.
+    \item
+      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $e_1, \dotsc, e_n \in \End(V)$ mit den folgenden Eigenschaften:
+  \begin{itemize}
+    \item
+      Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+    \item
+      Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
+    \item
+      Es gilt $\id_V = e_1 + \dotsb + e_n$.
+  \end{itemize}
+  Man sagt, dass $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $V = \im e_1 \oplus \dotsb \oplus \im e_n$ gilt.
+    \item
+      Zeigen Sie für alle $i = 1, \dotsc, n$, dass $\im e_i = V_1(e_i)$ und $\bigoplus_{j \neq i} \im e_j = \ker e_i$ gelten.
+    \item
+      Folgern Sie, dass es für jeden idempotenten Endomorphismus $e \colon V \to V$ eine Zerlegung
+      \[
+        V = \im e \oplus \ker e
+      \]
+      mit $\im e = V_1(e)$ gibt.
+      
+      (\emph{Hinweis}:
+       Erweitern Sie $e$ zu einem complete set of idempotents, dass die Zerlegung liefert.)
+    \item
+      Für alle $i = 1, \dotsc, n$ sei $E_{ii} \in \Mat_n(K)$ die Matrix mit $1$ als $i$-ten Diagonaleintrag, und alle anderen Einträge sind $0$.
+      Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ mit
+      \[
+        e_i \colon \Mat_n(K) \to \Mat_n(K),
+        \quad
+        A \mapsto A E_{ii}
+      \]
+      ein \emph{complete set of orthogonal idempotents} bildet, und bestimmen Sie die Zerlegung
+      \[
+        \Mat_n(K) = \im e_1 \oplus \dotsb \oplus \im e_n.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $e_1, \dotsc, e_n \in \End(V)$ Endomorphismen mit den folgenden Eigenschaften:
+      \begin{itemize}
+        \item
+          Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
+        \item
+          Die idempotenten Endomorphismen $e_1, \dotsc, e_n$ sind paarweise orthogonal, d.h.\ es ist $e_i e_j = 0$ für alle $1 \leq i \neq j \leq n$.
+        \item
+          Es gilt $\id_V = e_1 + \dotsb + e_n$.
+      \end{itemize}
+      Man nennt $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents}.
+      Zeigen Sie, dass
+      \[
+        V = \im e_1 \oplus \dotsb \oplus \im e_n.
+      \]
+  \end{enumerate}
+  Es sei nun $f \colon V \to V$ ein Endomorphismus.
+  Wir nehmen zunächst an, dass $f$ diagonalisierbar mit paarweise verschiedenen Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$ ist.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$.
+    \item
+      Folgern Sie aus der Eigenraumzerlegung $V = V_{\lambda_1}(f) \oplus \dotsb \oplus V_{\lambda_n}(f)$, dass es für alle $i = 1, \dotsc, n$ eine eindeutige lineare Abbildung $e_i \colon V \to V$ gibt, so dass
+      \[
+          e_i(v_1 + \dotsb + v_n)
+        = v_i
+        \quad
+        \text{für alle $v_1 \in V_{\lambda_1}(f), \dotsc, v_n \in V_{\lambda_n}(f)$}.
+      \]
+      (Die Abbildungen $e_1, \dotsc, e_n$ sind also die Projektionen auf die einzelnen Eigenräume bezüglich der Eigenraumzerlegung.)
+    \item
+      Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} bilden.
+    \item
+      Zeigen Sie, dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+      Die Zerlegung $V = \im e_1 \oplus \dotsb \oplus e_n$ stimmt also mit der Eigenraumzerlegung bezüglich $f$ überein.
+    \item
+      Zeigen Sie, dass
+      \[
+          e_i
+        = \prod_{j \neq i} \frac{f - \lambda_j}{\lambda_i - \lambda_j}
+        = \frac{\prod_{j \neq i} (f-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+        \quad
+        \text{für alle $i = 1 \dotsc, n$}.
+      \]
+      
+      (\emph{Hinweis}:
+       Wenden Sie den rechten Ausdruck auf die Eigenräume von $f$ an.)
+  \end{enumerate}
+  Wir nehmen nun umgekehrt an, dass $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ für paarweise verschiedene Skalare $\lambda_1, \dotsc, \lambda_n \in K$.
+  Für alle $i = 1, \dotsc, n$ sei
+  \[
+              e_i
+    \coloneqq \prod_{j \neq i} \frac{f - \lambda_j}{\lambda_i - \lambda_j}
+    =         \frac{\prod_{j \neq i} (f-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}.
+  \]
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ idempotent sind, indem Sie zeigen, dass
+      \[
+        e_i^2 - e_i = 0
+        \quad
+        \text{für alle $i = 1, \dotsc, n$}.
+      \]
+    \item
+      Zeigen Sie, dass die idempotenten Endomorphismen $e_1, \dotsc, e_n$ orthogonal sind.
+    \item
+      Zeigen Sie, dass $\id_V = e_1 + \dotsb + e_n$.
+      Gehen Sie hierfür wie folgt vor:
+      
+      Für alle $i = 1, \dotsc, n$ sei
+      \[
+                  P_i(T)
+        \coloneqq \prod_{j \neq i} \frac{T - \lambda_j}{\lambda_i - \lambda_j}
+        =         \frac{\prod_{j \neq i} (T-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
+        \in K[T].
+      \]
+      Zeigen Sie für alle $i = 1, \dotsc, n$, dass $P_i$ ein Polynom vom Grad $n-1$ ist, so dass $e_i = P_i(f)$, und dass $P_i(\lambda_i) = 1$ und $P_i(\lambda_j) = 0$ für alle $j \neq i$.
+      
+      Folgern Sie für das Polynom $P(T) \coloneqq 1 - \sum_{i=1}^n P_i(T)$, dass $\deg P \leq n-1$, und dass $P(\lambda_i) = 0$ für alle $i = 1, \dotsc, n$.
+      Folgern Sie, dass $P = 0$, also $1 = \sum_{i=1}^n P_i(T)$.
+      
+      Folgern Sie durch Einsetzen von $f$, dass $\id_V = \sum_{i=1}^n e_i$.
+  \end{enumerate}
+  Also ist $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents}, und somit $V = \im e_1 \oplus \dotsb \oplus \im e_n$.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass $\im e_i \subseteq V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+      
+      (\emph{Hinweis}:
+       Überlegen sie sich, dass $(f - \lambda_i) e_i = 0$.)
+    \item
+      Folgern Sie mithilfe der Zerlegung $V = \im e_1 \oplus \dotsb \oplus \im e_n$, dass $V$ diagonalisierbar ist, und dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
+  \end{enumerate}
+  Ingesamt zeigt dies, dass $f$ genau dann diagonalisierbar mit paarweise verschiedenen möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n$ ist, wenn $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$.
+  \begin{enumerate}[resume]
+    \item 
+      Es sei nun $K = \Cbb$.
+      Folgern Sie, dass $f$ in den folgenden Fällen diagonalisierbar ist, und bestimmen Sie jeweils die möglichen Eigenwerte:
+      \begin{itemize}
+        \item
+          $f^2 = f$
+        \item
+          $f^3 = f$
+        \item
+          $f^3 = -f$.
+        \item
+          $f^n = \id_V$ für ein $n \geq 1$
+      \end{itemize}
+  \end{enumerate}
+\end{question}

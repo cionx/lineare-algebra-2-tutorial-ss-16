@@ -1,0 +1,204 @@
+\section{Quotientenvektorräume}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ sei eine lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $U \subseteq V$ ein Untervektorraum mit $f|_U = 0$.
+      Zeigen Sie, dass $f$ eine lineare Abbildung
+      \[
+        \bar{f} \colon V\!/U \to W,
+        \quad
+        [v] \mapsto f(v)
+      \]
+      induziert.
+    \item
+      Zeigen Sie, dass $\im \bar{f} = \im f$.
+      Folgern Sie, dass $\bar{f}$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+    \item
+      Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
+      Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits die Gleichheit $U = \ker f$ gilt.
+    \item
+      Folgern Sie, dass $f$ einen Isomorphismus $V/(\ker f) \to \im f$, $[v] \mapsto f(v)$ induziert.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ genau dann ein Untervektorraum ist, wenn es einen $K$-Vektorraum $W$ und eine lineare Abbildung $f \colon V \to W$ gibt, so dass $U = \ker f$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
+  Es sei $W$ ein $K$-Vektorraum mit Basis $(b_e)_{e \in E}$.
+  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum mit zwei Untervektorräumen $U_1, U_2 \subseteq V$.
+  Zeigen Sie die folgenden beiden Isomorphiesätze:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Inklusion $U_1 \to U_1 + U_2$, $x \mapsto x$ induziert einen isomorphismus
+      \[
+        U_1 / (U_1 \cap U_2) \to (U_1 + U_2) / U_2,
+        \quad
+        [x] \mapsto [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+    \item
+      Ist $U_1 \subseteq U_2$, so ist $U_2 / U_1$ ein Untervektorraum von $V / U_1$, und die Abbildung
+      \[
+        (V \! / U_1) / (U_2 / U_1) \to V \! / U_2,
+        \quad
+        [[x]] \mapsto [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+      ist ein wohldefinierter Isomorphismus.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Konstruieren Sie für den Annihilator
+  \[
+      U^\circ
+    = \{ \varphi \in V^* \mid \text{$\varphi(u) = 0$ für alle $u \in U$} \}
+  \]
+  einen Isomorphismus $F \colon U^\circ \to (V\!/U)^*$.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $\sim$ eine Äquivalenzrelation auf $V$, so dass auf $V/{\sim}$ die Addition
+  \[
+      \overline{v} + \overline{w}
+    = \overline{v + w}
+    \quad
+    \text{für alle $v, w \in V$}
+  \]
+  und die Skalarmultiplikation
+  \[
+      \lambda \cdot \overline{v}
+    = \overline{\lambda \cdot v}
+    \quad
+    \text{für alle $\lambda \in K$, $v \in V$}
+  \]
+  wohldefiniert sind.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $V\!/{\sim}$ mit den obigen Operationen ein $K$-Vektorraum ist, und dass die Äquivalenzklasse $\overline{0}$ das Nullelement von $V/{\sim}$ ist.
+    \item
+      Zeigen Sie, dass die kanonische Abbildung $\rho \colon V \to V/{\sim}$ mit $v \mapsto \overline{v}$ ein Epimorphismus ist.
+    \item
+      Zeigen Sie für $U \coloneqq \ker \rho$, dass
+      \[
+        v \sim w
+        \iff
+        v - w \in U
+        \quad
+        \text{für alle $v, w \in V$}.
+      \]
+    \item
+      Folgern Sie, dass $V/{\sim} = V/U$, und dass $\rho$ die kanonische Projektion des Quotientenvektorraums ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Kbb$-Vektorraum.
+  Eine Abbildung $[\,\cdot\,] \colon V \to V$ heißt \emph{Seminorm}, falls
+  \begin{itemize}
+    \item
+      $[\lambda x] = |\lambda| [x]$ für alle $\lambda \in \Kbb$ und $x \in V$ (Homogenität), und
+    \item
+      $[x + y] \leq [x] + [y]$ für alle $x, y \in V$ (Dreiecksungleichung).
+  \end{itemize}
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Teilmenge $N \coloneqq \{x \in V \mid [x] = 0\}$ ist ein Untervektorraum von $V$.
+    \item
+      Die Seminorm $[\,\cdot\,]$ induziert auf $V\!/U$ eine Norm $\|\cdot\|$ durch
+      \[
+        \| \overline{x} \| \coloneqq [x]
+        \quad
+        \text{für alle $x \in V$}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
+  Es sei
+  \[
+    i \colon \ker f \to V,
+    \quad
+    v \mapsto v
+  \]
+  die kanonische Inklusion und
+  \[
+    p \colon W \to \coker f,
+    \quad
+    w \mapsto [w]
+  \]
+  die kanonische Projektion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $f \circ i = 0$ und $p \circ f = 0$.
+    \item
+      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $h \colon U \to V$ mit $f \circ h = 0$ eine eindeutige lineare Abbildung $\bar{h} \colon U \to \ker f$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \ker f  \arrow{r}{i}
+            \&  V       \arrow{r}{f}
+            \&  W
+          \\
+                U       \arrow[swap]{ru}{h}
+                        \arrow[dashed]{u}{\bar{h}}
+            \&  {}
+            \&  {}
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $g \colon W \to U$ mit $g \circ f = 0$ eine eindeutige lineare Abbildnug $\bar{g} \colon \coker f \to U$ gibt, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                {}
+            \&  {}
+            \&  U
+          \\
+                V         \arrow{r}{f}
+            \&  W         \arrow{r}{p}
+                          \arrow{ru}{g}
+            \&  \coker f  \arrow[swap, dashed]{u}{\bar{g}}
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien Endomorphismus.
+  Außdem sei $U \subseteq V$ ein Untervektorraum, der invariant unter $f$ und $g$ ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie: Der Endomorphismus $f$ induziert einen Endomorphismus
+      \[
+        \bar{f} \colon V\!/U \to V\!/U,
+        \quad
+        [v] \mapsto [f(v)].
+      \]
+      Analog induziert dann auch $g$ einen Endomorphismus $\bar{g} \colon V \to V$, $[v] \mapsto [g(v)]$.
+    \item
+      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
+      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
+  \end{enumerate}
+\end{question}

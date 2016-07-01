@@ -1,0 +1,343 @@
+\section{Komplexifizierung}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum und $W$ ein $\Cbb$-Vektorraum.
+  Es sei $\iota \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ gibt genau eine $\Cbb$-lineare Abbildung $f^\Cbb \colon V_\Cbb \to W$, die das folgende Diagram kommutieren lässt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
+                V       \arrow{d}[swap]{\iota}
+                        \arrow{rd}{f}
+            \&  {}
+          \\
+                V_\Cbb  \arrow{r}[swap]{f^\Cbb}
+            \&  W
+        \end{tikzcd}
+      \]
+    \item
+      Für je zwei $\Cbb$-lineare Abbildungen $g_1, g_2 \colon V_\Cbb \to W$ gilt die Äquivalenz
+      \[
+        g_1 = g_2
+        \iff
+        g_1 \circ \iota = g_2 \circ \iota.
+      \]
+    \item
+      Für jeden $\Cbb$-Vektorraum $W'$ gilt für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ und jede $\Cbb$-lineare Abbildung $g \colon W \to W'$ die Gleichheit
+      \[
+        (g \circ f)^\Cbb = g \circ f^\Cbb.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum.
+  \begin{enumerate}
+    \item
+      Definieren Sie, wann ein $\Cbb$-Untervektorraum $W \subseteq V_\Cbb$ induziert ist.
+    \item
+      Zeigen Sie, dass für einen induzierten $\Cbb$-Untervektorraum $W \subseteq V_\Cbb$ die Menge
+      \[
+        U \coloneqq \{ v \in V \mid v + i \cdot 0 \in W \}
+      \]
+      ein $\Rbb$-Untervektorraum von $V$ ist, durch den $W$ induziert wird.
+    \item
+      Ist $U$ eindeutig mit dieser Eigenschaft?
+    \item
+      Folgern Sie, dass eine $\Cbb$-Vektorraum $W \subseteq V_\Cbb$ genau dann induziert ist, wenn $\overline{W} = W$.
+    \item
+      Folgern Sie, dass die Abbildung
+      \[
+        \left\{
+          U \subseteq V
+        \,\middle|\,
+          \text{$U$ ist ein $\Rbb$-UVR}
+        \right\}
+        \to
+        \left\{
+          W \subseteq V_\Cbb
+         \,\middle|\,
+          \text{$W$ ist ein $\Cbb$-UVR}
+        \right\},
+        \quad
+        U \mapsto U_\Cbb
+      \]
+      injektiv ist, und geben Sie ein Linksinverses an.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Für jeden $\Rbb$-Vektorraum $V$ sei $\iota_V \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion und für jeden $\Cbb$-Vektorraum $W$ und jede $\Rbb$-lineare Abbildung $f \colon V \to W$ sei $f^\Cbb \colon V_\Cbb \to W$ die eindeutige $\Cbb$-lineare Abbildung mit $f^\Cbb \circ \iota_V = f$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass für jedes $\Rbb$-Vektorraum $V$ und $\Cbb$-Vektorraum $W$ die Abbildung
+      \[
+        \Phi_{V,W} \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W),
+        \quad
+        f \mapsto f^\Cbb
+      \]
+      ein Isomorphismus von $\Rbb$-Vektorräumen ist.
+      Geben Sie auch $\Phi_{V,W}^{-1}$ an.
+    \item
+      Es seien  $V, V', W, W'$ vier $K$-Vektorräume und $g_1 \colon V' \to V$ und $g_2 \colon W \to W'$ zwei $K$-lineare Abbildungen.
+      Zeigen Sie, dass die beidseitige Komposition
+      \[
+        g_2 \circ - \circ g_1
+        \colon
+        \Hom_K(V, W) \to \Hom_K(V', W'),
+        \quad
+        h \mapsto g_2 \circ f \circ g_1
+      \]
+      eine $K$-lineare Abbildung ist.
+    \item
+      Zeigen Sie, dass die Isomorphismen $\Phi_{V,W}$ in dem folgenden Sinne \emph{natürlich} sind:
+      Es seien $V$ und $V'$ zwei $\Rbb$-Vektorräume und es sei $h \colon V' \to V$ eine $\Rbb$-lineare Abbildung.
+      Es seien $W$ und $W'$ zwei $\Cbb$-Vektorräume und es sei $g \colon W \to W'$ eine $\Cbb$-lineare Abbildung.
+      Dann kommutiert das folgende Diagram von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
+                \Hom_\Rbb(V, W)         \arrow[swap]{d}{g \circ - \circ h}
+                                        \arrow{r}{\Phi_{V,W}}
+            \&  \Hom_\Cbb(V_\Cbb, W)    \arrow{d}{g \circ - \circ h^\Cbb}
+          \\
+                \Hom_\Rbb(V', W')       \arrow{r}{\Phi_{V',W'}}
+            \&  \Hom_\Cbb(V'_\Cbb, W')
+        \end{tikzcd}
+      \]
+
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum mit $\Rbb$-Basis $\mc{B} = (v_j)_{j \in J}$.
+  Zeigen Sie, dass dann $\mc{B}_\Cbb = (v_j + i \cdot 0)_{j \in J}$ eine $\Cbb$-Basis von $V_\Cbb$ ist.
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass die $\Rbb$-lineare Inklusion $\Rbb \to \Cbb$, $x \mapsto x$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume.
+  Zeigen Sie, dass die $\Rbb$-lineare Abbildung
+  \[
+    \varphi \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W_\Cbb),
+    \quad
+    f \mapsto f_\Cbb
+  \]
+  einen Isomorphismus von $\Cbb$-Vektorräumen
+  \[
+    \Phi \colon \Hom_\Rbb(V, W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
+  \]
+  induziert.
+  \newline
+  (\emph{Hinweis}:
+   Beachten Sie, dass $V$ und $W$ nicht notwendigerweise endlichdimensional sind.)
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Rbb$-Vektorraum.
+  Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
+  
+  (\emph{Hinweis}:
+   Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
+\end{question}
+
+
+\begin{question}\label{qst: compatibility of sums and intersections with complexification}
+  Es sei $V$ ein reeller Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gilt
+      \[
+          \left( \bigcap_{i \in I} U_i \right)_\Cbb
+        = \bigcap_{i \in I} (U_i)_\Cbb
+      \]
+    \item
+      Es gilt
+      \[
+          \left( \sum_{i \in I} U_i \right)_\Cbb
+        = \sum_{i \in I} (U_i)_\Cbb.
+      \]
+    \item
+      Folgern Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei reelle Vektorräume, und $f \colon V \to W$ sei eine $\Rbb$-lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\ker (f_\Cbb) = (\ker f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann injektiv ist, wenn $f$ injektiv ist.
+    \item
+      Folgern Sie ferner, dass $(V_\Cbb)_\lambda(f_\Cbb) = V_\lambda(f)_\Cbb$ für jedes $\lambda \in \Rbb$.
+    \item
+      Zeigen Sie, dass $\im (f_\Cbb) = (\im f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
+  \newline
+  (\emph{Hinweis}:
+   Man betrachte etwa Übung~\ref{qst: compatibility of sums and intersections with complexification}.
+   Beachten Sie aber auf jeden Fall, dass $V$ nicht notwendigerweise endlichdimensional ist.)
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass die kanonische Inklusion $\iota \colon \Rbb[X] \to \Cbb[X]$, $x \mapsto x$ $\Rbb$-linear ist, und einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
+\end{question}
+
+
+\begin{question}
+  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis eines $\Rbb$-Vektorraums $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis eines $\Rbb$-Vektorraums $W$.
+  Es seien
+  \[
+    \mc{B}_\Cbb \coloneqq (b_1 + i \cdot 0, \dotsc, b_n + i \cdot 0)
+    \quad\text{und}\quad
+    \mc{C}_\Cbb \coloneqq (c_1 + i \cdot 0, \dotsc, c_m + i \cdot 0)
+  \]
+  die entsprechenden $\Cbb$-Basen der Komplexifizierungen $V_\Cbb$ und $W_\Cbb$.
+  Es seien
+  \begin{gather*}
+    \Phi^\Rbb \colon \Hom_\Rbb(V,W) \to \Mat(m \times n, \Rbb),
+    \quad
+    f \mapsto \Mat_{\mc{B}, \mc{C}}(f)
+  \shortintertext{und}
+    \Phi^\Cbb \colon \Hom_\Cbb(V_\Cbb, W_\Cbb) \to \Mat(m \times n, \Cbb),
+    \quad
+    g \mapsto \Mat_{\mc{B}_\Cbb, \mc{C}_\Cbb}(g).
+  \end{gather*}
+  Es seien
+  \[
+  \begin{array}{ll}
+      \iota_1 \colon \Hom_\Rbb(V, W) \to \Hom_\Rbb(V,W)_\Cbb,
+    & f \mapsto f + i \cdot 0,
+    \\
+      \iota_2 \colon \Hom_\Rbb(V,W) \to \Hom_\Cbb(V_\Cbb, W_\Cbb),
+    & f \mapsto f_\Cbb
+    \\
+      \iota_3 \colon \Mat(m \times n, \Rbb) \to \Mat(m \times n, \Rbb)_\Cbb,
+    & A \mapsto A + i \cdot 0,
+    \\
+      \iota_4 \colon \Mat(m \times n, \Rbb) \to \Mat(m \times n, \Cbb),
+    & A \mapsto A,
+  \end{array}
+  \]
+  die jeweiligen kanonischen Inklusionen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \Hom_\Rbb(V, W)           \arrow{r}{\iota_2}
+                                          \arrow[swap]{d}{\Phi^\Rbb}
+            \&  \Hom_\Cbb(V_\Cbb, W_\Cbb) \arrow{d}{\Phi^\Cbb}
+          \\
+                \Mat(m \times n, \Rbb)    \arrow{r}{\iota_4}
+            \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+      Folgern Sie, dass $\iota_4$ tatsächlich injektiv ist, wie der oben verwendete Begriff \emph{Inklusion} vermuten lässt.
+    \item
+      Zeigen Sie, dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \Hom_\Rbb(V, W)             \arrow{r}{\iota_1}
+                                            \arrow[swap]{d}{\Phi^\Rbb}
+            \&  \Hom_\Rbb(V, W)_\Cbb        \arrow{d}{(\Phi^\Rbb)_\Cbb}
+          \\
+                \Mat(m \times n, \Rbb)      \arrow{r}{\iota_3}
+            \&  \Mat(m \times n, \Rbb)_\Cbb
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie, dass die Inklusion $\iota_2$ eine eindeutige $\Cbb$-lineare Abbildung
+      \[
+        \Psi_1 \colon \Hom_\Rbb(V,W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
+      \]
+      induziert, die das folgende Diagram zum kommutieren bringt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Hom_\Rbb(V,W)            \arrow[swap]{ld}{\iota_1}
+                                            \arrow{rd}{\iota_2}
+              \&  {}
+          \\
+                  \Hom_\Rbb(V,W)_\Cbb       \arrow{rr}{\Psi_1}
+              \&  {}
+              \&  \Hom_\Cbb(V_\Cbb, W_\Cbb).
+        \end{tikzcd}
+      \]
+    \item
+      Zeigen Sie auf analoge Weise, dass die Inklusion $\iota_4$ eine eindeutige $\Cbb$-lineare Abbildung
+      \[
+        \Psi_2 \colon \Mat(m \times n, \Rbb)_\Cbb \to \Mat(m \times n, \Cbb)
+      \]
+      induziert, die das folgende Diagram zum kommutieren bringt:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Mat(m \times n, \Rbb)      \arrow[swap]{ld}{\iota_3}
+                                              \arrow{rd}{\iota_4}
+              \&  {}
+          \\
+                  \Mat(m \times n, \Rbb)_\Cbb \arrow{rr}{\Psi_2}
+              \&  {}
+              \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+    \item
+      Wir haben nun das folgende Diagram:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                  {}
+              \&  \Hom_\Rbb(V, W)               \arrow[swap]{ld}{\iota_1}
+                                                \arrow{rd}{\iota_2}
+                                                \arrow[near end, swap]{dd}{\Phi^\Rbb}
+              \&  {}
+          \\
+                  \Hom_\Rbb(V, W)_\Cbb          \arrow[crossing over, near start]{rr}{\Psi_1}
+                                                \arrow[swap]{dd}{(\Phi^\Rbb)_\Cbb}
+              \&  {}
+              \&  \Hom_\Cbb(V_\Cbb, W_\Cbb)     \arrow{dd}{\Phi^\Cbb}
+          \\
+                  {}
+              \&  \Mat(m \times n, \Rbb)        \arrow[swap]{ld}{\iota_3}
+                                                \arrow{rd}{\iota_4}
+              \&  {}
+          \\
+                  \Mat(m \times n, \Rbb)_\Cbb   \arrow{rr}{\Psi_2}
+              \&  {}
+              \&  \Mat(m \times n, \Cbb)
+        \end{tikzcd}
+      \]
+      Von diesem Diagram wissen wir bereits, dass Deckel, Boden und beide Rückseiten kommutieren.
+      Folgern Sie daraus, dass auch die Vorderseite kommutiert.
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass zwei $\Cbb$-lineare Abbildung $f, g \colon \Hom_\Rbb(V, W)_\Cbb \to \Mat(m \times n, \Cbb)$ genau dann übereinstimmen, wenn die Kompositionen $f \circ \iota_1$ und $g \circ \iota_1$ übereinstimmen.)
+    \item
+      Zeigen Sie, dass $\Psi_2$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
+    \item
+      Folgen Sie, dass auch $\Psi_1$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
+  \end{enumerate}
+\end{question}
