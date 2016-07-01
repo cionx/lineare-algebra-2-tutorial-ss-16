@@ -1,0 +1,410 @@
+\section{Jordannormalform, Hautpträume und Trigonalisierbarkeit}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $\Cbb$-Vektorraums $V$.
+      Drücken Sie $\tr f$ und $\det f$ durch die (nicht notwendigerweise verschiedenen) Eigenwerte $\lambda_1, \dotsc, \lambda_n \in \Cbb$ von $f$ aus.
+    \item
+      Drücken Sie für den Fall $n = 2$ die Determinante $\det f$ durch $\tr f$ und $\tr f^2$ aus.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $A \in \Mat_2(\Cbb)$ mit $\tr A = 0$ und $\tr A^2 = -2$.
+  Bestimmen Sie $\det A$.
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein algebraisch abgeschlossener Körper mit $\ringchar K \notin \{2,3\}$.
+  Zeigen Sie, dass
+  \[
+    \det A = \frac{1}{6} (\tr A)^3 - \frac{1}{2} (\tr A^2)(\tr A) + \frac{1}{3} (\tr A^3)
+    \quad
+    \text{für jedes $A \in \Mat_3(K)$}.
+  \]
+  
+  (\emph{Hinweis}:
+   Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
+\end{question}
+
+
+\begin{question}
+  Es sei $f \colon V \to V$ ein Endomorphismus eines $K$-Vektorraums $f$.
+  \begin{enumerate}
+    \item
+      Definieren Sie den Eigenraum von $f$ zum möglichen Eigenwert $\lambda \in K$.
+    \item
+      Definieren sie den Hauptraum von $f$ zum möglichen Eigenwert $\lambda \in K$.
+  \end{enumerate}
+\end{question}
+
+
+
+\begin{question}
+  Bestimmen Sie alle möglichen Jordannormalformen einer nicht-diagonalierbaren Matrix $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie für die folgenden komplexen Matrizen jeweils eine Jordannormalform, inklusiver entsprechender Basiswechselmatrizen:
+  \begin{gather*}
+    \begin{pmatrix*}[r]
+      2 & 2 &  -5 \\
+      3 & 7 & -15 \\
+      1 & 2 &  -4
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      0 & 0 &  1 \\
+      1 & 0 & -3 \\
+      0 & 1 &  3
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      1 & 0 & 1 & -1  \\
+      0 & 1 & 1 &  0  \\
+      0 & 0 & 1 &  1  \\
+      0 & 0 & 0 &  1
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+      3 & -4  &  0  &  2  \\
+      4 & -5  & -2  &  4  \\
+      0 &  0  &  3  & -2  \\
+      0 &  0  &  2  & -1
+    \end{pmatrix*},
+  \\
+    \begin{pmatrix*}[r]
+       3  &  3  &  1  &  5  \\
+       0  & -2  &  2  & -8  \\
+      -1  & -2  &  0  & -3  \\
+       0  &  2  & -1  &  6
+    \end{pmatrix*}
+  \end{gather*}
+\end{question}
+\begin{solution}
+  \begin{enumerate}leftmargin=*]
+    \item
+      \[
+        \begin{pmatrix}
+          1 &   &   \\
+            & 1 &   \\
+            &   & 3
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          5 & -2  & 1 \\
+          0 &  1  & 3 \\
+          1 &  0  & 1
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          1 &   &   \\
+          1 & 1 &   \\
+            & 1 & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+           1  & -1  & 1 \\
+          -2  &  1  & 0 \\
+           1  &  0  & 0
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          1 & 0 & 0 & 0 \\
+            & 1 & 1 & 0 \\
+            &   & 1 & 1 \\
+            &   & 0 & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          1 & 1 & -1 & 0  \\
+          0 & 1 &  0 & 0  \\
+          0 & 0 &  1 & 0  \\
+          0 & 0 &  0 & 1
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix*}[r]
+          -1  &  1  &   &   \\
+              & -1  &   &   \\
+              &     & 1 & 1 \\
+              &     &   & 1
+        \end{pmatrix*}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix*}[r]
+          1 & \frac{1}{4} & 1 & \frac{1}{2} \\
+          1 & 0           & 1 & 0           \\
+          0 & 0           & 1 & \frac{1}{2} \\
+          0 & 0           & 1 & 0
+        \end{pmatrix*}
+      \]
+    \item
+      \[
+        \begin{pmatrix}
+          1 &   &   &   \\
+            & 2 & 1 &   \\
+            &   & 2 & 1 \\
+            &   &   & 2
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix}
+           0  &  1  &  2  &  7  \\
+          -2  & -2  &  0  & -1  \\
+           1  &  0  & -1  & -2  \\
+           1  &  1  &  0  &  0
+        \end{pmatrix}
+      \]
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $n \colon V \to V$ ein nilpotenter Endomorphismus.
+      Zeigen Sie, dass ${\id_V} - n$ invertierbar ist.
+      
+      (\emph{Hinweis}:
+       Es ist $\id_V = \id_V - n^{p+1}$ für $p \in \Nbb$ groß genug.)
+    \item
+      Zeigen, bzw.\ folgern Sie allgemeiner, dass $\lambda {\id_V} + n$ für alle $\lambda \in K^\times$ invertierbar ist.
+    \item
+      Es sei $f \colon V \to V$ ein beliebiger Endomorphismus.
+      Zeigen Sie für alle $\lambda, \mu \in K$ mit $\lambda \neq \mu$, dass $V^\sim_\lambda(f)$ invariant unter $f - \mu {\id_V}$ ist, und dass die Einschränkung $(f - \mu {\id_V})|_{V^\sim_\lambda(f)}$ invertierbar ist.
+    \item
+      Folgern Sie:
+      Ist $(f - \lambda_1)^{n_1} \dotsm (f - \lambda_k)^{n_k} = 0$ mit $\lambda_1, \dotsc, \lambda_k \in K$ paarweise verschieden, so sind $\lambda_1, \dotsc, \lambda_k$ die möglichen Eigenwerte von $f$, und für alle $1 \leq i \leq k$ ist der Nilpotenzindex von $(f - \lambda_i)|_{V^\sim_\lambda(f)}$ durch $\leq n_k$ abschätzbar.
+    \item
+      Folgern Sie:
+      Ist $K$ algebraisch abgeschlossen und $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$, so ist $f$ diagonalisierbar mit möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n \in K$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $f \colon V \to V$ ein Endomorphismus eines $\Cbb$-Vektorraums $V$ und $\lambda \in \Cbb$.
+  Zeigen Sie, dass die Einschränkung $(f - \lambda {\id_V})|_{V^\sim_\lambda(f)}$ nicht notwendigerweise nilpotent ist.
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie in den Folgenden alle Möglichkeiten der Jordannormalform von $A \in \Mat_n(\Cbb)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+     Es ist $\chi_A(T) = (T-3)^4 (T-5)^4$ und $(A - 3I)^2 (A - 5I)^2 = 0$.
+    \item
+      Es ist $A^3 = 0$ und alle nicht-trivalen Eigenräume von $A$ sind eindimensional.
+    \item
+      Es ist $\chi_A(T) = (T-2)(T+2)^3$ und $(A - 2I)(A + 2I) = 0$.
+    \item
+      Es ist $\chi_A(T) = T^3 - T$.
+    \item
+      Es ist $\chi_A(T) = (T^2 -5T + 6)^2$ und alle Eigenräume von $A$ sind entweder null-\ oder eindimensional.
+    \item
+      Es ist $A^2 = A$ und alle nicht-trivialen Eigenräume von $A$ sind zweidimensional.
+    \item
+      Es ist $\chi_A(T) = T^5$ und alle Eigenräume von $A$ sind entweder null-\ oder eindimensional.
+    \item
+      Es ist $\chi_A(T) = (T+3)^3 T^2$ und $A$ hat keine zweidimensionalen Eigenräume.
+    \item
+      Es ist $\chi_A(T) = T^5 - 2 T^4$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Cbb$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $n \colon V \to V$ ein nilpotenter Endomorphismus.
+      Zeigen Sie, dass der Endomorphismus ${\id_V} + n$ invertierbar ist.
+      
+      (\emph{Hinweis}: Es ist $\id_V = \id_V \pm n^{p+1}$ für $p \in \Nbb$ groß genug.)
+  \end{enumerate}
+  Ein Endomorphismus $u \colon V \to V$ heißt \emph{unipotent}, falls $u - \id_V$ nilpotent it.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Folgern Sie, dass jeder unipotente Endomorphismus von $V$ invertierbar ist.
+  \end{enumerate}
+  Von nun an sei $V$ endlichdimensional.
+  Auf dem fünften Übungszettel wurde gezeigt, dass es für jeden Endomorphismus $f \colon V \to V$ eindeutige Endomorphismen $d,n \colon V \to V$ gibt, so dass
+  \begin{itemize}
+    \item 
+      $f = d + n$,
+    \item
+      $d$ ist diagonalisierbar und $n$ ist nilpotent, und
+    \item
+      $d$ und $n$ kommutieren.
+  \end{itemize}
+  Dies ist die \emph{additive Jordanzerlegung} auf $\End(V)$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass $f$ genau dann invertierbar ist, wenn der diagonalisierbare Anteil $d$ der additiven Jordanzerlegung von $f$ invertierbar ist.
+  \end{enumerate}
+  Folgern Sie damit aus der obigen additiven Jordanzerlegung von $\End(V)$ die folgende \emph{multiplikative Jordanzerlegung} von $\GL(V)$:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass es für jedes $s \in \GL(V)$ eindeutige $d, u \in \GL(V)$ gibt, so dass
+      \begin{itemize}
+        \item
+          $s = d \cdot u$,
+        \item
+          $d$ ist diagonalisierbar und $u$ ist unipotent, und
+        \item
+          $d$ und $u$ kommutieren.
+      \end{itemize}
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie die Potenz $A^{10}$ der Matrix
+  \[
+    A
+    \coloneqq
+    \begin{pmatrix*}[r]
+       3  & 4 &  3      \\
+      -1  & 0 & -1      \\
+       1  & 2 &  3
+    \end{pmatrix*}
+    \in \Mat_3(\Cbb).
+  \]
+\end{question}
+
+
+\begin{question}
+  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Gleichungsssysteme.
+  Dabei seien $f, g, h \in C^\infty(\Rbb)$.
+  \[
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - 6g, \\
+        g'  & = & 2f  & + 6g;
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - g,  \\
+        g'  & = & 2f  & + g;
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrrr}
+        f'  & = & 2f  & + 2g  & + 3h, \\
+        g'  & = &  f  & + 3g  & + 3h, \\
+        h'  & = & -f  & - 2f  & - 2h.
+      \end{array}
+    \right.
+  \]
+\end{question}
+
+
+\begin{question}
+  Es sei $\|\cdot\|$ eine Norm auf $\Mat_n(\Cbb)$.
+  Für alle $\lambda_1, \dotsc, \lambda_n \in \Cbb$ sei
+  \[
+    \diag(\lambda_1, \dotsc, \lambda_n)
+    \coloneqq
+    \begin{pmatrix}
+      \lambda_1 &         &           \\
+                & \ddots  &           \\
+                &         & \lambda_n
+    \end{pmatrix}
+    \in \Mat_n(\Cbb).
+  \]
+  Es sei
+  \[
+    \Diagonal_n(\Cbb)
+    \coloneqq
+    \left\{
+      S \diag(\lambda_1, \dotsc, \lambda_n) S^{-1}
+    \,\middle|\,
+      S \in \GL_n(\Cbb),
+      \lambda_1, \dotsc, \lambda \in \Cbb
+    \right\}
+    \subseteq \Mat_n(\Cbb)
+  \]
+  die Menge der diagonalisierbaren komplexen $n \times n$-Matrizen.
+  Wir zeigen, dass $D_n(\Cbb) \subseteq \Mat_n(\Cbb)$ dicht ist, d.h.\ dass es für jede Matrix $A \in \Mat_n(\Cbb)$ und jedes $\varepsilon > 0$ eine diagonalisierbare Matrix $D \in \Diagonal_n(\Cbb)$ mit $\|A-D\| < \varepsilon$ gibt.
+  
+  Es sei $S \in \GL_n(\Cbb)$, so dass $S A S^{-1}$ eine obere Dreiecksmatrix
+  \[
+    S A S^{-1}
+    =
+    \begin{pmatrix}
+      \lambda_1 & *       & \cdots  & *         \\
+                & \ddots  & \ddots  & \vdots    \\
+                &         & \ddots  & *         \\
+                &         &         & \lambda_n
+    \end{pmatrix}
+  \]
+  ist.
+  Es seien $z_1, \dotsc, z_n \in \Cbb$ paarweise verschieden und
+  \[
+    B(t)
+    \coloneqq
+    A + t S \diag(z_1, \dotsc, z_n) S^{-1}
+    \quad
+    \text{für alle $t \in \Rbb$}.
+  \]
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass zum Zeitpunkt $t \in \Rbb$ die Zahlen $\mu_1(t), \dotsc, \mu_n(t) \in \Cbb$ mit
+      \[
+        \mu_i(t) \coloneqq \lambda_i + t z_i
+        \quad
+        \text{für jedes $i = 1, \dotsc, n$}
+      \]
+      die Eigenwerte von $B(t)$ ist.
+    \item
+      Zeigen Sie, dass die Zahlen $\mu_1(t), \dotsc, \mu_n(t)$ für fast alle $t \in \Rbb$ paarweise verschieden sind.
+    \item
+      Folgern Sie, dass $B(t)$ für fast alle $t \in \Rbb$ diagonalisierbar ist.
+    \item
+      Folgern Sie, dass es für alle $\varepsilon > 0$ ein $D \in \Diagonal_n(\Cbb)$ mit $\| A - D \| < \varepsilon$ gibt.
+  \end{enumerate}
+  Wir wollen die Dichtheit von $\Diagonal_n(\Cbb) \subseteq \Mat_n(\Cbb)$ nutzen, um den Satz von Cayley-Hamilton für komplexe Matrizen zu zeigen:
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        F \colon \Mat_n(\Cbb) \to \Mat_n(\Cbb),
+        \quad
+        A \mapsto \chi_A(A)
+      \]
+      stetig ist, wobei $\chi_A(T) \in \Cbb[T]$ das charakteristische Polynom von $A$ ist.
+      
+      (\emph{Hinweis}: Die Matrixpotenzen $A \mapsto A^k$ sind stetig, und die Koeffizienten des charakteristischen Polynoms $\chi_A$ sind Polynome in den Einträgen von $A$.)
+      
+    \item
+      Zeigen Sie, dass $F(D) = 0$ für jede Diagonalmatrix $D \in \Mat_n(\Cbb)$.
+    \item
+      Zeigen Sie, dass $P(SAS^{-1}) = S P(A) S^{-1}$ für alle $P \in \Cbb[T]$, $A \in \Mat_n(\Cbb)$ und $S \in \GL_n(\Cbb)$.
+      Folgern Sie, dass $F(D) = 0$ für jede Matrix $D \in \Diagonal_n(\Cbb)$.
+    \item
+      Folgern Sie, dass $F(A) = 0$ für alle $A \in \Mat_n(\Cbb)$.
+  \end{enumerate}
+\end{question}

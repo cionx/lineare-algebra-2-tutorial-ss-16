@@ -1,4 +1,4 @@
-\emph{Direkte Summen}
+\section{Direkte Summen}
 
 
 \begin{question}
@@ -27,7 +27,7 @@
         \text{für alle $u_1 \in U_1$ und $u_2 \in U_2$}.
       \]
     \item
-      Zeigen Sie, dass die obigen Konstruktionen eine Bijektion
+      Zeigen Sie, dass die obigen Konstruktionen wie folgt eine Bijektion ergeben.
       \begin{align*}
         \left\{
           (U_1, U_2)
@@ -41,11 +41,10 @@
         &\longleftrightarrow
         \{ e \in \End(V) \mid \text{$e$ ist idempotent} \},
       \\
-        (U_1, U_2) &\longmapsto p_{U_1, U_2}
+        (U_1, U_2) &\longmapsto p_{U_1, U_2},
       \\
-        (\im e, \ker e) &\longmapsfrom e
+        (\im e, \ker e) &\longmapsfrom e.
       \end{align*}
-      ergeben.
     \item
       Auf der linken Seite der obigen Bijektion gibt es eine Involution $(U_1, U_2) \mapsto (U_2, U_1)$.
       Zeigen Sie, dass dies unter der gegebenen Bijektion der Involutions $e \mapsto \id_V - e$ auf der rechten Seite entspricht.
@@ -57,7 +56,7 @@
   Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus mit $f^2 = 1$.
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie für $\ringchar K \neq 2$, dass $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist, dass also $V = V_1(f) \oplus V_{-1}(f)$.
+      Zeigen Sie für $\ringchar K \neq 2$, dass $V = V_1(f) \oplus V_{-1}(f)$, dass also $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist.
     \item
       Zeigen Sie, dass die Aussage für $\ringchar K = 2$ nicht mehr gelten muss.
   \end{enumerate}
@@ -65,10 +64,10 @@
 
 
 \begin{question}
-  Es seien $V$ und $W$ zwei $K$-Vektorräume, und $f \colon V \to W$ eine lineare Abbildung, die ein Rechtsinverses $g \colon W \to V$ besitzt.
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, und $f \colon V \to W$ sei eine lineare Abbildung, die ein lineares Rechtsinverses $g \colon W \to V$ besitzt.
   Zeigen Sie auf die folgenden beiden Weisen, dass
   \[
-    V = \ker f \oplus \im g
+    V = \ker f \oplus \im g.
   \]
   \begin{enumerate}[leftmargin=*]
     \item
@@ -83,7 +82,7 @@
   Zeigen Sie im Folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
   \begin{enumerate}[leftmargin=*]
     \item
-      Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der Vektorraum der ($n \times n$)-Matrizen über $K$,
+      Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der $K$-Vektorraum der ($n \times n$)-Matrizen über $K$,
       \[
         U_1 \coloneqq \{ A \in \Mat_n(K) \mid A^T = A \}
       \]
@@ -93,21 +92,21 @@
       \]
       der Untervektorraum der schiefsymmetrischen Matrizen.
     \item
-      Es sei $V \coloneqq \{ f \mid f \colon \Rbb \to \Rbb \}$ der Vektorraum der reellwertigen Folgen auf $\Rbb$, sowie
+      Es sei $V \coloneqq \{ f \mid f \colon \Rbb \to \Rbb \}$ der $\Rbb$-Vektorraum der reellwertigen Funktionen auf $\Rbb$, sowie
       \[
-        U_1 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+        U_1 \coloneqq \{ f \in V \mid \text{$f(-x) = f(x)$ für alle $x \in \Rbb$} \}
       \]
       der Untervektorraum der geraden Funktionen und
       \[
-        U_2 \coloneqq \{ f \in V \mid \text{$f(x) = f(-x)$ für alle $x \in \Rbb$} \}
+        U_2 \coloneqq \{ f \in V \mid \text{$f(-x) = -f(x)$ für alle $x \in \Rbb$} \}
       \]
       der Untervektorraum der ungeraden Funktionen.
     \item
-      Die Ebene $V = \Rbb^2$ und als Untervektorräume die beiden Geraden
+      Als $\Rbb$-Vektorraum die Ebene $V = \Rbb^2$ und als Untervektorräume die beiden Geraden
       \[
         U_1 \coloneqq \Rbb \vect{1 \\  1}
         \quad\text{und}\quad
-        U_2 \coloneqq \Rbb \vect{1 \\ -1}.
+        U_2 \coloneqq \Rbb \vect{\phantom{-}1 \\ -1}.
       \]
 %     \item
 %       Für $\ringchar K \neq 2$ und einen Vektorraum $W$ sei
@@ -128,7 +127,7 @@
 %       \]
 %       der Untervektorraum der alternierenden Bilinearformen.
     \item
-      Der reelle Vektorraum $V \coloneqq \Cbb(I, \Rbb)$ der stetigen reellwertigen Funktionen auf dem Einheitsintervall $I = [0,1]$ mit den Untervektorräumen
+      Der $\Rbb$-Vektorraum $V \coloneqq \mathcal{C}(I, \Rbb)$ der stetigen reellwertigen Funktionen auf dem Einheitsintervall $I = [0,1]$ mit den Untervektorräumen
       \[
         U_1 \coloneqq \{f \in V \mid f(0) = 0\}
         \quad\text{und}\quad
@@ -155,13 +154,12 @@
 %       (\emph{Hinweis}:
 %        Es hilft, sich diese Zerlegung anschaulich vorzustellen.)
     \item
-      Für einen Körper mit $\ringchar K \nmid n$ der Vektorraum $V \coloneqq \Mat_n(K)$ der $(n \times n)$-Matrizen über $K$, und die Untervektorräume
+      Für einen Körper $K$ mit $\ringchar K \nmid n$ der $K$-Vektorraum $V \coloneqq \Mat_n(K)$ der $(n \times n)$-Matrizen über $K$, und die Untervektorräume der spurlosen Matrizen und der Skalarmatrizen, d.h.\
       \[
         U_1 \coloneqq \slLie_n(K) = \{ A \in \Mat_n(K) \mid \tr A  = 0 \}
         \quad\text{und}\quad
         U_2 \coloneqq K I = \{ \lambda I \mid \lambda \in K \}
       \]
-      der spurlosen Matrizen und der Skalarmatrizen.
     \item
       Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus, so dass es $\lambda, \mu \in K$ mit $\lambda \neq \mu$ und $(f-\lambda)(f-\mu) = 0$ gibt.
       Es seien $U_1 = V_\lambda(f)$ und $U_2 = V_\mu(f)$.
@@ -174,7 +172,8 @@
 
 \begin{question}
   Es sei $V$ ein $K$-Vektorraum.
-  Zeigen Sie, dass die folgenden Aussagen allgemein gelten, oder geben Sie jeweils ein Gegenbeispiel an.
+  Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
+  Geben Sie gegebenfalls ein Gegenbeispiel an.
   \begin{enumerate}[leftmargin=*]
     \item
       Ist $V = U \oplus W_1 = U \oplus W_2$ für Untervektorräume $U, W_1, W_2 \subseteq V$, so ist $W_1 = W_2$.
@@ -198,20 +197,20 @@
     \item
       Ist $\mc{E} \subseteq V$ ein Erzeugendensystem von $V$ und $U \subseteq V$ ein Untervektorraum, so ist der Schnitt $\mc{E} \cap U$ ein Erzeugendensystem von $U$.
     \item
-      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für $i \neq j$, so ist $V = \bigoplus_{i \in I} U_i$.
+      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für alle $1 \leq i \neq j \leq n$, so ist $V = \bigoplus_{i \in I} U_i$.
   \end{enumerate}
 \end{question}
 
 
 \begin{question}
   Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein diagonalisierbarer Endomorphismus von $V$ (d.h.\ es gilt \mbox{$V = \bigoplus_{\lambda \in K} V_\lambda(f)$}).
-  Dann ist für jeden $f$-invarianten Untervektorraum $U \subseteq V$ die Einschränkung $f|_U \colon U \to U$ diagonalisierbar, und es gilt $U_\lambda(f|_U) = U \cap V_\lambda(f)$ für alle $\lambda \in K$.
+  Zeigen Sie, dass für jeden $f$-invarianten Untervektorraum $U \subseteq V$ die Einschränkung $f|_U \colon U \to U$ diagonalisierbar ist, und dass $U_\lambda(f|_U) = U \cap V_\lambda(f)$ für alle $\lambda \in K$.
 \end{question}
 
 
 \begin{question}
   Es sei $V$ ein $K$-Vektorraum.
-  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents}, falls die folgenden Bedingungen erfüllt sind:
+  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents}ö falls die folgenden Bedingungen erfüllt sind:
   \begin{itemize}
     \item
       Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$ (\emph{idempotents}).
@@ -296,7 +295,7 @@
 
 
 \begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $e_1, \dotsc, e_n \in \End(V)$ mit den folgenden Eigenschaften:
+  Es sei $V$ ein $K$-Vektorraum und $e_1, \dotsc, e_n \in \End(V)$ sei eine Kollektion von Endomorphismen mit den folgenden Eigenschaften:
   \begin{itemize}
     \item
       Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$.
@@ -373,7 +372,7 @@
       Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ ein \emph{complete set of orthogonal idempotents} bilden.
     \item
       Zeigen Sie, dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
-      Die Zerlegung $V = \im e_1 \oplus \dotsb \oplus e_n$ stimmt also mit der Eigenraumzerlegung bezüglich $f$ überein.
+      Die Zerlegung $V = \im e_1 \oplus \dotsb \oplus e_n$ stimmt also mit der Eigenraumzerlegung von $V$ bezüglich $f$ überein.
     \item
       Zeigen Sie, dass
       \[
@@ -415,10 +414,11 @@
         =         \frac{\prod_{j \neq i} (T-\lambda_j)}{\prod_{j \neq i} (\lambda_i - \lambda_j)}
         \in K[T].
       \]
-      Zeigen Sie für alle $i = 1, \dotsc, n$, dass $P_i$ ein Polynom vom Grad $n-1$ ist, so dass $e_i = P_i(f)$, und dass $P_i(\lambda_i) = 1$ und $P_i(\lambda_j) = 0$ für alle $j \neq i$.
+      Zeigen Sie für alle $i = 1, \dotsc, n$, dass $P_i$ ein Polynom vom Grad $n-1$ ist, so dass $e_i = P_i(f)$.
+      Zeigen Sie auch, dass $P_i(\lambda_i) = 1$ und $P_i(\lambda_j) = 0$ für alle $1 \leq i \neq j \leq n$.
       
       Folgern Sie für das Polynom $P(T) \coloneqq 1 - \sum_{i=1}^n P_i(T)$, dass $\deg P \leq n-1$, und dass $P(\lambda_i) = 0$ für alle $i = 1, \dotsc, n$.
-      Folgern Sie, dass $P = 0$, also $1 = \sum_{i=1}^n P_i(T)$.
+      Folgern Sie, dass $P = 0$, und somit $1 = \sum_{i=1}^n P_i(T)$.
       
       Folgern Sie durch Einsetzen von $f$, dass $\id_V = \sum_{i=1}^n e_i$.
   \end{enumerate}
@@ -432,20 +432,20 @@
     \item
       Folgern Sie mithilfe der Zerlegung $V = \im e_1 \oplus \dotsb \oplus \im e_n$, dass $V$ diagonalisierbar ist, und dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
   \end{enumerate}
-  Ingesamt zeigt dies, dass $f$ genau dann diagonalisierbar mit paarweise verschiedenen möglichen Eigenwerten $\lambda_1, \dotsc, \lambda_n$ ist, wenn $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$.
+  Ingesamt zeigt dies, dass genau dann $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ für paarweise verschieden $\lambda_1, \dotsc, \lambda_n \in K$, wenn $f$ diagonalisierbar ist und $\lambda_1, \dotsc, \lambda_n \in K$ die einzigen möglichen Eigenwerte von $f$ sind.
   \begin{enumerate}[resume]
     \item 
       Es sei nun $K = \Cbb$.
       Folgern Sie, dass $f$ in den folgenden Fällen diagonalisierbar ist, und bestimmen Sie jeweils die möglichen Eigenwerte:
       \begin{itemize}
         \item
-          $f^2 = f$
+          Es gilt $f^2 = f$,
         \item
-          $f^3 = f$
+          es gilt $f^3 = f$,
         \item
-          $f^3 = -f$.
+          es gilt $f^3 = -f$,
         \item
-          $f^n = \id_V$ für ein $n \geq 1$
+          es gilt $f^n = \id_V$ für ein $n \geq 1$.
       \end{itemize}
   \end{enumerate}
 \end{question}

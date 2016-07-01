@@ -1,0 +1,302 @@
+\section{Verschiedenes}
+
+
+
+
+
+
+
+
+
+
+\subsection{Allgemeines Zeugs}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien zwei Endomorphismen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $f \circ g = \id_V$ und $V$ sei endlichdimensional.
+      Zeigen Sie, dass auch $g \circ f = \id_V$.
+    \item
+      Zeigen Sie, dass die Aussage nicht mehr notwendigerweise gilt, wenn $V$ unendlichdimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein endlicher Körper.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $p \neq 0$ aber $p(\lambda) = 0$ für alle $\lambda \in K$.
+    \item
+      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $\deg p \geq 1$, aber $p(\lambda) = 1$ für alle $\lambda \in K$.
+    \item
+      Folgern Sie, dass es keine algebraisch abgeschlossenen endlichen Körper gibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume, so dass $V$ endlichdimensional ist, und $f \colon V \to W$ sei eine lineare Abbildung.
+  Zeigen Sie die Dimensionsformel
+  \[
+    \dim V = \dim \ker f + \dim \im f.
+  \]
+\end{question}
+
+
+\begin{question}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{lokal nilpotent}, falls es für jedes $v \in V$ ein $n \in \Nbb$ mit $f^n(v) = 0$ gibt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder nilpotente Endomorphismus auch lokal nilpotent ist.
+    \item
+      Zeige Sie, dass $0$ der einzige mögliche Eigenwert eines lokal nilpotenten Endomorphismus ist.
+    \item
+      Geben Sie ein Beispiel für einen Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, so dass $f$ zwar lokal nilpotent, nicht aber nilpotent ist.
+    \item
+      Zeigen Sie, dass jeder lokal nilpotente Endomorphismus eines endlichdimensionalen Vektorraums bereits nilpotent ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $K$ ein Körper.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass für alle $A, B \in \Mat_n(K)$ die Gleichheit $\tr(AB) = \tr(BA)$ gilt.
+    \item
+      Folgern Sie, dass die Spur invariant unter Konjugation ist, d.h.\ dass
+      \[
+        \tr(S A S^{-1}) = \tr(A)
+        \quad
+        \text{für alle $A \in \Mat_n(K)$ und $S \in \GL_n(K)$}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Für alle $k \in \Nbb$ sei
+  \[
+    R_k \coloneqq \im f^k
+    \quad\text{und}\quad
+    N_k \coloneqq \ker f^k.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $R_0 = V$, und dass $R_i \supseteq R_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine absteigende Kette
+      \[
+        V = R_0 \supseteq R_1 \supseteq R_2 \supseteq R_3 \supseteq R_4 \supseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie, dass für $i \in \Nbb$ mit $R_i = R_{i+1}$ auch $R_{i+1} = R_{i+2}$ gilt.
+    \item
+      Folgern Sie:
+      Gilt in der obigen absteigenden Kette einmal Gleichheit, also $R_i = R_{i+1}$ für ein $i \in \Nbb$, so stabilisiert die Kette bereits, d.h.\ es gilt $R_j = R_i$ für alle $j \geq i$.
+    \item
+      Zeigen Sie, dass $N_0 = 0$, und dass $N_i \subseteq N_{i+1}$ für alle $i \in \Nbb$.
+      Es gibt also eine aufsteigende Kette
+      \[
+        0 = N_0 \subseteq N_1 \subseteq N_2 \subseteq N_3 \subseteq N_4 \subseteq \dotsb
+      \]
+      von Untervektorräumen.
+    \item
+      Zeigen Sie, dass für $i \in \Nbb$ mit $N_i = N_{i+1}$ auch $N_{i+1} = N_{i+2}$ gilt.
+    \item
+      Folgern Sie:
+      Gilt in der obigen aufsteigende Kette einmal Gleichheit, also $N_i = N_{i+1}$ für ein $i \in \Nbb$, so stabilisiert die Kette bereits, d.h.\ es gilt $N_j = N_i$ für alle $j \geq i$.
+    \item
+      Folgern Sie:
+      Ist $V$ endlichdimensional, so stabilisieren beide Ketten.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Formulieren Sie den Satz von Cayley-Hamilton.
+    \item
+      Zeigen Sie den Satz für ($2 \times 2$)-Matrizen durch explizites Nachrechnen.
+    \item
+      Zeigen Sie den Satz für Diagonalmatrizen.
+    \item
+      Folgern Sie den Satz für diagonalisierbare Matrizen.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $A \in \GL_n(K)$ und $\chi_A(T)$ das charakteristische Polynom von $A$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass der konstante Term von $\chi_A(T)$ nicht verschwindet.
+    \item
+      Zeigen Sie, dass es ein Polynom $P \in K[T]$ gibt, so dass $A^{-1} = P(A)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{algebraisch (über $K$)}, falls es ein Polynom $P \in K[T]$ mit $P \neq 0$ gibt, so dass $P(f) = 0$ gilt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder Endomorphismus eines endlichdimensionalen Vektorraums algebraisch ist.
+    \item
+      Geben Sie ein Beispiel für einen $K$-Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$, der nicht algebraisch ist.
+    \item
+      Entscheiden Sie, ob die lineare Abbildung $K[X] \to K[X]$, $p \mapsto X \cdot p$ algebraisch ist.
+    \item
+      Zeigen Sie, dass ein diagonalisierbarer Endomorphismus genau dann algebraisch ist, wenn er nur endlich viele Eigenwerte hat.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
+    \item
+      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum, $f \colon V \to V$ ein Automorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie:
+      Ist $U$ endlichdimensional, so ist $U$ auch invariant unter $f^{-1}$.
+    \item
+      Zeigen Sie, dass die Aussage nicht gelten muss, falls $U$ unendlichdimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+
+
+\section{Diagonalisierbarkeit und Eigenzeugs}
+
+
+\begin{question}
+  Es seien $f, g \colon V \to V$ zwei Endomorphismen eines $K$-Vektorraums $V$.
+  Entscheiden sie für die folgenden Aussagen jeweils, ob diese allgemein gültig sind.
+  Geben Sie, sofern möglich, auch ein Gegenbeispiel an.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Sind $f$ und $g$ diagonalisierbar, so ist auch $f \circ g$ diagonalisierbar.
+    \item
+      Kommutieren $f$ und $g$ und ist $f \circ g$ diagonalisierbar, so ist $f$ oder $g$ diagonalisierbar.
+    \item
+      Sind $f$ und $g$ diagonalisierbar, so ist auch $f + g$ diagonalisierbar.
+    \item
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist $f \circ g$ invertierbar.
+    \item
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist auch $f + g$ diagonalisierbar.
+    \item
+      Ist $f$ diagonalisierbar, so ist für jedes $p \in K[X]$ auch $p(f)$ diagonalisierbar.
+    \item
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so folgt, wenn $g$ invertierbar ist, dass $ \circ g^{-1}$ diagonalisierbar ist.
+  \end{enumerate}
+\end{question}
+
+\begin{solution}
+  \begin{enumerate}
+    \item
+      Nein, braucht etwa simultan diagonalisierbar.
+    \item
+      Nein.
+    \item
+      Nein, braucht etwa simultan diagonalisierbar.
+    \item
+      Ja, da simultan diagonalisierbar.
+    \item
+      Ja, da simultan diagonalsierbar.
+    \item
+      Ja.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $V \neq 0$ ein $K$-Vektorraum, wobei $K$ algebraisch abgeschlossen ist.
+  Es seien $f_1, \dotsc, f_n \colon V \to V$ paarweise kommutierende Endomorphismen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass für alle $I \subseteq \{1, \dotsc, n\}$ und Skalare $\lambda_i \in K$ mit $i \in I$ der \emph{gemeinsame Eigenraum}
+      \[
+                   V( (f_i, \lambda_i)_{i \in I} )
+        \coloneqq  \{ v \in V \mid \text{$f_i(v) = \lambda_i v$ für alle $i \in I$} \}.
+      \]
+      invariant unter $f_1, \dotsc, f_n$ ist.
+     \item
+      Folgern Sie, dass die Endomorphismen $f_1, \dotsc, f_n$ einen gemeinsamen Eigenvektor besitzen, d.h.\ dass es einen Vektor $v \in V$ gibt, so dass $v$ für jedes $f_i$ eine Eigenvektor ist.
+      
+      (\emph{Hinweis}: Konstruieren sie induktiv $\lambda_1, \dotsc, \lambda_n \in K$, so dass $V((f_1, \lambda_1), \dotsc, (f_i, \lambda_i)) \neq 0$ für alle $i = 1, \dotsc, n$.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum.
+  Für alle Endomorphismen $f_1, \dotsc, f_n \colon V  \to V$ und Skalare (Eigenwerte) \mbox{$\lambda_1, \dotsc, \lambda_n \in K$} sei
+  \[
+              V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)
+    \coloneqq \{ v \in V \mid \text{$f_i(v) = \lambda_i v$ für alle $i = 1, \dotsc, n$} \}
+  \]
+  der \emph{gemeinsame Eigenraum} der Endomorphismen $f_1, \dotsc, f_n$ zu den Eigenwerten $\lambda_1, \dotsc, \lambda_n$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+          V(f_1, \lambda_1; \dotsc; f_n, \lambda_n)
+        = \bigcap_{i=1}^n V(f_i, \lambda_i)
+      \]
+      für alle Endomorphismen $f_1, \dotsc, f_n \in \End(V)$ und Eigenwerte $\lambda_1, \dotsc, \lambda_n \in K$.
+    \item
+      Es seien $f_1, \dotsc, f_n, g \in \End(V)$ Endomorphismen, so dass $g$ mit jedem $f_i$ kommutiert.
+      Zeigen sie, dass der gemeinsame Eigenraum $V(f_1, \lambda_1; \dots; f_n, \lambda_n)$ für alle $\lambda_1, \dotsc, \lambda_n \in K$ invariant unter $g$ ist.
+    \item
+      Zeigen Sie: Sind die Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ diagonalisierbar (d.h.\ für alle $i = 1, \dotsc, n$ ist $V = \bigoplus_{\lambda \in K} V(f_i, \lambda)$ ) und paarweise kommutierend, so sind die Endomorphismen \emph{simultan diagonalisierbar}, d.h.\ es ist
+      \[
+          V
+        = \bigoplus_{\lambda_1, \dotsc, \lambda_n \in K}  V(f_1, \lambda_1; \dotsc; f_n, \lambda_n).
+      \]
+    \item
+      Zeigen Sie, dass auch die Umkehrung gilt:
+      Sind Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ simultan diagonalisierbar, so sind $f_1, \dotsc, f_n$ diagonalisierbar und kommutieren.
+  \end{enumerate}
+  Von nun an sei $V$ endlichdimensional.
+  \begin{enumerate}[resume]
+    \item
+      Zeigen Sie, dass Endomorphismen $f_1, \dotsc, f_n \colon V \to V$ genau dann simultan diagonalisierbar sind, wenn es eine geordnete Basis $\mc{B}$ von $V$ gibt, so dass $\Mat_\mc{B}(f_i)$ für jedes $i = 1, \dotsc, n$ in Diagonalgestalt ist.
+    \item
+      Es sei nun $H \subseteq \End(V)$ ein Untervektorraum aus diagonalisierbaren und paarweise kommutierenden Endomorphismen.
+      Zeigen Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $\Mat_\mc{B}(f)$ für jedes $f \in H$ eine Diagonalmatrix ist.
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $H$ endlichdimensional ist.)
+    \item
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $f \colon V \to V$ ein Endomorphismus eines $n$-dimensionalen $K$-Vektorraums $V$ und $\{ v_1, \dotsc, v_{n+1} \} \subseteq V$ eine Teilmenge aus Eigenvektoren von $f$, so dass jede $n$-elementige Teilmenge linear unabhängig ist.
+  Zeigen Sie, dass $f$ bereits ein skalares Vielfaches der Identität ist.
+\end{question}

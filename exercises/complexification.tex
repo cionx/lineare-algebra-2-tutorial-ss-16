@@ -7,7 +7,7 @@
   Zeigen Sie:
   \begin{enumerate}[leftmargin=*]
     \item
-      Für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ gibt genau eine $\Cbb$-lineare Abbildung $f^\Cbb \colon V_\Cbb \to W$, die das folgende Diagram kommutieren lässt:
+      Für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ gibt genau eine $\Cbb$-lineare Abbildung $f^\Cbb \colon V_\Cbb \to W$, die das folgende Diagramm zum Kommutieren bringt:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
                 V       \arrow{d}[swap]{\iota}
@@ -19,39 +19,21 @@
         \end{tikzcd}
       \]
     \item
-      Für je zwei $\Cbb$-lineare Abbildungen $g_1, g_2 \colon V_\Cbb \to W$ gilt die Äquivalenz
-      \[
-        g_1 = g_2
-        \iff
-        g_1 \circ \iota = g_2 \circ \iota.
-      \]
+      Für je zwei $\Cbb$-lineare Abbildungen $g_1, g_2 \colon V_\Cbb \to W$ gilt genau dann $g_1 = g_2$, wenn $g_1 \circ \iota = g_2 \circ \iota$.
     \item
-      Für jeden $\Cbb$-Vektorraum $W'$ gilt für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ und jede $\Cbb$-lineare Abbildung $g \colon W \to W'$ die Gleichheit
-      \[
-        (g \circ f)^\Cbb = g \circ f^\Cbb.
-      \]
+      Für jeden $\Cbb$-Vektorraum $W'$ gilt für jede $\Rbb$-lineare Abbildung $f \colon V \to W$ und jede $\Cbb$-lineare Abbildung $g \colon W \to W'$ gilt $(g \circ f)^\Cbb = g \circ f^\Cbb$.
   \end{enumerate}
 \end{question}
 
 
 \begin{question}
   Es sei $V$ ein $\Rbb$-Vektorraum.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
-      Definieren Sie, wann ein $\Cbb$-Untervektorraum $W \subseteq V_\Cbb$ induziert ist.
-    \item
-      Zeigen Sie, dass für einen induzierten $\Cbb$-Untervektorraum $W \subseteq V_\Cbb$ die Menge
+      Zeigen Sie, dass die folgende Abbildung wohldefiniert ist:
       \[
-        U \coloneqq \{ v \in V \mid v + i \cdot 0 \in W \}
-      \]
-      ein $\Rbb$-Untervektorraum von $V$ ist, durch den $W$ induziert wird.
-    \item
-      Ist $U$ eindeutig mit dieser Eigenschaft?
-    \item
-      Folgern Sie, dass eine $\Cbb$-Vektorraum $W \subseteq V_\Cbb$ genau dann induziert ist, wenn $\overline{W} = W$.
-    \item
-      Folgern Sie, dass die Abbildung
-      \[
+        \Phi
+        \colon
         \left\{
           U \subseteq V
         \,\middle|\,
@@ -66,7 +48,25 @@
         \quad
         U \mapsto U_\Cbb
       \]
-      injektiv ist, und geben Sie ein Linksinverses an.
+    \item
+      Zeigen Sie, dass $\Phi$ injektiv ist, und geben Sie ein Linksinverses von $\Phi$ an.
+    \item
+      Zeigen Sie, dass $\Phi$ genau dann surjektiv ist, wenn $V = 0$ oder $V$ eindimensional ist.
+    \item
+      Zeigen Sie, dass für einen $\Cbb$-Untervektorraum $W \subseteq V_\Cbb$ die folgenden beiden Bedingungen äquivalent sind:
+      \begin{enumerate}
+        \item
+          Es ist $W \in \im \Phi$.
+        \item
+          Der Unterraum $W$ ist induziert.
+        \item
+          Für alle $v_1, v_2 \in V$ mit $v_1 + i v_2 \in W$ sind auch $v_1 + i \cdot 0, v_2 + i \cdot 0 \in W$.
+        \item
+          Es gilt $W = \overline{W}$.
+      \end{enumerate}
+    \item
+      Zeigen Sie für jeden Endomorphismus $f \colon V \to V$ und jeden Skalar $\lambda \in \Cbb$, dass der Eigenraum $(V_\Cbb)_\lambda(f_\Cbb)$ genau dann induziert ist, wenn $\lambda \in \Rbb$.
+      Bestimmen Sie unter dieser Bedingung den Untervektorraum von $V$, durch denn $(V_\Cbb)_\lambda(f)$ induziert wird.
   \end{enumerate}
 \end{question}
 
@@ -75,7 +75,7 @@
   Für jeden $\Rbb$-Vektorraum $V$ sei $\iota_V \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion und für jeden $\Cbb$-Vektorraum $W$ und jede $\Rbb$-lineare Abbildung $f \colon V \to W$ sei $f^\Cbb \colon V_\Cbb \to W$ die eindeutige $\Cbb$-lineare Abbildung mit $f^\Cbb \circ \iota_V = f$.
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie, dass für jedes $\Rbb$-Vektorraum $V$ und $\Cbb$-Vektorraum $W$ die Abbildung
+      Zeigen Sie, dass für jeden $\Rbb$-Vektorraum $V$ und jeden $\Cbb$-Vektorraum $W$ die Abbildung
       \[
         \Phi_{V,W} \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W),
         \quad
@@ -98,7 +98,7 @@
       Zeigen Sie, dass die Isomorphismen $\Phi_{V,W}$ in dem folgenden Sinne \emph{natürlich} sind:
       Es seien $V$ und $V'$ zwei $\Rbb$-Vektorräume und es sei $h \colon V' \to V$ eine $\Rbb$-lineare Abbildung.
       Es seien $W$ und $W'$ zwei $\Cbb$-Vektorräume und es sei $g \colon W \to W'$ eine $\Cbb$-lineare Abbildung.
-      Dann kommutiert das folgende Diagram von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
+      Dann kommutiert das folgende Diagramm von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
                 \Hom_\Rbb(V, W)         \arrow[swap]{d}{g \circ - \circ h}
@@ -160,7 +160,7 @@
     \item
       Es gilt
       \[
-          \left( \bigcap_{i \in I} U_i \right)_\Cbb
+            \left( \bigcap_{i \in I} U_i \right)_\Cbb
         = \bigcap_{i \in I} (U_i)_\Cbb
       \]
     \item
@@ -197,7 +197,7 @@
   Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
   \newline
   (\emph{Hinweis}:
-   Man betrachte etwa Übung~\ref{qst: compatibility of sums and intersections with complexification}.
+   Man kann etwa Übung~\ref{qst: compatibility of sums and intersections with complexification} nutzen.
    Beachten Sie aber auf jeden Fall, dass $V$ nicht notwendigerweise endlichdimensional ist.)
 \end{question}
 
@@ -245,7 +245,7 @@
   die jeweiligen kanonischen Inklusionen.
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie, dass das folgende Diagram kommutiert:
+      Zeigen Sie, dass das folgende Diagramm kommutiert:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                 \Hom_\Rbb(V, W)           \arrow{r}{\iota_2}
@@ -258,7 +258,7 @@
       \]
       Folgern Sie, dass $\iota_4$ tatsächlich injektiv ist, wie der oben verwendete Begriff \emph{Inklusion} vermuten lässt.
     \item
-      Zeigen Sie, dass das folgende Diagram kommutiert:
+      Zeigen Sie, dass das folgende Diagramm kommutiert:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                 \Hom_\Rbb(V, W)             \arrow{r}{\iota_1}
@@ -274,7 +274,7 @@
       \[
         \Psi_1 \colon \Hom_\Rbb(V,W)_\Cbb \to \Hom_\Cbb(V_\Cbb, W_\Cbb)
       \]
-      induziert, die das folgende Diagram zum kommutieren bringt:
+      induziert, die das folgende Diagramm zum Kommutieren bringt:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                   {}
@@ -292,7 +292,7 @@
       \[
         \Psi_2 \colon \Mat(m \times n, \Rbb)_\Cbb \to \Mat(m \times n, \Cbb)
       \]
-      induziert, die das folgende Diagram zum kommutieren bringt:
+      induziert, die das folgende Diagramm zum K5ommutieren bringt:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                   {}
@@ -306,7 +306,7 @@
         \end{tikzcd}
       \]
     \item
-      Wir haben nun das folgende Diagram:
+      Wir haben nun das folgende Diagramm:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                   {}
@@ -325,12 +325,12 @@
                                                 \arrow{rd}{\iota_4}
               \&  {}
           \\
-                  \Mat(m \times n, \Rbb)_\Cbb   \arrow{rr}{\Psi_2}
+                  \Mat(m \times n, \Rbb)_\Cbb   \arrow[near start]{rr}{\Psi_2}
               \&  {}
               \&  \Mat(m \times n, \Cbb)
         \end{tikzcd}
       \]
-      Von diesem Diagram wissen wir bereits, dass Deckel, Boden und beide Rückseiten kommutieren.
+      Von diesem Diagramm wissen wir bereits, dass Deckel, Boden und beide Rückseiten kommutieren.
       Folgern Sie daraus, dass auch die Vorderseite kommutiert.
       
       (\emph{Hinweis}:

@@ -10,7 +10,7 @@
       \[
         \bar{f} \colon V\!/U \to W,
         \quad
-        [v] \mapsto f(v)
+        \overline{v} \mapsto f(v)
       \]
       induziert.
     \item
@@ -20,7 +20,7 @@
       Zeigen Sie, dass $U \subseteq \ker f$, und dass $\ker \bar{f} = (\ker f)/U$.
       Folgern Sie, dass $\bar{f}$ genau dann injektiv ist, wenn bereits die Gleichheit $U = \ker f$ gilt.
     \item
-      Folgern Sie, dass $f$ einen Isomorphismus $V/(\ker f) \to \im f$, $[v] \mapsto f(v)$ induziert.
+      Folgern Sie, dass $f$ einen Isomorphismus $V/(\ker f) \to \im f$, $\overline{v} \mapsto f(v)$ induziert.
   \end{enumerate}
 \end{question}
 
@@ -42,11 +42,11 @@
   Zeigen Sie die folgenden beiden Isomorphiesätze:
   \begin{enumerate}[leftmargin=*]
     \item
-      Die Inklusion $U_1 \to U_1 + U_2$, $x \mapsto x$ induziert einen isomorphismus
+      Die Inklusion $U_1 \to U_1 + U_2$, $x \mapsto x$ induziert einen Isomorphismus
       \[
         U_1 / (U_1 \cap U_2) \to (U_1 + U_2) / U_2,
         \quad
-        [x] \mapsto [x]
+        \overline{x} \mapsto \overline{x}
         \quad
         \text{für alle $x \in V$}.
       \]
@@ -55,9 +55,9 @@
       \[
         (V \! / U_1) / (U_2 / U_1) \to V \! / U_2,
         \quad
-        [[x]] \mapsto [x]
+        \overline{\overline{x}} \mapsto \overline{x}
         \quad
-        \text{für alle $x \in V$}.
+        \text{für alle $x \in V$}
       \]
       ist ein wohldefinierter Isomorphismus.
   \end{enumerate}
@@ -106,7 +106,7 @@
         \text{für alle $v, w \in V$}.
       \]
     \item
-      Folgern Sie, dass $V/{\sim} = V/U$, und dass $\rho$ die kanonische Projektion des Quotientenvektorraums ist.
+      Folgern Sie, dass $V\!/{\sim} = V\!/U$, und dass $\rho$ die kanonische Projektion des Quotientenvektorraums ist.
   \end{enumerate}
 \end{question}
 
@@ -131,6 +131,44 @@
         \quad
         \text{für alle $x \in V$}.
       \]
+    \item
+      Es sei $V \coloneqq \mathcal{C}(\Rbb, \Rbb)$ der Vektorraum der $\Rbb$-Vektorraum der reellwertigen stetigen Funktionen auf der reellen Geraden.
+      Es sei
+      \[
+        [f] \coloneqq \sup_{x \in [0,1]} |f(x)|
+        \quad
+       \text{für alle $f \in V$}.
+      \]
+      Zeigen Sie, dass $[\cdot]$ eine Seminorm auf $V$ definiert, die aber keine Norm ist.
+      Durch die obige Konstruktion erhalten wir einen normierten $\Rbb$-Vektorraum $(V\!/N, \|\cdot\|)$, wobei $N \coloneqq \{f \in V \mid [f] = 0\}$ und $\|\overline{f}\| = [f]$ für alle $f \in V$.
+      
+      Konstruieren Sie einen Isomorphismus $\varphi \colon V\!/N \to \mathcal{C}([0,1], \Rbb)$, der eine Isometrie bezüglich der Norm $\|\cdot\|$ von $V\!/N$ und der Supremumsnorm $\|\cdot\|_\infty$ von $\mathcal{C}([0,1], \Rbb)$ ist, d.h.\ für alle $f \in V\!/U$ ist $\|\varphi(f)\|_\infty = \|f\|$.
+      (Wer können den Quotienten $V\!/U$, dessen Elemente Äquivalenzklassen von Funktionen sind, also als die stetigen Funktionen auf dem Einheitsintervall betrachten, und diese Identifikation ist mit den jeweiligen Normen verträglich.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
+  Es sei $\pi \colon V \to V\!/U$, $v \mapsto [v]$ die kanonische Projektion.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $V$, so dass es eine Teilmenge $J \subseteq I$ gibt, so dass $(b_j)_{j \in J}$ eine Basis von $U$ ist.
+      Zeigen Sie, dass $(\overline{b_i})_{i \in I \smallsetminus J}$ eine Basis von $V\!/U$ ist.
+    \item
+      Folgern Sie die folgenden Di\-men\-si\-ons\-for\-meln für einen end\-lich\-di\-men\-si\-o\-na\-len $K$-Vek\-tor\-raum $V$:
+      Ist $U \subseteq V$ ein Untervektorraum, so ist
+      \[
+        \dim V\!/U = \dim V - \dim U.
+      \]
+      Ist $f \colon V \to W$ eine lineare Abbildung in einen weiteren $K$-Vektorraum $W$, so ist
+      \[
+        \dim V = \dim \ker f + \dim \im f.
+      \]
+    \item
+      Es sei $(b_i)_{i \in I}$ eine Basis von $U$ und $(c_j)_{j \in J}$ eine Basis von $V\!/U$, wobei $I \cap J = \emptyset$.
+      Für jedes $j \in J$ sei $b_j \in V$ eine Element mit $\pi(b_j) = c_j$.
+      Zeigen Sie, dass $(b_\ell)_{\ell \in L}$ für $L \coloneqq I \cup J$ ist eine Basis von $V$ ist.
   \end{enumerate}
 \end{question}
 
@@ -147,14 +185,14 @@
   \[
     p \colon W \to \coker f,
     \quad
-    w \mapsto [w]
+    w \mapsto \overline{w}
   \]
   die kanonische Projektion.
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $f \circ i = 0$ und $p \circ f = 0$.
     \item
-      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $h \colon U \to V$ mit $f \circ h = 0$ eine eindeutige lineare Abbildung $\bar{h} \colon U \to \ker f$ gibt, so dass das folgende Diagram kommutiert:
+      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $h \colon U \to V$ mit $f \circ h = 0$ eine eindeutige lineare Abbildung $\bar{h} \colon U \to \ker f$ gibt, so dass das folgende Diagrammmmmm kommutiert:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                 \ker f  \arrow{r}{i}
@@ -168,7 +206,7 @@
         \end{tikzcd}
       \]
     \item
-      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $g \colon W \to U$ mit $g \circ f = 0$ eine eindeutige lineare Abbildnug $\bar{g} \colon \coker f \to U$ gibt, so dass das folgende Diagram kommutiert:
+      Zeigen Sie, dass es für jeden $K$-Vektorraum $U$ und jede lineare Abbildung $g \colon W \to U$ mit $g \circ f = 0$ eine eindeutige lineare Abbildnug $\bar{g} \colon \coker f \to U$ gibt, so dass das folgende Diagrammmmmm kommutiert:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                 {}

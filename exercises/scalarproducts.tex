@@ -1,0 +1,924 @@
+\section{Skalarprodukträume}
+
+
+\begin{question}
+  Definieren Sie die Begriffe eines reellen, bzw.\ komplexen Skalarprodukts, sowie eines reellen, bzw.\ komplexen Hilbertraums.
+\end{question}
+
+
+\begin{question}
+  Formulieren und Beweisen Sie die Cauchy-Schwarz-Ungleichung.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei Skalarprodukträume über $\Kbb$ und $f \colon V \to W$ eine lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Definieren Sie die zu $f$ adjungierte Abbildung.
+    \item
+      Zeigen Sie, dass die adjungierte Abbildung eindeutig ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum.
+  Zeigen Sie für Endomorphismen $f, g_1, g_2 \colon V \to V$ Endomorphismen die folgende Kürzungsregel:
+  Falls $f^*$ existiert und $f^* f g_1 = f^* f g_2$, dann ist bereits $f g_1 = f g_2$.
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass jeder endlichdimensionale Skalarproduktraum eine Orthonormalbasis besitzt.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $\Kbb$-Vektorraum mit abzählbarer Orthonormalbasis $(e_i)_{i \in \Nbb}$.
+  Es sei $T \colon V \to V$ die eindeutige lineare Abbildung mit $T(e_i) = e_1$ für alle $i \in \Nbb$.
+  Zeigen Sie, dass $T$ kein Adjungiertes besitzt.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $v_1, \dotsc, v_n \in V$ seien paarweise orthogonal zueinander.
+  Zeigen Sie: Ist $v_1, \dotsc, v_n \neq 0$, so ist die Familie $(v_1, \dotsc, v_n)$ linear unabhängig.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $f \colon V \to V$ ein normaler Endomorphismus.
+  Zeigen Sie, dass die Eigenräume $V_\lambda(f)$ und $V_\mu(f)$ für alle $\lambda \neq \mu$ orthogonal sind.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $\Kbb$-Skalarprodukträume und $f \colon V \to W$ eine lineare Abbildung.
+  Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Orthonormalbasis von $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Orthonormalbasis von $W$.
+  Zeigen Sie die Gleichheit
+  \[
+      \Mat_{\mc{B}, \mc{C}}(f^*)
+    = \Mat_{\mc{C}, \mc{B}}(f)^*.
+  \]
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein normaler Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\|f(v)\| = \|f^*(v)\|$ für alle $v \in V$.
+    \item
+      Zeigen Sie, dass $V_\lambda(f) = V_{\overline{\lambda}}(f^*)$ und $V^\sim_\lambda(f) = V^\sim_{\overline{\lambda}}(f^*)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $v_1, \dotsc, v_n \in V$ seien Einheitsvektoren.
+  Zeigen Sie, dass die folgenden beiden Aussage äquivalent sind:
+  \begin{enumerate}
+    \item
+      $(v_1, \dotsc, v_n)$ ist eine Orthonormalbasis von $V$.
+    \item
+      Für alle $v \in V$ ist $\| v \|^2 = \sum_{i=1}^n |\bil{v, v_i}|^2$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und $f \colon V \to V$ ein selbstadjungierter, nilpotenter Endomorphismus.
+  Zeigen Sie, dass $f = 0$.
+\end{question}
+
+
+\begin{question}
+  Es sei $\pi \in S_n$ eine Permutation und $P_\pi \colon \Rbb^n \to \Rbb^n$ die eindeutige lineare Abbildung mit
+  \[
+    P_\pi(e_i) = e_{\pi(i)}
+    \quad
+    \text{für alle $i = 1, \dotsc, n$},
+  \]
+  wobei $(e_1, \dotsc, e_n)$ die Standardbasis von $\Rbb^n$ ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $P_\pi$ orthogonal ist.
+    \item
+      Bestimmen Sie die möglichen Eigenwerte von $P_\pi$.
+    \item
+      Geben Sie ein Beispiel an, bei dem alle möglichen Eigenwerte auftreten.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $U \subseteq V$ ein Untervektorraum mit Orthonormalbasis $(u_1, \dotsc, u_n)$.
+  Zeigen Sie, dass die lineare Abbildung
+  \[
+    P \colon V \to V,
+    \quad
+    v \mapsto \sum_{i=1}^n \bil{v, u_i} u_i
+  \]
+  die orthogonale Projektion auf $U$ ist.
+\end{question}
+
+\begin{question}
+  Es sei $V \neq 0$ ein $\Kbb$-Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
+  Für alle $\lambda \in \Kbb$ sei
+  \[
+    \bil{x, y}_\lambda \coloneqq \lambda \bil{x, y}
+    \quad
+    \text{für alle $x, y \in V$}.
+  \]
+  Bestimmen Sie alle $\lambda \in \Kbb$, für die $\bil{\cdot, \cdot}_\lambda$ ein Skalarprodukt auf $V$ ist.
+\end{question}
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler unitärer Vektorraum und $f \colon V \to V$ ein normaler Endomorphismus.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      $f$ ist genau dann unitär, wenn alle Eigenwerte von $f$ Betrag $1$ haben.
+    \item
+      $f$ ist genau dann selbstadjungiert, wenn alle Eigenwerte von $f$ reell sind.
+    \item
+      $f$ ist genau dann antiselbstadjungiert, wenn alle Eigenwerte von $f$ rein imaginär sind.
+    \item
+      $f$ ist genau dann eine Orthogonalprojektion, wenn $0$ und $1$ die einzigen Eigenwerte von $f$ sind.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktsraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\ker f^* \subseteq (\im f)^\perp$.
+    \item
+      Folgern Sie daraus, dass $\im f^* \subseteq (\ker f)^\perp$.
+    \item
+      Folgern Sie aus den beiden Inklusionen $\ker f^* \subseteq (\im f)^\perp$ und $\im f^* \subseteq (\ker f)^\perp$ mithilfe der Endlichdimensionalität von $V$, dass bereits Gleichheiten gelten, dass also
+      \[
+        \ker f^* = (\im f)^\perp
+        \quad\text{und}\quad
+        \im f^* = (\ker f)^\perp.
+      \]
+  \end{enumerate}
+  Von nun an sei $f$ normal.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass $\|f(x)\| = \|f^*(x)\|$ für alle $x \in V$.
+    \item
+      Folgern Sie, dass $\ker f = \ker f^*$.
+    \item
+      Folgern Sie damit aus den obigen Gleichheiten, dass $V = \im f \oplus \ker f$ gilt, und dass die Summe orthogonal ist.
+      
+      (\emph{Hinweis}:
+       Zeigen Sie zuerst, dass $\im f$ und $\ker f$ orthogonal sind, und nutzen Sie dann die Endlichdimensionalität von $V$.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Bestimmen Sie für die Matrix
+      \[
+        A \coloneqq
+        \begin{pmatrix*}[r]
+          2  & -1  & 1 \\
+          -1  &  2  & 1 \\
+          1  &  1  & 2
+        \end{pmatrix*}
+        \in \Mat_n(\Rbb)
+      \]
+      eine orthogonale Matrix $S \in \Orthogonal(3)$, so dass $S^T A S$ eine Diagonalmatrix ist.
+    \item
+      Bestimmen Sie für die symmetrische Bilinearform $\beta \colon \Rbb^2 \times \Rbb^2 \to \Rbb$ mit
+      \[
+        \beta\left( \vect{x_1 \\ x_2}, \vect{y_1 \\ y_2} \right)
+        \coloneqq
+        x_1 y_2 + x_2 y_1
+        \quad
+        \text{für alle $\vect{x_1 \\ x_2}, \vect{y_1 \\ y_2} \in \Rbb^2$}
+      \]
+      eine Basis $\mc{B}$ von $\Rbb^2$, so dass $\beta$ bezüglich $\mc{B}$ durch eine Diagonalmatrix mit möglichen Diagonaleinträgen $0, 1, -1$ dargestellt wird.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei endlichdimensionale euklidische Vektorräume.
+  Ferner sei $f \colon V \to W$ eine $\Rbb$-lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_V \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-, v}
+      \]
+      ein $\Rbb$-linearer Isomorphismus ist.
+    \item
+      Geben Sie die Definition der dualen Abbildung $f^* \colon W^* \to V^*$ an.
+      Zeigen Sie, dass $f^*$ $\Rbb$-linear ist.
+    \item
+      Zeigen Sie, dass die Abbildung $g \coloneqq \Phi_V^{-1} \circ f^* \circ \Phi_W$ $\Rbb$-linear ist, und dass
+      \[
+        \bil{f(v), w} = \bil{v, g(w)}
+        \quad
+        \text{für alle $v \in V$, $w \in W$}.
+      \]
+    \item
+      Zeigen Sie:
+      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann eine Orthonormalbasis, wenn die Basis $\Phi_V(\mc{B}) = (\Phi_V(v_1), \dotsc, \Phi_V(v_n))$ von $V^*$ die duale Basis $\mc{B}^*$ ist.
+    \item
+      Inwiefern ändern sich die obigen Resultate für denn Fall $\Kbb = \Cbb$, wenn also $V$ und $W$ endlichdimensionale unitäre Vektorräume sind?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionale $\Kbb$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für denn Fall $\Kbb = \Rbb$, dass $f$ genau dann diagonalisierbar ist, wenn es ein Skalarprodukt auf $V$ gibt, bezüglich dessen $f$ selbstadjungiert ist.
+    \item
+      Zeigen oder widerlegen Sie die analoge Aussage für $\Kbb = \Cbb$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $x \in \Rbb^n$ ein normierter Spaltenvektor und
+  \[
+    A \coloneqq x x^T \in \Mat(n \times n, \Rbb).
+  \]
+  Zeigen Sie, dass die Abbildung
+  \[
+    P \colon \Rbb^n \to \Rbb^n,
+    \quad
+    y \mapsto Ay
+  \]
+  die orthogonale Projektion auf die Gerade $\Rbb x$ ist.
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei endlichdimensionale euklidische Vektorräume.
+  Für jeden Untervektorraum $U \subseteq V$ sei
+  \[
+              U^\perp
+    \coloneqq \{ v \in V \mid \text{$\bil{u, v} = 0$ für alle $u \in U$} \}
+  \]
+  das orthogonale Komplement von $U$, und
+  \[
+              U^\circ
+    \coloneqq \{ \varphi \in V^* \mid \text{$\varphi(u) = 0$ für alle $u \in U$} \}
+  \]
+  der Annihilator von $U$.
+  Es sei $f \colon V \to W$ eine lineare Abbildung.
+  Es sei $f^* \colon W \to V$ die zu $f$ adjungierte Abbildung, und
+  \[
+    f^T \colon W^* \to V^*,
+    \quad
+    \varphi \mapsto \varphi \circ f
+  \]
+  die zu $f$ duale Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_V \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-, v}
+      \]
+      ein Isomorphismus ist.
+    \item
+      Zeigen Sie, dass für jeden Untervektorraum $U \subseteq V$ die Gleichheit $\Phi_V(U^\perp) = U^\circ$ gilt.
+    \item
+      Zeigen Sie, dass $f^T \circ \Phi_W = \Phi_V \circ f^*$, dass also das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                V   \arrow[swap]{d}{\Phi_V}
+            \&  W   \arrow[swap]{l}{f^*}
+                    \arrow{d}{\Phi_W}
+          \\
+                V^* 
+            \&  W^* \arrow{l}{f^T}
+        \end{tikzcd}
+      \]
+      Folgern Sie, dass $f^* = \Phi_V^{-1} \circ f^T \circ \Phi_W$.
+  \end{enumerate}
+  In Lineare Algebra I wurde gezeigt, dass
+  \[
+      \ker f^T
+    = (\im f)^\circ
+    \quad\text{und}\quad
+      \im f^T
+    = (\ker f )^\circ,
+  \]
+  und dass für je zwei Untervektorräume $U_1, U_2 \subseteq V$ die Gleichheiten
+  \[
+      (U_1 + U_2)^\circ
+    = U_1^\circ \cap U_2^\circ
+    \quad\text{und}\quad
+      (U_1 \cap U_2)^\circ
+    = U_1^\circ + U_2^\circ
+  \]
+  gelten.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Folgern Sie aus den vorherigen Aufgabenteilen und den Aussagen aus Lineare Algebra I für alle Untervektorräume $U_1, U_2 \subseteq V$ die Gleichheiten
+      \[
+          (U_1 + U_2)^\perp
+        = U_1^\perp \cap U_2^\perp
+        \quad\text{und}\quad
+          (U_1 \cap U_2)^\perp
+        = U_1^\perp + U_2^\perp.
+      \]
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\Phi_V$ ein Isomorphismus ist.)
+    \item
+      Folgern Sie aus den vorherigen Aufgabenteilen und den Aussagen aus Lineare Algebra I, dass
+      \[
+          \ker f^*
+        = (\im f)^\perp
+        \quad\text{und}\quad
+          \im f^*
+        = (\ker f)^\perp.
+      \]
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\Phi_V$ und $\Phi_W$ Isomorphismen sind.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V \coloneqq \mathcal{C}([0,1], \Rbb)$ der Raum der stetigen Funktionen $[0,1] \to \Rbb$, und es sei
+  \[
+    U \coloneqq \{ f \in V \mid f(0) = 0 \}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $U$ ein Untervektorraum von $V$ ist.
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{f, g} \coloneqq \int_0^1 f(t) g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Zeigen Sie, dass $U^\perp = 0$.
+      Folgern Sie, dass $V \neq U \oplus U^\perp$.
+      
+      (\emph{Hinweis}:
+       Betrachten Sie für $g \in U^\perp$ die Funktion $h \colon [0,1] \to \Rbb$ mit $h(t) = t^2 g(t)$.)
+    \item
+      Zeigen Sie ferner, dass $V\!/U$ eindimensional ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum und $f \colon V \to V$ ein selbstadjungierter, orthogonaler Endomorphismus mit nur positiven Eigenwerten.
+  Zeigen Sie, dass bereits $f = \id_V$ gilt.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi \colon V \to V^*,
+        \quad
+        v \mapsto \bil{-,v}
+      \]
+      ein Isomorphismus ist.
+    \item
+      Zeigen Sie:
+      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann eine Orthonormalbasis, wenn
+      \[
+          \varphi
+        = \sum_{i=1}^n \varphi(v_i) \bil{-,v_i}
+        \quad
+        \text{für alle $\varphi \in V^*$}.
+      \]
+  \end{enumerate}
+  Es sei nun $V$ der Vektorraum der Polynomsfunktionen $\Rbb \to \Rbb$ vom Grad $\leq 2$.
+  Für $a \in \Rbb$ sei $\varphi_a \in V^*$ durch $\varphi_a(f) = f(a)$ definiert.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{f, g} \coloneqq \int_{-1}^1 f(t)g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Bestimmen Sie eine Orthonormalbasis von $V$.
+    \item
+      Zeigen Sie, dass es für alle $a \in \Rbb$ ein eindeutiges $g_a \in V$ gibt, so dass
+      \[
+          f(a)
+        = \int_{-1}^1 f(t) g_a(t) \dd{t}
+        \quad
+        \text{für alle $f \in V$}.
+      \]
+    \item
+      Bestimmen Sie $g_a$ für beliebiges $a \in \Rbb$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Entscheiden Sie, welche der folgenden Aussagen sich implizieren.
+  \begin{enumerate}
+    \item
+      $f$ ist selbstadjungiert mit positiven Eigenwerten.
+    \item
+      $f$ ist orthogonal, und alle Eigenwerte von $f$ sind positiv.
+    \item
+      $f$ ist normal mit $\det f > 0$.
+    \item
+      Es gibt einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$.
+    \item
+      $f$ ist selbstadjungiert und orthogonal.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ der reelle Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$, und für alle $n \in \Nbb$ sei $V_n \subseteq V$ der Untervektorraum der Polynomfunktionen von Grad $\leq n$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+                  \bil{f, g}
+        \coloneqq \int_{-1}^1 f(t) g(t) \dd{t}
+        \quad
+        \text{für alle $f, g \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Zeigen Sie, dass die lineare Abbildung $\psi \colon V \to V$ mit
+      \[
+        \psi(f)(t) \coloneqq (t^2 - 1) f''(t) + 2t f'(t)
+        \quad
+        \text{für alle $f \in V$ und $t \in \Rbb$}
+      \]
+      selbstadjungiert bezüglich $\bil{\cdot, \cdot}$ ist.
+  \end{enumerate}
+  Es sei $\mc{G} \coloneqq (p_n)_{n \geq 0}$ die Orthonormalbasis von $V$, die durch Anwenden des Gram-Schmidt-Verfahrens auf die Standardbasis $\mc{B} \coloneqq (x^n)_{n \geq 0}$ ensteht.
+  \begin{enumerate}[resume, leftmargin=*]
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $V_n$ invariant unter $\psi$ ist.
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $\mc{G}_n \coloneqq (p_0, \dotsc, p_n)$ eine Basis von $V_n$ ist.
+    \item
+      Zeigen Sie für alle $n \geq 0$, dass $\Mat_{\mc{G}_n}(\psi|_{V_n})$ eine obere Dreiecksmatrix ist.
+      Betrachten Sie hierfür die Filtration
+      \[
+        0 \subseteq V_0 \subseteq V_1 \subseteq V_2 \subseteq V_3 \subseteq \dotsb \subseteq V_n,
+      \]
+      und nutzen Sie, dass $V_i = \Ell(\mc{G}_i)$ invariant unter $\psi$ ist.
+    \item
+      Folgen Sie mithilfe der Selbstadjungiertheit von $\psi$, dass $\Mat_{\mc{G}_n}(\psi|_{V_n})$ für alle $n \geq 0$ bereits eine Diagonalmatrix ist.
+      Folgern Sie, dass $\mc{G}$ eine Basis aus Eigenvektoren von $\psi$ ist.
+    \item
+      Bestimmen Sie für alle $n \geq 0$ die Eigenwerte der Einschränkung $\psi|_{V_n}$, indem Sie die darstellende Matrix bezüglich der Basis $\mc{B}_n = (1, x, \dotsc, x^n)$ von $V_n$ bestimmen.
+    \item
+      Geben Sie den zu $p_n$ gehörigen Eigenwert von $\psi$ an.
+    \item
+      Berechnen Sie $\mc{G}_4$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gilt $\exp(f)^* = \exp(f^*)$.
+    \item
+      Ist $f$ normal, so ist auch $f^*$ normal.
+    \item
+      Ist $f$ selbstadjungiert, so ist auch $\exp(f)$ selbstadjungiert.
+    \item
+      Ist $f$ antiselbstadjungiert, so ist $\exp(f)$ orthogonal ($\Kbb = \Rbb$), bzw.\ unitär ($\Kbb = \Cbb$).
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $f \colon V \to V$ ein Endomorphismus.
+  \newline
+  Zeigen Sie die folgenden Äquivalenzen für den Fall $\Kbb = \Cbb$:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist.
+    \item
+      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ unitär ist.
+    \item
+      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven Eigenwerten ist.
+  \end{enumerate}
+  Zeigen Sie die folgenden Aussagen für den Fall $\Kbb = \Rbb$:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist, und alle (reellen) Eigenwerte von $g$ gerade Vielfachheit haben.
+    \item
+      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ orthogonal ist und alle negativen (reellen) Eigenwerte von $f$ gerade Vielfachheit haben.
+    \item
+      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven (reellen) Eigenwerten ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei
+  \[
+    W = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
+  \]
+  der Vektorraum der beidseitigen reellwertigen Folgen.
+  Wir betrachten den Untervektorraum
+  \[
+    V \coloneqq
+    \left\{
+      (a_n)_{n \in \Zbb} \in W
+    \,\middle|\,
+      \sum_{n \in \Zbb} |a_n|^2 < \infty
+   \right\}
+  \]
+  der quadratsummierbaren Folgen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $V$ ein Untervektorraum von $W$ ist.
+    \item
+      Zeigen Sie für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$, dass
+      \[
+        \sum_{n \in \Zbb} a_n b_n < \infty.
+      \]
+      
+      (\emph{Hinweis}:
+       Zeigen sie zunächst, dass $ab \leq (a^2 + b^2)/2$ für alle $a, b \in \Rbb$.)
+    \item
+      Zeigen sie, dass
+      \[
+                  \bil{ (a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} }
+        \coloneqq \sum_{n \in \Zbb} a_n b_n
+        \quad
+        \text{für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$}
+      \]
+      ein Skalarprodukt auf $V$ definiert.
+    \item
+      Es sei
+      \[
+        R \colon V \to V,
+        \quad
+        (a_n)_{n \in \Zbb} \mapsto (a_{n-1})_{n \in \Zbb}
+      \]
+      der Rechtsshift-Operator.
+      Zeigen Sie, dass $R$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, orthogonal, bzw.\ normal ist.
+    \item
+      Zeigen Sie, dass $R$ keine Eigenwerte besitzt.
+    \item
+      Es sei
+      \[
+        S \colon V \to V,
+        \quad
+        (a_n)_{n \in \Nbb} \mapsto (a_{-n})_{n \in \Nbb}.
+      \]
+      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, orthogonal, bzw.\ normal ist.
+    \item
+      Zeigen Sie, dass $S$ diagonalisierbar ist.
+    \item
+      Es sei
+      \[
+        U \coloneqq \{(a_n)_{n \in \Zbb} \in V \mid \text{$a_n = 0$ für fast alle $n \in \Zbb$}\}.
+      \]
+      Bestimmen Sie $U^\perp$ und entscheiden Sie, ob $V = U \oplus U^\perp$.
+    \item
+      Bestimmen Sie eine Orthonormalbasis von $U$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass durch
+      \[
+        \sigma(A, B) \coloneqq \tr\left( A^T B \right)
+        \quad
+        \text{für alle $A, B \in \Mat_n(\Rbb)$}
+      \]
+      ein Skalarprodukt auf $\Mat_n(\Rbb)$ definiert wird.
+    \item
+      Zeigen Sie, dass die Standardbasis $(E_{ij})_{i,j=1,\dotsc,n}$ von $\Mat_n(\Rbb)$ mit
+      \[
+        (E_{ij})_{kl} \coloneqq \delta_{ik} \delta_{jl}
+        \quad
+        \text{für alle $1 \leq i,j,k,l \leq n$}
+      \]
+      eine Orthonormalbasis von $\Mat_n(\Rbb)$ bezüglich $\sigma$ bilden.
+    \item
+      Es sei
+      \[
+        S_+ \coloneqq \{A \in \Mat_n(\Rbb) \mid A^T = A\}
+      \]
+      der Untervektorraum der symmetrischen Matrizen, und
+      \[
+        S_- \coloneqq \{A \in \Mat_n(\Rbb) \mid A^T  = -A\}
+      \]
+      der Untervektorraum der schiefsymmetrischen Matrizen.
+      Zeigen Sie, dass
+      \[
+        \Mat_n(\Rbb) = S_+ \oplus S_-,
+      \]
+      und dass die Summe orthogonal ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein Skalarproduktraum und
+  \[
+    \Orthogonal(V) \coloneqq \{ f \in \End(V) \mid f f^* = \id \}.
+  \]
+  Zeigen Sie, dass $\Orthogonal(V)$ eine Untergruppe von $\GL(V)$ bildet.
+\end{question}
+
+
+\begin{question}
+Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $A$ ist invertierbar mit $A^{-1} = A^*$.
+    \item
+      $A A^* = I$.
+    \item
+      $A^* A = I$.
+    \item
+      Die Spalten von $A$ bilden eine Orthonormalbasis des $\Kbb^n$.
+    \item
+      Die Zeilen von $A$ bilden eine Orthonormalbasis des $\Kbb^n$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $A \in \Mat_n(\Cbb)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass es eindeutige hermitsche Matrizen $B, C \in \Mat_n(\Cbb)$ mit $A = B + i C$ gibt.
+    \item
+      Zeigen Sie, dass $A$ genau dann normal ist, wenn $B$ und $C$ kommutieren.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$, und es sei $G \subseteq \GL(V)$ eine endliche Untergruppe.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+        \bil{x,y}_G \coloneqq \frac{1}{|G|} \sum_{\phi \in G} \bil{\phi(x), \phi(y)}
+        \quad
+        \text{für alle $x, y \in V$}
+      \]
+      ein Skalarprodukt auf $G$ definiert.
+    \item
+      Zeigen Sie, dass $\bil{\cdot, \cdot}_G$ in dem Sinne $G$-invariant ist, dass
+      \[
+        \bil{\phi(x), \phi(y)} = \bil{x,y}
+        \quad
+        \text{für alle $x, y \in V$ und $\phi \in G$}.
+      \]
+    \item
+      Folgern Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $M_\mc{B}(\phi)$ für alle $\phi \in G$ eine orthogonale Matrix ist.
+    \item
+      Folgern Sie damit, dass es für $n = \dim V$ einen injektiven Gruppenhomomorphismus $\Phi \colon G \to \Orthogonal(n)$ gibt, $G$ also isomorph zu der Untergruppe $\im \Phi$ von $\Orthogonal(n)$ ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $F$ und $G$ zwei selbstadjungierte Endomorphismen eines Skalarproduktraums $V$.
+  Zeigen Sie, dass $F \circ G$ genau dann selbstadjungierti ist, wenn $F$ und $G$ kommutieren.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum.
+  Für jedes $\alpha \in V$ mit $\alpha \neq 0$ sei
+  \[
+    s_\alpha \colon V \to V,
+    \quad\text{mit}\quad
+              s_\alpha(x)
+    \coloneqq x - 2 \frac{\bil{x, \alpha}}{\|\alpha\|^2} \alpha.
+  \]
+  Ferner seien
+  \[
+              L_\alpha
+    \coloneqq \Rbb \alpha
+    \quad\text{und}\quad
+              H_\alpha
+    \coloneqq L_\alpha^\perp
+    =         \alpha^\perp
+    =         \{ v \in V \mid \bil{v, \alpha} = 0 \}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $s_\alpha^2 = \id_V$, und dass $s_{\lambda \alpha} = s_\alpha$ für alle $\lambda \in \Rbb^\times$.
+    \item
+      Zeigen Sie, dass $s_\alpha$ diagonalisierbar ist, und dass
+      \[
+        V_{-1}(s_\alpha) = L_\alpha
+        \quad\text{und}\quad
+        V_1(s_\alpha) = H_\alpha.
+      \]
+    \item
+      Interpretieren Sie $V$ geometrisch anschaulich.
+    \item
+      Es sei $s' \colon V \to V$ ein Endomorphismus mit $s'(\alpha) = -\alpha$ und $s'(x) = x$ für alle $x \in H_\alpha$.
+      Zeigen Sie, dass bereits $s' = s_\alpha$ gilt.
+    \item
+      Es sei $t \colon V \to V$ ein orthogonaler Isomorphismus. Zeigen Sie die Gleichheit
+      \[
+        t s_\alpha t^{-1} = s_{t(\alpha)}.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ euklidische Vektorräume, und $f \colon V \to V$ eine surjektive Funktion (!) mit
+  \[
+    \bil{f(v_1), f(v_2)} = \bil{v_1, v_2}
+    \quad
+    \text{für alle $v_1, v_2 \in V$}.
+  \]
+  Zeigen Sie, dass $f$ ein Isomorphismus ist.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler unitärer Vektorraum.
+  Zeigen Sie, dass für eine lineare Abbildung $S \colon V \to V$ die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $S$ ist normal.
+    \item
+      $V$ hat eine Orthonormalbasis aus Eigenvektoren von $S$.
+    \item
+      Für jeden $S$-invarianten Untervektorraum $U \subseteq V$ ist auch das orthogonale Komplement $U^\perp$ invariant unter $S$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum über $\Kbb$.
+  Es sei
+  \[
+    S \coloneqq \{ f \in \End_\Kbb(V) \mid f^* = f \}
+  \]
+  der Untervektorraum der selbstadjungierten Endomorphismen und
+  \[
+    A \coloneqq \{ f \in \End_\Kbb(V) \mid f^* = -f \}
+  \]
+  der Untervektorraum der antiselbstadjungierten Endomorphismen.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass
+      \[
+        \langle f, g \rangle \coloneqq \tr(f \circ g^*)
+      \]
+      ein Skalarprodukt auf $\End_\Kbb(V)$ definiert.
+    \item
+      Folgern Sie, dass
+      \[
+        |\tr(f g^*)|^2 \leq \tr(f f^*) \tr(g g^*)
+        \quad
+        \text{für alle $f, g \in \End_\Kbb(V)$}.
+      \]
+    \item
+      Zeigen Sie, dass $\End_\Kbb(V) = S \oplus A$, und dass die Summe orthogonal ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $\det \colon \Mat_n(\Cbb) \to \Cbb^\times$ die Determinantenabbildung, wobei $\Cbb^\times$ die multiplikative Gruppe des Körpers bezeichnet.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\det$ ein surjektiver Gruppenhomomorphismus ist.
+    \item
+      Bestimmen Sie den Kern von $\det$.
+    \item
+      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\GL_n(\Rbb)}$.
+    \item
+      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Unitary_n}$.
+    \item
+      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Orthogonal_n}$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei
+  \[
+    \Phi \colon \SUnitary(2) \to S^3,
+    \quad
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \mapsto
+    \vect{a \\ c}
+  \]
+  die Abbildung auf die erste Spalte, wobei
+  \[
+              S^3
+    \coloneqq \left\{ \vect{z_1 \\ z_2} \in \Cbb^2 \,\middle|\, |z_1|^2 + |z_2|^2 = 1 \right\}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\Phi$ wohldefiniert ist.
+    \item
+      Zeigen Sie, dass $\Phi$ bijektiv ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen Sie, dass die drei Gruppen $\SOrthogonal(2)$, $S^1$ und $\Unitary(1)$ isomorph sind.
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum, und die Abbildung $P \colon V \to V$ sei orthogonal und eine Orthogonalprojektion.
+  Bestimmen Sie $P$.
+\end{question}
+
+
+\begin{question}
+  Es sei $A \in \Unitary(n)$.
+  Zeigen Sie, dass $|\tr A| \leq n$.
+  Wann gilt Gleichheit?
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $\mc{B} = (b_1, \dotsc, b_n)$ und $\mc{C} = (c_1, \dotsc, c_n)$ seien zwei geordnete Basen von $V$.
+  \begin{enumerate}
+    \item
+      Die Basis $\mc{C}$ sei genau die Orthonormalbasis von $V$, die aus $\mc{B}$ durch Anwendung des Gram-Schmidt-Verfahrens entstehen.
+      Zeigen Sie, dass die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ (von $\mc{C}$ nach $\mc{B}$) eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen ist.
+    \item
+      Zeigen oder widerlegen Sie die umgekehrte Aussage:
+      Ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen, so ist $\mc{C}$ notwendigerweise die Orthonormalbasis von $V$, die durch das Gram-Schmidt-Verfahren aus $\mc{B}$ entsteht.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $z_1, \dotsc, z_n \in \Cbb$ paarweise verschieden Punkte.
+      Zeigen Sie, dass es für beliebige Werte $w_1, \dotsc, w_n \in \Cbb$ ein Polynom $P \in \Cbb[T]$ mit $P(z_j) = w_j$ für alle $j = 1, \dotsc, n$ gibt.
+    \item
+      Es sei $f \colon V \to V$ ein normaler Endomorphismus eines endlichdimensionalen unitären Vektorraums $V$.
+      Zeigen Sie, dass es ein Polynom $P \in \Cbb[T]$ mit $f^* = P(f)$ gibt.
+      
+      (\emph{Hinweis}:
+       $f$ ist diagonalisierbar.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler reeller Vektorraum mit $n \coloneqq \dim V$.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass es für jede Basis $\mc{B} = \{b_1, \dotsc, b_n\}$ von $V$ genau ein Skalarprodukt $\bil{\cdot, \cdot}_\mc{B}$ auf $V$ gibt, so dass $\mc{B}$ eine Orthonormalbasis von $V$ bezüglich $\bil{\cdot, \cdot}_\mc{B}$ ist.
+    \item
+      Untersuchen Sie die Abbildung
+      \[
+        \{\text{Basen von $V$}\} \to \{\text{Skalarprodukte auf $V$}\},
+        \quad
+        \mc{B} \mapsto \bil{\cdot, \cdot}_\mc{B}
+      \]
+      auf Injektivität und Surjektivität.
+  \end{enumerate}
+\end{question}
