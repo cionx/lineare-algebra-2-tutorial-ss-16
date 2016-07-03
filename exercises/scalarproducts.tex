@@ -404,7 +404,7 @@
       ein Isomorphismus ist.
     \item
       Zeigen Sie:
-      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann eine Orthonormalbasis, wenn
+      Eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ist genau dann orthonormal, wenn
       \[
           \varphi
         = \sum_{i=1}^n \varphi(v_i) \bil{-,v_i}
@@ -412,8 +412,16 @@
         \text{für alle $\varphi \in V^*$}.
       \]
   \end{enumerate}
-  Es sei nun $V$ der Vektorraum der Polynomsfunktionen $\Rbb \to \Rbb$ vom Grad $\leq 2$.
-  Für $a \in \Rbb$ sei $\varphi_a \in V^*$ durch $\varphi_a(f) = f(a)$ definiert.
+  Es sei nun $V$ der unendlichdimensionale Vektorraum der Polynomsfunktionen $\Rbb \to \Rbb$, und für alle $n \in \Nbb$ sei $V_n \subseteq V$ der endlichdimensionale Untervektorraum der Polynomsfunktionen vom Grad $\leq n$.
+  Für $a \in \Rbb$ sei
+  \[
+    \varphi_a \colon V \to \Rbb
+    \quad\text{mit}\quad
+    \varphi_a(f) = f(a)
+    \quad
+    \text{für alle $a \in \Rbb$}
+  \]
+  die Auswertung an $a$.
   \begin{enumerate}[leftmargin=*, resume]
     \item
       Zeigen Sie, dass
@@ -424,17 +432,17 @@
       \]
       ein Skalarprodukt auf $V$ definiert.
     \item
-      Bestimmen Sie eine Orthonormalbasis von $V$.
-    \item
-      Zeigen Sie, dass es für alle $a \in \Rbb$ ein eindeutiges $g_a \in V$ gibt, so dass
+      Zeigen Sie, dass es für alle $n \in \Nbb$ und $a \in \Rbb$ und eine eindeutige Funktion $g_{n,a} \in V$ gibt, so dass
       \[
           f(a)
-        = \int_{-1}^1 f(t) g_a(t) \dd{t}
+        = \int_{-1}^1 f(t) g_{n,a}(t) \dd{t}
         \quad
-        \text{für alle $f \in V$}.
+        \text{für alle $f \in V_n$}.
       \]
     \item
-      Bestimmen Sie $g_a$ für beliebiges $a \in \Rbb$.
+      Bestimmen Sie eine Orthonormalbasis von $V_2$.
+    \item
+      Bestimmen Sie $g_{2,a}$ in Abhängigkeit von $a$.
   \end{enumerate}
 \end{question}
 
@@ -444,15 +452,15 @@
   Entscheiden Sie, welche der folgenden Aussagen sich implizieren.
   \begin{enumerate}
     \item
-      $f$ ist selbstadjungiert mit positiven Eigenwerten.
+      Der Endomorphismus $f$ ist selbstadjungiert mit positiven Eigenwerten.
     \item
-      $f$ ist orthogonal, und alle Eigenwerte von $f$ sind positiv.
+      Der Endomorphismus $f$ ist orthogonal, und alle Eigenwerte von $f$ sind positiv.
     \item
-      $f$ ist normal mit $\det f > 0$.
+      Der Endomorphismus $f$ ist normal mit $\det f > 0$.
     \item
       Es gibt einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$.
     \item
-      $f$ ist selbstadjungiert und orthogonal.
+      Der Endomorphismus $f$ ist selbstadjungiert und orthogonal.
   \end{enumerate}
 \end{question}
 
@@ -478,7 +486,7 @@
       \]
       selbstadjungiert bezüglich $\bil{\cdot, \cdot}$ ist.
   \end{enumerate}
-  Es sei $\mc{G} \coloneqq (p_n)_{n \geq 0}$ die Orthonormalbasis von $V$, die durch Anwenden des Gram-Schmidt-Verfahrens auf die Standardbasis $\mc{B} \coloneqq (x^n)_{n \geq 0}$ ensteht.
+  Es sei $\mc{G} \coloneqq (p_n)_{n \geq 0}$ die Orthonormalbasis von $V$, die durch Anwenden des Gram-Schmidt-Verfahrens auf die Standardbasis $\mc{B} \coloneqq (x^n)_{n \geq 0}$ von $V$ ensteht.
   \begin{enumerate}[resume, leftmargin=*]
     \item
       Zeigen Sie für alle $n \geq 0$, dass $V_n$ invariant unter $\psi$ ist.
@@ -490,7 +498,7 @@
       \[
         0 \subseteq V_0 \subseteq V_1 \subseteq V_2 \subseteq V_3 \subseteq \dotsb \subseteq V_n,
       \]
-      und nutzen Sie, dass $V_i = \Ell(\mc{G}_i)$ invariant unter $\psi$ ist.
+      und nutzen Sie, dass $V_i = \Ell(\mc{G}_i)$ für alle $1 \leq i \leq n$ invariant unter $\psi$ ist.
     \item
       Folgen Sie mithilfe der Selbstadjungiertheit von $\psi$, dass $\Mat_{\mc{G}_n}(\psi|_{V_n})$ für alle $n \geq 0$ bereits eine Diagonalmatrix ist.
       Folgern Sie, dass $\mc{G}$ eine Basis aus Eigenvektoren von $\psi$ ist.
@@ -535,11 +543,11 @@
   Zeigen Sie die folgenden Aussagen für den Fall $\Kbb = \Rbb$:
   \begin{enumerate}[leftmargin=*, resume]
     \item
-      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist, und alle (reellen) Eigenwerte von $g$ gerade Vielfachheit haben.
+      Es gibt genau dann einen normalen Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ normal und invertierbar ist, und alle negativen reellen Eigenwerte von $g$ gerade Vielfachheit haben.
     \item
-      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ orthogonal ist und alle negativen (reellen) Eigenwerte von $f$ gerade Vielfachheit haben.
+      Es gibt genau dann einen antiselbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ orthogonal ist und alle negativen reellen Eigenwerte von $f$ gerade Vielfachheit haben.
     \item
-      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven (reellen) Eigenwerten ist.
+      Es gibt genau dann einen selbstadjungierten Endomorphismus $g \colon V \to V$ mit $f = \exp(g)$, wenn $f$ selbstadjungiert mit positiven reellen Eigenwerten ist.
   \end{enumerate}
 \end{question}
 
@@ -547,22 +555,19 @@
 \begin{question}
   Es sei
   \[
-    W = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
+    \Rbb^\Zbb = \{(a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\}
   \]
   der Vektorraum der beidseitigen reellwertigen Folgen.
-  Wir betrachten den Untervektorraum
+  Wir betrachten die Teilmenge der quadratsummierbaren Folgen
   \[
-    V \coloneqq
+    \ell^2(\Zbb) \coloneqq
     \left\{
-      (a_n)_{n \in \Zbb} \in W
+      (a_n)_{n \in \Zbb} \in \Rbb^\Zbb
     \,\middle|\,
       \sum_{n \in \Zbb} |a_n|^2 < \infty
-   \right\}
+   \right\}.
   \]
-  der quadratsummierbaren Folgen.
   \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass $V$ ein Untervektorraum von $W$ ist.
     \item
       Zeigen Sie für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$, dass
       \[
@@ -572,18 +577,20 @@
       (\emph{Hinweis}:
        Zeigen sie zunächst, dass $ab \leq (a^2 + b^2)/2$ für alle $a, b \in \Rbb$.)
     \item
-      Zeigen sie, dass
+      Folgern Sie, dass $\ell^2(\Zbb)$ ein Untervektorraum von $\Rbb^\Zbb$ ist.
+    \item
+      Zeigen Sie, dass
       \[
                   \bil{ (a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} }
         \coloneqq \sum_{n \in \Zbb} a_n b_n
         \quad
         \text{für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$}
       \]
-      ein Skalarprodukt auf $V$ definiert.
+      ein Skalarprodukt auf $\ell^2(\Zbb)$ definiert.
     \item
       Es sei
       \[
-        R \colon V \to V,
+        R \colon \ell^2(\Zbb) \to \ell^2(\Zbb),
         \quad
         (a_n)_{n \in \Zbb} \mapsto (a_{n-1})_{n \in \Zbb}
       \]
@@ -598,13 +605,13 @@
         \quad
         (a_n)_{n \in \Nbb} \mapsto (a_{-n})_{n \in \Nbb}.
       \]
-      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $R$ selbstadjungiert, orthogonal, bzw.\ normal ist.
+      Zeigen Sie, dass $S$ ein Adjungiertes besitzt, und entscheiden Sie, ob $S$ selbstadjungiert, orthogonal, bzw.\ normal ist.
     \item
       Zeigen Sie, dass $S$ diagonalisierbar ist.
     \item
       Es sei
       \[
-        U \coloneqq \{(a_n)_{n \in \Zbb} \in V \mid \text{$a_n = 0$ für fast alle $n \in \Zbb$}\}.
+        U \coloneqq \{(a_n)_{n \in \Zbb} \in \ell^2(\Zbb) \mid \text{$a_n = 0$ für fast alle $n \in \Zbb$}\}.
       \]
       Bestimmen Sie $U^\perp$ und entscheiden Sie, ob $V = U \oplus U^\perp$.
     \item
@@ -631,6 +638,10 @@
         \text{für alle $1 \leq i,j,k,l \leq n$}
       \]
       eine Orthonormalbasis von $\Mat_n(\Rbb)$ bezüglich $\sigma$ bilden.
+      (Der $(i,j)$-te Eintrag von $E_{ij}$ ist also $1$, und alle anderen Einträge sind $0$.)
+      
+      (\emph{Hinweis}:
+       Überlegen sie sich zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i,j,k,l \leq n$.)
     \item
       Es sei
       \[
@@ -683,12 +694,18 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass es eindeutige hermitsche Matrizen $B, C \in \Mat_n(\Cbb)$ mit $A = B + i C$ gibt.
     \item
       Zeigen Sie, dass $A$ genau dann normal ist, wenn $B$ und $C$ kommutieren.
+    \item
+      Zeigen Sie, dass es eine eindeutige hermitsche Matrix $D \in \Mat_n(\Cbb)$ und schiefhermitsche Matrix $E \in \Mat_n(\Cbb)$ gibt, so dass $A = D + E$.
+    \item
+      Zeigen Sie, dass $A$ genau dann normal ist, wenn $D$ und $E$ kommutieren.
+    \item
+      Wie hängen die Zerlegungen $A = B + i C$ und $A = D + E$ zusammen?
   \end{enumerate}
 \end{question}
 
 
 \begin{question}
-  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$, und es sei $G \subseteq \GL(V)$ eine endliche Untergruppe.
+  Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$, und $G \subseteq \GL(V)$ sei eine endliche Untergruppe.
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass
@@ -697,7 +714,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
         \quad
         \text{für alle $x, y \in V$}
       \]
-      ein Skalarprodukt auf $G$ definiert.
+      ein Skalarprodukt auf $V$ definiert.
     \item
       Zeigen Sie, dass $\bil{\cdot, \cdot}_G$ in dem Sinne $G$-invariant ist, dass
       \[
@@ -705,6 +722,11 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
         \quad
         \text{für alle $x, y \in V$ und $\phi \in G$}.
       \]
+      
+      (\emph{Hinweis}:
+       Beachten Sie, dass die Multiplikation $G \to G$, $h \mapsto hg$ für alle $g \in G$ bijektiv ist.)
+    \item
+      Zeigen Sie auch, dass $\bil{\cdot, \cdot}_G = \bil{\cdot, \cdot}$, wenn $\bil{\cdot, \cdot}$ bereits $G$-invariant ist.
     \item
       Folgern Sie, dass es eine Basis $\mc{B}$ von $V$ gibt, so dass $M_\mc{B}(\phi)$ für alle $\phi \in G$ eine orthogonale Matrix ist.
     \item
@@ -715,7 +737,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 \begin{question}
   Es seien $F$ und $G$ zwei selbstadjungierte Endomorphismen eines Skalarproduktraums $V$.
-  Zeigen Sie, dass $F \circ G$ genau dann selbstadjungierti ist, wenn $F$ und $G$ kommutieren.
+  Zeigen Sie, dass $F \circ G$ genau dann selbstadjungiert ist, wenn $F$ und $G$ kommutieren.
 \end{question}
 
 
@@ -728,48 +750,37 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
               s_\alpha(x)
     \coloneqq x - 2 \frac{\bil{x, \alpha}}{\|\alpha\|^2} \alpha.
   \]
-  Ferner seien
-  \[
-              L_\alpha
-    \coloneqq \Rbb \alpha
-    \quad\text{und}\quad
-              H_\alpha
-    \coloneqq L_\alpha^\perp
-    =         \alpha^\perp
-    =         \{ v \in V \mid \bil{v, \alpha} = 0 \}.
-  \]
+  Ferner seien $L_\alpha \coloneqq \Rbb \alpha$ und $H_\alpha \coloneqq L_\alpha^\perp$.
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie, dass $s_\alpha^2 = \id_V$, und dass $s_{\lambda \alpha} = s_\alpha$ für alle $\lambda \in \Rbb^\times$.
-    \item
-      Zeigen Sie, dass $s_\alpha$ diagonalisierbar ist, und dass
-      \[
-        V_{-1}(s_\alpha) = L_\alpha
-        \quad\text{und}\quad
-        V_1(s_\alpha) = H_\alpha.
-      \]
+      Zeigen Sie, dass $L_\alpha = V_{-1}(s_\alpha)$ und $H_\alpha = V_1(s_\alpha)$.
+      Folgern Sie, dass $s_\alpha$ diagonalisierbar ist.
     \item
       Interpretieren Sie $V$ geometrisch anschaulich.
+    \item
+      Zeigen Sie, dass $s_\alpha^2 = \id_V$, und dass $s_{\lambda \alpha} = s_\alpha$, $L_{\lambda \alpha} = L_\alpha$ und $H_{\lambda \alpha} = H_\alpha$ für alle $\lambda \in \Rbb^\times$.
     \item
       Es sei $s' \colon V \to V$ ein Endomorphismus mit $s'(\alpha) = -\alpha$ und $s'(x) = x$ für alle $x \in H_\alpha$.
       Zeigen Sie, dass bereits $s' = s_\alpha$ gilt.
     \item
-      Es sei $t \colon V \to V$ ein orthogonaler Isomorphismus. Zeigen Sie die Gleichheit
-      \[
-        t s_\alpha t^{-1} = s_{t(\alpha)}.
-      \]
+      Es sei $t \colon V \to V$ ein orthogonaler Isomorphismus. Zeigen Sie, dass $t s_\alpha t^{-1} = s_{t(\alpha)}$.
   \end{enumerate}
 \end{question}
 
 
 \begin{question}
-  Es seien $V$ und $W$ euklidische Vektorräume, und $f \colon V \to V$ eine surjektive Funktion (!) mit
+  Es seien $V$ und $W$ euklidische Vektorräume, und $f \colon V \to W$ sei eine surjektive Funktion mit
   \[
     \bil{f(v_1), f(v_2)} = \bil{v_1, v_2}
     \quad
     \text{für alle $v_1, v_2 \in V$}.
   \]
-  Zeigen Sie, dass $f$ ein Isomorphismus ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $f$ linear ist.
+    \item
+      Zeigen Sie, dass $f$ bereits ein Isomorphismus ist.
+  \end{enumerate}
 \end{question}
 
 
@@ -778,9 +789,9 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
   Zeigen Sie, dass für eine lineare Abbildung $S \colon V \to V$ die folgenden Bedingungen äquivalent sind:
   \begin{enumerate}
     \item
-      $S$ ist normal.
+      Der Endomorphismus $S$ ist normal.
     \item
-      $V$ hat eine Orthonormalbasis aus Eigenvektoren von $S$.
+      Der Vektorraum $V$ hat eine Orthonormalbasis aus Eigenvektoren von $S$.
     \item
       Für jeden $S$-invarianten Untervektorraum $U \subseteq V$ ist auch das orthogonale Komplement $U^\perp$ invariant unter $S$.
   \end{enumerate}
@@ -789,7 +800,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 \begin{question}
   Es sei $V$ ein endlichdimensionaler Skalarproduktraum über $\Kbb$.
-  Es sei
+  Für den $\Kbb$-Vektorraum $\End_\Kbb(V)$ sei
   \[
     S \coloneqq \{ f \in \End_\Kbb(V) \mid f^* = f \}
   \]
@@ -798,20 +809,11 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
     A \coloneqq \{ f \in \End_\Kbb(V) \mid f^* = -f \}
   \]
   der Untervektorraum der antiselbstadjungierten Endomorphismen.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie, dass
-      \[
-        \langle f, g \rangle \coloneqq \tr(f \circ g^*)
-      \]
-      ein Skalarprodukt auf $\End_\Kbb(V)$ definiert.
+      Zeigen Sie, dass $\langle f, g \rangle \coloneqq \tr(f \circ g^*)$ ein Skalarprodukt auf $\End_\Kbb(V)$ definiert.
     \item
-      Folgern Sie, dass
-      \[
-        |\tr(f g^*)|^2 \leq \tr(f f^*) \tr(g g^*)
-        \quad
-        \text{für alle $f, g \in \End_\Kbb(V)$}.
-      \]
+      Folgern Sie, dass $|\tr(f \circ g^*)| \leq \sqrt{|\tr(f \circ f^*) \tr(g \circ g^*)|}$ für alle $f, g \in \End_\Kbb(V)$.
     \item
       Zeigen Sie, dass $\End_\Kbb(V) = S \oplus A$, und dass die Summe orthogonal ist.
   \end{enumerate}
@@ -819,18 +821,18 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 
 \begin{question}
-  Es sei $\det \colon \Mat_n(\Cbb) \to \Cbb^\times$ die Determinantenabbildung, wobei $\Cbb^\times$ die multiplikative Gruppe des Körpers bezeichnet.
+  Es sei $\det \colon \Mat_n(\Cbb) \to \Cbb^\times$ die Determinantenabbildung, wobei $\Cbb^\times$ die multiplikative Gruppe des Körpers $\Cbb$ bezeichnet.
   \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass $\det$ ein surjektiver Gruppenhomomorphismus ist.
     \item
-      Bestimmen Sie den Kern von $\det$.
+     Geben Sie den Kern von $\det$ an.
     \item
-      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\GL_n(\Rbb)}$.
+      Bestimmen Sie das Bild der Einschränkung $\det|_{\GL_n(\Rbb)}$, und geben Sie den Kern an.
     \item
-      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Unitary_n}$.
+      Bestimmen Sie das Bild der Einschränkung $\det|_{\Unitary(n)}$, und geben Sie den Kern an.
     \item
-      Bestimmen Sie Bild und Kern der Einschränkung $\det|_{\Orthogonal_n}$.
+      Bestimmen Sie das Bild der Einschränkung $\det|_{\Orthogonal(n)}$, und geben Sie den Kern an.
   \end{enumerate}
 \end{question}
 
@@ -850,7 +852,8 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
   die Abbildung auf die erste Spalte, wobei
   \[
               S^3
-    \coloneqq \left\{ \vect{z_1 \\ z_2} \in \Cbb^2 \,\middle|\, |z_1|^2 + |z_2|^2 = 1 \right\}.
+    \coloneqq \left\{ \vect{z_1 \\ z_2} \in \Cbb^2 \,\middle|\, |z_1|^2 + |z_2|^2 = 1 \right\}
+    =         \left\{ x \in \Cbb^2 \mid \|x\| = 1 \right\}
   \]
   \begin{enumerate}[leftmargin=*]
     \item
@@ -863,6 +866,7 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 \begin{question}
   Zeigen Sie, dass die drei Gruppen $\SOrthogonal(2)$, $S^1$ und $\Unitary(1)$ isomorph sind.
+  (Dabei ist $S^1 = \{z \in \Cbb \mid |z| = 1\}$ eine Untergruppe von $\Cbb^\times$.)
 \end{question}
 
 
@@ -881,13 +885,17 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
 
 \begin{question}
   Es sei $V$ ein endlichdimensionaler Skalarproduktraum und $\mc{B} = (b_1, \dotsc, b_n)$ und $\mc{C} = (c_1, \dotsc, c_n)$ seien zwei geordnete Basen von $V$.
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
-      Die Basis $\mc{C}$ sei genau die Orthonormalbasis von $V$, die aus $\mc{B}$ durch Anwendung des Gram-Schmidt-Verfahrens entstehen.
+      Die Basis $\mc{C}$ entstehen aus $\mc{B}$ durch Anwendung des Gram-Schmidt-Verfahrens.
       Zeigen Sie, dass die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ (von $\mc{C}$ nach $\mc{B}$) eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen ist.
     \item
       Zeigen oder widerlegen Sie die umgekehrte Aussage:
-      Ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen, so ist $\mc{C}$ notwendigerweise die Orthonormalbasis von $V$, die durch das Gram-Schmidt-Verfahren aus $\mc{B}$ entsteht.
+      Ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ eine obere Dreiecksmatrix mit positiven reellen Diagonaleinträgen, so ist $\mc{C}$ notwendigerweise die Orthonormalbasis von $V$, die durch Anwendung des Gram-Schmidt-Verfahrens aus $\mc{B}$ entsteht.
+    \item
+      Entsteht $\mc{C}$ durch Anwendung des Gram-Schmidt-Verfahrens aus $\mc{B}$, so ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ unitär.
+    \item
+      Sind $\mc{B}$ und $\mc{C}$ orthonormal, so ist die Basiswechselmatrix $T_{\mc{C} \to \mc{B}}$ unitär.
   \end{enumerate}
 \end{question}
 
@@ -902,23 +910,27 @@ Zeigen sie, dass für eine Matrix $A \in \Mat_n(\Kbb)$ die folgenden Bedingungen
       Zeigen Sie, dass es ein Polynom $P \in \Cbb[T]$ mit $f^* = P(f)$ gibt.
       
       (\emph{Hinweis}:
-       $f$ ist diagonalisierbar.)
+       Nutzen Sie, dass $f$ diagonalisierbar ist.)
   \end{enumerate}
 \end{question}
 
 
 \begin{question}
-  Es sei $V$ ein endlichdimensionaler reeller Vektorraum mit $n \coloneqq \dim V$.
-  \begin{enumerate}
+  Es sei $V$ ein endlichdimensionaler $\Kbb$-Vektorraum mit $n \coloneqq \dim V$.
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass es für jede Basis $\mc{B} = \{b_1, \dotsc, b_n\}$ von $V$ genau ein Skalarprodukt $\bil{\cdot, \cdot}_\mc{B}$ auf $V$ gibt, so dass $\mc{B}$ eine Orthonormalbasis von $V$ bezüglich $\bil{\cdot, \cdot}_\mc{B}$ ist.
     \item
       Untersuchen Sie die Abbildung
-      \[
-        \{\text{Basen von $V$}\} \to \{\text{Skalarprodukte auf $V$}\},
-        \quad
-        \mc{B} \mapsto \bil{\cdot, \cdot}_\mc{B}
-      \]
+      \begin{align*}
+         \{\mc{B} \subseteq V \mid \text{$\mc{B}$ ist eine Basis von $V$}\}
+        &\longrightarrow
+         \{\bil{\cdot, \cdot} \colon V \times V \to V \mid \text{$\bil{\cdot, \cdot}$ ist ein Skalarprodukt auf $V$}\},
+        \\
+         \mc{B}
+        &\longmapsto
+         \bil{\cdot, \cdot}_\mc{B}
+      \end{align*}
       auf Injektivität und Surjektivität.
   \end{enumerate}
 \end{question}

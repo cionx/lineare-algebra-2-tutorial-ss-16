@@ -240,3 +240,55 @@
       Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
   \end{enumerate}
 \end{question}
+
+
+% \begin{question}
+%   Es sei $K$ ein Körper und
+%   \[
+%               \slLie_n(K)
+%     \coloneqq \{ A \in \Mat_n(K) \mid \tr A = 0 \}.
+%   \]
+%   \begin{enumerate}
+%     \item
+%       Zeigen Sie, dass $\slLie_n(K)$ ein Untervektorraum von $\Mat_n(K)$ mit $\dim \slLie_n(K) = n^2 - 1$ ist.
+%     \item
+%       Zeigen Sie, dass
+%       \[
+%         \mc{B}
+%         \coloneqq
+%               \{ E_{ij} \mid 1 \leq i \neq j \leq n \}
+%         \cup  \{ E_{11} - E_{ii} \mid 2 \leq i \leq n \}
+%       \]
+%       eine Basis von $\slLie_n(K)$ ist, wobei $E_{ij} \in \Mat_n(K)$ die Matrix ist, deren $(i,j)$-ter Eintrag $1$ ist, und für die alle anderen Einträge $0$ sind.
+%   \end{enumerate}
+%   Es sei nun $C \coloneqq \Ell( [A,B] \mid A, B \in \Mat_n(K) )$.
+%   \begin{enumerate}[resume]
+%     \item
+%       Zeigen Sie, dass $\tr([A,B]) = 0$ für alle $A, B \in \Mat_n(K)$.
+%       Folgern Sie, dass $C \subseteq \slLie_n(K)$.
+%     \item
+%       Zeigen Sie, dass $\slLie_n(K) \subseteq C$, indem Sie jedes der Basiselement aus $\mc{B}$ also Kommutator schreiben.
+%       
+%       (\emph{Hinweis}:
+%        Überlegen Sie zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
+%   \end{enumerate}
+%   Es ist also $\slLie_n(K) = \Ell( [A,B] \mid A, B \in \Mat_n(K) )$ ein ($n^2 - 1$)-dimensionaler Untervektorraum.
+%   Es sei nun $f \colon \Mat_n(K) \to K$ eine lineare Abbildung mit $f(AB) = f(BA)$ für alle $A, B \in \Mat_n(K)$.
+%   \begin{enumerate}[resume]
+%     \item
+%       Zeigen Sie, dass $f$ eine eindeutige lineare Abbildung
+%       \[
+%         \overline{f} \colon \Mat_n(K) / \slLie_n(K) \to K,
+%         \quad
+%         [A] \mapsto f(A)
+%       \]
+%       induziert.
+%       Zeigen Sie, dass $\overline{\tr} \neq 0$.
+%     \item
+%       Zeigen Sie, dass $\Mat_n(K) / \slLie(K)$ eindimensional ist.
+%       Folgern Sie, dass es ein eindeutiges $\lambda \in K$ mit $\overline{f} = \lambda \overline{\tr}$ gibt.
+%     \item
+%       Folgern Sie, dass bereits $f = \lambda \tr$ gilt.
+%       (Die Spur ist also durch die Eigenschaft, dass $\tr(AB) = \tr(BA)$ für alle $A, B \in \Mat_n(K)$, bis auf skalares Vielfaches eindeutig bestimmt.)
+%   \end{enumerate}
+% \end{question}

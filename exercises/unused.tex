@@ -1,0 +1,147 @@
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $m \colon V \times V \to V$ eine bilineare Abbildung.
+  Eine lineare Abbildung $D \colon V \to V$ heißt \emph{$m$-Derivation}, falls
+  \[
+    D(m(x,y))
+    = m(D(x), y) + m(x, D(y))
+    \quad
+    \text{für alle $x, y \in V$}.
+  \]
+  Es sei
+  \[
+              \Der(m)
+    \coloneqq \{ D \colon V \to V \mid \text{$D$ ist eine $m$-Derivation} \}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für den Fall $V = K[X]$ und die Multiplikation
+      \[
+        m(p,q) \coloneqq p \cdot q
+        \quad
+        \text{für alle $p, q \in K[X]$},
+      \]
+      dass die Ableitung
+      \[
+        D \colon K[X] \to K[X],
+        \quad
+        \sum_{d=0}^n a_d X^d  \mapsto \sum_{d=1}^n a_d d X^{d-1} 
+      \]
+      eine $m$-Derivation ist.
+      Unter welchem Namen ist dieser Umstand für gewöhnlich bekannt?
+    \item
+      Zeigen Sie, dass $\Der(m)$ ein Untervektorraum von $\End(V)$ ist.
+    \item
+      Zeigen Sie, dass $\Der(m)$ eine Lie-Unteralgebra von $\End(V)$ ist, d.h.\ dass für alle $D_1, D_2 \in \Der(m)$ auch $[D_1, D_2] \in \Der(m)$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein euklidischer Vektorraum und $\omega \colon V^3 \to K$ eine Trilinearform.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass es für alle $u, v \in V$ ein eindeutiges Element $\times_\omega \in V$ gibt, so dass
+      \[
+          \omega(u, v, w)
+        = \bil{u \times_\omega v, w}
+        \quad
+        \text{für alle $u, v, w \in V$}.
+      \]
+    \item
+      Zeigen Sie, dass die Abbildung $\times_\omega \colon V \times V \to V$ bilinear ist.
+    \item
+      Zeigen Sie:
+      Ist $\omega$ symmetrisch, bzw.\ alternierend, so ist auch $\times_\omega$ symmetrisch, bzw.\ alternierend.
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Tril(V, V, V; K) \mapsto \Bil(V, V; V),
+        \omega
+        \mapsto
+        \times_\omega
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+  \end{enumerate} 
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $\beta \colon V \times V \to K$ eine nicht-entartete Bilinearform.
+  \begin{enumerate}
+    \item
+      Zeigen Sie, dass es für jede Bilinearform $\gamma \colon V \times V \to K$ eine eindeutige lineare Abbildung $f \colon V \to V$ gibt, so dass
+      \[
+        \gamma(x,y) = \beta(f(x), y)
+        \quad
+        \text{für alle $x,y \in V$}.
+      \]
+    \item
+      Zeigen oder widerlegen Sie, dass es für jede nicht-entartete Bilinearform $\gamma \colon V \times V \to K$ einen eindeutigen Skalar $c \in K$ mit $\gamma = c \beta$ gibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Zeigen oder widerlegen Sie, dass der Kommutator
+  \[
+    [-, -] \colon \Mat_n(K) \times \Mat_n(K) \to \Mat_n(K)
+  \]
+  in dem folgenden Sinne universell ist:
+  
+  Für jeden $K$-Vektorraum $V$ und jede bilineare Abbildung \mbox{$\beta \colon \Mat_n(K) \times \Mat_n(K) \to V$} gibt es eine eindeutige $K$-lineare Abbildung $\varphi \colon \Mat_n(K) \to V$, so dass das folgende Diagramm kommutiert:
+  \[
+    \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+            {}
+        \&  \Mat_n(K) \times \Mat_n(K)  \arrow{rd}{\beta}
+                                        \arrow[swap]{ld}{[-,-]}
+        \&  {}
+      \\
+            \Mat_n(K)                   \arrow{rr}{\varphi}
+        \&  {}
+        \&  V
+    \end{tikzcd}
+  \]
+\end{question}
+
+
+\begin{question}
+  Es sei $m \colon K^n \times K^n \to \Mat_n(K)$ mit
+  \[
+    m(x,y) = x y^T
+    \quad
+    \text{für alle $x,y \in K^n$}.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $m$ bilinear ist.
+    \item
+      Zeigen Sie, dass $m$ im folgenden Sinne universell ist:
+      Für jeden Vektorraum $V$ und jede bilineare Abbildung $b \colon K^n \times K^n \to V$ gibt es eine eindeutige lineare Abbildung $\varphi \colon \Mat_n(K) \to V$ mit $b = \varphi \circ m$, dass also das folgende Diagramm kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+              {}
+          \&  K^n \times K^n  \arrow{rd}{m}
+                              \arrow[swap]{ld}{b}
+          \&  {}
+          \\
+              \Mat_n(K)       \arrow{rr}{\varphi}
+          \&  {}
+          \&  V
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $\beta \colon V \times V \to W$ eine bilineare Abbildung.
+  Zeigen oder widerlegen Sie, dass $\im \beta$ notwendigerweise ein Untervektorraum von $W$ ist.
+\end{question}
+
+
+

@@ -1,0 +1,451 @@
+\section{Bilinearformen}
+
+
+\begin{question}
+  Bestimmen Sie die Signatur $(n_0, n_+, n_-)$ der folgenden quadratischen Formen auf $\Rbb^n$:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      $
+          q(x_1, x_2)
+        = 2 x_1^2 - 3 x_2^2 + 2 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2)
+        = - x_1^2 + x_2^2 + a x_1 x_2
+      $
+      mit $a \in \Rbb$
+    \item
+      $
+          q(x_1, x_2)
+        = x_1^2 + 15 x_2^2 + 6 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2)
+        = 2 x_1 x_2
+      $
+    \item
+      $
+          q(x_1, x_2, x_3)
+        = x_1^2 + 2 x_1 x_2 - 2 x_1 x_3 + x_2^2 - 2 x_2 x_3 - x_3^2
+      $
+    \item
+      $
+          q(x_1, x_2, x_3, x_4)
+        = x_1^2 - 7 x_2^2 - x_3^2 - x_4^2 + 2 x_1 x_2 - 6 x_2 x_3 + 6 x_2 x_4 + 2 x_3 x_4.
+      $
+  \end{enumerate}
+\end{question}
+\begin{solution}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Signatur ist $(0,1,-1)$.
+    \item
+      Die Signatur ist $(0,1,-1)$.
+    \item
+      Die Signatur ist $(0,2,0)$.
+    \item
+      Die Signatur ist $(0,1,-1)$
+    \item
+      Die Signatur ist $(1,1,1)$.
+    \item
+      Die Signatur ist $(1,2,1)$.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum, $\beta \colon V \times V \to K$ eine symmetrische Bilinearform und $q \colon V \to K$, $v \mapsto \beta(v,v)$ die zugehörige quadratische Form.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für den Fall $\ringchar K \neq 2$ mithilfe einer Polarisationsformel, dass $\beta$ durch $q$ bereits eindeutig bestimmt ist.
+    \item
+      Folgern Sie:
+      Ist $\ringchar K \neq 2$, $V \neq 0$ und $\beta$ nicht entartet, d.h.\ für jedes $v \in V$ mit $v \neq 0$ gibt es ein $w \in V$ mit $\beta(v, w) \neq 0$, so gibt es ein $v \in V$ mit $\beta(v,v) \neq 0$.
+    \item
+      Zeigen Sie für den Fall $\ringchar K = 2$, dass es unterschiedliche symmetrische Bilinearformen mit gleicher quadratischer Form geben kann, indem Sie ein explizites Beispiel angeben.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ eine reeller Vektorraum und $\bil{\cdot, \cdot} \colon V \times V \to \Rbb$ eine symmetrische Bilinearform.
+  Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
+  Geben Sie gegebenenfalls ein Gegenbeispiel.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $\bil{v, v} \geq 0$ für alle $v \in V$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b, b} > 0$ für alle $b \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b_1, b_2} > 0$ für alle $b_1, b_2 \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
+    \item
+      Die Teilmenge $\rad \beta \coloneqq \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}$ ist ein Untervektorraum von $V$.
+    \item
+      Die Teilmengen
+      \[
+        U_+ \coloneqq \{ v \in V \mid \bil{v, v} \geq 0 \}
+        \quad\text{und}\quad
+        U_- \coloneqq \{ v \in V \mid \bil{v, v} \leq 0 \}
+      \]
+      sind Untervektorräume von $V$.
+    \item
+      Die Teilmenge $U_0 \coloneqq \{ v \in V \mid \bil{v, v} = 0 \}$ ist ein Untervektorraum von $V$.
+    \item
+      Für jeden Untervektorraum $U \subseteq V$ ist $\dim V = \dim U + \dim U^\perp$.
+    \item
+      Ist $U \subseteq V$ ein Untervektorraum mit $(U^\perp)^\perp = V$, so ist $U = V$.
+    \item
+      Für alle Untervektorräume $U_1, U_2 \subseteq V$ gilt $(U_1 + U_2)^\perp = U_1^\perp \cap U_2^\perp$.
+    \item
+      Für $\rad \beta = \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}$ und jeden Untervektorraum $U \subseteq V$ gilt
+      \[
+        (U^\perp)^\perp = U + U_0.
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{solution}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Falsch, siehe Nullbilinearform.
+    \item
+      Falsch, siehe
+      \[
+        \begin{pmatrix}
+          0 & 1
+          1 & 0
+        \end{pmatrix}.
+      \]
+    \item
+      Falsch, siehe
+      \[
+        \begin{pmatrix}
+          1 & 2 \\
+          2 & 1
+        \end{pmatrix}
+      \]
+    \item
+      Wahr.
+    \item
+      Falsch, für
+      \[
+        \begin{pmatrix}
+          1 & 2 \\
+          2 & 1
+        \end{pmatrix}
+      \]
+      sind $e_1$ und $e_2$ in $U_+$, aber $e_1 - e_2$ nicht.
+    \item
+      Nein, siehe
+      \[
+        \begin{pmatrix}
+          0 & 1 \\
+          1 & 0
+        \end{pmatrix}
+      \]
+    \item
+      Nein, siehe Nullbilinearform.
+    \item
+      Falsch, siehe den Span von $e_2$ und
+      \[
+        \begin{pmatrix}
+          0 & 0 \\
+          0 & 1
+        \end{pmatrix}.
+      \]
+    \item
+      Die Aussage gilt.
+    \item
+      Falsch: Nehme ein Skalarprodukt auf einem unendlichdimensionalen Raum, und einen dichten, echten Unterraum.
+  \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+  Ist $\beta \colon V \times W \to K$ eine Bilinearform, so heißen eine Basis $\mc{B} = (v_i)_{i \in I}$ von $V$ und eine Basis $\mc{C} = (w_i)_{i \in I}$ von $W$ \emph{dual bezüglich $\beta$}, falls
+  \[
+    \beta(v_i, w_j) = \delta_{ij}
+    \quad
+    \text{für alle $i, j \in I$}.
+  \]
+  Es sei zunächst $V$ ein $K$-Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die \emph{Evaluation} $e \colon V \times V^* \to K$ mit $e(v, \varphi) = \varphi(e)$ eine $K$-bilineare Abbildung ist.
+    \item
+      Zeigen Sie: Ist $V$ endlichdimensional, so gibt es zu jeder Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$ genau eine Basis $\mc{C}$ von $V^*$, die bezüglich $e$ dual zu $\mc{B}$ ist.
+      Woher kennen Sie diese Basis?
+  \end{enumerate}
+  Von nun an sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit Skalarprodukt $\bil{\cdot, \cdot}$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass die Abbildung $\Phi \colon V \to V^*$, $v \mapsto \bil{-, v}$ ein Isomorphismus ist.
+    \item
+      Folgern Sie, dass es für jede Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$ genau eine Basis $\mc{B}^\circ = (b_1^\circ, \dotsc, b_n^\circ)$ von $V$ gibt, die bezüglich $\bil{\cdot, \cdot}$ dual zu $\mc{B}$ ist.
+      
+      (\emph{Hinweis}:
+       Formulieren Sie die Aussage, dass $\mc{B}^\circ$ dual zu $\mc{B}$ ist, mithilfe von $\Phi$ um.)
+    \item
+      Zeigen Sie, dass die Abbildung
+      \[
+            \left\{ \text{geordnete Basen von $V$} \right\}
+        \to \left\{ \text{geordnete Basen von $V$} \right\},
+        \quad
+        \mc{B} \mapsto \mc{B}^\circ
+      \]
+      eine Involution ist.
+    \item
+      Unter welchen Namen kennen Sie Basen von $V$, die bezüglich $(-)^\circ$ selbstdual sind, die also $\mc{B}^\circ = \mc{B}$ erfüllen?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein $K$-Vektorraum und $\beta \colon V \times V \to K$ eine symmetrische Bilinearform.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+        \rad(\beta) \coloneqq \{ v \in V \mid \text{$\beta(v, w) = 0$ für alle $w \in V$} \}
+      \]
+      ein Untervektorraum von $V$ ist.
+      (Man bezeichnet $\rad(\beta)$ als das \emph{Radikal} von $\beta$.)
+    \item
+      Zeigen Sie: $\beta$ induziert eine symmetrische Bilinearform
+      \[
+        \bar{\beta} \colon (V / \rad(\beta)) \times (V /\rad(\beta)) \to K
+        \quad\text{mit}\quad
+        \bar{\beta}(\overline{v}, \overline{w})
+        \coloneqq
+        \beta(v,w)
+        \quad
+        \text{für alle $v, w \in V$}.
+      \]
+    \item
+      Zeigen Sie, dass $\bar{\beta}$ nicht entartet ist, d.h.\ dass für das Radikal
+      \[
+                  \rad(\bar{\beta})
+        \coloneqq \{ x \in V / \rad(\beta) \mid \text{$\bar{\beta}(x,y) = 0$ für alle $y \in V / \rad(\beta)$} \}
+      \]
+      bereits $\rad(\bar{\beta}) = 0$ gilt.
+    \item
+      Inwiefern gelten die obigen Aussagen, wenn man $\rad(\beta)$ durch $W \coloneqq \{v \in V \mid \beta(v,v) = 0\}$ ersetzt?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+   Es sei $V$ ein $K$-Vektorraum und $b \colon V \times V \to K$ eine Bilinearform.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für $\ringchar K \neq 2$, dass es eindeutige Bilinearformen $b_s, b_a \colon V \times V \to K$ gibt, so dass
+      \begin{itemize}
+        \item
+          $b = b_s + b_a$ und
+        \item
+          $b_s$ ist symmetrisch und $b_a$ ist alternierend.
+      \end{itemize}
+    \item
+      Zeigen Sie durch Angabe eines Gegenbeispiels, dass die Aussage für $\ringchar K = 2$ nicht notwendigerweise gilt.
+  \end{enumerate}
+  Es sei nun $V$ der reelle Vektorraum der Polynomfunktionen $\Rbb \to \Rbb$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass die Abbildung $b \colon V \times V \to \Rbb$ mit $b(p, q) \coloneqq \int_{-1}^1 p(t) q'(t) \dd{t}$ eine Bilinearform ist.
+    \item
+      Geben Sie den symmtrischen Anteil $b_s$ in einer Form an, in der kein Integral vorkommt.
+%     \item
+%       Geben Sie eine Basis von $V_n$ an, bezüglich der $b_s$ durch eine Diagonalmatrix mit Einträgen $0, 1, -1$ beschrieben wird, und bestimmen Sie die Signatur von $b_s$ auf $V_n$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Für je zwei $K$-Vektorräume $V$ und $W$ sei
+  \[
+              \Bil(V, W)
+    \coloneqq \{b \colon V \times  W \to K \mid \text{$b$ ist bilinear}\}
+  \]
+  der $K$-Vektorraum der Bilinearformen $V \times W \to K$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Flipabbildung $F_{V,W} \colon \Bil(V, W) \to \Bil(W, V)$ mit
+      \[
+        F_{V,W}(b)(w,v) = b(v,w)
+        \quad
+        \text{für alle $v \in V$, $w \in W$}
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+    \item
+      Es sei $b \in \Bil(V, W)$ eine Bilinearform.
+      Zeigen Sie, dass $b$ ein lineare Abbildung
+      \[
+        \Phi_{V,W}(b) \colon V \to W^*,
+        \quad
+        v \mapsto b(v, -)
+      \]
+      induziert.
+      Dabei ist $b(v, -) \colon W \to K$, $w \mapsto b(v,w)$.
+  \item
+      Zeigen Sie, dass die Abbildung
+      \[
+        \Phi_{V,W} \colon \Bil(V, W) \to \Hom(V, W^*),
+        \quad
+        b \mapsto \Phi_{V,W}(b)
+      \]
+      ein Isomorphismus von $K$-Vektorräumen ist.
+    \item
+      Konstruieren Sie mithilfe der vorherigen Aufgabenteile einen Isomorphismus von $K$-Vektorräumen $T_{V,W} \colon \Hom(V, W^*) \to \Hom(W, V^*)$, so dass das folgende Diagram kommutiert:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
+                \Bil(V, W)    \arrow{r}{F_{V,W}}
+                              \arrow[swap]{d}{\Phi_{V,W}}
+            \&  \Bil(W, V)    \arrow{d}{\Phi_{W,V}}
+          \\
+                \Hom(V, W^*)  \arrow{r}{T_{V,W}}
+            \&  \Hom(W, V^*)
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+  Wir betrachten nun den Fall $W = V^*$.
+  \begin{enumerate}[resume, leftmargin=*]
+    \item
+      Zeigen Sie, dass die Evaluation $e \colon V \times V^* \to K$, $(v, \varphi) \mapsto \varphi(v)$ eine Bilinearform ist.
+   \item
+      Nach den vorherigen Aufgabenteilen entspricht die Bilinearform $e \in \Bil(V, V^*)$ einer linearen Abbildung $V \to V^{**}$, sowie einer linearen Abbildung $V^* \to V^*$.
+      Bestimmen Sie diese Abbildungen.
+    \item
+      Woher kennen Sie diese Abbildung?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ sei eine lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Geben Sie die Definition der dualen Abbildung $f^* \colon W^* \to V^*$ an, und zeigen Sie ihre Linearität.
+    \item
+      Zeigen Sie für jeden $K$-Vektorraum $U$, dass die Abbildung
+      \[
+        \bil{\cdot, \cdot} \colon U \times U^* \to K
+        \quad\text{mit}\quad
+        \bil{v, \varphi} = \varphi(v)
+        \quad\text{für alle $v \in V$, $\varphi \in V^*$}
+      \]
+      eine Bilinearform ist.
+    \item
+      Zeigen Sie, dass $\bil{f(v), \psi} = \bil{v, f^*(\psi)}$ für alle $v \in V$ und $\psi \in W^*$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung $\sigma \colon \Mat_n(K) \times \Mat_n(K) \to K$ mit $\sigma(A, B) \coloneqq \tr(AB)$ eine symmetrische Bilinearform ist.
+      Man bezeichnet diese als die \emph{Traceform}.
+    \item
+      Zeigen Sie, dass $\sigma$ in dem Sinne assoziativ ist, dass $\sigma(AB, C) = \sigma(A, BC)$ für alle $A, B, C \in \Mat_n(K)$.
+    \item
+      Zeigen Sie, dass $\sigma$ auch in dem Sinne assoziativ ist, dass $\sigma([A,B],C) = \sigma(A,[B,C])$ für alle $A, B, C \in \Mat_n(K)$.
+    \item
+      Zeigen sie, dass $\sigma$ nicht entartet ist, d.h.\ dass es für jedes $A \in \Mat_n(K)$ mit $A \neq 0$ ein $B \in \Mat_n(K)$ mit $\sigma(A, B) \neq 0$ gibt.
+      
+      (\emph{Hinweis}:
+       Betrachten Sie die Matrizen $E_{ij} \in \Mat_n(K)$.)
+  \end{enumerate}
+  Es sei nun
+  \[
+    S_+ \coloneqq \{ A \in \Mat_n(K) \mid A^T = A \}
+  \]
+  der Untervektorraum der symmetrischen Matrizen und
+  \[
+    S_- \coloneqq \{ A \in \Mat_n(K) \mid A^T = -A \}
+  \]
+  der Untervektorraum der schiefsymmetrischen Matrizen.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Ist $\ringchar K \neq 2$, so sind $S_+$ und $S_-$ bezüglich $\sigma$ orthogonal zueinander.
+      
+      (\emph{Hinweis}:
+       Überlegen Sie sich, dass $\sigma(A^T, B^T) = \sigma(A, B)$ für alle $A, B \in \Mat_n(K)$.)
+    \item
+      Ist $K = \Rbb$, so ist die Einschränkung von $\sigma$ auf $S_+$ positiv definit, und die Einschränkung auf $S_-$ negativ definit.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum, $b \colon V \times V \to K$ eine Bilinearform, $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis von $V$, und $\mc{B}^* = (b_1^*, \dotsc, b_n^*)$ die entsprechende duale Basis von $V^*$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass die Abbildung $B \colon V \to V^*$, $v \mapsto b(-, v)$ linear ist.
+    \item
+      Zeigen Sie die Gleihheit $\Mat_\mc{B}(b) = \Mat_{\mc{B}, \mc{B}^*}(B)$.
+      (Beachten Sie, dass auf der linken Seite die darstellende Matrix einer Bilinearform steht, und auf der rechten Seite die darstellende Matrix einer linearen Abbildung.)
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}\label{qst: isometry group and lie algebra of bilinear form coordinate ver}
+  Es sei $B \in \Mat_n(\Kbb)$.
+  Es seien
+  \[
+              \Orthogonal(B)
+    \coloneqq \{ S \in \GL_n(\Kbb) \mid S^T B S = B \}
+  \]
+  und
+  \[          \gLie(B)
+    \coloneqq \{ A \in \Mat_n(\Kbb) \mid A^T B = - B A \}
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\Orthogonal(B)$ eine Untergruppe von $\GL_n(\Kbb)$ ist.
+    \item
+      Zeigen Sie, dass $\gLie(B)$ eine Lie-Unteralgebra von $\gl_n(\Kbb)$ ist, dass also $[A_1, A_2] \in \gLie(B)$ für alle $A_1, A_2 \in \gLie(B)$.
+    \item
+      Zeigen Sie, dass $\exp(A) \in \Orthogonal(B)$ für alle $A \in \gLie(B)$.
+      
+      (\emph{Hinweis}:
+       Zeigen Sie zunächst, dass $\exp(A)^T B = B \exp(-A)$.)
+    \item
+      Geben Sie für $\Kbb = \Rbb$ eine Matrix $B \in \Mat_n(\Rbb)$ an, so dass $\Orthogonal(B) = \Orthogonal(n)$.
+      Was sind dann die Elemente von $\gLie(B)$?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}
+  Dies ist eine koordinatenfreie Version von Übung~\ref{qst: isometry group and lie algebra of bilinear form coordinate ver}.
+  Für einen endlichdimensionalen $\Kbb$-Vektorraum $V$ und eine Bilinearform $\beta \colon V \times V \to \Kbb$ sei
+  \[
+              \Orthogonal(\beta)
+    \coloneqq \{ \phi \in \GL(V) \mid \text{$\beta(\phi(x), \phi(y)) = \beta(x,y)$ für alle $x,y \in V$} \}
+  \]
+  die Isometriegruppe von $\beta$, und
+  \[
+              \gLie(\beta)
+    \coloneqq \{ f \in \End(V) \mid \text{$\beta(f(x),y) = -\beta(x, f(y))$ für alle $x, y \in V$} \}
+  \]
+  die assoziierte Lie-Algebra.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\Orthogonal(\beta)$ eine Untergruppen von $\GL(V)$ ist.
+    \item
+      Zeigen Sie, dass $\gLie(\beta)$ eine Lie-Unteralgebra von $\gl(V)$ ist, d.h.\ dass $[f,g] \in \gLie(\beta)$ für alle $f, g \in \gLie(\beta)$.
+    \item
+      Zeigen Sie, dass $\exp(f) \in \Orthogonal(\beta)$ für alle $f \in \gLie(\beta)$.
+      
+      (\emph{Hinweis}:
+       Zeigen Sie zunächst, dass $\beta(\exp(f)(x) ,y) = \beta(x, \exp(-f)(y))$ für alle $x, y \in V$.
+       Nutzen Sie hierfür, dass die Bilinearform $\beta$ in beiden Argumenten stetig ist.)
+    \item
+      Es sei $\Kbb = \Rbb$ und $\bil{\cdot, \cdot}$ ein Skalarprodukt auf $V$.
+      Unter welchen Begriffen sind die Elemente aus $G(\bil{\cdot, \cdot})$ und $\gLie(\bil{\cdot, \cdot})$ bekannt?
+  \end{enumerate}
+\end{question}
