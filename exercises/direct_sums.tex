@@ -1,7 +1,63 @@
 \section{Direkte Summen}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 1
+
+
+\begin{question}[subtitle = Definition der direkten Summe]{1}
+  Es sei $V$ ein Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
+  Definieren Sie, wann $V = \bigoplus_{i \in I} U_i$.
+\end{question}
+
+
+
+
+
+%%% PRIORITY 2
+
+
+\begin{question}[subtitle = Multiple Choice für Direkte Summen]{2}
+  Es sei $V$ ein $K$-Vektorraum.
+  Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
+  Geben Sie gegebenfalls ein Gegenbeispiel an.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $V = U \oplus W_1 = U \oplus W_2$ für Untervektorräume $U, W_1, W_2 \subseteq V$, so ist $W_1 = W_2$.
+    \item
+      Ist $V = V_1 \oplus V_2$ für Untervektorräume $V_1, V_2 \subseteq V$, so gilt für jeden Untervektorraum $U \subseteq V$ die Zerlegung
+      \[
+        U = (U \cap V_1) \oplus (U \cap V_2).
+      \]
+    \item
+      Ist $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum, so gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+    \item
+      Für alle Untervektorräume $W, U_1, U_2 \subseteq V$ mit $U_1 \subseteq U_2$ gilt
+      \[
+        (U_1 + W) \cap U_2 =  U_1 + (W \cap U_2).
+      \]
+    \item
+      Sind $U_1, U_2, W \subseteq V$ Untervektorräume mit $U_1 \subseteq U_2$ und $V = U_1 \oplus W$, so ist
+      \[
+        U_2 = U_1 \oplus (W \cap U_2).
+      \]
+    \item
+      Ist $\mc{E} \subseteq V$ ein Erzeugendensystem von $V$ und $U \subseteq V$ ein Untervektorraum, so ist der Schnitt $\mc{E} \cap U$ ein Erzeugendensystem von $U$.
+    \item
+      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für alle $1 \leq i \neq j \leq n$, so ist $V = \bigoplus_{i \in I} U_i$.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+%%% PRIORITY 3
+
+
+\begin{question}[subtitle = Äquivalenz von Idempotenten und direkten Summen]{3}
   Es seien $V$ ein $K$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -52,18 +108,7 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus mit $f^2 = 1$.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie für $\ringchar K \neq 2$, dass $V = V_1(f) \oplus V_{-1}(f)$, dass also $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist.
-    \item
-      Zeigen Sie, dass die Aussage für $\ringchar K = 2$ nicht mehr gelten muss.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Direkte Summen durch Splits]{3}
   Es seien $V$ und $W$ zwei $K$-Vektorräume, und $f \colon V \to W$ sei eine lineare Abbildung, die ein lineares Rechtsinverses $g \colon W \to V$ besitzt.
   Zeigen Sie auf die folgenden beiden Weisen, dass
   \[
@@ -78,7 +123,18 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Diagonalisierbarkeit involutiver Endomorphismen]{3}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus mit $f^2 = 1$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie für $\ringchar K \neq 2$, dass $V = V_1(f) \oplus V_{-1}(f)$, dass also $f$ diagonalisierbar mit möglichen Eigenwerten $1$ und $-1$ ist.
+    \item
+      Zeigen Sie, dass die Aussage für $\ringchar K = 2$ nicht mehr gelten muss.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Idempotente konstruieren]{3}
   Zeigen Sie im Folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -170,47 +226,9 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Äquivalenz von complete sets of orthogonal idempotents und endlichen direkten Summen]{3}
   Es sei $V$ ein $K$-Vektorraum.
-  Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
-  Geben Sie gegebenfalls ein Gegenbeispiel an.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Ist $V = U \oplus W_1 = U \oplus W_2$ für Untervektorräume $U, W_1, W_2 \subseteq V$, so ist $W_1 = W_2$.
-    \item
-      Ist $V = V_1 \oplus V_2$ für Untervektorräume $V_1, V_2 \subseteq V$, so gilt für jeden Untervektorraum $U \subseteq V$ die Zerlegung
-      \[
-        U = (U \cap V_1) \oplus (U \cap V_2).
-      \]
-    \item
-      Ist $f \colon V \to V$ ein Endomorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum, so gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
-    \item
-      Für alle Untervektorräume $W, U_1, U_2 \subseteq V$ mit $U_1 \subseteq U_2$ gilt
-      \[
-        (U_1 + W) \cap U_2 =  U_1 + (W \cap U_2).
-      \]
-    \item
-      Sind $U_1, U_2, W \subseteq V$ Untervektorräume mit $U_1 \subseteq U_2$ und $V = U_1 \oplus W$, so ist
-      \[
-        U_2 = U_1 \oplus (W \cap U_2).
-      \]
-    \item
-      Ist $\mc{E} \subseteq V$ ein Erzeugendensystem von $V$ und $U \subseteq V$ ein Untervektorraum, so ist der Schnitt $\mc{E} \cap U$ ein Erzeugendensystem von $U$.
-    \item
-      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für alle $1 \leq i \neq j \leq n$, so ist $V = \bigoplus_{i \in I} U_i$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein diagonalisierbarer Endomorphismus von $V$ (d.h.\ es gilt \mbox{$V = \bigoplus_{\lambda \in K} V_\lambda(f)$}).
-  Zeigen Sie, dass für jeden $f$-invarianten Untervektorraum $U \subseteq V$ die Einschränkung $f|_U \colon U \to U$ diagonalisierbar ist, und dass $U_\lambda(f|_U) = U \cap V_\lambda(f)$ für alle $\lambda \in K$.
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum.
-  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents}ö falls die folgenden Bedingungen erfüllt sind:
+  Eine Kollektion $e_1, \dotsc, e_n \in \End(V)$ von Endomorphismen heißt \emph{complete set of orthogonal idempotents} falls die folgenden Bedingungen erfüllt sind:
   \begin{itemize}
     \item
       Für alle $i = 1, \dotsc, n$ ist $e_i$ idempotent, also $e_i^2 = e_i$ (\emph{idempotents}).
@@ -282,19 +300,7 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
-  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
-  \begin{enumerate}
-    \item
-      $f$ ist diagonalisierbar.
-    \item
-      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Complete sets of orthogonal idempotents]{3}
   Es sei $V$ ein $K$-Vektorraum und $e_1, \dotsc, e_n \in \End(V)$ sei eine Kollektion von Endomorphismen mit den folgenden Eigenschaften:
   \begin{itemize}
     \item
@@ -335,7 +341,25 @@
 \end{question}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 4
+
+
+\begin{question}[subtitle = Eine Charakterisierung von Diagonalisierbarkeit über direkte Komplemente]{4}
+  Es sei $K$ ein algebraisch abgeschlossener Körper und $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $K$-Vektorraums $V$.
+  Zeigen Sie, dass die folgenden beiden Aussagen äquivalent sind:
+  \begin{enumerate}
+    \item
+      $f$ ist diagonalisierbar.
+    \item
+      Für jeden $f$-invarianten Untervektorraum $U \subseteq V$ gibt es einen $f$-invarianten Untervektorraum $W \subseteq V$ mit $V = U \oplus W$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Ein Kriterium für Diagonalisierbarkeit mithilfe von complete sets of orthogonal idempotents]{4}
   Es sei $V$ ein $K$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -449,3 +473,4 @@
       \end{itemize}
   \end{enumerate}
 \end{question}
+

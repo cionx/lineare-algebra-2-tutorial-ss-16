@@ -1,5 +1,29 @@
 \usepackage{exsheets}
 \usepackage{geometry}
+\usepackage[colorlinks=true]{hyperref}
+
+\DeclareInstance{exsheets-heading}{ownheadings}{default}{
+  points-pre-code   = ( ,
+  points-post-code  = ) ,
+  join              =
+    {
+      title[r,B]number[l,B](.333em,0pt) ;
+      title[r,B]subtitle[l,B](1em,0pt)  ;
+    } ,
+    attach          =
+    {
+      main[l,vc]title[l,vc](0pt,0pt) ;
+      main[r,vc]points[l,vc](\marginparsep,0pt)
+    }
+}
+
+\SetupExSheets{
+  headings = ownheadings,
+  points/format = \textbf{Pr.\ },
+  points/use-name = false ,
+  points/number-format = \bfseries
+}
+
 
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\Bil}{Bil}

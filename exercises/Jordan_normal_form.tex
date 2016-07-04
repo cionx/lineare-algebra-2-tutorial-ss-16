@@ -1,7 +1,13 @@
 \section{Jordannormalform, Hautpträume und Trigonalisierbarkeit}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 1
+
+
+\begin{question}[subtitle = Spur und Determinante durch Eigenwerte]{1}
   \begin{enumerate}[leftmargin=*]
     \item
       Es sei $f \colon V \to V$ ein Endomorphismus eines endlichdimensionalen $\Cbb$-Vektorraums $V$.
@@ -12,44 +18,7 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $A \in \Mat_2(\Cbb)$ mit $\tr A = 0$ und $\tr A^2 = -2$.
-  Bestimmen Sie $\det A$.
-\end{question}
-
-
-\begin{question}
-  Es sei $K$ ein algebraisch abgeschlossener Körper mit $\ringchar K \notin \{2,3\}$.
-  Zeigen Sie, dass
-  \[
-    \det A = \frac{1}{6} (\tr A)^3 - \frac{1}{2} (\tr A^2)(\tr A) + \frac{1}{3} (\tr A^3)
-    \quad
-    \text{für jedes $A \in \Mat_3(K)$}.
-  \]
-  
-  (\emph{Hinweis}:
-   Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
-\end{question}
-
-
-\begin{question}
-  Es sei $f \colon V \to V$ ein Endomorphismus eines $K$-Vektorraums $f$.
-  \begin{enumerate}
-    \item
-      Definieren Sie den Eigenraum von $f$ zum möglichen Eigenwert $\lambda \in K$.
-    \item
-      Definieren sie den Hauptraum von $f$ zum möglichen Eigenwert $\lambda \in K$.
-  \end{enumerate}
-\end{question}
-
-
-
-\begin{question}
-  Bestimmen Sie alle möglichen Jordannormalformen einer nicht-diagonalierbaren Matrix $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Berechnung von Jordannormalformen]{1}
   Bestimmen Sie für die folgenden komplexen Matrizen jeweils eine Jordannormalform, inklusiver entsprechender Basiswechselmatrizen:
   \begin{gather*}
     \begin{pmatrix*}[r]
@@ -83,6 +52,20 @@
        0  & -2  &  2  & -8  \\
       -1  & -2  &  0  & -3  \\
        0  &  2  & -1  &  6
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+       7  & 1 &  2  &  2  \\
+       1  & 4 & -1  & -1  \\
+      -2  & 1 &  5  & -1  \\
+       1  & 1 &  2  &  8
+    \end{pmatrix*},
+    \quad
+    \begin{pmatrix*}[r]
+       5  &  4  &  2  &  1  \\
+       0  &  1  & -1  & -1  \\
+      -1  & -1  &  3  &  0  \\
+       1  &  1  & -1  &  2
     \end{pmatrix*}
   \end{gather*}
 \end{question}
@@ -174,11 +157,98 @@
            1  &  1  &  0  &  0
         \end{pmatrix}
       \]
+    \item
+      \[
+        \begin{pmatrix}
+          6 &   &   &   \\
+            & 6 & 1 &   \\
+            &   & 6 & 1 \\
+            &   &   & 6
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix}
+           \frac{2}{3}  &  3  &  2  & 0 \\
+           \frac{2}{3}  &  3  & -1  & 0 \\
+          -\frac{1}{3}  & -6  & -1  & 0 \\
+          -\frac{1}{3}  &  3  &  2  & 0
+        \end{pmatrix}
+      \]
+    \item
+      \[
+        \begin{pmatrix}
+          1 &   &   &   \\
+            & 2 &   &   \\
+            &   & 4 & 1 \\
+            &   &   & 4
+        \end{pmatrix}
+      \]
+      mit Basiswechselmatrix
+      \[
+        \begin{pmatrix}
+          -1  &  1  &  1  & 1 \\
+           1  & -1  &  0  & 0 \\
+           0  &  0  & -1  & 0 \\
+           0  &  1  &  1  & 0
+        \end{pmatrix}
+      \]
   \end{enumerate}
 \end{solution}
 
 
-\begin{question}
+\begin{question}{1}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Bestimmen Sie alle möglichen Jordannormalformen einer nicht-diagonalierbaren Matrix $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
+    \item
+      Bestimmen Sie alle möglichen Jordnormalformen für $A \in \Mat_3(\Cbb)$ mit $\det A = 0$ und $\tr A = 0$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Lösen linearer homogener DGL]{1}
+  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Gleichungsssysteme.
+  Dabei seien $f, g, h \in C^\infty(\Rbb)$.
+  \[
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - 6g, \\
+        g'  & = & 2f  & + 6g;
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrr}
+        f'  & = & -f  & - g,  \\
+        g'  & = & 2f  & + g;
+      \end{array}
+    \right.
+    \quad
+    \left\{
+      \begin{array}{ccrrr}
+        f'  & = & 2f  & + 2g  & + 3h, \\
+        g'  & = &  f  & + 3g  & + 3h, \\
+        h'  & = & -f  & - 2f  & - 2h.
+      \end{array}
+    \right.
+  \]
+\end{question}
+
+
+
+
+
+%%% PRIORITY 2
+
+
+\begin{question}{2}
+  Es sei $A \in \Mat_2(\Cbb)$ mit $\tr A = 0$ und $\tr A^2 = -2$.
+  Bestimmen Sie $\det A$.
+\end{question}
+
+
+\begin{question}[subtitle = Zu Haupträumen]{2}
   Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -202,13 +272,13 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Ein Gegenbeispiel]{2}
   Es sei $f \colon V \to V$ ein Endomorphismus eines $\Cbb$-Vektorraums $V$ und $\lambda \in \Cbb$.
   Zeigen Sie, dass die Einschränkung $(f - \lambda {\id_V})|_{V^\sim_\lambda(f)}$ nicht notwendigerweise nilpotent ist.
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Bestimmung möglicher Jordannormalformen]{2}
   Bestimmen Sie in den Folgenden alle Möglichkeiten der Jordannormalform von $A \in \Mat_n(\Cbb)$.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -233,7 +303,71 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}{2}
+  Bestimmen Sie die Potenz $A^{10}$ der Matrix
+  \[
+    A
+    \coloneqq
+    \begin{pmatrix*}[r]
+       3  & 4 &  3      \\
+      -1  & 0 & -1      \\
+       1  & 2 &  3
+    \end{pmatrix*}
+    \in \Mat_3(\Cbb).
+  \]
+\end{question}
+
+
+
+
+
+%%% PRIORITY 3
+
+
+\begin{question}[subtitle = Shiften von Haupträumen]{3}
+  Es sei $V$ ein endlichdimensionaler $\Cbb$-Vektorraum, und es seien $K, E \colon V \to V$ zwei Endomorphismen mit
+  \[
+    \text{$K$ ist invertierbar}
+    \quad\text{und}\quad
+    KE = 2EK.
+  \]
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass
+      \[
+        (K - 2 \lambda \id_V)^n E = 2^n E (K - \lambda \id_V)^n
+      \]
+      für alle $n \in \Nbb$.
+    \item
+      Folgern Sie, dass $E( V^\sim_\lambda(K) ) \subseteq V^\sim_{2\lambda}(K)$ für alle $\lambda \in \Cbb$.
+    \item
+      Folgern Sie, dass $E$ nilpotent ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Determinante durch Tracepowers ausdrücken]{3}
+  Es sei $K$ ein algebraisch abgeschlossener Körper mit $\ringchar K \notin \{2,3\}$.
+  Zeigen Sie, dass
+  \[
+    \det A = \frac{1}{6} (\tr A)^3 - \frac{1}{2} (\tr A^2)(\tr A) + \frac{1}{3} (\tr A^3)
+    \quad
+    \text{für jedes $A \in \Mat_3(K)$}.
+  \]
+  
+  (\emph{Hinweis}:
+   Wenn die Rechnungen zu kompliziert werden, dann macht man es falsch.)
+\end{question}
+
+
+
+
+
+
+%%% PRIORITY 4
+
+
+\begin{question}[subtitle = Die multiplikative Jordanzerlegung]{4}
   Es sei $V$ ein $\Cbb$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -278,73 +412,7 @@
 \end{question}
 
 
-\begin{question}
-  Bestimmen Sie die Potenz $A^{10}$ der Matrix
-  \[
-    A
-    \coloneqq
-    \begin{pmatrix*}[r]
-       3  & 4 &  3      \\
-      -1  & 0 & -1      \\
-       1  & 2 &  3
-    \end{pmatrix*}
-    \in \Mat_3(\Cbb).
-  \]
-\end{question}
-
-
-\begin{question}
-  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Gleichungsssysteme.
-  Dabei seien $f, g, h \in C^\infty(\Rbb)$.
-  \[
-    \left\{
-      \begin{array}{ccrr}
-        f'  & = & -f  & - 6g, \\
-        g'  & = & 2f  & + 6g;
-      \end{array}
-    \right.
-    \quad
-    \left\{
-      \begin{array}{ccrr}
-        f'  & = & -f  & - g,  \\
-        g'  & = & 2f  & + g;
-      \end{array}
-    \right.
-    \quad
-    \left\{
-      \begin{array}{ccrrr}
-        f'  & = & 2f  & + 2g  & + 3h, \\
-        g'  & = &  f  & + 3g  & + 3h, \\
-        h'  & = & -f  & - 2f  & - 2h.
-      \end{array}
-    \right.
-  \]
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein endlichdimensionaler $\Cbb$-Vektorraum, und es seien $K, E \colon V \to V$ zwei Endomorphismen mit
-  \[
-    \text{$K$ ist invertierbar}
-    \quad\text{und}\quad
-    KE = 2EK.
-  \]
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass
-      \[
-        (K - 2 \lambda \id_V)^n E = 2^n E (K - \lambda \id_V)^n
-      \]
-      für alle $n \in \Nbb$.
-    \item
-      Folgern Sie, dass $E( V^\sim_\lambda(K) ) \subseteq V^\sim_{2\lambda}(K)$ für alle $\lambda \in \Cbb$.
-    \item
-      Folgern Sie, dass $E$ nilpotent ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Dichtheit der diagonalisierbaren Matrizen]{4}
   Es sei $\|\cdot\|$ eine Norm auf $\Mat_n(\Cbb)$.
   Für alle $\lambda_1, \dotsc, \lambda_n \in \Cbb$ sei
   \[
@@ -392,7 +460,7 @@
     \quad
     \text{für alle $t \in \Rbb$}.
   \]
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Zeigen Sie, dass zum Zeitpunkt $t \in \Rbb$ die Zahlen $\mu_1(t), \dotsc, \mu_n(t) \in \Cbb$ mit
       \[
@@ -409,7 +477,7 @@
       Folgern Sie, dass es für alle $\varepsilon > 0$ ein $D \in \Diagonal_n(\Cbb)$ mit $\| A - D \| < \varepsilon$ gibt.
   \end{enumerate}
   Wir wollen die Dichtheit von $\Diagonal_n(\Cbb) \subseteq \Mat_n(\Cbb)$ nutzen, um den Satz von Cayley-Hamilton für komplexe Matrizen zu zeigen:
-  \begin{enumerate}[resume]
+  \begin{enumerate}[leftmargin=*, resume]
     \item
       Zeigen Sie, dass die Abbildung
       \[
@@ -430,3 +498,4 @@
       Folgern Sie, dass $F(A) = 0$ für alle $A \in \Mat_n(\Cbb)$.
   \end{enumerate}
 \end{question}
+

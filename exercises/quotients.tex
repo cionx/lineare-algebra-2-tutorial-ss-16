@@ -1,7 +1,13 @@
 \section{Quotientenvektorräume}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 1
+
+
+\begin{question}[subtitle = Die universelle Eigenschaft des Quotienten]{1}
   Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ sei eine lineare Abbildung.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -25,19 +31,12 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Charakterisierung von Untervektorräumen]{1}
   Zeigen Sie, dass eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ genau dann ein Untervektorraum ist, wenn es einen $K$-Vektorraum $W$ und eine lineare Abbildung $f \colon V \to W$ gibt, so dass $U = \ker f$.
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
-  Es sei $W$ ein $K$-Vektorraum mit Basis $(b_e)_{e \in E}$.
-  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Isomorphiesätze]{1}
   Es sei $V$ ein $K$-Vektorraum mit zwei Untervektorräumen $U_1, U_2 \subseteq V$.
   Zeigen Sie die folgenden beiden Isomorphiesätze:
   \begin{enumerate}[leftmargin=*]
@@ -64,7 +63,20 @@
 \end{question}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 2
+
+
+\begin{question}[subtitle = Vektorräume als Quotienten freier Vektorräume]{2}
+  Es sei $V$ ein $K$-Vektorraum mit Erzeugendensystem $E \subseteq V$.
+  Es sei $W$ ein $K$-Vektorraum mit Basis $(b_e)_{e \in E}$.
+  Konstruieren Sie einen Isomorphismus $W\!/U \to V$ für einen passenden Untervektorraum $U \subseteq W$.
+\end{question}
+
+
+\begin{question}[subtitle = Annihilatoren als Dualräume von Quotienten]{2}
   Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
   Konstruieren Sie für den Annihilator
   \[
@@ -75,7 +87,39 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Induzierte Endomorphismen auf Quotienten]{2}
+  Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien Endomorphismus.
+  Außdem sei $U \subseteq V$ ein Untervektorraum, der invariant unter $f$ und $g$ ist.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie: Der Endomorphismus $f$ induziert einen Endomorphismus
+      \[
+        \bar{f} \colon V\!/U \to V\!/U,
+        \quad
+        [v] \mapsto [f(v)].
+      \]
+      Analog induziert dann auch $g$ einen Endomorphismus $\bar{g} \colon V \to V$, $[v] \mapsto [g(v)]$.
+    \item
+      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
+      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+%%% PRIORITY 3
+
+
+\begin{question}[subtitle = Herausteilen von direkten Summanden]{3}
+  Es sei $V$ ein $K$-Vektorraum und $U, W \subseteq V$ seien zwei Untervektorräume mit $V = U \oplus W$.
+  Konstruieren Sie einen Isomorphismus $V\!/U \to W$.
+\end{question}
+
+
+
+\begin{question}[subtitle = Quotienten von Vektorräumen sind Quotientenvektorräume]{3}
   Es sei $V$ ein $K$-Vektorraum und $\sim$ eine Äquivalenzrelation auf $V$, so dass auf $V/{\sim}$ die Addition
   \[
       \overline{v} + \overline{w}
@@ -111,7 +155,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Seminormen induzieren Normen auf dem Quotienten]{3}
   Es sei $V$ ein $\Kbb$-Vektorraum.
   Eine Abbildung $[\,\cdot\,] \colon V \to V$ heißt \emph{Seminorm}, falls
   \begin{itemize}
@@ -148,7 +192,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Basen von Quotientenvektorräumen]{3}
   Es sei $V$ ein $K$-Vektorraum und $U \subseteq V$ ein Untervektorraum.
   Es sei $\pi \colon V \to V\!/U$, $v \mapsto [v]$ die kanonische Projektion.
   \begin{enumerate}[leftmargin=*]
@@ -173,7 +217,33 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Definition von Vektorräumen über Erzeuger und Relationen]{3}
+  Es sei $K$ ein Körper.
+  Konstruieren Sie ein Paar $(V,E)$, bestehend aus einem $K$-Vektorraum $V$ und einer Familie $E = (v_1, \dotsc, v_5)$ von Vektoren $v_1, \dotsc, v_n \in V$ mit den folgenden Eigeschaften:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Familie $E$ ist ein Erzeugendensystem von $V$.
+    \item
+      Zwischen den Erzeugern aus $E$ gelten die folgenden Beziehungen:
+      \begin{itemize}
+        \item
+          $3 v_3 = 2 v_1 - v_4$,
+        \item
+          $2 v_2 = 3 v_1 - v_5$, und
+        \item
+          $4 v_5 - 2 v_1 = v_3 + 3 v_4$.
+      \end{itemize}
+    \item
+      Das Paar $(V,E)$ ist im folgenden Sinne \emph{universell}:
+      
+      Es sei $(W, F)$ ein weiteres Paar, bestehend aus einem $K$-Vektorraum $W$ und einer Familie $F = (w_1, \dotsc, w_5)$ von Vektoren $w_1, \dotsc, w_5 \in W$, so dass $W$ und $F$ die obigen Bedingungen erfüllen (wobei $V$ durch $W$, $E$ durch $F$ und $v_i$ durch $w_i$ ersetzt wird).
+      
+      Dann gibt es eine eindeutige lineare Abbildung $f \colon V \to W$ mit $f(v_i) = w_i$ für alle $i = 1, \dotsc, 5$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Die Universelle Eigenschaft des Kerns und des Cokerns]{3}
   Es seien $V$ und $W$ zwei $K$-Vektorräume und $f \colon V \to W$ eine lineare Abbildung.
   Es sei
   \[
@@ -223,72 +293,59 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien Endomorphismus.
-  Außdem sei $U \subseteq V$ ein Untervektorraum, der invariant unter $f$ und $g$ ist.
+
+
+
+%%% PRIORITY 4
+
+
+\begin{question}[subtitle = Alternative Beschreibung der Spur]{4}
+  Es sei $K$ ein Körper und
+  \[
+              \slLie_n(K)
+    \coloneqq \{ A \in \Mat_n(K) \mid \tr A = 0 \}.
+  \]
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie: Der Endomorphismus $f$ induziert einen Endomorphismus
-      \[
-        \bar{f} \colon V\!/U \to V\!/U,
-        \quad
-        [v] \mapsto [f(v)].
-      \]
-      Analog induziert dann auch $g$ einen Endomorphismus $\bar{g} \colon V \to V$, $[v] \mapsto [g(v)]$.
+      Zeigen Sie, dass $\slLie_n(K)$ ein Untervektorraum von $\Mat_n(K)$ mit $\dim \slLie_n(K) = n^2 - 1$ ist.
     \item
-      Es seien $f|_U = g|_U$ und $\bar{f} = \bar{g}$.
-      Beweisen oder widerlegen Sie, dass bereits $f = g$ gelten muss.
+      Zeigen Sie, dass
+      \[
+        \mc{B}
+        \coloneqq
+              \{ E_{ij} \mid 1 \leq i \neq j \leq n \}
+        \cup  \{ E_{11} - E_{ii} \mid 2 \leq i \leq n \}
+      \]
+      eine Basis von $\slLie_n(K)$ ist, wobei $E_{ij} \in \Mat_n(K)$ die Matrix ist, deren $(i,j)$-ter Eintrag $1$ ist, und für die alle anderen Einträge $0$ sind.
   \end{enumerate}
+  Es sei nun $C \coloneqq \Ell( [A,B] \mid A, B \in \Mat_n(K) )$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass $\tr([A,B]) = 0$ für alle $A, B \in \Mat_n(K)$.
+      Folgern Sie, dass $C \subseteq \slLie_n(K)$.
+    \item
+      Zeigen Sie, dass $\slLie_n(K) \subseteq C$, indem Sie jedes der Basiselemente aus $\mc{B}$ also Kommutator schreiben.
+      
+      (\emph{Hinweis}:
+       Überlegen Sie sich zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
+  \end{enumerate}
+  Es ist also $\slLie_n(K) = \Ell( [A,B] \mid A, B \in \Mat_n(K) )$ ein ($n^2 - 1$)-dimensionaler Untervektorraum.
+  Es sei nun $f \colon \Mat_n(K) \to K$ eine lineare Abbildung mit $f(AB) = f(BA)$ für alle $A, B \in \Mat_n(K)$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass $f$ eine eindeutige lineare Abbildung
+      \[
+        \overline{f} \colon \Mat_n(K) / \slLie_n(K) \to K,
+        \quad
+        \overline{A} \mapsto f(A)
+      \]
+      induziert.
+      Zeigen Sie, dass $\overline{\tr} \neq 0$.
+    \item
+      Zeigen Sie, dass $\Mat_n(K) / \slLie(K)$ eindimensional ist.
+      Folgern Sie, dass es ein eindeutiges $\lambda \in K$ mit $\overline{f} = \lambda \overline{\tr}$ gibt.
+    \item
+      Folgern Sie, dass bereits $f = \lambda \tr$ gilt.
+  \end{enumerate}
+  Die Spur ist also durch die Eigenschaft, dass $\tr(AB) = \tr(BA)$ für alle $A, B \in \Mat_n(K)$, bis auf skalares Vielfaches eindeutig bestimmt.
 \end{question}
-
-
-% \begin{question}
-%   Es sei $K$ ein Körper und
-%   \[
-%               \slLie_n(K)
-%     \coloneqq \{ A \in \Mat_n(K) \mid \tr A = 0 \}.
-%   \]
-%   \begin{enumerate}
-%     \item
-%       Zeigen Sie, dass $\slLie_n(K)$ ein Untervektorraum von $\Mat_n(K)$ mit $\dim \slLie_n(K) = n^2 - 1$ ist.
-%     \item
-%       Zeigen Sie, dass
-%       \[
-%         \mc{B}
-%         \coloneqq
-%               \{ E_{ij} \mid 1 \leq i \neq j \leq n \}
-%         \cup  \{ E_{11} - E_{ii} \mid 2 \leq i \leq n \}
-%       \]
-%       eine Basis von $\slLie_n(K)$ ist, wobei $E_{ij} \in \Mat_n(K)$ die Matrix ist, deren $(i,j)$-ter Eintrag $1$ ist, und für die alle anderen Einträge $0$ sind.
-%   \end{enumerate}
-%   Es sei nun $C \coloneqq \Ell( [A,B] \mid A, B \in \Mat_n(K) )$.
-%   \begin{enumerate}[resume]
-%     \item
-%       Zeigen Sie, dass $\tr([A,B]) = 0$ für alle $A, B \in \Mat_n(K)$.
-%       Folgern Sie, dass $C \subseteq \slLie_n(K)$.
-%     \item
-%       Zeigen Sie, dass $\slLie_n(K) \subseteq C$, indem Sie jedes der Basiselement aus $\mc{B}$ also Kommutator schreiben.
-%       
-%       (\emph{Hinweis}:
-%        Überlegen Sie zunächst, dass $E_{ij} E_{kl} = \delta_{jk} E_{il}$ für alle $1 \leq i, j, k, l \leq n$.)
-%   \end{enumerate}
-%   Es ist also $\slLie_n(K) = \Ell( [A,B] \mid A, B \in \Mat_n(K) )$ ein ($n^2 - 1$)-dimensionaler Untervektorraum.
-%   Es sei nun $f \colon \Mat_n(K) \to K$ eine lineare Abbildung mit $f(AB) = f(BA)$ für alle $A, B \in \Mat_n(K)$.
-%   \begin{enumerate}[resume]
-%     \item
-%       Zeigen Sie, dass $f$ eine eindeutige lineare Abbildung
-%       \[
-%         \overline{f} \colon \Mat_n(K) / \slLie_n(K) \to K,
-%         \quad
-%         [A] \mapsto f(A)
-%       \]
-%       induziert.
-%       Zeigen Sie, dass $\overline{\tr} \neq 0$.
-%     \item
-%       Zeigen Sie, dass $\Mat_n(K) / \slLie(K)$ eindimensional ist.
-%       Folgern Sie, dass es ein eindeutiges $\lambda \in K$ mit $\overline{f} = \lambda \overline{\tr}$ gibt.
-%     \item
-%       Folgern Sie, dass bereits $f = \lambda \tr$ gilt.
-%       (Die Spur ist also durch die Eigenschaft, dass $\tr(AB) = \tr(BA)$ für alle $A, B \in \Mat_n(K)$, bis auf skalares Vielfaches eindeutig bestimmt.)
-%   \end{enumerate}
-% \end{question}

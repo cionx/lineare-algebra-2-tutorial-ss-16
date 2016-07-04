@@ -1,7 +1,13 @@
 \section{Komplexifizierung}
 
 
-\begin{question}
+
+
+
+%%% PRIORITY 1
+
+
+\begin{question}[subtitle = Universelle Eigenschaft der Komplexifizierung]{1}
   Es sei $V$ ein $\Rbb$-Vektorraum und $W$ ein $\Cbb$-Vektorraum.
   Es sei $\iota \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion.
   Zeigen Sie:
@@ -26,7 +32,101 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Kern und Bild unter Komplexifizierung]{1}
+  Es seien $V$ und $W$ zwei reelle Vektorräume, und $f \colon V \to W$ sei eine $\Rbb$-lineare Abbildung.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\ker (f_\Cbb) = (\ker f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann injektiv ist, wenn $f$ injektiv ist.
+    \item
+      Folgern Sie ferner, dass $(V_\Cbb)_\lambda(f_\Cbb) = V_\lambda(f)_\Cbb$ für jedes $\lambda \in \Rbb$.
+    \item
+      Zeigen Sie, dass $\im (f_\Cbb) = (\im f)_\Cbb$.
+    \item
+      Folgern Sie, dass $f_\Cbb$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+%%% PRIORITY 2
+
+
+\begin{question}[subtitle = Komplexifizierung von Abbildungen und Natürlichkeit der Komplexifizierung]{2}
+  Für jeden $\Rbb$-Vektorraum $V$ sei $\iota_V \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion und für jeden $\Cbb$-Vektorraum $W$ und jede $\Rbb$-lineare Abbildung $f \colon V \to W$ sei $f^\Cbb \colon V_\Cbb \to W$ die eindeutige $\Cbb$-lineare Abbildung mit $f^\Cbb \circ \iota_V = f$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass für jeden $\Rbb$-Vektorraum $V$ und jeden $\Cbb$-Vektorraum $W$ die Abbildung
+      \[
+        \Phi_{V,W} \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W),
+        \quad
+        f \mapsto f^\Cbb
+      \]
+      ein Isomorphismus von $\Rbb$-Vektorräumen ist.
+      Geben Sie auch $\Phi_{V,W}^{-1}$ an.
+    \item
+      Es seien  $V, V', W, W'$ vier $K$-Vektorräume und $g_1 \colon V' \to V$ und $g_2 \colon W \to W'$ zwei $K$-lineare Abbildungen.
+      Zeigen Sie, dass die beidseitige Komposition
+      \[
+        g_2 \circ - \circ g_1
+        \colon
+        \Hom_K(V, W) \to \Hom_K(V', W'),
+        \quad
+        h \mapsto g_2 \circ f \circ g_1
+      \]
+      eine $K$-lineare Abbildung ist.
+    \item
+      Zeigen Sie, dass die Isomorphismen $\Phi_{V,W}$ in dem folgenden Sinne \emph{natürlich} sind:
+      Es seien $V$ und $V'$ zwei $\Rbb$-Vektorräume und es sei $h \colon V' \to V$ eine $\Rbb$-lineare Abbildung.
+      Es seien $W$ und $W'$ zwei $\Cbb$-Vektorräume und es sei $g \colon W \to W'$ eine $\Cbb$-lineare Abbildung.
+      Dann kommutiert das folgende Diagramm von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
+      \[
+        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
+                \Hom_\Rbb(V, W)         \arrow[swap]{d}{g \circ - \circ h}
+                                        \arrow{r}{\Phi_{V,W}}
+            \&  \Hom_\Cbb(V_\Cbb, W)    \arrow{d}{g \circ - \circ h^\Cbb}
+          \\
+                \Hom_\Rbb(V', W')       \arrow{r}{\Phi_{V',W'}}
+            \&  \Hom_\Cbb(V'_\Cbb, W')
+        \end{tikzcd}
+      \]
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Komplexifizierung von Basen]{2}
+  Es sei $V$ ein $\Rbb$-Vektorraum mit $\Rbb$-Basis $\mc{B} = (v_j)_{j \in J}$.
+  Zeigen Sie, dass dann $\mc{B}_\Cbb = (v_j + i \cdot 0)_{j \in J}$ eine $\Cbb$-Basis von $V_\Cbb$ ist.
+\end{question}
+
+
+\begin{question}[subtitle = Komplexifizierung von Summen Schnitten und direkten Summen]{2}
+  \label{qst: compatibility of sums and intersections with complexification}
+  Es sei $V$ ein reeller Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
+  Zeigen Sie:
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gilt
+      \[
+            \left( \bigcap_{i \in I} U_i \right)_\Cbb
+        = \bigcap_{i \in I} (U_i)_\Cbb
+      \]
+    \item
+      Es gilt
+      \[
+          \left( \sum_{i \in I} U_i \right)_\Cbb
+        = \sum_{i \in I} (U_i)_\Cbb.
+      \]
+    \item
+      Folgern Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Induzierte Untervektorräume]{2}
   Es sei $V$ ein $\Rbb$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -71,61 +171,46 @@
 \end{question}
 
 
-\begin{question}
-  Für jeden $\Rbb$-Vektorraum $V$ sei $\iota_V \colon V \to V$, $v \mapsto v + i \cdot 0$ die kanonische Inklusion und für jeden $\Cbb$-Vektorraum $W$ und jede $\Rbb$-lineare Abbildung $f \colon V \to W$ sei $f^\Cbb \colon V_\Cbb \to W$ die eindeutige $\Cbb$-lineare Abbildung mit $f^\Cbb \circ \iota_V = f$.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass für jeden $\Rbb$-Vektorraum $V$ und jeden $\Cbb$-Vektorraum $W$ die Abbildung
-      \[
-        \Phi_{V,W} \colon \Hom_\Rbb(V, W) \to \Hom_\Cbb(V_\Cbb, W),
-        \quad
-        f \mapsto f^\Cbb
-      \]
-      ein Isomorphismus von $\Rbb$-Vektorräumen ist.
-      Geben Sie auch $\Phi_{V,W}^{-1}$ an.
-    \item
-      Es seien  $V, V', W, W'$ vier $K$-Vektorräume und $g_1 \colon V' \to V$ und $g_2 \colon W \to W'$ zwei $K$-lineare Abbildungen.
-      Zeigen Sie, dass die beidseitige Komposition
-      \[
-        g_2 \circ - \circ g_1
-        \colon
-        \Hom_K(V, W) \to \Hom_K(V', W'),
-        \quad
-        h \mapsto g_2 \circ f \circ g_1
-      \]
-      eine $K$-lineare Abbildung ist.
-    \item
-      Zeigen Sie, dass die Isomorphismen $\Phi_{V,W}$ in dem folgenden Sinne \emph{natürlich} sind:
-      Es seien $V$ und $V'$ zwei $\Rbb$-Vektorräume und es sei $h \colon V' \to V$ eine $\Rbb$-lineare Abbildung.
-      Es seien $W$ und $W'$ zwei $\Cbb$-Vektorräume und es sei $g \colon W \to W'$ eine $\Cbb$-lineare Abbildung.
-      Dann kommutiert das folgende Diagramm von $\Rbb$-Vektorräumen und $\Rbb$-linearen Abbildungen:
-      \[
-        \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement=\&]
-                \Hom_\Rbb(V, W)         \arrow[swap]{d}{g \circ - \circ h}
-                                        \arrow{r}{\Phi_{V,W}}
-            \&  \Hom_\Cbb(V_\Cbb, W)    \arrow{d}{g \circ - \circ h^\Cbb}
-          \\
-                \Hom_\Rbb(V', W')       \arrow{r}{\Phi_{V',W'}}
-            \&  \Hom_\Cbb(V'_\Cbb, W')
-        \end{tikzcd}
-      \]
-
-  \end{enumerate}
+\begin{question}[subtitle = Diagonalisierbarkeit der komplexifizierten Abbildung]{2}
+  Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
+  \newline
+  (\emph{Hinweis}:
+   Man kann etwa Übung~\ref{qst: compatibility of sums and intersections with complexification} nutzen.
+   Beachten Sie aber auf jeden Fall, dass $V$ nicht notwendigerweise endlichdimensional ist.)
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein $\Rbb$-Vektorraum mit $\Rbb$-Basis $\mc{B} = (v_j)_{j \in J}$.
-  Zeigen Sie, dass dann $\mc{B}_\Cbb = (v_j + i \cdot 0)_{j \in J}$ eine $\Cbb$-Basis von $V_\Cbb$ ist.
-\end{question}
 
 
-\begin{question}
+
+%%% PRIORITY 3
+
+\begin{question}[subtitle = Komplexifizierung der reellen Zahlen]{3}
   Zeigen Sie, dass die $\Rbb$-lineare Inklusion $\Rbb \to \Cbb$, $x \mapsto x$ einen Isomorphismus $\Rbb_\Cbb \to \Cbb$ von $\Cbb$-Vektorräumen induziert.
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Komplexifizierung der Matrizen]{3}
+  Zeigen Sie, dass die $\Rbb$-lineare kanonische Inklusion $\iota \colon \Mat(m \times n, \Rbb) \to \Mat(m \times n, \Rbb)$, $A \mapsto A$ einen Isomorphismus von $\Cbb$-Vektorräumen $\Phi \colon \Mat(m \times n, \Rbb)_\Cbb \to \Mat(m \times n, \Cbb)$ induziert.
+\end{question}
+
+
+\begin{question}[subtitle = Komplexifizierung des Polynomrings]{3}
+  Zeigen Sie, dass die kanonische Inklusion $\iota \colon \Rbb[X] \to \Cbb[X]$, $x \mapsto x$ $\Rbb$-linear ist, und einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
+\end{question}
+
+
+\begin{question}[subtitle = Komplexifizierung von Dualräumen]{3}
+  Es sei $V$ ein $\Rbb$-Vektorraum.
+  Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
+  \newline
+  (\emph{Hinweis}:
+   Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
+\end{question}
+
+
+\begin{question}[subtitle = Komplexifizierung von $\Hom$-Räumen]{3}
   Es seien $V$ und $W$ zwei $\Rbb$-Vektorräume.
   Zeigen Sie, dass die $\Rbb$-lineare Abbildung
   \[
@@ -144,70 +229,13 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein $\Rbb$-Vektorraum.
-  Konstruieren Sie einen Isomorphismus $(V^*)_\Cbb \to (V_\Cbb)^*$.
-  
-  (\emph{Hinweis}:
-   Beachten Sie, dass $V$ ist nicht notwendigerweise endlichdimensional ist.)
-\end{question}
 
 
-\begin{question}\label{qst: compatibility of sums and intersections with complexification}
-  Es sei $V$ ein reeller Vektorraum und $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$.
-  Zeigen Sie:
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Es gilt
-      \[
-            \left( \bigcap_{i \in I} U_i \right)_\Cbb
-        = \bigcap_{i \in I} (U_i)_\Cbb
-      \]
-    \item
-      Es gilt
-      \[
-          \left( \sum_{i \in I} U_i \right)_\Cbb
-        = \sum_{i \in I} (U_i)_\Cbb.
-      \]
-    \item
-      Folgern Sie, dass genau dann $V = \bigoplus_{i \in I} U_i$, wenn $V_\Cbb = \bigoplus_{i \in I} (U_i)_{\Cbb}$.
-  \end{enumerate}
-\end{question}
+
+%%% PRIORITY 4
 
 
-\begin{question}
-  Es seien $V$ und $W$ zwei reelle Vektorräume, und $f \colon V \to W$ sei eine $\Rbb$-lineare Abbildung.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass $\ker (f_\Cbb) = (\ker f)_\Cbb$.
-    \item
-      Folgern Sie, dass $f_\Cbb$ genau dann injektiv ist, wenn $f$ injektiv ist.
-    \item
-      Folgern Sie ferner, dass $(V_\Cbb)_\lambda(f_\Cbb) = V_\lambda(f)_\Cbb$ für jedes $\lambda \in \Rbb$.
-    \item
-      Zeigen Sie, dass $\im (f_\Cbb) = (\im f)_\Cbb$.
-    \item
-      Folgern Sie, dass $f_\Cbb$ genau dann surjektiv ist, wenn $f$ surjektiv ist.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein reeller Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  Zeigen Sie, dass $f$ genau dann diagonalisierbar ist, wenn $f_\Cbb$ diagonalisierbar mit reellen Eigenwerten ist.
-  \newline
-  (\emph{Hinweis}:
-   Man kann etwa Übung~\ref{qst: compatibility of sums and intersections with complexification} nutzen.
-   Beachten Sie aber auf jeden Fall, dass $V$ nicht notwendigerweise endlichdimensional ist.)
-\end{question}
-
-
-\begin{question}
-  Zeigen Sie, dass die kanonische Inklusion $\iota \colon \Rbb[X] \to \Cbb[X]$, $x \mapsto x$ $\Rbb$-linear ist, und einen Isomorphismus $\Rbb[X]_\Cbb \to \Cbb[X]$ von $\Cbb$-Vektorräumen induziert.
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Komplexifizierung von Abbildungen und Matrizen in einem kommutierenden Prisma]{4}
   Es sei $\mc{B} = (b_1, \dotsc, b_n)$ eine Basis eines $\Rbb$-Vektorraums $V$ und $\mc{C} = (c_1, \dotsc, c_m)$ eine Basis eines $\Rbb$-Vektorraums $W$.
   Es seien
   \[
@@ -292,7 +320,7 @@
       \[
         \Psi_2 \colon \Mat(m \times n, \Rbb)_\Cbb \to \Mat(m \times n, \Cbb)
       \]
-      induziert, die das folgende Diagramm zum K5ommutieren bringt:
+      induziert, die das folgende Diagramm zum Kommutieren bringt:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                   {}
@@ -341,3 +369,24 @@
       Folgen Sie, dass auch $\Psi_1$ ein Isomorphismus von $\Cbb$-Vektorräumen ist.
   \end{enumerate}
 \end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

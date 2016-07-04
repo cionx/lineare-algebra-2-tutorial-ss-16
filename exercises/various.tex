@@ -12,7 +12,13 @@
 \subsection{Allgemeines Zeugs}
 
 
-\begin{question}
+
+
+
+% PRIORITY 1
+
+
+\begin{question}[subtitle = Invertierbarkeit im Endlichdimensionalen]{1}
   Es sei $V$ ein $K$-Vektorraum und $f, g \colon V \to V$ seien zwei Endomorphismen.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -24,20 +30,7 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $K$ ein endlicher Körper.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $p \neq 0$ aber $p(\lambda) = 0$ für alle $\lambda \in K$.
-    \item
-      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $\deg p \geq 1$, aber $p(\lambda) = 1$ für alle $\lambda \in K$.
-    \item
-      Folgern Sie, dass es keine algebraisch abgeschlossenen endlichen Körper gibt.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Dimensionsformel]{1}
   Es seien $V$ und $W$ zwei $K$-Vektorräume, so dass $V$ endlichdimensional ist, und $f \colon V \to W$ sei eine lineare Abbildung.
   Zeigen Sie die Dimensionsformel
   \[
@@ -46,22 +39,26 @@
 \end{question}
 
 
-\begin{question}
-  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{lokal nilpotent}, falls es für jedes $v \in V$ ein $n \in \Nbb$ mit $f^n(v) = 0$ gibt.
+\begin{question}[subtitle = Operationen mit invarianten Unterräumen]{1}
+  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
+  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
+  Zeigen Sie:
   \begin{enumerate}[leftmargin=*]
     \item
-      Zeigen Sie, dass jeder nilpotente Endomorphismus auch lokal nilpotent ist.
+      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
     \item
-      Zeige Sie, dass $0$ der einzige mögliche Eigenwert eines lokal nilpotenten Endomorphismus ist.
-    \item
-      Geben Sie ein Beispiel für einen Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, so dass $f$ zwar lokal nilpotent, nicht aber nilpotent ist.
-    \item
-      Zeigen Sie, dass jeder lokal nilpotente Endomorphismus eines endlichdimensionalen Vektorraums bereits nilpotent ist.
+      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
   \end{enumerate}
 \end{question}
 
 
-\begin{question}
+
+
+
+% PRIORITY 2
+
+
+\begin{question}[subtitle = Konjugationsinvarianz der Spur]{2}
   Es sei $K$ ein Körper.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -77,7 +74,66 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Der Satz von Cayley-Hamilton]{2}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Formulieren Sie den Satz von Cayley-Hamilton.
+    \item
+      Zeigen Sie den Satz für ($2 \times 2$)-Matrizen durch explizites Nachrechnen.
+    \item
+      Zeigen Sie den Satz für Diagonalmatrizen.
+    \item
+      Folgern Sie den Satz für diagonalisierbare Matrizen.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Invertieren durch das charakteristische Polynom]{2}
+  Es sei $A \in \GL_n(K)$ und $\chi_A(T)$ das charakteristische Polynom von $A$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass der konstante Term von $\chi_A(T)$ nicht verschwindet.
+    \item
+      Zeigen Sie, dass es ein Polynom $P \in K[T]$ gibt, so dass $A^{-1} = P(A)$.
+  \end{enumerate}
+\end{question}
+
+
+
+
+
+% PRIORITY 3
+
+
+\begin{question}[subtitle = Unterscheidung zwischen nilpotenten und lokal nilpotenten Endomorphismen]{3}
+  Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{lokal nilpotent}, falls es für jedes $v \in V$ ein $n \in \Nbb$ mit $f^n(v) = 0$ gibt.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass jeder nilpotente Endomorphismus auch lokal nilpotent ist.
+    \item
+      Zeige Sie, dass $0$ der einzige mögliche Eigenwert eines lokal nilpotenten Endomorphismus ist.
+    \item
+      Geben Sie ein Beispiel für einen Vektorraum $V$ und einen Endomorphismus $f \colon V \to V$ an, so dass $f$ zwar lokal nilpotent, nicht aber nilpotent ist.
+    \item
+      Zeigen Sie, dass jeder lokal nilpotente Endomorphismus eines endlichdimensionalen Vektorraums bereits nilpotent ist.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Zur Unterscheidung von Polynomen und Polynomsfunktionen]{3}
+  Es sei $K$ ein endlicher Körper.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $p \neq 0$ aber $p(\lambda) = 0$ für alle $\lambda \in K$.
+    \item
+      Geben Sie ein Polynom $p \in K[X]$ an, so dass zwar $\deg p \geq 1$, aber $p(\lambda) = 1$ für alle $\lambda \in K$.
+    \item
+      Folgern Sie, dass es keine algebraisch abgeschlossenen endlichen Körper gibt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Auf- und absteigende Ketten von Bild und Kern]{3}
   Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus.
   Für alle $k \in \Nbb$ sei
   \[
@@ -117,32 +173,7 @@
 \end{question}
 
 
-\begin{question}
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Formulieren Sie den Satz von Cayley-Hamilton.
-    \item
-      Zeigen Sie den Satz für ($2 \times 2$)-Matrizen durch explizites Nachrechnen.
-    \item
-      Zeigen Sie den Satz für Diagonalmatrizen.
-    \item
-      Folgern Sie den Satz für diagonalisierbare Matrizen.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $A \in \GL_n(K)$ und $\chi_A(T)$ das charakteristische Polynom von $A$.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass der konstante Term von $\chi_A(T)$ nicht verschwindet.
-    \item
-      Zeigen Sie, dass es ein Polynom $P \in K[T]$ gibt, so dass $A^{-1} = P(A)$.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Algebraische Endomorphismen]{3}
   Ein Endomorphismus $f \colon V \to V$ eines $K$-Vektorraums $V$ heißt \emph{algebraisch (über $K$)}, falls es ein Polynom $P \in K[T]$ mit $P \neq 0$ gibt, so dass $P(f) = 0$ gilt.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -157,20 +188,7 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein Vektorraum und $f \colon V \to V$ ein Endomorphismus.
-  Es sei $(U_i)_{i \in I}$ eine Familie von $f$-invarianten Untervektorräumen, und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
-  Zeigen Sie:
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Auch der Schnitt $\bigcap_{i \in I} U_i$ ist $f$-invariant.
-    \item
-      Auch die Summe $\sum_{i \in i} U_i$ ist $f$-invariant.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Einschränkung des Inversen]{3}
   Es sei $V$ ein $K$-Vektorraum, $f \colon V \to V$ ein Automorphismus und $U \subseteq V$ ein $f$-invarianter Untervektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -182,7 +200,13 @@
 \end{question}
 
 
-\begin{question}
+
+
+
+% PRIORITY 4
+
+
+\begin{question}[subtitle = Das Zentrum des Matrizenrings]{4}
   Das \emph{Zentrum} eines Rings $R$ ist
   \[
     Z(R) \coloneqq \{ r \in R \mid \text{$rs = sr$ für alle $s \in R$} \}.
@@ -226,7 +250,7 @@
 \subsection{Diagonalisierbarkeit und Eigenzeugs}
 
 
-\begin{question}
+\begin{question}[subtitle = Multiple Choice zur Kombination diagonalisierbarer Endomorphismen]{2}
   Es seien $f, g \colon V \to V$ zwei Endomorphismen eines $K$-Vektorraums $V$.
   Entscheiden sie für die folgenden Aussagen jeweils, ob diese allgemein gültig sind.
   Geben Sie, sofern möglich, auch ein Gegenbeispiel an.
@@ -266,7 +290,13 @@
 \end{solution}
 
 
-\begin{question}
+\begin{question}[subtitle = Einschränkung diagonalisierbarer Endomorphismen]{2}
+  Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein diagonalisierbarer Endomorphismus von $V$ (d.h.\ es gilt \mbox{$V = \bigoplus_{\lambda \in K} V_\lambda(f)$}).
+  Zeigen Sie, dass für jeden $f$-invarianten Untervektorraum $U \subseteq V$ die Einschränkung $f|_U \colon U \to U$ diagonalisierbar ist, und dass $U_\lambda(f|_U) = U \cap V_\lambda(f)$ für alle $\lambda \in K$.
+\end{question}
+
+
+\begin{question}[subtitle = Zur Existenz gemeinsamer Eigenvektoren]{3}
   Es sei $V \neq 0$ ein $K$-Vektorraum, wobei $K$ algebraisch abgeschlossen ist.
   Es seien $f_1, \dotsc, f_n \colon V \to V$ paarweise kommutierende Endomorphismen.
   \begin{enumerate}[leftmargin=*]
@@ -285,7 +315,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Simultane Diagonalisierbarkeit]{2}
   Es sei $V$ ein $K$-Vektorraum.
   Für alle Endomorphismen $f_1, \dotsc, f_n \colon V  \to V$ und Skalare (Eigenwerte) \mbox{$\lambda_1, \dotsc, \lambda_n \in K$} sei
   \[
@@ -324,18 +354,17 @@
       
       (\emph{Hinweis}:
        Nutzen Sie, dass $H$ endlichdimensional ist.)
-    \item
   \end{enumerate}
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Eine Knobelaufgabe]{3}
   Es sei $f \colon V \to V$ ein Endomorphismus eines $n$-dimensionalen $K$-Vektorraums $V$ und $\{ v_1, \dotsc, v_{n+1} \} \subseteq V$ eine Teilmenge aus Eigenvektoren von $f$, so dass jede $n$-elementige Teilmenge linear unabhängig ist.
   Zeigen Sie, dass $f$ bereits ein skalares Vielfaches der Identität ist.
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Diagonalisierbarkeit und Nilpotenz von $\ad_X$]{3}
   Für jede Matrix $X \in \Mat_n(K)$ sei
   \[
     \lambda_X \colon \Mat_n(K) \to \Mat_n(K),
@@ -381,7 +410,7 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Shiften von Eigenräumen]{3}
   Es seien $E$ und $H$ zwei Endomorphismen eines $\Cbb$-Vektorraums $V$, so dass $[H,E] = 2E$.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -403,21 +432,32 @@
 \subsection{Multilinearität}
 
 
-\begin{question}
-  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum mit $n \coloneqq \dim V$ und $\omega \colon V^n \to K$ eine alternierende Multilinearform.
-  Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
-  \begin{enumerate}
-    \item
-      Es ist $\omega \neq 0$.
-    \item
-      Es gibt eine Basis $(b_1, \dotsc, b_n)$ von $V$, so dass $\omega(b_1, \dotsc, b_n) \neq 0$.
-    \item
-      Für jede Basis $(b_1, \dotsc, b_n)$ von $V$ gilt $\omega(b_1, \dotsc, b_n) \neq 0$.
-  \end{enumerate}
+
+
+
+% PRIORITY 1
+
+
+
+
+
+% PRIORITY 2
+
+
+\begin{question}[subtitle = Das Verschwinden von alternierenden Formen für große Dimensionen]{2}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $n \coloneqq \dim V$.
+  Es sei $\omega \colon V^m \to V$ eine alternierende Multilinearform.
+  Zeigen Sie, dass $\omega = 0$.
 \end{question}
 
 
-\begin{question}
+
+
+
+% PRIORITY 3
+
+
+\begin{question}[subtitle = Charakterisierungen der Jacobi-Identität]{3}
   Es sei $V$ ein $K$-Vektorrraum und $[-,-] \colon V \times V \to V$ eine alternierend bilineare Abbildung.
   Für jedes $x \in V$ sei
   \[
@@ -439,14 +479,27 @@
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $n \coloneqq \dim V$.
-  Es sei $\omega \colon V^m \to V$ eine alternierende Multilinearform.
-  Zeigen Sie, dass $\omega = 0$.
+\begin{question}[subtitle = Charakterisierungen nicht verschwindender alternierender Formen]{3}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum mit $n \coloneqq \dim V$ und $\omega \colon V^n \to K$ eine alternierende Multilinearform.
+  Zeigen Sie, dass die folgenden Bedingungen äquivalent sind:
+  \begin{enumerate}
+    \item
+      Es ist $\omega \neq 0$.
+    \item
+      Es gibt eine Basis $(b_1, \dotsc, b_n)$ von $V$, so dass $\omega(b_1, \dotsc, b_n) \neq 0$.
+    \item
+      Für jede Basis $(b_1, \dotsc, b_n)$ von $V$ gilt $\omega(b_1, \dotsc, b_n) \neq 0$.
+  \end{enumerate}
 \end{question}
 
 
-\begin{question}
+
+
+
+% PRIORITY 4
+
+
+\begin{question}[subtitle = Multilineare Formen und die Determinante]{4}
   Es sei $V$ ein endlichdimensionaler $K$-Vektorraum und $n \coloneqq \dim V$.
   Es sei $\omega \colon V^n \to K$ eine alternierende Multilinearform.
   Es sei $f \colon V \to V$ ein Endomorphismus und
@@ -470,10 +523,16 @@
 
 
 
-\subsection{Wegzusammenhang und geometrisches}
+\subsection{Wegzusammenhang und Geometrisches}
 
 
-\begin{question}
+
+
+
+% PRIORITY 1
+
+
+\begin{question}[subtitle = Multiple Choice zu Wegzusammenhangskomponenten]{1}
   Es sei $n \geq 1$.
   Entscheiden Sie, welche der folgenden Aussagen gelten.
   \begin{enumerate}[leftmargin=*]
@@ -515,7 +574,6 @@
       ist eine wegzusammenhängende Untergruppe von $\GL_2(\Rbb)$.
   \end{enumerate}
 \end{question}
-
 \begin{solution}
   \begin{enumerate}
     \item
@@ -541,37 +599,19 @@
 \end{solution}
 
 
-\begin{question}
+
+
+
+% PRIORITY 2
+
+
+\begin{question}[subtitle = Zerschneidung von $\Rbb^n$]{2}
   Es sei $f \colon \Rbb^n \to \Rbb$ eine lineare Abbildung mit $f \neq 0$.
   Zeigen Sie, dass $\Rbb^n \smallsetminus \ker f$ nicht wegzusammenhängend ist.
 \end{question}
 
 
-\begin{question}
-  Es sei $V$ ein euklidischer $n$-dimensionaler Vektorraum und $d$ eine normierte, alternierende $n$-Form auf $d$.
-  Es sei $u \in V$ mit $\|u\| = 1$.
-  Zeigen Sie für das orthogonale Komplement $U \coloneqq u^\perp = \Ell(u)^\perp$, dass die Einschränkung $d(-, \dotsc, -, u)|_{U^{n-1}}$ eine normierte, alternierende $(n-1)$-Form ist.
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein eindimensionaler euklidischer Vektorraum.
-  \begin{enumerate}[leftmargin=*]
-    \item
-      Zeigen Sie, dass es genau zwei verschiedene Vektoren $v_1, v_2 \in V$ gibt, so dass $\|v_1\| = 1$ und $\|v_2\| = 1$, und dass $v_2 = \pm v_1$.
-    \item
-      Entscheiden Sie, ob die Aussage auch für einen eindimensionalen unitären Vektorraum gilt.
-  \end{enumerate}
-\end{question}
-
-
-\begin{question}
-  Es sei $V$ ein euklidischer Vektorraum, und $A, B \in V$ seien zwei linear unabhängige Punkte.
-  Zeigen Sie, dass es genau ein Element $\tangent_{AB} \in \Ell(A,B)$ gibt, so dass $\tangent_{AB} \perp A$, $\|\tangent_{AB}\| = 1$ und $\bil{\tangent_{AB}, B} > 0$.
-\end{question}
-
-
-\begin{question}
+\begin{question}[subtitle = Definition und Sinus des unorientierten Winkels]{2}
   Es sei $V$ ein euklidischer Vektorraum und es seien $v, w \in V$ mit $v, w \neq 0$.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -588,7 +628,37 @@
 \end{question}
 
 
-\begin{question}
+\begin{question}[subtitle = Zur Existenz und Eindeutigkeit normierter Vektoren auf der Gerade]{2}
+  Es sei $V$ ein eindimensionaler euklidischer Vektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass es genau zwei verschiedene Vektoren $v_1, v_2 \in V$ gibt, so dass $\|v_1\| = 1$ und $\|v_2\| = 1$, und dass $v_2 = \pm v_1$.
+    \item
+      Entscheiden Sie, ob die Aussage auch für einen eindimensionalen unitären Vektorraum gilt.
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Zur Existenz von Tangentialvektoren]{2}
+  Es sei $V$ ein euklidischer Vektorraum, und $A, B \in V$ seien zwei linear unabhängige Punkte.
+  Zeigen Sie, dass es genau ein Element $\tangent_{AB} \in \Ell(A,B)$ gibt, so dass $\tangent_{AB} \perp A$, $\|\tangent_{AB}\| = 1$ und $\bil{\tangent_{AB}, B} > 0$.
+\end{question}
+
+
+
+
+
+% PRIORITY 3
+
+
+\begin{question}[subtitle = Einschränkung der Orientierung auf das orthogonale Komplement]{3}
+  Es sei $V$ ein euklidischer $n$-dimensionaler Vektorraum und $d$ eine normierte, alternierende $n$-Form auf $d$.
+  Es sei $u \in V$ mit $\|u\| = 1$.
+  Zeigen Sie für das orthogonale Komplement $U \coloneqq u^\perp = \Ell(u)^\perp$, dass die Einschränkung $d(-, \dotsc, -, u)|_{U^{n-1}}$ eine normierte, alternierende $(n-1)$-Form ist.
+\end{question}
+
+
+\begin{question}[subtitle = Konstruktion und Eigenschaften des Kreuzprodukts]{3}
   Es sei $V$ ein dreidimensionaler orientierter euklidischer Vektorraum mit normierter alternierender Trilinearform $d$.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -606,10 +676,27 @@
       Zeigen Sie für alle $u, v \in V$, dass $\|u \times v\| = \|u\| \|v\| \sin \alpha$, wobei $\alpha$ der unorientierte Winkel zwischen $u$ und $v$ ist.
     \item
       Zeigen Sie:
-      Ist $(e_1, e_2, e_3)$ eine positiv orientierte Orthonormalbasis von $V$, so gilt für $u = u_1 e1 + u_2 e_2 + u_2 e_3$ und $v = v_1 e_1 + v_2 e_2 + v_3 e_3$, dass
+      Ist $(e_1, e_2, e_3)$ eine positiv orientierte Orthonormalbasis von $V$, so gilt für $u, v \in V$ mit $u = u_1 e_1 + u_2 e_2 + u_2 e_3$ und $v = v_1 e_1 + v_2 e_2 + v_3 e_3$, dass
       \[
-        u \times v = (u_2 v_3 - u_3 v_2) e_1 + (u_3 v_1 - u_1 v_3) e_2 + (u_1 v_2 + u_2 v_1) e_3.
+        u \times v = (u_2 v_3 - u_3 v_2) e_1 + (u_3 v_1 - u_1 v_3) e_2 + (u_1 v_2 - u_2 v_1) e_3.
       \]
   \end{enumerate}
 \end{question}
+
+
+
+
+
+% PRIORITY 4
+
+
+
+
+
+
+
+
+
+
+
 
