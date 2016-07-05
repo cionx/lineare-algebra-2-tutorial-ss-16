@@ -690,6 +690,72 @@
 % PRIORITY 4
 
 
+\begin{question}[subtitle = Die Wegzusammenhangskomponenten der oberen Dreiecksmatrizen]{4}
+  Für einen Körper $K$ und $n \in \Nbb$ mit $n \geq 1$ sei
+  \[
+    \Borel_n(K)
+    \coloneqq
+    \left\{
+      \begin{pmatrix}
+        a_{11}  & *       & \cdots  & *       \\
+                & \ddots  & \ddots  & \vdots  \\
+                &         & \ddots  & *       \\
+                &         &         & a_{nn}
+      \end{pmatrix}
+      \in \Mat_n(K)
+      \,\middle|\,
+      \text{$a_{ii} \neq 0$ für alle $i = 1, \dotsc, n$}
+    \right\}
+  \]
+  die Menge der invertierbaren oberen Dreiecksmatrizen.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Zeigen Sie, dass $\Borel_n(K)$ eine Untergruppe von $\GL_n(K)$ ist.
+  \end{enumerate}
+  Wir bestimmen nun die Wegzusammenhangskomponenten von $\Borel_n(\Rbb)$.
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Es seien $A, B \in \Borel_n(\Rbb)$ mit $A = (a_{ij})_{ij}$ und $B = (b_{ij})_{ij}$.
+      Zeigen Sie:
+      Gibt es einen stetigen Weg $\Gamma \colon [0,1] \to \Borel_n(\Rbb)$ von $A$ nach $B$, so ist $\sign a_{ii} = \sign b_{ii}$ für alle $i = 1, \dotsc, n$.
+      
+      (\emph{Hinweis}:
+       Überlegen Sie sich zunächst, dass $\Gamma(t)_{ii} \neq 0$ für alle $t \in [0,1]$ und $i = 1, \dotsc, n$.)
+    \item
+      Konstruieren Sie in $\Borel_n(\Rbb)$ einen stetigen Weg von der Matrix $A$ zu der Diagonalmatrix mit Diagonaleinträgen $a_{11}, \dotsc, a_{nn}$.
+    \item
+      Geben Sie in $\Borel_n(\Rbb)$ einen stetigen Weg von der Diagonalmatrix mit Diagonaleinträgen $a_{11}, \dotsc, a_{nn}$ zu der Diagonalmatrix mit Diagonaleinträgen $\sign a_{11}, \dotsc, \sign a_{nn}$ an.
+    \item
+      Folgern Sie aus den obigen Aussagen, dass $\Borel_n(\Rbb)$ aus $2^n$ Wegzusammenhängskomponenten besteht, und dass
+      \[
+        \left\{
+          \begin{pmatrix}
+            \varepsilon_1 &         &                 \\
+                          & \ddots  &                 \\
+                          &         & \varepsilon_n
+          \end{pmatrix}
+          \,\middle|\,
+          \varepsilon_1, \dotsc, \varepsilon_n \in \{1,-1\}
+        \right\}
+        \subseteq
+        \Borel_n(\Rbb)
+      \]
+      ein Repräsentantensystem der Wegzusammenhangskomponenten ist.
+      Dabei wird die Weg\-zu\-sam\-men\-hangs\-kom\-po\-nen\-te von $A$ durch die Diagonalmatrix mit Diagonaleinträgen $\sign a_{11}, \dotsc, \sign a_{nn}$ repräsentiert.
+  \end{enumerate}
+  Im Komplexen vereinfacht sich dieses Resultat:
+  \begin{enumerate}[leftmargin=*, resume]
+    \item
+      Zeigen Sie, dass es für $A = (a_{ij})_{i,j} \in \Borel_n(\Cbb)$ in $\Borel_n(\Cbb)$ einen stetigen Weg zu der Diagonalmatrix mit Diagonaleinträgen $a_{11}, \dotsc, a_{nn}$ gibt.
+    \item
+      Zeigen Sie, dass es für je zwei Diagonalmatrizen $D_1, D_2 \in \Borel_n(\Cbb)$ einen stetigen Weg in $\Borel_n(\Cbb)$ von $D_1$ nach $D_2$ gibt.
+      
+      (\emph{Hinweis}:
+       Nutzen Sie, dass $\Cbb^\times$ wegzusammenhängend ist.)
+    \item
+      Folgern Sie, dass $\Borel_n(\Cbb)$ wegzusammenhängend ist.
+  \end{enumerate}
+\end{question}
 
 
 
