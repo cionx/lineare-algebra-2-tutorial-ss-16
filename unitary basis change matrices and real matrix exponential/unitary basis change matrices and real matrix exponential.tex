@@ -1,0 +1,176 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+
+\title{Lösungen zu Aufgabe 1, Zettel 9}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Vorbereitung: Basiswechselmatrizen}
+
+
+\begin{lemma}
+  Es sei $A \in \Mat_n(\Kbb)$.
+  Dann sind die folgenden Bedingungen äquivalent:
+  \begin{enumerate}
+    \item
+      Die Matrix $A$ ist invertierbar mit $A^{-1} = A^*$.
+    \item
+      Es gilt $A A^* = I$.
+    \item
+      Es gilt $A^* A = I$.
+    \item
+      Die Spalten von $A$ sind eine Orthonormalbasis von $\Kbb^n$ (als Spaltenvektoren gesehen).
+    \item
+      Die Zeilen von $A$ sind eine Orthonormalbasis von $\Kbb^n$ (als Zeilenvektoren gesehen).
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  Die Äquivalenz der ersten drei Aussagen folgt, wie aus Lineare Algebra I bekannt, mithilfe der Dimensionsformel.
+  
+  Dass $A^* A = I$ ist äquivalent dazu, dass $\sum_{l=1}^n \overline{a_{lj}} a_{lk} = \delta_{jk}$ für alle $j,k = 1, \dotsc, n$.
+  Dies ist durch Konjugation äquivalent dazu, dass $\sum_{l=1}^n a_{lj} \overline{a_{lk}} = \delta_{j,k}$ für alle $j, k = 1, \dotsc, n$.
+  Da der Ausdruck $\sum_{l=1}^n a_{lj} \overline{a_{lk}}$ das Standardskalarprodukt der $j$-ten und $k$-ten Spalten von $A$ ist, bedeutet dies gerade, dass die Spalten von $A$ eine Orthonormalbasis von $\Kbb^n$ bilden.
+  
+  Analog ergibt sich, dass $A A^* = I$ äquivalent dazu ist, dass die Zeilen von $A$ eine Orthonormalbasis von $\Kbb^n$ bilden.
+\end{proof}
+
+
+Im Folgenen sei
+\[
+  D_\varphi
+  \coloneqq
+  \begin{pmatrix*}[r]
+    \cos \varphi  & -\sin \varphi \\
+    \sin \varphi  &  \cos \varphi
+  \end{pmatrix*}
+\]
+die Drehmatrix um den Winkel $\varphi \in \Rbb$.
+
+
+\begin{theorem}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Ist $A \in \Mat_n(\Cbb)$ normal, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt ist.
+    \item
+      Ist $A \in \Mat_n(\Cbb)$ selbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt mit reellen Diagonaleinträgen ist.
+    \item
+      Ist $A \in \Mat_n(\Cbb)$ antiselbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt mit rein imaginären Diagonaleinträgen ist.
+    \item
+      Ist $A \in \Mat_n(\Cbb)$ unitär, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt ist, und alle Diagonaleinträge haben Betrag $1$.
+    \item
+      Ist $A \in \Mat_n(\Rbb)$ normal, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass
+      \[
+        O A O^{-1}
+        =
+        \begin{pmatrix}
+          \lambda_1 &         &           &                   &         &                   \\
+                    & \ddots  &           &                   &         &                   \\
+                    &         & \lambda_p &                   &         &                   \\
+                    &         &           & r_1 D_{\varphi_1} &         &                   \\
+                    &         &           &                   & \ddots  &                   \\
+                    &         &           &                   &         & r_q D_{\varphi_q},
+        \end{pmatrix}.
+      \]
+    \item
+      Ist $A \in \Mat_n(\Rbb)$ selbstadjungiert, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass $O A O^{-1}$ in Diagonalgestalt ist.
+    \item
+      Ist $A \in \Mat_n(\Rbb)$ orthogonal, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass
+      \[
+        O A O^{-1}
+        =
+        \begin{pmatrix}
+          1 &         &   &     &         &     &               &         &                 \\
+            & \ddots  &   &     &         &     &               &         &                 \\
+            &         & 1 &     &         &     &               &         &                 \\
+            &         &   & -1  &         &     &               &         &                 \\
+            &         &   &     & \ddots  &     &               &         &                 \\
+            &         &   &     &         & -1  &               &         &                 \\
+            &         &   &     &         &     & D_{\varphi_1} &         &                 \\
+            &         &   &     &         &     &               & \ddots  &                 \\
+            &         &   &     &         &     &               &         & D_{\varphi_r}
+        \end{pmatrix}.
+      \]
+  \end{enumerate}
+\end{theorem}
+
+
+\begin{proof}
+  Wir betrachten den Fall, dass $A \in \Mat_n(\Cbb)$ normal ist.
+  Es sei $\mc{B} = (e_1, \dotsc, e_n)$ die Standardbasis von $\Cbb^n$ und $f \colon V \to V$ der eindeutige Endomorphismus mit $\Mat_{\mc{B}}(f) = A$.
+  Da $\mc{B}$ eine Orthonormalbasis ist, folgt aus der Normalität von $A$, dass der Endomorphismus $f$ normal ist.
+  Da $\Cbb^n$ endlichdimensional ist, gibt es eine Orthonormalbasis $\mc{C} = (c_1, \dotsc, c_n)$ von $\Cbb^n$ aus Eigenvektoren von $f$.
+  Für die Basiswechselmatrix $U \coloneqq T^{\mc{B}}_{\mc{C}}$ gilt nun, dass
+  \[
+      U A U^{-1}
+    = T^{\mc{B}}_{\mc{C}} \Mat_\mc{B}(f) T^{\mc{C}}_{\mc{B}}
+    = \Mat_\mc{C}(f)
+  \]
+  eine Diagonalmatrix ist.
+  Die Spalten der Matrix $U^{-1} = T^{\mc{C}}_\mc{B}$ sind genau die Spaltenvektoren $c_1, \dotsc, c_n \in \Cbb^n$.
+  Also sind die Spalten von $U^{-1}$ eine Orthonormalbasis von $\Cbb^n$, und $U^{-1}$ somit unitär.
+  Deshalb ist auch $U$ unitär.
+  
+  Das zeigt die erste Aussage.
+  Die anderen Aussagen ergeben sich analog über die Normalenformen der entsprechenden Endomorphismen.
+\end{proof}
+
+
+Im Folgenden seien
+\[
+  I \coloneqq
+  \begin{pmatrix}
+    1 &   \\
+      & 1
+  \end{pmatrix}
+  \quad\text{und}\quad
+  J \coloneqq
+  \begin{pmatrix}
+      & -1  \\
+    1 & 
+  \end{pmatrix}.
+\]
+
+
+\begin{lemma}
+  Für alle $r, \theta \in \Rbb$ ist $\exp(\log(r) I + \theta J) = r D_{\theta}$.
+\end{lemma}
+\begin{proof}
+  Da $I$ und $J$ kommutieren (denn $I$ ist die Einheitsmatrix), kommutieren auch $\log(r) I$ und $\theta J$.
+  Daher ist
+  \[
+      \exp(\log(r) I + \theta J)
+    = \exp(\log(r) I) \exp(\theta J)
+    = \exp(\log(r)) I \exp(\theta J)
+    = r \exp(\theta J).
+  \]
+  Da $J^2 = -I$ gilt für alle $n \in \Nbb$, dass
+  \[
+    J^n
+    =
+    \begin{cases}
+      \phantom{-}I  & \text{falls $n \equiv 0 \mod 4$}  \\
+      \phantom{-}J  & \text{falls $n \equiv 1 \mod 4$}  \\
+                -I  & \text{falls $n \equiv 2 \mod 4$}  \\
+                -J  & \text{falls $n \equiv 3 \mod 4$}.
+    \end{cases}
+  \]
+  Damit ergibt sich, dass
+  \[
+      \exp(\theta J)
+    = \sum_{n=0}^\infty \frac{(\theta J)^n}{n!}
+  \]
+
+\end{proof}
+
+
+
+
+
+\end{document}
