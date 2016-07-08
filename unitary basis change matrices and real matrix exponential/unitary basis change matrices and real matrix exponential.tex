@@ -1,9 +1,10 @@
 %\documentclass[a4paper,10pt]{article}
-\documentclass[a4paper,10pt]{scrartcl}
+\documentclass[a4paper, 10pt, numbers=noenddot]{scrartcl}
 
 \usepackage{../generalstyle}
+\usepackage{specificstyle}
 
-\title{Lösungen zu Aufgabe 1, Zettel 9}
+\title{Lösungen zu Aufgabe 1, Zettel 8}
 \author{Jendrik Stelzner}
 \date{\today}
 
@@ -52,51 +53,67 @@ Im Folgenen sei
   \end{pmatrix*}
 \]
 die Drehmatrix um den Winkel $\varphi \in \Rbb$.
+Für Skalare $\lambda_1, \dotsc, \lambda_n \in \Cbb$ sei
+\[
+  \diag(\lambda_1, \dotsc, \lambda_n)
+  \coloneqq
+  \begin{pmatrix}
+    \lambda_1 &         &           \\
+              & \ddots  &           \\
+              &         & \lambda_p
+  \end{pmatrix}
+  \in
+  \Mat_n(\Cbb)
+\]
+die entsprechende Diagonalmatrix.
+Für Matrizen $A_1 \in \Mat_{n_1}(\Cbb), \dotsc, A_r \in \Mat_{n_r}(\Cbb)$ sei
+\[
+  \block(A_1, \dotsc, A_r)
+  =
+  \begin{pmatrix}
+    A_1 &         &     \\
+        & \ddots  &     \\
+        &         & A_r
+  \end{pmatrix}
+  \in
+  \Mat_{n_1 + \dotsb + n_r}(\Cbb)
+\]
+die entsprechende Blockdiagonalmatrix.
 
 
 \begin{theorem}
   \begin{enumerate}[leftmargin=*]
     \item
-      Ist $A \in \Mat_n(\Cbb)$ normal, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt ist.
+      Ist $A \in \Mat_n(\Cbb)$ normal, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U \! A U^{-1}$ in Diagonalgestalt ist.
+      Die Diagonaleinträge sind dabei bis auf Permutation eindeutig bestimmt.
     \item
-      Ist $A \in \Mat_n(\Cbb)$ selbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt mit reellen Diagonaleinträgen ist.
+      Ist $A \in \Mat_n(\Cbb)$ selbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U \! A U^{-1}$ in Diagonalgestalt mit reellen Diagonaleinträgen ist.
+      Die Diagonaleinträge sind dabei bis auf Permutation eindeutig bestimmt.
     \item
-      Ist $A \in \Mat_n(\Cbb)$ antiselbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt mit rein imaginären Diagonaleinträgen ist.
+      Ist $A \in \Mat_n(\Cbb)$ antiselbstadjungiert, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U \! A U^{-1}$ in Diagonalgestalt mit rein imaginären Diagonaleinträgen ist.
+      Die Diagonaleinträge sind dabei bis auf Permutation eindeutig bestimmt.
     \item
-      Ist $A \in \Mat_n(\Cbb)$ unitär, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U A U^{-1}$ in Diagonalgestalt ist, und alle Diagonaleinträge haben Betrag $1$.
+      Ist $A \in \Mat_n(\Cbb)$ unitär, so gibt es eine unitäre Matrix $U \in \Unitary(n)$, so dass $U \! A U^{-1}$ in Diagonalgestalt ist, und alle Diagonaleinträge haben Betrag $1$.
+      Die Diagonaleinträge sind dabei bis auf Permutation eindeutig bestimmt.
     \item
       Ist $A \in \Mat_n(\Rbb)$ normal, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass
       \[
-        O A O^{-1}
-        =
-        \begin{pmatrix}
-          \lambda_1 &         &           &                   &         &                   \\
-                    & \ddots  &           &                   &         &                   \\
-                    &         & \lambda_p &                   &         &                   \\
-                    &         &           & r_1 D_{\varphi_1} &         &                   \\
-                    &         &           &                   & \ddots  &                   \\
-                    &         &           &                   &         & r_q D_{\varphi_q},
-        \end{pmatrix}.
+          O A O^{-1}
+        = \block(\lambda_1, \dotsc, \lambda_p, r_1 D_{\varphi_1}, \dotsc, r_q D_{\varphi_q}).
       \]
+      mit $\lambda_1, \dotsc, \lambda_p \in \Rbb$, $r_1, \dotsc, r_q > 0$ und $\varphi_1, \dotsc, \varphi_q \in (0,\pi)$.
+      Die Zahlen $r$ und $s$ sind dabei eindeutig bestimmt, und die Skalare $\lambda_1, \dotsc, \lambda_p \in \Rbb$ und Paare $(r_1, \varphi_1), \dotsc, (r_q, \varphi_q)$ sind dabei jeweils bis auf Permutation eindeutig bestimmt.
     \item
       Ist $A \in \Mat_n(\Rbb)$ selbstadjungiert, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass $O A O^{-1}$ in Diagonalgestalt ist.
+      Die Diagonaleinträge sind dabei
     \item
       Ist $A \in \Mat_n(\Rbb)$ orthogonal, so gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass
       \[
-        O A O^{-1}
-        =
-        \begin{pmatrix}
-          1 &         &   &     &         &     &               &         &                 \\
-            & \ddots  &   &     &         &     &               &         &                 \\
-            &         & 1 &     &         &     &               &         &                 \\
-            &         &   & -1  &         &     &               &         &                 \\
-            &         &   &     & \ddots  &     &               &         &                 \\
-            &         &   &     &         & -1  &               &         &                 \\
-            &         &   &     &         &     & D_{\varphi_1} &         &                 \\
-            &         &   &     &         &     &               & \ddots  &                 \\
-            &         &   &     &         &     &               &         & D_{\varphi_r}
-        \end{pmatrix}.
+          O A O^{-1}
+        = \block(1, \dotsc, 1, -1, \dotsc, -1, D_{\varphi_1}, \dotsc, D_{\varphi_r}).
       \]
+      mit Winkeln $\varphi_1, \dotsc, \varphi_r \in (0,\pi)$.
+      Dabei eindeutig bestimmt, wie häufig die Einträge $1$ und $-1$ vorkommen, und die Winkel $\varphi_1, \dotsc, \varphi_n$ sind bis auf Permutation eindeutig bestimmt.
   \end{enumerate}
 \end{theorem}
 
@@ -108,7 +125,7 @@ die Drehmatrix um den Winkel $\varphi \in \Rbb$.
   Da $\Cbb^n$ endlichdimensional ist, gibt es eine Orthonormalbasis $\mc{C} = (c_1, \dotsc, c_n)$ von $\Cbb^n$ aus Eigenvektoren von $f$.
   Für die Basiswechselmatrix $U \coloneqq T^{\mc{B}}_{\mc{C}}$ gilt nun, dass
   \[
-      U A U^{-1}
+      U \! A U^{-1}
     = T^{\mc{B}}_{\mc{C}} \Mat_\mc{B}(f) T^{\mc{C}}_{\mc{B}}
     = \Mat_\mc{C}(f)
   \]
@@ -138,7 +155,7 @@ Im Folgenden seien
 \]
 
 
-\begin{lemma}
+\begin{lemma}\label{lem: finding a logarithm for rotation matrices}
   Für alle $r, \theta \in \Rbb$ ist $\exp(\log(r) I + \theta J) = r D_{\theta}$.
 \end{lemma}
 \begin{proof}
@@ -162,12 +179,255 @@ Im Folgenden seien
     \end{cases}
   \]
   Damit ergibt sich, dass
-  \[
-      \exp(\theta J)
-    = \sum_{n=0}^\infty \frac{(\theta J)^n}{n!}
-  \]
-
+  \begin{align*}
+        \exp(\theta J)
+    &=  \sum_{n=0}^\infty \frac{(\theta J)^n}{n!}
+     =    \sum_{k=0}^\infty \frac{(\theta J)^{2k}}{(2k)!}
+        + \sum_{k=0}^\infty \frac{(\theta J)^{2k+1}}{(2k+1)!}     \\
+    &=    \sum_{k=0}^\infty (-1)^k \frac{\theta^{2k} I}{(2k)!}
+        + \sum_{k=0}^\infty (-1)^k \frac{\theta^{2k+1} J}{(2k+1)!}
+     =  \cos(\theta) I + \sin(\theta) J
+     =  D_\theta.
+  \end{align*}
+  Zusammengefasst ist also $\exp(\log(r)I + \theta J) = r \exp(\theta J) = r D_\theta$.
 \end{proof}
+
+
+\begin{remark}
+  Lemma~\ref{lem: finding a logarithm for rotation matrices} lässt sich auch konzeptioneller begründen:
+  Es sei
+  \[
+    C \coloneqq
+    \left\{
+      \begin{pmatrix*}[r]
+        a & -b  \\
+        b &  a
+      \end{pmatrix*}
+    \,\middle|\,
+      a, b \in \Rbb
+    \right\}
+    \subseteq
+    \Mat_2(\Rbb).
+  \]
+  Die Abbildung $\Phi \colon \Cbb \to C$ mit
+  \[
+    \Phi(a + i b)
+    =
+    \begin{pmatrix*}[r]
+      a & -b  \\
+      b &  a
+    \end{pmatrix*}
+    =
+    a I + b J
+    \quad
+    \text{für alle $a, b \in \Rbb$}
+  \]
+  ist bijektiv, und durch direktes Nachrechnen ergibt sich, dass $\Phi$ bezüglich der üblichen Matrixaddition und -multiplikation ein Ringhomomorphismus ist. (D.h.\ es ist $\Phi(z_1 + z_2) = \Phi(z_1) + \Phi(z_2)$, $\Phi(z_1 \cdot z_2) = \Phi(z_1) \cdot \Phi(z_2)$ und $\Phi(1) = I$ für alle $z_1, z_2 \in \Cbb$.)
+  Also ist $\Phi$ ein Ringisomorphismus.
+  Da $\Cbb$ ein Körper ist, folgt damit, dass $C$ mit der üblichen Matrixaddition und -multiplikation ebenfalls ein Körper ist, und dass $\Phi$ ein Isomorphismus von Körpern ist.
+  Dabei entspricht die Darstellung $a + ib$ einer komplexen Zahl der Darstellung $a I + b J$ einer Matrix aus $C$, und die Polardarstellung $r e^{i\varphi}$ einer komplexen Zahl der Darstellung $r D_\varphi$ einer Matrix in $C$.
+  
+  Neben diesen algebraischen Eigenschaft sind $\Phi$ und $\Phi^{-1}$ auch stetig.
+  Somit ist $\Phi$ auch ein Homöomorphismus.
+  (Insgesamt ist $\Phi$ also ein Isomorphismus von topologischen Körpern.)
+  
+  Für alle $z_1, z_2 \in \Cbb$ ist deshalb genau dann $z_2 = \exp(z_1)$, wenn $\Phi(z_2) = \exp(\Phi(z_1))$.
+  Somit lassen sich Aussagen über das Matrixexponential auf $C$ in Aussagen über die Exponentialabbildung auf $\Cbb$ übersetzen.
+  Inbesondere übersetzt sich das Problem, einen Logarithmus einer Matrix $r D_\varphi \in C$ zu finden, darin, einen Logarithmus einer komplexen Zahl $r e^{i \varphi}$ zu finden.
+  Ein solcher ist durch $\log(r) + i \varphi$ gegeben.
+  Diese komplexe Zahl entspricht zurückübersetzt der Matrix $\log(r) I + \varphi J \in C$.
+\end{remark}
+
+
+\begin{lemma}\label{lemma: unitary basis change matrices}
+  Es sei $A \in \Mat_n(\Cbb)$ und $U \in \Unitary(n)$.
+  Dann ist $(U \! A U^{-1})^* = U \! A^* U^{-1}$.
+\end{lemma}
+\begin{proof}
+  Es ist
+  $
+      (U \! A U^{-1})^*
+    = (U^{-1})^* A^* U^*
+    = (U^*)^{-1} A^* U^*
+    = (U^{-1})^{-1} A^* U^{-1}
+    = U \! A U^{-1}.
+  $
+\end{proof}
+
+
+\begin{corollary}
+  Es sei $A \in \Mat_n(\Cbb)$ und $U \in \Unitary(n)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Matrix $A$ ist genau dann normal, wenn $U \! A U^{-1}$ normal ist.
+    \item
+      Die Matrix $A$ ist genau dann selbstadjungiert, wenn $U \! A U^{-1}$ selbstadjungiert ist.
+    \item
+      Die Matrix $A$ ist genau dann antiselbstadjungiert, wenn $U \! A U^{-1}$ antiselbstadjungiert ist.
+    \item
+      Die Matrix $A$ ist genau dann unitär, wenn $U \! A U^{-1}$ unitär ist.
+  \end{enumerate}
+\end{corollary}
+
+
+\begin{remark}
+  Für nicht-unitäre Basiswechselmatrizen gilt zu zu Lemma~\ref{lemma: unitary basis change matrices} analoge Aussage nicht notwendigerweise.
+  Für $S \in \GL_n(\Cbb)$ gilt allgemeiner, dass genau dann $(S A S^{-1})^* = S A^* S^{-1}$ für alle $A \in \Mat_n(\Cbb)$, wenn $S = \lambda U$ für ein eine unitäre Matrix $U \in \Unitary(n)$ und einen Skalar $\lambda \in \Cbb^\times$; dabei lässt sich $\lambda$ durch passende Wahl von $U$ als positiven reellen Skalar $\lambda = \sqrt{\tr(SS^*)/n}$ wählen.
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+\section{Lösungen zu Aufgabe 1}
+
+
+Es sei $A \in \GL_n(\Rbb)$.
+
+
+
+
+
+\subsection{}
+
+Angenommen, es ist $A = \exp(B)$ für selbstadjungiertes $B \in \Mat_n(\Rbb)$.
+Da $B$ selbstadjungiert ist, gibt es $O \in \Orthogonal(n)$, so dass $O B O^{-1}$ eine Diagonalmatrix mit reellen Diagonaleinträgen $\lambda_1, \dotsc, \lambda_n \in \Rbb$ ist.
+Da $B$ selbstadjungiert ist, ist auch $A = \exp(B)$ selbstadjungiert, also symmetrisch.
+Da $O A O^{-1} = O \exp(B) O^{-1} = \exp(O B O^{-1})$ eine Diagonalmatrix mit positiven reellen Diagonaleinträgen $\exp(\lambda_1), \dotsc, \exp(\lambda_n)$ ist, sind alle Eigenwerte von $A$ positiv.
+
+Angenommen, $A$ ist symmetrisch, also selbstadjungiert, mit positiven Eigenwerten.
+Dann $A$ selbstadjungiert ist, gibt es $O \in \Orthogonal(n)$, so dass $O A O^{-1}$ eine Diagonalmatrix mit Diagonaleinträgen $\lambda_1, \dotsc, \lambda_n \in \Rbb$.
+Nach Annahme sind diese Diagonaleinträge positiv.
+Für die Diagonalmatrix $D \in \Mat_n(\Rbb)$ mit Diagonaleinträgen $\log(\lambda_1), \dotsc, \log(\lambda_n)$ gilt nun, dass $O A O^{-1} = \exp(D)$, und somit $A = O^{-1} \exp(D) O = \exp(O^{-1} D O)$.
+Da $A$ selbstadjungiert ist und $O$ normal ist, ist auch $O^{-1} A \in \Mat_n(\Rbb)$ selbstadjungiert.
+
+
+
+
+
+\subsection{}
+
+Angenommen, es ist $A = \exp(B)$ für antiselbstadjungiertes $B \in \Mat_n(\Rbb)$.
+Da $B$ antiselbstadjungiert ist, ist $\exp(A) \in \Mat_n(\Rbb)$ unitär, und somit orthogonal.
+Da $B \in \Mat_n(\Rbb)$ antiselbstadjungiert ist, sind die Diagonaleinträge von $B$ alle Null, weshalb $\tr B = 0$ und somit $\det A = \det \exp(B) = \exp(\tr B) = \exp(0) = 1$.
+
+Angenommen, $A$ ist orthogonal mit $\det A = 1$.
+Da $A$ orthogonal ist, gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$, so dass
+\[
+    O A O^{-1}
+  = \block(1, \dotsc, 1, -1, \dotsc, -1, D_{\varphi_1}, \dotsc, D_{\varphi_r}),
+\]
+wobei $r$ die Vielfachheit des Diagonaleintrags $-1$ sei.
+Da
+\[
+    1
+  = \det A
+  = \det(O A O^{-1})
+  = 1 \dotsm 1 \cdot \underbrace{(-1) \dotsm (-1)}_{r} \det(D_{\varphi_1}) \dotsm \det(D_{\varphi_r})
+  = (-1)^r
+\]
+muss $r$ gerade sein.
+Für $s = r/2$ ist deshalb
+\[
+    O A O^{-1}
+  = \block(1, \dotsc, 1, \underbrace{-I, \dotsc, -I}_{s}, D_{\varphi_1}, \dotsc, D_{\varphi_r}).
+\]
+Für die Matrix
+\[
+            B
+  \coloneqq \block\Bigl(0, \dotsc, 0,
+                        \underbrace{\frac{\pi}{2} J, \dotsc, \frac{\pi}{2} J}_{s},
+                        \varphi_1 J, \dotsc, \varphi_r J
+                  \Bigr)
+\]
+gilt, dass $O A O^{-1} = \exp(B)$, und deshalb $A = O^{-1} \exp(B) O = \exp(O^{-1} B O)$.
+Da $B$ antiselbstadjungiert ist (denn $J$ ist antiselbstadjungiert) und $O$ orthogonal ist, ist auch $O B O^{-1}$ antiselbstadjungiert.
+
+
+
+
+
+\subsection{}
+
+Angenommen, es ist $A = \exp(B)$ für normales $B \in \Mat_n(\Rbb)$.
+Als normale Matrix ist $B$ über $\Cbb$ diagonalisierbar, d.h.\ es gibt $S \in \GL_n(\Cbb)$ mit $S B S^{-1} = \diag(\lambda_1, \dotsc, \lambda_n)$.
+Da $B$ eine reelle Matrix ist, ist für jeden nicht reellen Eigenwert $\lambda$ von $B$ auch $\overline{\lambda}$ ein Eigenwert von $B$, und $\lambda$ und $\overline{\lambda}$ haben die gleichen algebraischen (und geometrischen) Vielfachheiten.
+Durch passende Wahl von $S$ ist deshalb o.B.d.A.
+\[
+    S B S^{-1}
+  = \diag(\mu_1, \dotsc, \mu_r, \lambda_1, \overline{\lambda_1}, \dotsc, \lambda_s, \overline{\lambda_s})
+\]
+mit $\mu_1, \dotsc, \mu_r \in \Rbb$ und $\lambda_1, \dotsc, \lambda_s \in \Cbb$ nicht reell.
+Daher ist
+\[
+    S A S^{-1}
+  = S \exp(B) S^{-1}
+  = \exp(S B S^{-1})
+  = \diag(e^{\mu_1}, \dotsc, e^{\mu_r},
+          e^{\lambda_1}, \overline{e^{\lambda_1}}, \dotsc, e^{\lambda_s}, \overline{e^{\lambda_s}}).
+\]
+Dabei wird genutzt, dass $\exp(\overline{z}) = \overline{\exp(z)}$ für alle $z \in \Cbb$.
+Die Eigenwerte $e^{\mu_1}, \dotsc, e^{\mu_r}$ von $A$ sind alle positiv.
+Ist $\lambda$ ein negativer, reeller Eigenwert von $A$, so ist für alle $j = 1, \dotsc, s$ genau dann $\lambda = e^{\lambda_j}$, wenn $\overline{e^{\lambda_j}}$.
+Also tritt $\lambda$ ein Eigenwert mit gerader Vielfachheit.
+
+Angenommen, $A \in \Mat_n(\Rbb)$ ist normal und invertierbar, so dass alle negativen reellen Eigenwerte von $A$ gerade Vielfachheit haben.
+Da $A$ normal ist, gibt es eine orthogonale Matrix $O \in \Orthogonal(n)$ mit
+\begin{align*}
+      O A O^{-1}
+  &=  \block( \lambda_1, \dotsc, \lambda_p,
+              \mu_1, \mu_1, \dotsc, \mu_q, \mu_q,
+              r_1 D_{\varphi_1}, \dotsc, r_s D_{\varphi_s}  ) \\
+  &=  \block( \lambda_1, \dotsc, \lambda_p,
+              \mu_1 I, \dotsc, \mu_q I,
+              r_1 D_{\varphi_1}, \dotsc, r_s D_{\varphi_s}  ),
+\end{align*}
+wobei $\lambda_1, \dotsc, \lambda_p > 0$ die positiven reellen Eigenwerte von $A$ sind, $\mu_1, \dotsc, \mu_q < 0$ die negativen reellen Eigenwerte, $r_1, \dotsc, r_s > 0$ Radien und $\varphi_1, \dotsc, \varphi_s \in \Rbb$ Drehwinkel.
+Für die Matrix
+\begin{align*}
+  B
+  \coloneqq \block\Bigl(  \log(\lambda_1), \dotsc, \log(\lambda_p),
+                         &\log(-\mu_1) I + \frac{\pi}{2} J, \dotsc, \log(-\mu_q) I + \frac{\pi}{2} J, \\
+                         &\log(r_1) I + \varphi_1 J, \dotsc, \log(r_s) I + \varphi_s J                \Bigr)
+\end{align*}
+ist $O A O^{-1} = \exp(B)$ und somit $A = O^{-1} \exp(A) O = \exp(O^{-1} A O)$.
+
+Die Matrix $B$ ist normal:
+Es ist
+\begin{align*}
+    B^*
+  = B^T
+  = \block\Bigl(  \log(\lambda_1), \dotsc, \log(\lambda_p),
+                 &\log(-\mu_1) I + \frac{\pi}{2} J, \dotsc, \log(-\mu_q) I + \frac{\pi}{2} J, \\
+                 & \log(r_1) I - \varphi_1 J, \dotsc, \log(r_s) I - \varphi_s J                \Bigr),
+\end{align*}
+und es genügt zu überprüfen, dass die einzelnen Blöcke von $B$ und $B^*$ kommutieren.
+Für die einzelnen Skalare $\log(\lambda_j)$ mit $j = 1, \dotsc, p$ ist dies klar.
+Für die Vielfachen der Einheitsmatrix $\log(-\mu_j)$ mit $j = 1, \dotsc, q$ ist dies ebenfalls klar.
+Für die $(2 \times 2)$-Blöcke $\log(r_j) I + \varphi_j J$ und $\log(r_j) I - \varphi_j J$ mit $j = 1, \dotsc, s$ folgt dies daraus, dass $I$ und $J$ kommutieren.
+Also kommutieren $B$ und $B^*$, weshalb $B$ normal ist.
+Da $O$ orthogonal ist, ist damit auch $O^{-1} B O$ normal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
