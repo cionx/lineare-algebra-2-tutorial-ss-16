@@ -1,0 +1,219 @@
+\documentclass[a4paper, 10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\title{Lösung zu Zettel 10, Aufgabe 1}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Es sei $V$ ein endlichdimensionaler euklidischer Vektorraum mit $n \coloneqq \dim V$.
+Für alle $v_1, \dotsc, v_n \in V$ sei
+\[
+            P(v_1, \dotsc, v_n)
+  \coloneqq \left\{ \sum_{i=1}^n \lambda_i v_i \,\middle|\, \lambda_1, \dotsc, \lambda_n \in [0,1] \right\}
+\]
+
+Wir zeigen, dass es genau eine Funktion $\Vol \colon V^n \to \Rbb_{\geq 0}$ gibt, die alle der folgenden Bedingungen erfüllt:
+\begin{enumerate}
+  \item\label{enum: permutationinvariant}
+    Für alle $v_1, \dotsc, v_n \in V$ und $\sigma \in S_n$ ist $\Vol(v_{\sigma(1)}, \dotsc, v_{\sigma(n)}) = \Vol(v_1, \dotsc, v_n)$, d.h.\ $\Vol$ ist permutationsinvariant.
+  \item\label{enum: homogeneous in the last coordinate}
+    Für alle $v_1, \dotsc, v_n \in V$ und $\lambda \in [0,\infty)$ ist
+    \[
+        \Vol(v_1, \dotsc, v_{n-1}, \lambda v_n)
+      = \lambda \Vol(v_1, \dotsc, v_{n-1}, v_n).
+    \]
+  \item\label{enum: normed}
+    Ist $\{e_1, \dotsc, e_n\} \subseteq V$ eine Orthonormalbasis, so ist $\Vol(e_1, \dotsc, e_n) = 1$.
+  \item\label{enum: Cavalieri property}
+    Es seien $v_1, \dotsc, v_n, v_n' \in V$ und $X \coloneqq \Ell(v_1, \dotsc, v_{n-1})$.
+    Wenn es für jedes $y \in X^\perp$ mit $y \neq 0$ ein $x \in X$ mit
+    \[
+        P(v_1, \dotsc, v_{n-1}, v_n) \cap (X + y)
+      = [P(v_1, \dotsc, v_{n-1}, v_n') \cap (X + y)] + x
+    \]
+    gibt, so ist $\Vol(v_1, \dotsc, v_{n-1}, v_n) = \Vol(v_1, \dotsc, v_{n-1}, v_n')$.
+\end{enumerate}
+
+
+\begin{remark}
+  Die letzte Bedingung wurde ich Vergleich zu der Version auf dem Aufgabenzettel dahingehend geändert, dass die angegebene Bedingung nur für $y \neq 0$ erfüllbar seien muss.
+\end{remark}
+
+
+Wir zeigen zunächst die Eindeutigkeit.
+Hierfür sei $\Vol$ eine entsprechende Abbildung.
+
+
+\begin{proposition}\label{prop: replacing by orthogonal part of last element}
+  Es seien $v_1, \dotsc, v_n \in V$ und es sei $X \coloneqq \Ell(v_1, \dotsc, v_{n-1})$.
+  Es sei $v_n = x' + y'$ die eindeutige Zerlegung mit $x' \in X$ und $y' \in X^\perp$.
+  Dann ist
+  \[
+      \Vol(v_1, \dotsc, v_{n-1}, v_n)
+    = \Vol(v_1, \dotsc, v_{n-1}, y').
+  \]
+\end{proposition}
+\begin{proof}
+  Es sei $X \coloneqq \Ell(v_1, \dotsc, v_{n-1})$.
+  Wir zeigen, dass es für alle $y \in X^\perp$ mit $y \neq 0$ ein $x \in X$ gibt, so dass
+  \[
+      P(v_1, \dotsc, v_{n-1}, v_n) \cap (X + y)
+    = [P(v_1, \dotsc, v_{n-1}, y') \cap (X + y)] + x
+  \]
+  Hierfür betrachten wir $E \coloneqq P(v_1, \dotsc, v_{n-1}) \subseteq X$ und bemerken, dass
+  \begin{gather*}
+    \begin{aligned}
+          P(v_1, \dotsc, v_{n-1}, y')
+      &=  \left\{
+            \sum_{i=1}^{n-1} \lambda_i v_i + \lambda y'
+          \,\middle|\,
+            \lambda_1, \dotsc, \lambda_{n-1}, \lambda \in [0,1]
+        \right\} \\
+      &=  \{ e + \lambda y' \mid e \in E, \lambda \in [0,1] \}
+       =  \bigcup_{\lambda \in [0,1]} (E + \lambda y'),
+    \end{aligned}
+  \shortintertext{und analog}
+      P(v_1, \dotsc, v_{n-1}, v_n)
+    = \bigcup_{\lambda \in [0,1]} (E + \lambda v_n)
+    = \bigcup_{\lambda \in [0,1]} (E + \lambda x' + \lambda y')
+  \end{gather*}
+  Zudem nutzen wir im Folgenden die folgende Behauptung:
+  
+  \begin{claim}
+    Es seien $y_1, y_2 \in X^\perp$.
+    Dann ist genau dann $(X + y_1) \cap (X + y_2) \neq \emptyset$, wenn $y_1 = y_2$.
+    Dann gilt bereits $X + y_1 = X + y_2$.
+  \end{claim}
+  \begin{proof}
+    Aus Lineare Algebra I ist bekannt, dass die beiden zu $X$ affinen Unterräume $X + y_1$ und $X + y_2$ entweder disjunkt oder gleich sind, und das Gleichheit genau dann eintritt, wenn $y_1 - y_2 \in X$.
+    Da $y_1 - y_2 \in X^\perp$ ist dies genau dann erfüllt, wenn $y_1 - y_2 = 0$, wenn also $y_1 = y_2$.
+  \end{proof}
+  Wir unterscheiden im Folgenden zwischen den beiden Fällen $y' = 0$ und $y' \neq 0$.
+  
+  Angenommen, es ist $y' = 0$, und es sei $y \in X^\times$ mit $y \neq 0$.
+  Da $y' = 0$ ist
+  \[
+      P(v_1, \dotsc, v_{n-1}, y')
+    = \bigcup_{\lambda \in [0,1]} (E + \lambda y')
+    = \bigcup_{\lambda \in [0,1]} E
+    = E
+    \subseteq X.
+  \]
+  Da $y \neq 0$ ist $y \notin X$ (denn sonst wäre $y \in X \cap X^\perp = 0$).
+  Nach der Behauptung ist deshalb $X \cap (X + y) = (X + 0) \cap (X + y) = \emptyset$.
+  Daher ist
+  \[
+              P(v_1, \dotsc, v_{n-1}, y') \cap (X + y)
+    \subseteq X \cap (X + y)
+    =         \emptyset.
+  \]
+  Also ist $P(v_1, \dotsc, v_{n-1}, y') \cap (X + y) = \emptyset$.
+  Analog ergibt sich wegen
+  \[
+              P(v_1, \dotsc, v_{n-1}, v_n)
+    =         \bigcup_{\lambda \in [0,1]} \underbrace{(E + \lambda x')}_{\subseteq X}
+    \subseteq X,
+  \]
+  dass auch $P(v_1, \dotsc, v_{n-1}, v_n) \cap (X + y) = \emptyset$.
+  Im Falle von $y' = 0$ stimmen die beiden Schnitte also für alle $y \in X^\perp$ mit $y \neq 0$ überein.
+  (Für $y = 0$ gilt diese Gleichheit im allgemeinen nicht.)
+  In diesem Fall lässt sich also $x$ beliebig wählen.
+  
+  Nun betrachten wir den Fall $y' \neq 0$.
+  Es sei $y \in X^\times$.
+  Es ist
+  \[
+      P(v_1, \dotsc, v_n, y') \cap (X + y)
+    = \bigcup_{\lambda \in [0,1]} (E + \lambda y') \cap (X + y)
+  \]
+  Da $E + \lambda y' \subseteq X + \lambda y'$ folgt aus der Behauptung, dass $(E + \lambda y') \cap (X + y) = \emptyset$, falls $\lambda y' \neq y$ für alle $\lambda \in [0,1]$.
+  Andernfalls gibt es wegen $y' \neq 0$ genau ein $\lambda \in [0,1]$ mit $y' = \lambda y$, weshalb in diesem Fall $(E + \lambda y') \cap (X + y) = E + y'$.
+  Also ist
+  \[
+    P(v_1, \dotsc, v_n, y') \cap (X + y)
+    =
+      \begin{cases}
+        E + y'     & \text{falls $y = \lambda y'$ für ein $\lambda \in [0,1]$},  \\
+        \emptyset & \text{sonst}.
+      \end{cases}
+  \]
+  Analog ergibt sich, dass
+  \[
+    P(v_1, \dotsc, v_n, y') \cap (X + y)
+    =
+      \begin{cases}
+        E + y' + \lambda x' & \text{falls $y = \lambda y'$ für ein $\lambda \in [0,1]$},  \\
+        \emptyset           & \text{sonst}.
+      \end{cases}
+  \]
+  Wir können im ersten Fall $x = \lambda x'$ wählen, und im zweiten Fall lässt sich $x$ beliebig wählen.
+\end{proof}
+
+
+\begin{corollary}\label{cor: replacing by orthogonal part}
+  Es seien $v_1, \dotsc, v_n \in V$ und es sei $1 \leq i \leq n$.
+  Es sei $X \coloneqq \Ell(v_j \mid j \neq i)$ und $v_i = x' + y'$ mit $x' \in X$ und $y' \in X^\perp$.
+  Dann ist
+  \[
+      \Vol(v_1, \dotsc, v_{i-1}, v_i, v_{i+1}, \dotsc, v_n)
+    = \Vol(v_1, \dotsc, v_{i-1}, y', v_{i+1}, \dotsc, v_n).
+  \]
+\end{corollary}
+
+
+\begin{proof}
+  Dies folgt aus Proposition~\ref{prop: replacing by orthogonal part of last element} mithilfe der Permutationsinvarianz von $\Vol$.
+\end{proof}
+
+
+Mithilfe des Korollars ergibt sich die Eindeutigkeit nun wie folgt:
+Es seien $v_1, \dotsc, v_n \in V$.
+Induktiv definieren wir $y_1, \dotsc, y_n \in V$, so dass
+\begin{itemize}
+  \item
+    die Menge $\{y_1, \dotsc, y_n\}$ orthogonal ist, und
+  \item
+    für alle $i = 1, \dotsc, n$ ist $\Vol(v_1, \dotsc, v_n) = \Vol(y_1, \dotsc, y_i, v_{i+1}, \dotsc, v_n)$.
+\end{itemize}
+
+Dabei beginnen wir mit $X_1 \coloneqq \Ell(v_2, \dotsc, v_n)$ und zerlegen $v_1 = x_1 + y_1$ mit $x_1 \in X_1$ und $y_1 \in X_1^\perp$.
+Nach Korollar~\ref{cor: replacing by orthogonal part} ist dann $\Vol(v_1, v_2, \dotsc, v_n) = \Vol(y_1, v_2, \dotsc, v_n)$.
+
+Sind $y_1, \dotsc, y_i \in V$ für $1 \leq i < n$ mit den obigen Eigenschaften bereits definiert, so setzen wir $X_{i+1} \coloneqq \Ell(y_1, \dotsc, y_i, v_{i+2}, \dotsc, v_n)$ und zerlegen $v_{i+1} = x_{i+1} + y_{i+1}$ mit $x_{i+1} \in X_{i+1}$ und $y_{i+1} \in X_{i+1}^\perp$.
+Dann gilt
+\begin{align*}
+      \Vol(v_1, \dotsc, v_n)
+  &=  \Vol(y_1, \dotsc, y_i, v_{i+1}, v_{i+2}, \dotsc, v_n) \\
+  &=  \Vol(y_1, \dotsc, y_i, y_{i+1}, v_{i+2}, \dotsc, v_n).
+\end{align*}
+
+Damit erhalten wir nun, dass $\Vol(v_1, \dotsc, v_n) = \Vol(y_1, \dotsc, y_n)$, wobei $y_1, \dotsc, y_n$ orthogonal und unabhängig von $\Vol$ sind.
+Um zu zeigen, dass $\Vol(v_1, \dotsc, v_n)$ durch die obigen Bedingungen von $\Vol$ eindeutig bestimmt sind, genügt es deshalb, dies für $\Vol(y_1, \dotsc, y_n)$ zu zeigen.
+Ist $y_i = 0$ für ein $i = 1, \dotsc, n$, so ist
+\begin{align*}
+      \Vol(y_1, \dotsc, y_{i-1}, 0, y_{i+1}, \dotsc, y_n)
+  &=  \Vol(y_1, \dotsc, y_{i-1}, 0 \cdot 0, y_{i+1}, \dotsc, y_n) \\
+  &=  0 \cdot \Vol(y_1, \dotsc, y_{i-1}, 0, y_{i+1}, \dotsc, y_n)
+   =  0.
+\end{align*}
+Ansonsten ist $\{ y_1/\|y_1\|, \dotsc, y_n/\|y_n\| \} \subseteq V$ orthonormal, und somit
+\[
+    \Vol(y_1, \dotsc, y_n)
+  = \|y_1\| \dotsm \|y_n\| \Vol\left( \frac{y_1}{\|y_1\|}, \dotsc, \frac{y_n}{\|y_n\|} \right)
+  = \|y_1\| \dotsm \|y_n\|.
+\]
+
+
+
+
+
+
+
+
+
+\end{document}
