@@ -1,4 +1,4 @@
-\section{Jordannormalform, Hautpträume und Trigonalisierbarkeit}
+\section{Jordannormalform, Haupträume und Trigonalisierbarkeit}
 
 
 
@@ -19,7 +19,7 @@
 
 
 \begin{question}[subtitle = Berechnung von Jordannormalformen]{1}
-  Bestimmen Sie für die folgenden komplexen Matrizen jeweils eine Jordannormalform, inklusiver entsprechender Basiswechselmatrizen:
+  Bestimmen Sie für die folgenden komplexen Matrizen jeweils eine Jordannormalform, inklusive entsprechender Basiswechselmatrizen:
   \begin{gather*}
     \begin{pmatrix*}[r]
       2 & 2 &  -5 \\
@@ -70,129 +70,137 @@
   \end{gather*}
 \end{question}
 \begin{solution}
-  \begin{enumerate}leftmargin=*]
+  \begin{enumerate}[leftmargin=*]
     \item
-      \[
+      Eine mögliche Jordannormalform ist
+      $
         \begin{pmatrix}
           1 &   &   \\
             & 1 &   \\
             &   & 3
-        \end{pmatrix}
-      \]
+        \end{pmatrix},
+      $
       mit Basiswechselmatrix
-      \[
+      $
         \begin{pmatrix*}[r]
           5 & -2  & 1 \\
           0 &  1  & 3 \\
           1 &  0  & 1
-        \end{pmatrix*}
-      \]
+        \end{pmatrix*}.
+      $
     \item
-      \[
+      Die Jordannormalform ist
+      $
         \begin{pmatrix*}[r]
-          1 &   &   \\
           1 & 1 &   \\
-            & 1 & 1
-        \end{pmatrix*}
-      \]
+            & 1 & 1 \\
+            &   & 1
+        \end{pmatrix*},
+      $
       mit Basiswechselmatrix
-      \[
+      $
         \begin{pmatrix*}[r]
            1  & -1  & 1 \\
           -2  &  1  & 0 \\
            1  &  0  & 0
-        \end{pmatrix*}
-      \]
+        \end{pmatrix*}.
+      $
     \item
-      \[
-        \begin{pmatrix*}[r]
-          1 & 0 & 0 & 0 \\
-            & 1 & 1 & 0 \\
+      Eine mögliche Jordannormalform ist
+      $
+        \begin{psmallmatrix*}[r]
+          1 &   &   &   \\
+            & 1 & 1 &   \\
             &   & 1 & 1 \\
-            &   & 0 & 1
-        \end{pmatrix*}
-      \]
+            &   &   & 1
+        \end{psmallmatrix*},
+      $
       mit Basiswechselmatrix
-      \[
-        \begin{pmatrix*}[r]
+      $
+        \begin{psmallmatrix*}[r]
           1 & 1 & -1 & 0  \\
           0 & 1 &  0 & 0  \\
           0 & 0 &  1 & 0  \\
           0 & 0 &  0 & 1
-        \end{pmatrix*}
-      \]
+        \end{psmallmatrix*}.
+      $
     \item
-      \[
-        \begin{pmatrix*}[r]
+      Eine mögliche Jordannormalform ist
+      $
+        \begin{psmallmatrix*}[r]
           -1  &  1  &   &   \\
               & -1  &   &   \\
               &     & 1 & 1 \\
               &     &   & 1
-        \end{pmatrix*}
-      \]
+        \end{psmallmatrix*},
+      $
       mit Basiswechselmatrix
-      \[
+      $
         \begin{pmatrix*}[r]
           1 & \frac{1}{4} & 1 & \frac{1}{2} \\
           1 & 0           & 1 & 0           \\
           0 & 0           & 1 & \frac{1}{2} \\
           0 & 0           & 1 & 0
-        \end{pmatrix*}
-      \]
+        \end{pmatrix*}.
+      $
     \item
-      \[
-        \begin{pmatrix}
+      Eine mögliche Jordannormalform ist
+      $
+        \begin{psmallmatrix}
           1 &   &   &   \\
             & 2 & 1 &   \\
             &   & 2 & 1 \\
             &   &   & 2
-        \end{pmatrix}
-      \]
+        \end{psmallmatrix},
+      $
       mit Basiswechselmatrix
-      \[
-        \begin{pmatrix}
+      $
+        \begin{psmallmatrix*}[r]
            0  &  1  &  2  &  7  \\
           -2  & -2  &  0  & -1  \\
            1  &  0  & -1  & -2  \\
            1  &  1  &  0  &  0
-        \end{pmatrix}
-      \]
+        \end{psmallmatrix*}.
+      $
     \item
-      \[
-        \begin{pmatrix}
+      Eine mögliche Jordannormalform ist
+      $
+        \begin{psmallmatrix}
           6 &   &   &   \\
             & 6 & 1 &   \\
             &   & 6 & 1 \\
             &   &   & 6
-        \end{pmatrix}
-      \]
+        \end{psmallmatrix},
+      $
       mit Basiswechselmatrix
-      \[
-        \begin{pmatrix}
+      $
+        \renewcommand*{\arraystretch}{1.3}
+        \begin{pmatrix*}[r]
            \frac{2}{3}  &  3  &  2  & 0 \\
            \frac{2}{3}  &  3  & -1  & 0 \\
           -\frac{1}{3}  & -6  & -1  & 0 \\
           -\frac{1}{3}  &  3  &  2  & 0
-        \end{pmatrix}
-      \]
+        \end{pmatrix*}.
+      $
     \item
-      \[
-        \begin{pmatrix}
+      Eine mögliche Jordannormalform ist
+      $
+        \begin{psmallmatrix}
           1 &   &   &   \\
             & 2 &   &   \\
             &   & 4 & 1 \\
             &   &   & 4
-        \end{pmatrix}
-      \]
+        \end{psmallmatrix},
+      $
       mit Basiswechselmatrix
-      \[
-        \begin{pmatrix}
+      $
+        \begin{psmallmatrix*}[r]
           -1  &  1  &  1  & 1 \\
            1  & -1  &  0  & 0 \\
            0  &  0  & -1  & 0 \\
            0  &  1  &  1  & 0
-        \end{pmatrix}
-      \]
+        \end{psmallmatrix*}.
+      $
   \end{enumerate}
 \end{solution}
 
@@ -200,15 +208,15 @@
 \begin{question}{1}
   \begin{enumerate}[leftmargin=*]
     \item
-      Bestimmen Sie alle möglichen Jordannormalformen einer nicht-diagonalierbaren Matrix $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
+      Bestimmen Sie alle möglichen Jordannormalformen einer nicht-diagonalisierbare Matrix $A \in \Mat_2(\Cbb)$ mit $\tr = 0$.
     \item
-      Bestimmen Sie alle möglichen Jordnormalformen für $A \in \Mat_3(\Cbb)$ mit $\det A = 0$ und $\tr A = 0$.
+      Bestimmen Sie alle möglichen Jordannormalformen für $A \in \Mat_3(\Cbb)$ mit $\det A = 0$ und $\tr A = 0$.
   \end{enumerate}
 \end{question}
 
 
-\begin{question}[subtitle = Lösen linearer homogener DGL]{1}
-  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Gleichungsssysteme.
+\begin{question}[subtitle = Lösen linearer homogener Differentialgleichungen]{1}
+  Bestimmen Sie die Lösungsräume der folgenden homogenen linearen Differentialgleichungen.
   Dabei seien $f, g, h \in C^\infty(\Rbb)$.
   \[
     \left\{
@@ -284,7 +292,7 @@
     \item
      Es ist $\chi_A(T) = (T-3)^4 (T-5)^4$ und $(A - 3I)^2 (A - 5I)^2 = 0$.
     \item
-      Es ist $A^3 = 0$ und alle nicht-trivalen Eigenräume von $A$ sind eindimensional.
+      Es ist $A^3 = 0$ und alle nicht-trivialen Eigenräume von $A$ sind eindimensional.
     \item
       Es ist $\chi_A(T) = (T-2)(T+2)^3$ und $(A - 2I)(A + 2I) = 0$.
     \item
@@ -376,7 +384,7 @@
       
       (\emph{Hinweis}: Es ist $\id_V = \id_V \pm n^{p+1}$ für $p \in \Nbb$ groß genug.)
   \end{enumerate}
-  Ein Endomorphismus $u \colon V \to V$ heißt \emph{unipotent}, falls $u - \id_V$ nilpotent it.
+  Ein Endomorphismus $u \colon V \to V$ heißt \emph{unipotent}, falls $u - \id_V$ nilpotent ist.
   \begin{enumerate}[leftmargin=*, resume]
     \item
       Folgern Sie, dass jeder unipotente Endomorphismus von $V$ invertierbar ist.

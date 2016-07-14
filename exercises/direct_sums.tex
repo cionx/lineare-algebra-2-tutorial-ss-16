@@ -22,7 +22,7 @@
 \begin{question}[subtitle = Multiple Choice für Direkte Summen]{2}
   Es sei $V$ ein $K$-Vektorraum.
   Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
-  Geben Sie gegebenfalls ein Gegenbeispiel an.
+  Geben Sie gegebenenfalls ein Gegenbeispiel an.
   \begin{enumerate}[leftmargin=*]
     \item
       Ist $V = U \oplus W_1 = U \oplus W_2$ für Untervektorräume $U, W_1, W_2 \subseteq V$, so ist $W_1 = W_2$.
@@ -46,7 +46,7 @@
     \item
       Ist $\mc{E} \subseteq V$ ein Erzeugendensystem von $V$ und $U \subseteq V$ ein Untervektorraum, so ist der Schnitt $\mc{E} \cap U$ ein Erzeugendensystem von $U$.
     \item
-      Ist $(U_i)_{i \in I}$ eine Famlie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für alle $1 \leq i \neq j \leq n$, so ist $V = \bigoplus_{i \in I} U_i$.
+      Ist $(U_i)_{i \in I}$ eine Familie von Untervektorräumen $U_i \subseteq V$ mit $V = \sum_{i \in I} U_i$ und $U_i \cap U_j = 0$ für alle $1 \leq i \neq j \leq n$, so ist $V = \bigoplus_{i \in I} U_i$.
   \end{enumerate}
 \end{question}
 
@@ -57,7 +57,7 @@
 %%% PRIORITY 3
 
 
-\begin{question}[subtitle = Äquivalenz von Idempotenten und direkten Summen]{3}
+\begin{question}[subtitle = Äquivalenz von idempotenten Endomorphismen und direkten Summen]{3}
   Es seien $V$ ein $K$-Vektorraum.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -103,7 +103,7 @@
       \end{align*}
     \item
       Auf der linken Seite der obigen Bijektion gibt es eine Involution $(U_1, U_2) \mapsto (U_2, U_1)$.
-      Zeigen Sie, dass dies unter der gegebenen Bijektion der Involutions $e \mapsto \id_V - e$ auf der rechten Seite entspricht.
+      Zeigen Sie, dass dies unter der gegebenen Bijektion der Involution $e \mapsto \id_V - e$ auf der rechten Seite entspricht.
   \end{enumerate}
 \end{question}
 
@@ -134,8 +134,8 @@
 \end{question}
 
 
-\begin{question}[subtitle = Idempotente konstruieren]{3}
-  Zeigen Sie im Folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphisus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
+\begin{question}[subtitle = Konstruktion idempotenter Endomorphismen]{3}
+  Zeigen Sie im Folgenden jeweils, dass der Vektorraum $V$ die direkte Summe der Untervektorräume $U_1$ und $U_2$ ist, indem Sie einen idempotenten Endomorphismus $e \colon V \to V$ mit $U_1 = \im e$ und $U_2 = \ker e$ angeben.
   \begin{enumerate}[leftmargin=*]
     \item
       Es sei $\ringchar K \neq 2$, $V \coloneqq \Mat_n(K)$ der $K$-Vektorraum der ($n \times n$)-Matrizen über $K$,
@@ -324,7 +324,7 @@
       mit $\im e = V_1(e)$ gibt.
       
       (\emph{Hinweis}:
-       Erweitern Sie $e$ zu einem complete set of idempotents, dass die Zerlegung liefert.)
+       Erweitern Sie $e$ zu einem complete set of orthogonal idempotents, dass die Zerlegung liefert.)
     \item
       Für alle $i = 1, \dotsc, n$ sei $E_{ii} \in \Mat_n(K)$ die Matrix mit $1$ als $i$-ten Diagonaleintrag, und alle anderen Einträge sind $0$.
       Zeigen Sie, dass die Endomorphismen $e_1, \dotsc, e_n$ mit
@@ -456,7 +456,7 @@
     \item
       Folgern Sie mithilfe der Zerlegung $V = \im e_1 \oplus \dotsb \oplus \im e_n$, dass $V$ diagonalisierbar ist, und dass $\im e_i = V_{\lambda_i}(f)$ für alle $i = 1, \dotsc, n$.
   \end{enumerate}
-  Ingesamt zeigt dies, dass genau dann $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ für paarweise verschieden $\lambda_1, \dotsc, \lambda_n \in K$, wenn $f$ diagonalisierbar ist und $\lambda_1, \dotsc, \lambda_n \in K$ die einzigen möglichen Eigenwerte von $f$ sind.
+  Insgesamt zeigt dies, dass genau dann $(f - \lambda_1) \dotsm (f - \lambda_n) = 0$ für paarweise verschieden $\lambda_1, \dotsc, \lambda_n \in K$, wenn $f$ diagonalisierbar ist und $\lambda_1, \dotsc, \lambda_n \in K$ die einzigen möglichen Eigenwerte von $f$ sind.
   \begin{enumerate}[resume]
     \item 
       Es sei nun $K = \Cbb$.

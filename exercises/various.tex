@@ -120,7 +120,7 @@
 \end{question}
 
 
-\begin{question}[subtitle = Zur Unterscheidung von Polynomen und Polynomsfunktionen]{3}
+\begin{question}[subtitle = Zur Unterscheidung von Polynomen und Polynomfunktionen]{3}
   Es sei $K$ ein endlicher Körper.
   \begin{enumerate}[leftmargin=*]
     \item
@@ -262,28 +262,71 @@
     \item
       Sind $f$ und $g$ diagonalisierbar, so ist auch $f + g$ diagonalisierbar.
     \item
-      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist $f \circ g$ invertierbar.
-    \item
       Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so ist auch $f + g$ diagonalisierbar.
     \item
       Ist $f$ diagonalisierbar, so ist für jedes $p \in K[X]$ auch $p(f)$ diagonalisierbar.
     \item
-      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so folgt, wenn $g$ invertierbar ist, dass $ \circ g^{-1}$ diagonalisierbar ist.
+      Falls $f$ und $g$ kommutieren und diagonalisierbar sind, so folgt, wenn $g$ invertierbar ist, dass $f \circ g^{-1}$ diagonalisierbar ist.
   \end{enumerate}
 \end{question}
 
 \begin{solution}
-  \begin{enumerate}
+  \begin{enumerate}[leftmargin=*]
     \item
       Nein, braucht etwa simultan diagonalisierbar.
+      Siehe etwa
+      $
+        \begin{pmatrix*}[r]
+          1 & -1  \\
+            & -1
+        \end{pmatrix*}
+      $
+      und
+      $
+        \begin{pmatrix*}[r]
+          -1 &  1 \\
+             & -1
+        \end{pmatrix*}.
+      $
     \item
-      Nein.
+      Nein, siehe etwa
+      $
+        \begin{pmatrix}
+          1 & 1 &   &   \\
+          0 & 1 &   &   \\
+            &   & 0 & 0 \\
+            &   & 0 & 0
+        \end{pmatrix}
+      $
+      und
+      $
+        \begin{pmatrix}
+          0 & 0 &   &   \\
+          0 & 0 &   &   \\
+            &   & 1 & 1 \\
+            &   & 0 & 1
+        \end{pmatrix}.
+      $
     \item
       Nein, braucht etwa simultan diagonalisierbar.
+      Siehe etwa
+      $
+        \begin{pmatrix*}[r]
+          1 &  1 \\
+            & -1
+        \end{pmatrix*}
+      $
+      und
+      $
+        \begin{pmatrix*}[r]
+          -1 & 1  \\
+             & 1
+        \end{pmatrix*}.
+      $
     \item
       Ja, da simultan diagonalisierbar.
     \item
-      Ja, da simultan diagonalsierbar.
+      Ja, denn ist $v \in V$ ein Eigenvektor von $f$ zum Eigenwert $\lambda \in K$, so ist $v$ ein Eigenvektor von $p(f)$ zum Eigenwert $p(\lambda)$.
     \item
       Ja.
   \end{enumerate}
@@ -458,7 +501,7 @@
 
 
 \begin{question}[subtitle = Charakterisierungen der Jacobi-Identität]{3}
-  Es sei $V$ ein $K$-Vektorrraum und $[-,-] \colon V \times V \to V$ eine alternierend bilineare Abbildung.
+  Es sei $V$ ein $K$-Vektorraum und $[-,-] \colon V \times V \to V$ eine alternierend bilineare Abbildung.
   Für jedes $x \in V$ sei
   \[
     \ad_x \coloneqq [x,-] \colon V \to V, \quad y \mapsto [x,y].
@@ -533,8 +576,7 @@
 
 
 \begin{question}[subtitle = Multiple Choice zu Wegzusammenhangskomponenten]{1}
-  Es sei $n \geq 1$.
-  Entscheiden Sie, welche der folgenden Aussagen gelten.
+  Entscheiden Sie, welche der folgenden Aussagen gelten für alle $n \geq 1$ gelten.
   \begin{enumerate}[leftmargin=*]
     \item
       Die Wegzusammenhangskomponenten von $\GL_n(\Rbb)$ sind die beiden Untergruppen
@@ -548,13 +590,11 @@
     \item
       Die schiefsymmetrischen Matrizen $\mathfrak{o}_n(\Rbb) = \{ A \in \Mat_n(\Rbb) \mid A^T = -A \}$ sind eine wegzusammenhängende Teilmenge von $\Mat_n(\Rbb)$.
     \item
-      Die Gruppe $\Unitary(n) \cap \GL_n(\Rbb)_+$ besteht aus zwei Wegzusammenhangskomponenten.
+      Ist $n \geq 2$, so hat die Gruppe $\Unitary(n) \cap \GL_n(\Rbb)_+$ unendlich viele Zusammenhangskomponenten.
     \item
-      Ist $G$ eine wegzusammenhängende Untergruppe von $\GL_n(\Kbb)$, die alle invertierbaren Skalarmatrizen (d.h.\ Matrizen der Form $\lambda I$ mit $\lambda \in \Kbb^\times$) enthält, so ist $G' \coloneqq \{ S \in G \mid \det S = 1 \}$ ebenfalls eine wegzusammenhängende Untergruppe von $\GL_n(\Kbb)$.
+      Es ist $G = \{ S \in \GL_n(\Rbb) \mid S^{-1} = -S \}$ eine zusammenhängende, aber nicht wegzusammenhängende Untergruppe von $\GL_n(\Rbb)$.
     \item
       Jede Untergruppe von $\GL_n(\Cbb)$ ist wegzusammenhängend.
-    \item
-      Es ist $G = \{ S \in \GL_n(\Rbb) \mid S^{-1} = -S \}$ eine zusammehängende, aber nicht wegzusammenhängende Untergruppe von $\GL_n(\Rbb)$.
     \item
       Die Gruppe $\SUnitary(n) \cap \GL_n(\Rbb)$ ist wegzusammenhängend.
     \item
@@ -574,29 +614,27 @@
       ist eine wegzusammenhängende Untergruppe von $\GL_2(\Rbb)$.
   \end{enumerate}
 \end{question}
-\begin{solution}
-  \begin{enumerate}
-    \item
-      Nein, $\GL_n(\Rbb)_-$ ist keine Untergruppe.
-    \item
-      Falsch, die Wegzusammenhangskomponenten von $\GL_n(\Rbb)$ sind $\GL_n(\Rbb)_+$ und $\GL_n(\Rbb)_-$.
-    \item
-      Ja, denn normierte Vektorräume sind immer wegzusammenhängend.
-    \item
-      Nein: Der Schnitt ist $\SO(n)$, also wegzusammenhängend.
-    \item
-      Ja: Wähle einen Weg in $G$ und teile diesen durch die Determinante.
-    \item
-      Nein, es ist keine Untergruppe.
-    \item
-      Falsch, siehe $\{1,-1\}$.
-    \item
-      Ja, der Schnitt ist $\SOrthogona(n)$.
-    \item
-      Ja: Ändere den Winkel stetig.
-      Außerdem ist es $\SOrthogonal(2)$.
-  \end{enumerate}
-\end{solution}
+% \begin{solution}
+%   \begin{enumerate}[leftmargin=*]
+%     \item
+%       Es sind zwar die Wegzusammenhangskomponenten, aber $\GL_n(\Rbb)_-$ ist keine Untergruppe.
+%     \item
+%       Falsch: $\Orthogonal(n)$ enthält zwar die Einheitsmatrix (da eine Untergruppe), ist aber keine Wegzusammenhangskomponente von $\GL_n(\Rbb)$.
+%     \item
+%       Ja, denn normierte Vektorräume sind immer wegzusammenhängend; für beliebige $A, B \in \orthogonal_n(\Rbb)$ ist $\gamma \colon [0,1] \to \orthogonal_n(\Rbb)$, $t \mapsto A + t(B-A)$ ein stetiger Weg von $A$ nach $B$.
+%     \item
+%       Nein: Dieser Schnitt ist $\SOrthogonal(n)$, also wegzusammenhängend.
+%     \item
+%       Nein, es ist keine Untergruppe, da etwa $I \notin G$.
+%     \item
+%       Falsch, siehe etwa $\{1,-1\}$ oder $\Orthogonal(n)$.
+%     \item
+%       Ja, dieser Schnitt ist $\SOrthogonal(n)$.
+%     \item
+%       Die Gruppe ist $\SOrthogonal(2)$, und somit wegzusammenhängend.
+%       Alternativ lässt sich der Drehwinkel stetig ändern.
+%   \end{enumerate}
+% \end{solution}
 
 
 
@@ -726,7 +764,7 @@
     \item
       Geben Sie in $\Borel_n(\Rbb)$ einen stetigen Weg von der Diagonalmatrix mit Diagonaleinträgen $a_{11}, \dotsc, a_{nn}$ zu der Diagonalmatrix mit Diagonaleinträgen $\sign a_{11}, \dotsc, \sign a_{nn}$ an.
     \item
-      Folgern Sie aus den obigen Aussagen, dass $\Borel_n(\Rbb)$ aus $2^n$ Wegzusammenhängskomponenten besteht, und dass
+      Folgern Sie aus den obigen Aussagen, dass $\Borel_n(\Rbb)$ aus $2^n$ Wegzusammenhangskomponenten besteht, und dass
       \[
         \left\{
           \begin{pmatrix}
