@@ -1,0 +1,256 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,numbers=noenddot]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\title{Lösungen zu Zettel 11}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+Wir erinnern zunächst an das folgende Lemma, das im Tutorium bereits gezeigt wurde:
+
+
+\begin{lemma}\label{lem: existence of spacelike vectors}
+  Es seien $u, v \in V$ zwei linear unabhängige Vektoren, die jeweils lichtartig oder zeitartig sind (d.h.\ es ist $\beta(u,u) \leq 0$ und $\beta(v,v) \leq 0$).
+  Dann enthält die Ebene $\Ell(u,v)$ einen raumartigen Vektor.
+\end{lemma}
+\begin{proof}
+  Es sei $\mc{B} = (e_1, e_2, e_3)$ eine Sylvesterbasis von $V$ mit
+  \[
+    \Mat_\mc{B}(\beta)
+    =
+    \begin{pmatrix}
+      1 &   &     \\
+        & 1 &     \\
+        &   & -1
+    \end{pmatrix},
+  \]
+  und es seien $u = u_1 e_1 + u_2 e_2 + u_3 e_3$ und $v = v_1 e_1 + v_2 e_2 + v_3 e_3$ mit $u_1, u_2, u_3, v_1, v_2, v_3 \in \Rbb$.
+  Da $u \neq 0$ gibt es ein $i \in \{1, 2, 3\}$ mit $u_i \neq 0$; da
+  \[
+      u_1^2 + u_2^2 - u_3^2
+    = \beta(u,u)
+    \leq 0
+  \]
+  muss auch $u_3 \neq 0$.
+  Es sei 
+  \[
+              w
+    \coloneqq v - \frac{v_3}{u_3} u
+    \in       \Ell(u, v).
+  \]
+  Es ist $w = w_1 e_1 + w_2 e_2 + w_3 e_3$ mit $w_i = u_i - v_3 u_i / u_3$ für alle $i = 1, 2, 3$; insbesondere ist $w_3 = 0$.
+  Da $u$ und $v$ linear unabhängig sind, ist aber auch $w \neq 0$, und somit $w_1 \neq 0$ oder $w_2 \neq 0$.
+  Damit haben wir
+  \[
+      \beta(w,w)
+    = w_1^2 + w_2^2 - w_3^2
+    = w_1^2 + w_2^2
+    > 0,
+  \]
+  weshalb $w$ raumartig ist.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\subsection{}
+
+
+Wir bemerken zunächst, dass die Bedingung, dass $\beta|_{X \times X}$ nichtentartet ist, unnötig ist:
+
+
+\begin{lemma}
+  Es sei $X \subseteq V$ ein zweidimensionaler Untervektorraum, so dass $\beta|_{X \times X}$ vom Typ $(1,1)$ ist.
+  Dann ist $\beta|_{X \times X}$ nichtentartet.
+\end{lemma}
+\begin{proof}
+  Da $\beta|_{X \times X}$ vom Typ $(1,1)$ ist, und $1 + 1 = 2 = \dim X$, gibt es eine Sylvesterbasis $\mc{B} = (b_1, b_2)$ von $X$, so dass
+  \[
+    \Mat_\mc{B}(\beta|_{X \times X})
+    =
+    \begin{pmatrix*}[r]
+      1 &  0  \\
+      0 & -1
+    \end{pmatrix*}.
+  \]
+  Da die Matrix keine Nullen auf der Diagonalen hat, ist $\beta|_{X \times X}$ nichtentartet.
+\end{proof}
+
+
+Wir zeigen daher im Folgenden, dass für einen zweidimensionalen Untervektorraum $X \subseteq V$ genau dann $\hyperbolic \cap X \neq \emptyset$, wenn $\beta|_{X \times X}$ den Typ $(1,1)$ hat.
+
+Wenn $\beta|_{X \times X}$ den Typ $(1,1)$ hat, dann gibt es eine Sylvesterbasis $(b_1, b_2)$ von $X$ mit $\beta(b_1, b_1) = 1$ und $\beta(b_2, b_2) = -1$ (sowie $\beta(b_1, b_2) = 0$).
+Insbesondere gilt $b_2 \in \hyperbolic_{\pm}$ und somit entweder $b_2 \in \hyperbolic$ oder $-b_2 \in \hyperbolic$, also $b_2 \in \hyperbolic \cap X$ oder $-b_2 \in \hyperbolic \cap X$.
+Es gilt aber auf jeden Fall $\hyperbolic \cap X \neq \emptyset$.
+
+Angenommen, es ist $\hyperbolic \cap X \neq \emptyset$.
+Es sei $b \in \hyperbolic \cap X \neq 0$.
+Da $b \in \hyperbolic$ ist $\beta(b,b) = -1$.
+Für den Typen von $\beta|_{X \times X}$ gibt es wegen der Zweidimensionalität von $X$ a priori sechs Möglichkeiten: $(0,0)$, $(1,0)$, $(0,1)$, $(2,0)$, $(1,1)$ oder $(0,2)$.
+
+Die Fälle $(0,0)$, $(1,0)$ und $(2,0)$ können wir ausschließen, denn sonst wäre $\beta|_{X \times X}$ positiv semidefinit, was $\beta(b,b) = -1$ widerspricht.
+
+In den Fällen $(0,1)$ und $(0,2)$ wäre $\beta|_{X \times X}$ negativ semidefinit; eine beliebige Basis $\mc{B}$ von $X$ würde dann aus licht- oder zeitartigen Vektoren bestehen, weshalb $X$ nach Lemma~\ref{lem: existence of spacelike vectors} einen raumartigen Vektor enthälten müsste.
+Dies stünde dann aber im Widerspruch zur negativen Semidefinitheit von $\beta|_{X \times X}$.
+
+Es bleibt also nur noch die Möglichkeit $(1,1)$ übrig.
+
+
+
+
+
+\subsection{}
+
+Die entscheidende Beobachtung ist, dass $x$ und $y$ linear unabhängig sind:
+
+
+\begin{lemma}\label{lem: elements of hyperbolic space are linear independent}
+  Je zwei Elemente $x, y \in \hyperbolic$ sind linear unabhängig.
+\end{lemma}
+\begin{proof}
+Nach Aufgabe 2 ist $\beta(x,y) < -1$, da sich $x$ und $y$ beide in der gleichen Zusammenhangskomponente von $\hyperbolic_{\pm}$ befinden, nämlich in $\hyperbolic$.
+Deshalb ist
+\[
+    \beta(u,v)^2
+  > (-1)^2
+  = (-1)(-1)
+  = \beta(u,u)\beta(v,v),
+\]
+weshalb die lineare Unabhängigkeit aus Aufgabe 1 folgt, da $u$ und $v$ beide zeitartig sind.
+\end{proof}
+
+Ist $\hyperbolicline \subseteq \hyperbolic$ eine Gerade, die $x$ und $y$ enthält, so gibt es einen zweidimensionalen Untervektorraum $X \subseteq V$ mit $\hyperbolicline = \hyperbolic \cap X$.
+Da die zweidimensionale Ebene $X$ die beiden linear unabhängigen Vektoren $u$ und $v$ enthält, muss bereits $X = \Ell(u,v)$.
+Somit ist $\hyperbolicline = \hyperbolic \cap \Ell(x,y)$ die eindeutige Gerade, die $x$ und $y$ enthält.
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\subsection{}
+
+
+Wegen der Bilinearität von $\beta$ ist $\beta(x, -) \colon V \to \Rbb$, $v \mapsto \beta(x,v)$ eine lineare Abbildung.
+Es gilt $\beta(x, -) \neq 0$, da $\beta(x,-)(x) = \beta(x,x) = -1$.
+Folglich ist $\im \beta(x, -)$ ein Untervektorraum von $\Rbb$, der nicht der Nullvektorraum ist; es muss $\im \beta(x, -) = \Rbb$ gelten.
+Damit ergibt sich, dass $T_x = \ker \beta(x, -)$ ein Untervektorraum von $V$ ist, und nach der Dimensionsformel ist
+\[
+    \dim T_x
+  = \dim \ker \beta(x,-)
+  = \dim V - \dim \im \beta(x, -)
+  = 3 - 1
+  = 2.
+\]
+
+Um zu zeigen, dass $\beta|_{T_x \times T_x}$ ein Skalarprodukt ist, zeigen wir für $v \in T_x$ mit $v \neq 0$, dass $\beta(v,v) > 0$.
+Hierfür nehmen wir an, dass $\beta(v, v) \leq 0$, dass also $v$ licht- oder zeitartig ist.
+
+Wir bemerken, dass $x$ und $v$ linear unabhängig sind; ansonsten wäre nämlich $v = \lambda x$ für ein $\lambda \in \Rbb$ mit $\lambda \neq 0$, weshalb $\beta(v,x) = \beta(\lambda x, x) = \lambda \beta(x,x) = - \lambda \neq 0$ wäre.
+(Für diese Beobachtung haben wir genutzt, dass $v \neq 0$.)
+
+Nach Aufgabe 1 ist nun
+\[
+     0
+  = \beta(x,v)^2
+  > \beta(x,x) \beta(v,v)
+  = -\beta(v,v).
+\]
+Dabei haben wir in der ersten Gleichung genutzt, dass $v \in T_x$ und somit $\beta(x,v) = 0$, und für die Striktheit der Ungleichung nutzen wir, dass $x$ und $v$ linear unabhängig sind.
+Nach der obigen Gleichskette ist nun $\beta(v,v) > 0$, im Widerspruch zur Annahme $\beta(v,v) \leq 0$.
+Also musst bereits $\beta(v,v) > 0$ gelten.
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+Wir zeigen als erstes, dass das angegebene Element
+\[
+  \tangent
+  \coloneqq
+  \frac{B - \cosh(c) A}{\sinh(c)}
+\]
+die gewünschten Eigenschaften hat.
+Das zeigt inbesondere die Existenz von $\tangent_{AB}$.
+Anschließend zeigen wir die Eindeutigkeit von $\tangent_{AB}$; dann folgt insbesondere, dass $\tangent_{AB} = \tangent$.
+
+Es ist klar, dass $\tangent \in \Ell(A,B)$, und dass $1\sinh(c) > 0$.
+Man bemerke, dass $\cosh(c) = \cosh(\arccosh(-\beta(A,B))) = -\beta(A,B)$
+Deshalb ist
+\[
+    \beta(\tangent, A)
+  = \beta(\frac{B - \cosh(c) A}{\sinh(c)}, A)
+  = \frac{\beta(B, A) - \cosh(c) \beta(A,A)}{\sinh(c)}
+  = \frac{\beta(A,B) - \beta(A,B)}{\sinh(c)}
+  = 0,
+\]
+also $\tangent \in T_A$.
+Da $\sinh(c)^2 = \cosh(c)^2 - 1$ und deshalb
+\begin{align*}
+      \beta(\tangent, \tangent)
+  &=  \beta\left( \frac{B - \cosh(c) A}{\sinh(c)}, \frac{B - \cosh(c) A}{\sinh(c)} \right)    \\
+  &=  \frac{ \beta(B, B) - 2 \cosh(c) \beta(A,B) + \cosh(c)^2 \beta(A,A) }{ \cosh(c)^2 - 1 }  \\
+  &=  \frac{ -1 - 2 (- \beta(A, B)) \beta(A,B) + \beta(A,B)^2 (-1) }{ \beta(A,B)^2 - 1 }
+   =  \frac{ \beta(A, B)^2 - 1 }{ \beta(A, B)^2 - 1 }
+   =  1.
+\end{align*}
+Also ist $\tangent$ normiert.
+Somit erfüllt $\tangent$ alle geforderten Eigenschaften.
+
+Es sei nun $\tangent_{AB}$ ein weiterer Vektor, der alle angegebenen Eigenschaften erfüllt.
+Der Untervektorraum $\Ell(A,B) \subseteq V$ ist zweidimensional nach Lemma~\ref{lem: elements of hyperbolic space are linear independent} zweidimensional.
+Der Untervektorraum $U \coloneqq \{t \in \Ell(A,B) \mid \beta(t,A) = 0\} = \Ell(A,B) \cap T_A$ ist eindimensional: Da $\tangent \in U$ ist $U \neq 0$ und somit $\dim U \geq 1$, da aber $A \notin U$ ist $U \subsetneq \Ell(A,B)$ und somit $\dim U < \dim \Ell(A,B) = 2$.
+Da $\tangent$ und $\tangent_{AB}$ zwei bezüglich $\beta|_{U \times U}$ normierte Vektoren des eindimensionalen Vektorraums $U$ sind, muss $\tangent_{AB} = \pm \tangent$.
+Wäre $\tangent_{AB} = -\tangent$, so wäre $\tangent_{AB} = (-B + \cosh(c) A)/\sinh(c)$.
+Wegen der linearen Unabhängigkeit von $A$ und $B$ wäre diese Linearkombination von $A$ und $B$ eindeutig; der Koeffizient $-1/\sinh(c)$ von $B$ ist aber negativ, im Widerspruch zur Definition von $B$.
+Also muss bereits $\tangent_{AB} = \tangent$ gelten, was die Eindeutigkeit zeigt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
