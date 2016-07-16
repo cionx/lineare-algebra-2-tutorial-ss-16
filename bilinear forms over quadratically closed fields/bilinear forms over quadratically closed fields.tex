@@ -1,0 +1,507 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,numbers=noenddot]{scrartcl}
+
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+
+\title{Lösungen zu Zettel 12}
+\author{Jendrik Stelzner}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+
+\addtocounter{section}{2}
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+\begin{remark}
+  In der Vorlesung wurde anscheinend nicht definiert, was das Symbol $\oplus$ in $V \oplus V^*$ bedeuten soll.
+  Wir wollen dies hier ebenfalls nicht tun.
+  Stattdessen geben wir den Fakt an, dass für endlich viele $K$-Vektorräume $V_1, \dotsc, V_n$ die Gleichheit
+  \[
+      V_1 \oplus \dotsb \oplus V_n
+    = V_1 \times \dotsb \times V_n.
+  \]
+  gilt.
+  Wir werden daher im Folgenden jeweils mit $\times$ als mit $\oplus$ arbeiten.
+\end{remark}
+
+
+Um zu zeigen, dass $q \colon V \times V^* \to K$ mit $q(v, \varphi) = \varphi(v)$ für alle $(v, \varphi) \in V \times V^*$ eine quadratische Form ist, müssen wir eine Bilinearform $\beta \colon (V \times V^*) \times (V \times V^*) \to K$ angeben, so dass $q$ die quadratische Form von $\beta$ ist, also $q(v,\varphi) = \beta((v, \varphi), (v, \varphi))$ für alle $(v,\varphi) \in V \times V^*$.
+Da $\ringchar K \neq 2$ gibt höchstens eine solche Bilinearform, und wir können sie durch eine Polarisationsformal angeben:
+
+Für alle $(v_1, \varphi_1), (v_2, \varphi_2)$ definieren wir
+\begin{align*}
+              \beta((v_1, \varphi_1), (v_2, \varphi_2))
+  &\coloneqq  \frac{q((v_1, \varphi_1) + (v_2, \varphi_2)) - q(v_1, \varphi_1) - q(v_2, \varphi_2)}{2}  \\
+  &=          \frac{(\varphi_1 + \varphi_2)(v_1 + v_2) - \varphi_1(v_1) - \varphi_2(v_2)}{2}
+   =          \frac{\varphi_1(v_2) + \varphi_2(v_1)}{2}.
+\end{align*}
+Eine einfache Rechnung zeigt, dass $\beta \colon (V \times V^*) \times (V \times V^*) \to K$ eine Bilinearform ist.
+Für alle $(v, \varphi) \in V \times V^*$ ist
+\[
+    \beta((v, \varphi), (v, \varphi))
+  = \frac{\varphi(v) + \varphi(v)}{2}
+  = \varphi(v)
+  = q(v, \varphi),
+\]
+also ist $q$ die zu $\beta$ gehörige quadratische Form.
+
+Um zu zeigen, dass $q$ nicht-entartet ist, müssen wir zeigen, dass $\beta$ nicht entartet.
+Wir nehmen uns hierfür ein $(v, \varphi) \in V \times V^*$ mit $(v, \varphi) \neq (0,0)$ und geben ein $(w, \psi) \in V \times V^*$ an, so dass $\beta((v, \varphi), (w, \psi)) \neq 0$.
+Hierfür unterscheiden wir zwischen den beiden Fällen $v \neq 0$ und $\varphi \neq 0$.
+
+Ist $v \neq 0$, so können wir $v_1 \coloneqq v$ zu einer Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ ergänzen (hier nutzen wir, dass $V$ endlichdimensional ist).
+Für die entsprechende duale Basis $\mc{B}^* = (v_1^*, \dotsc, v_n^*)$ von $V^*$ gilt $v_i^*(v_j) = \delta_{ij}$ für alle $i,j = 1, \dotsc, n$.
+Deshalb ist
+\[
+        \beta((v, \varphi), (0, v_1^*))
+  =     \frac{v_1^*(v) + \varphi(0)}{2}
+  =     \frac{v_1^*(v_i)}{2}
+  =     \frac{1}{2}
+  \neq  0.
+\]
+Ist $\varphi \neq 0$, so gibt es ein $w \in V$ mit $\varphi(w) \neq 0$, weshalb
+\[
+    \beta((v, \varphi), (w,0))
+  = \frac{\varphi(w)}{2}
+  \neq 0.
+\]
+Insgesamt zeigt dies, dass $\beta$ nicht entartet ist.
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\subsection{Vorbereitung und hilfreiche Aussagen}
+
+
+Wir wollen die gegebenen Probleme und Aussagen über quadratischen Formen auf Probleme und Aussagen über die assoziierte Bilinearform zurückführen.
+
+
+Zunächst beginnen wir aber mit der folgenden allgemeinen Aussage über nicht-entartete Bilinearformen im Endlichdimensionalen.l
+
+
+\begin{proposition}\label{prop: orthogonal decomposition for nondegenerate symmetric forms}
+  Es sei $V$ ein endlichdimensionaler $K$-Vektorraum, wobei $K$ ein beliebiger Körper ist, und $\beta \colon V \times V \to K$ eine nicht-entartete Bilinearform.
+  Es sei $U \subseteq V$ ein beliebiger Untervektorraum.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Die Einschränkungsabbildung $\rho_U \colon V^* \to U^*$, $\varphi \mapsto \varphi|_U$ ist surjektiv.
+    \item
+      Es gilt $\dim V = \dim U + \dim U^\perp$.
+    \item
+      Es gilt $(U^\perp)^\perp = U$.
+    \item
+      Die folgenden Bedingungen sind äquivalent:
+      \begin{enumerate}
+        \item
+          Es gilt $V = U \oplus U^\perp$.
+        \item
+          Es gilt $U \cap U^\perp = 0$.
+        \item
+          Die Einschränkung $\beta|_{U \times U}$ ist nicht-entartet.
+        \item
+          Die Einschränkung $\beta|_{U^\perp \times U^\perp}$ ist nicht-entartet.
+      \end{enumerate}
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es sei $(v_1, \dotsc, v_m)$ eine Basis von $U$, und $(v_1, \dotsc, v_m, v_{m+1}, \dotsc, v_n)$ eine ergänzte Basis von $V$.
+      Ist $\psi \in U^*$, also $\psi \colon U \to K$ eine lineare Abbildung, so gibt es genau eine lineare Abbildung $\varphi \colon V \to K$, also genau ein $\varphi \in V^*$, so dass $\varphi(v_i) = \psi(v_i)$ für alle $i = 1, \dotsc, m$ und $\varphi(v_j) = 0$ für alle $j = m+1, \dotsc, n$.
+      Aufgrund der Linearität von $\psi$ und $\varphi$ ist bereits $\varphi(u) = \psi(u)$ für alle $u \in U$ und somit $\varphi|_U = \psi$.
+    \item
+      Da $\beta$ nicht-entartet ist, ist die Abbildung
+      \[
+        \Phi \colon V \to V^*,
+        \quad
+        v \mapsto \beta(v, -)
+      \]
+      injektiv.
+      Wegen der Endlichdimensionalität von $V$ ist auch $V^*$ endlichdimensional mit $\dim V^* = \dim V$.
+      Deshalb ist $\Phi$ bereits ein Isomorphismus.
+      Insbesondere ist $\Phi$ schon surjektiv.
+      Also ist nach dem vorherigen Aufgabenteil auch die Komposition
+      \[
+        \Psi \coloneqq \rho_U \circ \Phi \colon V \to U^*,
+        \quad
+        v \mapsto \beta(v, -)|_U
+      \]
+      surjektiv.
+      Es gilt $\ker \Psi = U^\perp$ und deshalb nach der Dimensionsformel
+      \[
+        \dim V
+        = \dim \im \Psi + \dim \ker \Psi
+        = \dim U^* + \dim U^\perp
+        = \dim U + \dim U^\perp,
+      \]
+      wobei wir für $\dim U^* = \dim U$ die Endlichdimensionalität von $U$ genutzt haben.
+    \item
+      Es gilt $U \subseteq (U^\perp)^\perp$ und $\dim (U^\perp)^\perp = \dim V - \dim U^\perp = \dim U$, also bereits $U = (U^\perp)^\perp$.
+    \item
+      Es gilt genau dann $V = U \oplus U^\perp$, wenn $U + U^\perp = V$ und $U \cap U^\perp = 0$.
+      Nach einem der vorherigen Aufgabenteilen und einer Dimensionsformel gilt
+      \[
+          \dim( U + U^\perp )
+        = \dim U + \dim U^\perp - \dim( U \cap U^\perp )
+        = \dim V - \dim (U \cap U^\perp )
+      \]
+      gilt genau dann $U + U^\perp = V$, wenn $U \cap U^\perp = 0$.
+      Es gilt also genau dann $V = U \oplus U^\perp$, wenn $U \cap U^\perp = 0$.
+      
+      Andererseits sei
+      \[
+          \rad \beta_{U \times U}
+        = \{ u \in U \mid \text{$\beta(u, u') = 0$ für alle $u' \in U$} \}
+      \]
+      das Radikal von $\beta_{U \times U}$.
+      Die Einschränkung $\beta_{U \times U}$ ist genau dann nicht-entartet, wenn $\rad \beta_{U \times U} = 0$.
+      Das Radikal lässt sich auch als $\rad \beta_{U \times U} = U \cap U^\perp$ ausdrücken.
+      Also ist $\beta|_{U \times U}$ genau dann nicht-entartet, wenn $U \cap U^\perp = 0$.
+      
+      Dass $\beta_{U^\perp, U^\perp}$ nicht-entartet ist, ist äquivalent dazu, dass $\rad \beta_{U^\perp \times U^\perp} \neq 0$.
+      Da mithilfe des vorherigen Aufgabenteils
+      \[
+          \rad \beta_{U^\perp \times U^\perp}
+        = U^\perp \cap (U^\perp)^\perp
+        = U^\perp \cap U
+        = U \cap U^\perp
+        = \rad \beta_{U \times U}
+      \]
+      ist genau dann $\rad \beta_{U^\perp \times U^\perp} = 0$, wenn $\rad_{U \times U} = 0$, wenn also $\beta_{U \times U}$ nicht-entartet ist.
+    \qedhere
+  \end{enumerate}
+\end{proof}
+
+
+Wir zeigen nun, dass es aufgrund der schönen Eigenschaften des Körpers ($\ringchar K \neq 2$ und $K$ ist quadratisch abgeschlossen) für eine nicht-entartete symmetrische Bilinearform auf einem endlichdimensionalen $K$-Vektorraum immer eine Orthonormalbasis gibt.
+
+
+\begin{theorem}\label{thrm: existence of orthonormalbases}
+  Es sei $K$ ein Körper mit $\ringchar K \neq 2$, $V$ ein endlichdimensionaler $K$-Vektorraum und $\beta \colon V \times V \to K$ eine nicht-entartete symmetrische Bilinearform.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es gibt eine Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ und Skalare $\lambda_1, \dotsc, \lambda_n \in K$ mit $\lambda_i \neq 0$ für alle $i = 1, \dotsc n$, so dass
+      \[
+        \Mat_\mc{B}(\beta)
+        =
+        \begin{pmatrix}
+          \lambda_1 &         &             \\
+                    & \ddots  &             \\
+                    &         & \lambda_n
+        \end{pmatrix}.
+      \]
+    \item
+      Ist $K$ zusätzlich quadratisch abgeschlossen, so kann die Basis $\mc{B}$ so gewählt werden, dass $\lambda_1 = \dotsb = \lambda_n = 1$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Wir zeigen die Aussage per Induktion über $\dim V$:
+      Für $V = 0$ ist nichts zu zeigen.
+      Es sei also $\dim V > 0$ und die Aussage gelte für alle kleineren Dimensionen.
+      
+      \begin{claim}
+        Es gibt ein $v \in V$ mit $\beta(v,v) \neq 0$.
+      \end{claim}
+      \begin{proof}
+        Es sei $q$ die zu $\beta$ gehörige quadratische Form.
+        Da $V \neq 0$ gibt es ein $u \in V$ mit $u \neq 0$, und da $\beta$ nicht-entartet ist, gibt es ein $w \in V$ mit $\beta(u,v) \neq 0$.
+        Da $\ringchar K \neq 2$ können wir eine Polarisationsformel nutzen um
+        \[
+                0 
+          \neq  \beta(u,w)
+          =     \frac{q(u+w)-q(u)-q(w)}{2}
+        \]
+        zu erhalten.
+        Also ist $q(u+w) \neq 0$, $q(u) \neq 0$ oder $q(w) \neq 0$.
+      \end{proof}
+    
+      Wir wählen nun $v_1 \in V$ mit $\beta(v_1,v_1) \neq 0$.
+      Die Einschränkung $\beta_{U \times U}$ ist für $U \coloneqq \Ell(v_1)$ nicht-entartet, denn ist $u \in U$ mit $u \neq 0$, so gibt es ein $\lambda \in K$ mit $\lambda \neq 0$ und $u = \lambda v_1$, weshalb
+      \[
+              \beta(u, v_1)
+        =     \beta(\lambda v_1, v_1)
+        =     \lambda \beta(v_1, v_1)
+        \neq  0.
+      \]
+      Nach Proposition~\ref{prop: orthogonal decomposition for nondegenerate symmetric forms} ist deshalb $V = U \oplus U^\perp = \Ell(v_1) \oplus U^\perp$ und $\beta_{U^\perp \times U^\perp}$ nicht-entartet.
+      Nach Induktionsvoraussetzung gibt es eine Basis $\mc{C} = (v_2, \dotsc, v_n)$ von $\Ell(v_1)^\perp$, so dass
+      \[
+        \Mat_\mc{C}(\beta_{\Ell(v_1)^\perp \times \Ell(v_1)^\perp})
+        =
+        \begin{pmatrix}
+          \lambda_2 &         &           \\
+                    & \ddots  &           \\
+                    &         & \lambda_n,
+        \end{pmatrix}
+      \]
+      wobei $\lambda_2, \dotsc, \lambda_n \in K$ mit $\lambda_i \neq 0$ für alle $i = 1, \dotsc, n$.
+      Da $V = \Ell(v_1) \oplus \Ell(v_1)^\perp$ ist $\mc{B} \coloneqq (v_1, v_2, \dotsc, v_n)$ eine Basis von $V$, und da die Summe orthogonal ist, ergibt sich mit $\lambda_1 \coloneqq \beta(v_1, v_1)$, dass
+      \[
+        \Mat_\mc{B}(\beta_{\Ell(v_1)^\perp \times \Ell(v_1)^\perp})
+        =
+        \begin{pmatrix}
+          \lambda_1 &         &           \\
+                    & \ddots  &           \\
+                    &         & \lambda_n,
+        \end{pmatrix}.
+      \]
+      
+    \item
+      Es sei $\mc{C} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so dass $\Mat_\mc{C}(\beta)$ in Diagonalgestalt mit Diagonaleinträgen $\lambda_1, \dotsc, \lambda_n \in K$ ist, wobei $\lambda_i \neq 0$ für alle $i = 1, \dotsc, n$.
+      Da $K$ quadratisch abgeschlossen ist, gibt es für jedes $i = 1, \dotsc, n$ einen Skalar $\mu_i \in K$ mit $\mu_i^2 = \lambda_i$; man beachte, dass $\mu_i \neq 0$ für alle $i = 1, \dotsc, n$.
+      Die Basis $\mc{B} \coloneqq (\mu_1^{-1} v_1, \dotsc, \mu_n^{-1} v_n)$ leistet nun das Gewünschte.
+    \qedhere
+  \end{enumerate}
+\end{proof}
+
+
+\begin{definition}
+  Es sei $V$ ein $K$-Vektorraum und $\beta \colon V \times V \to K$ eine symmetrische Bilinearform.
+  Eine Basis $(v_i)_{i \in I}$ von $V$ heißt \emph{orthonormal} bezüglich $\beta$, falls $\beta(v_i, v_j) = \delta_{ij}$ für alle $i,j \in I$.
+\end{definition}
+
+
+\begin{remark}
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Besitzt ein $K$-Vektorraum $V$ bezüglich einer symmetrischen Bilinearform $\beta \colon V \times V \to K$ eine Orthonormalbasis $(v_i)_{i \in I}$, so ist $\beta$ nicht-entartet.
+      Ist nämlich $v \in V$ mit $\beta(v, v') = 0$ für alle $v' \in V$, so lässt sich $v$ als Linearkombination $v = \sum_{i \in I} \lambda_i v_i$ darstellen, und da
+      \[
+          \lambda_j
+        = \sum_{i \in I} \lambda_i \delta_{ij}
+        = \sum_{i \in I} \lambda_i \beta(v_i, v_j)
+        = \beta\left( \sum_{i \in I} \lambda_i v_i, v_j \right)
+        = \beta(v, v_j)
+        = 0
+        \quad
+        \text{für alle $j \in I$}
+      \]
+      ist bereits $v = 0$.
+    \item
+      Ist $(v_i)_{i \in I}$ eine Orthonormalbasis von $V$ bezüglich einer symmetrischen Bilinearform $\beta \colon V \times V \to K$, so gilt für die zugehörige quadratische Form $q$ und $v \in V$ mit Linearkombination $v = \sum_{i \in I} \lambda_i v_i$, dass
+      \begin{align*}
+            q(v)
+         =  \beta(v,v)
+        &=  \beta\left( \sum_{i \in I} \lambda_i v_i, \sum_{j \in I} \lambda_j v_j \right)  \\
+        &=  \sum_{i,j \in I} \lambda_i \lambda_j \beta(v_i, v_j)
+         =  \sum_{i,j \in I} \lambda_i \lambda_j \delta_{ij}
+         =  \sum_{i \in I} \lambda_i^2.
+      \end{align*}
+      Dabei haben wir im dritten Schritt die Bilinaerität von $\beta$ genutzt.
+  \end{enumerate}
+\end{remark}
+
+
+Um quadratische Aussagen in bilineare zu übersetzen, nutzen wir das folgende Lemma:
+
+
+\begin{lemma}\label{lem: homomorphism of quadratic and bilinear spaces}
+  Es sei $K$ ein Körper mit $\ringchar K \neq 2$.
+  Es seien $V$ und $W$ zwei $K$-Vektorräume.
+  Es seien $\beta \colon V \times V \to K$ und $\gamma \colon W \times W \to K$ zwei Bilinearformen, und $q \colon V \to K$ und $r \colon W \to K$ seien die assoziierten quadratischen Formen.
+  Für eine lineare Abbildung $f \colon V \to W$ sind die folgenden beiden Bedingungen äquivalent:
+  \begin{enumerate}
+    \item
+      Es ist $r(f(v)) = q(v)$ für alle $v \in V$.
+    \item
+      Es ist $\gamma(f(v_1),f(v_2)) = \beta(v_1, v_2)$ für alle $v_1, v_2 \in V$.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  Angenommen, es ist $r(f(v)) = q(v)$ für alle $v \in V$.
+  Nach einer Polarisationsformel ist dann für alle $v_1, v_2 \in V$ auch
+  \begin{align*}
+        \gamma(f(v_1), f(v_2))
+    &=  \frac{r(f(v_1) + f(v_2)) - r(f(v_1)) - r(f(v_2))}{2}  \\
+    &=  \frac{r(f(v_1 + v_2)) - r(f(v_1)) - r(f(v_2))}{2}     \\
+    &=  \frac{q(v_1 + v_2) - q(v_1) - q(v_2)}{2}
+    =   \beta(v_1, v_2).
+  \end{align*}
+  Gilt andererseits $\gamma(f(v_1), f(v_2)) = \beta(v_1, v_2)$ für alle $v_1, v_2 \in V$, so ergibt sich für alle $v \in V$, dass
+  $ r(f(v)) = \gamma(f(v), f(v)) = \beta(v, v) = q(v)$.
+\end{proof}
+
+
+
+
+
+\subsection{Der geradedimensionale Fall}
+
+
+Zunächst sei $X$ ein endlichdimensionaler $K$-Vektorraum, wobei $\ringchar K \neq 2$ und $K$ quadratisch abgeschlossen ist, so dass $\dim X$ gerade ist, und $q \colon X \to K$ eine nicht-entartete quadratische Form.
+Es sei $\beta \colon X \times X \to K$ die zu $q$ gehörige Bilinearform; dass $q$ nicht-entartet ist, bedeutet gerade, dass $\beta$ nicht-entartet ist.
+Nach Theorem~\ref{thrm: existence of orthonormalbases} gibt es eine Orthonormalbasis $(x_1, \dotsc, x_{2n})$ von $X$ bezüglich $\beta$.
+
+Es sei $V$ ein beliebiger $n$-dimensionaler $K$-Vektorraum.
+Wie in Aufgabe~3 gesehen ist $r \colon V \times V^* \to K$, $(v,\varphi) \mapsto \varphi(v)$ die quadratische Form einer nicht-entarteten symmetrischen Bilinearform $\gamma \colon (V \times V^*) \times (V \times V^*) \to K$.
+Nach Theorem~\ref{thrm: existence of orthonormalbases} gibt es eine Orthonormalbasis $(v_1, \dotsc, v_{2n})$ von $V \times V^*$ bezüglich $\gamma$.
+
+Es gibt nun einen eindeutigen Isomorphismus $\Phi \colon X \to V \times V^*$ mit $\Phi(x_i) = v_i$ für alle $i = 1, \dotsc, 2n$.
+Es gilt
+\[
+  \gamma(\Phi(x_i), (x_j)) = \gamma(v_i, v_j) = \delta_{ij} = \beta(x_i, x_j)
+  \quad
+  \text{für alle $i, j = 1, \dotsc, n$}.
+\]
+Wegen der Linearität von $\Phi$ und Bilinearität von $\beta$ und $\gamma$ ergibt sich daraus, dass bereits $\gamma(\Phi(y_1), \Phi(y_2)) = \beta(y_1, y_2)$ für alle $y_1, y_2 \in X$.
+Nach Lemma~\ref{lem: homomorphism of quadratic and bilinear spaces} ist deshalb $r(\Phi(y)) = q(y)$ für alle $y \in X$.
+Also ist $\Phi$ ein Isomorphismus von quadratischen Räumen bezüglich $q$ und $r$.
+
+
+
+
+
+\subsection{Der ungeradedimensionale Fall}
+
+Es sei nun also $X$ ein endlichdimensionaler $K$-Vektorraum, so dass $\dim X$ ungerade ist, und $q$ eine nicht-entartete quadratische Form auf $X$, sowie $\beta$ die zu $q$ assoziierte symmetrische Bilinearform auf $X$.
+Nach Theorem~\ref{thrm: existence of orthonormalbases} gibt es eine Orthonormalbasis $(x_1, \dotsc, x_{2n+1})$ von $X$.
+
+Ist $V$ ein $n$-dimensionaler $K$-Vektorraum und $r' \colon V \times V^* \to K$, $(v, \varphi) \mapsto \varphi(v)$, so gibt es nach Aufgabe~2 und Theorem~\ref{thrm: existence of orthonormalbases} eine Orthonormalbasis $\mc{B} = ((v_1, \varphi_1), \dotsc, (v_{2n}, \varphi_{2n}))$ von $V \times V^*$ bezüglich der zu $r'$ gehörigen symmetrischen Bilinearform $\gamma'$.
+
+Dabei haben wir in Aufgabe~2 durch Interpolation gesehen, dass
+\[
+    \gamma'((w_1, \psi_1), (w_2, \psi_2))
+  = \frac{\psi_1(w_2) + \psi_2(w_1)}{2}
+  \quad
+  \text{für alle $(w_1, \psi_1), (w_2, \psi_2) \in V \times V^*$}.
+\]
+Durch Interpolation ergibt sich analog zu Aufgabe~2, dass die zu $r \colon V \times V^* \times K \to K$, $(v, \varphi, \lambda) \mapsto \varphi(v) + \lambda^2 = r'(v, \varphi) + \lambda^2$ gehörige symmetrische Bilinearform $\gamma$ durch
+\[
+    \gamma(w_1, \psi_1, \mu_1), (w_2, \psi_2, \mu_2))
+  = \frac{\psi_1(w_2) + \psi_2(w_1)}{2} + \mu_1 \mu_2
+  = \gamma'((w_1, \psi_1), (w_2, \psi_2)) + \mu_1 \mu_2
+\]
+gegeben ist.
+
+
+Indem wir den Isomorphismus $((V \times V^*) \times K) \to V \times V^* \times K$, $((v, \varphi), \lambda) \mapsto (v, \varphi, \lambda)$ nutzen, sehen wir, dass sich aus $\mc{B}$ eine Basis $\mc{C} \coloneqq ((v_1, \varphi_1, 0), \dotsc, (v_{2n}, \varphi_{2n}, 0), (0,0,1))$ von $V \times V^* \times K$ ergibt.
+Man bemerke, dass $\mc{C}$ eine Orthonormalbasis von $V \times V^* \times K$ bezüglich $\gamma$ ist:
+Dass $((v_1, \varphi_1, 0), \dotsc, (v_{2n}, \varphi_{2n}, 0))$ orthonormal ist, folgt daraus, dass
+\[
+    \gamma((v_i, \varphi_i, 0), (v_j, \varphi_j, 0))
+  = \underbrace{ \gamma'((v_i, \varphi_i, (v_j, \varphi_j)) }_{= \delta_{ij}} + 0^2
+  = \delta_{ij}
+  \quad
+  \text{für alle $i,j = 1, \dotsc, 2n$}.
+\]
+Dass $(0,0,1)$ bezülich $\gamma$ orthogonal zu den üblichen $2n$ Basiselementen ist, ergibt sich daraus, dass
+\[
+  \gamma((v,\varphi,0), (0,0,1))
+  = \gamma'((v, \varphi), (0,0)) + 0 \cdot 1
+  = 0 + 0
+  = 0
+  \quad
+  \text{für alle $(v, \varphi) \in V \times V^*$},
+\]
+und die Normiertheit von $(0,0,1)$ bezüglich $\gamma$ ergibt sich durch direktes Nachrechnen:
+\[
+  \gamma((0,0,1), (0,0,1))
+  = \gamma'((0,0), (0,0)) + 1 \cdot 1
+  = 0 + 1
+  = 1.
+\]
+
+Für den eindeutige Isomorphismus $\Phi \colon X \to V \times V^* \times K$ mit $\Phi(x_i) = (v_i, \varphi_i, 0)$ für alle $i = 1, \dotsc, 2n$ und $\Phi(x_{2n+1}) = (0,0,1)$ ergibt sich nun analog zum geradedimensionalen Fall zunächst, dass $\gamma(\Phi(y_1), \Phi(y_2)) = \beta(y_1, y_2)$ für alle $y_1, y_2 \in X$, und daraus dann mit Lemma~\ref{lem: homomorphism of quadratic and bilinear spaces}, dass $\Phi$ ein Isomorphismus von quadratischen Räumen ist.
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+Die nicht-entartete symmmetrische Bilinearform $\beta$ korrespondiert zu einem Isomorphismus
+\[
+  B \colon V \to V^*,
+  \quad
+  v \mapsto \beta(-, v).
+\]
+Dass eine Endomorphismus $g \colon V \to V$ bezüglich $\beta$ adjungiert zu einem Endomorphismus $f \colon V \to V$ ist, dass also
+\[
+    \beta(f(v_1), v_2)
+  = \beta(v_1, g(v_2))
+  \quad
+  \text{für alle $v_1, v_2 \in V$},
+\]
+ist äquivalent dazu, dass
+\[
+    B(v_2)(f(v_1))
+  = B(g(v_2))(v_1)
+  \quad
+  \text{für alle $v_1, v_2 \in V$}.
+\]
+Mithilfe der zu $f$ dualen Abbildung $f^T \colon V^* \to V^*$, $\varphi \mapsto \varphi \circ f$ lässt sich diese Bedingung zu
+\begin{gather*}
+    f^T(B(v_2))(v_1)
+  = B(g(v_2))(v_1)
+  \quad
+  \text{für alle $v_1, v_2 \in V$}
+\shortintertext{umschreiben, also zu}
+    f^T(B(v_2))
+  = B(g(v_2))
+  \quad
+  \text{für alle $v_2 \in V$},
+\end{gather*}
+und somit $f^T \circ B = B \circ g$.
+Also muss $g = B^{-1} f^T B$, was Existenz und Eindeutigkeit zeigt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
