@@ -61,7 +61,7 @@
 \end{solution}
 
 
-\begin{question}[subtitle = You should be above to solve this]{1}
+\begin{question}[subtitle = You should be able to solve this]{1}
   \begin{enumerate}[leftmargin=*]
     \item
       Bestimmen Sie für die Matrix
@@ -95,6 +95,18 @@
 %%% PRIORITY 2
 
 
+\begin{question}[subtitle ={Eine Beschreibung vom Typ $(1,1)$}]{2}
+  Es sei $V$ ein zweidimensionaler $\Rbb$-Vektorraum und $\beta \colon V \times V \to \Rbb$ eine symmetrische Bilinearform.
+  Zeigen Sie, dass $\beta$ genau dann vom Typ $(1,1)$ ist, wenn es $v_+, v_- \in V$ mit $\beta(v_+, v_+) > 0$ und $\beta(v_-, v_-) < 0$ gibt.
+\end{question}
+
+
+\begin{question}[subtitle = Einschränkung nicht-entarteter Bilinearformen]{2}
+  Es sei $V$ ein $K$-Vektorraum und $\beta \colon V \times V \to K$ eine nicht-entartete Bilinearform, d.h.\ für jedes $v \in V$ mit $v \neq 0$ gibt es $w \in V$ mit $\beta(v,w) \neq 0$.
+  Entscheiden Sie, ob für jeden Untervektorraum $U \subseteq V$ die Einschränkung $\beta|_{U \times U}$ notwendigerweise ebenfalls nicht-entartet ist; geben Sie gegebenenfalls ein Gegenbeispiel an.
+\end{question}
+
+
 \begin{question}[subtitle = Die Polarisationsformel(n)]{2}
   Es sei $V$ ein $K$-Vektorraum, $\beta \colon V \times V \to K$ eine symmetrische Bilinearform und $q \colon V \to K$, $v \mapsto \beta(v,v)$ die zugehörige quadratische Form.
   \begin{enumerate}[leftmargin=*]
@@ -102,7 +114,7 @@
       Zeigen Sie für den Fall $\ringchar K \neq 2$ mithilfe einer Polarisationsformel, dass $\beta$ durch $q$ bereits eindeutig bestimmt ist.
     \item
       Folgern Sie:
-      Ist $\ringchar K \neq 2$, $V \neq 0$ und $\beta$ nicht entartet, d.h.\ für jedes $v \in V$ mit $v \neq 0$ gibt es ein $w \in V$ mit $\beta(v, w) \neq 0$, so gibt es ein $v \in V$ mit $\beta(v,v) \neq 0$.
+      Ist $\ringchar K \neq 2$, $V \neq 0$ und $\beta$ nicht-entartet, d.h.\ für jedes $v \in V$ mit $v \neq 0$ gibt es ein $w \in V$ mit $\beta(v, w) \neq 0$, so gibt es ein $v \in V$ mit $\beta(v,v) \neq 0$.
     \item
       Zeigen Sie für den Fall $\ringchar K = 2$, dass es unterschiedliche symmetrische Bilinearformen mit gleicher quadratischer Form geben kann, indem Sie ein explizites Beispiel angeben.
   \end{enumerate}
@@ -110,14 +122,11 @@
 
 
 \begin{question}[subtitle = Multiple Choice zu reellen symmetrischen Bilinearformen]{2}
-  Es sei $V$ eine reeller Vektorraum und $\bil{\cdot, \cdot} \colon V \times V \to \Rbb$ eine symmetrische Bilinearform.
-  Entscheiden Sie, welche der folgenden Aussagen allgemein gültig sind.
+  Entscheiden Sie, welche der folgenden Aussagen für jeden reellen Vektorraum $V$ und jede symmetrische Bilinearform $\bil{\cdot, \cdot} \colon V \times V \to \Rbb$ mit $\beta \neq 0$ gilt.
   Geben Sie gegebenenfalls ein Gegenbeispiel.
   \begin{enumerate}[leftmargin=*]
     \item
       Ist $\bil{v, v} \geq 0$ für alle $v \in V$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
-    \item
-      Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b, b} > 0$ für alle $b \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
     \item
       Ist $\mc{B}$ eine Basis von $V$ mit $\bil{b_1, b_2} > 0$ für alle $b_1, b_2 \in \mc{B}$, so ist $\bil{\cdot, \cdot}$ ein Skalarprodukt.
     \item
@@ -133,71 +142,83 @@
     \item
       Die Teilmenge $U_0 \coloneqq \{ v \in V \mid \bil{v, v} = 0 \}$ ist ein Untervektorraum von $V$.
     \item
-      Ist $V$ endlichdimensional, so gilt für eden Untervektorraum $U \subseteq V$ die Gleichung $\dim V = \dim U + \dim U^\perp$
+      Ist $V$ endlichdimensional, so gilt für jeden Untervektorraum $U \subseteq V$ die Gleichung $\dim V = \dim U + \dim U^\perp$
     \item
-      Ist $U \subseteq V$ ein Untervektorraum mit $(U^\perp)^\perp = V$, so ist $U = V$.
+      Ist $\beta \neq 0$ und $U \subseteq V$ ein Untervektorraum mit $(U^\perp)^\perp = V$, so ist $U = V$.
     \item
       Für alle Untervektorräume $U_1, U_2 \subseteq V$ gilt $(U_1 + U_2)^\perp = U_1^\perp \cap U_2^\perp$.
     \item
       Für $\rad \beta = \{ v \in V \mid \text{$\bil{v, w} = 0$ für alle $w \in V$} \}$ und jeden Untervektorraum $U \subseteq V$ gilt
       \[
-        (U^\perp)^\perp = U + U_0.
+        (U^\perp)^\perp = U + \rad \beta.
       \]
   \end{enumerate}
 \end{question}
 \begin{solution}
   \begin{enumerate}[leftmargin=*]
     \item
-      Falsch, siehe Nullbilinearform.
+      Falsch, siehe
+      $
+       \begin{pmatrix}
+        0 & 0 \\
+        0 & 1
+       \end{pmatrix}
+      $
+      und die Standardbasis.
     \item
       Falsch, siehe
-      \[
-        \begin{pmatrix}
-          0 & 1
-          1 & 0
-        \end{pmatrix}.
-      \]
-    \item
-      Falsch, siehe
-      \[
+      $
         \begin{pmatrix}
           1 & 2 \\
           2 & 1
         \end{pmatrix}
-      \]
+      $
+      und die Standardbasis.
     \item
       Wahr.
     \item
       Falsch, für
-      \[
+      $
         \begin{pmatrix}
           1 & 2 \\
           2 & 1
         \end{pmatrix}
-      \]
+      $
       sind $e_1$ und $e_2$ in $U_+$, aber $e_1 - e_2$ nicht.
     \item
-      Nein, siehe
-      \[
+      Nein,für
+      $
         \begin{pmatrix}
           0 & 1 \\
           1 & 0
-        \end{pmatrix}
-      \]
+        \end{pmatrix}.
+      $
+      ist $e_1, e_2 \in U_0$, aber $e_1 + e_2 \notin U_0$.
     \item
-      Nein, siehe Nullbilinearform.
-    \item
-      Falsch, siehe den Span von $e_2$ und
-      \[
+      Nein, für
+      $
         \begin{pmatrix}
           0 & 0 \\
           0 & 1
-        \end{pmatrix}.
-      \]
+        \end{pmatrix}
+      $
+      und $U = \Ell(e_1)$ ist $U^\perp = \Rbb^2$.
+    \item
+      Falsch:
+      Für
+      $
+        \begin{pmatrix}
+          1 & 0 \\
+          0 & 0
+        \end{pmatrix}
+      $
+      und $U \coloneqq \Ell(e_1)$ ist $U^\perp = \Ell(e_2)$ und $(U^\perp)^\perp = \Rbb^2$.
     \item
       Die Aussage gilt.
     \item
-      Falsch: Nehme ein Skalarprodukt auf einem unendlichdimensionalen Raum, und einen dichten, echten Unterraum.
+      Falsch:
+      Nehme ein Skalarprodukt auf einem unendlichdimensionalen Raum, und einen dichten, echten Unterraum.
+      Man siehe etwa Übung~\ref{qst: counterexample with integral scalar product} und Übung~\ref{qst: counterexample sequences}.
   \end{enumerate}
 \end{solution}
 
@@ -208,7 +229,7 @@
     \item
       Zeigen Sie, dass die Abbildung $B \colon V \to V^*$, $v \mapsto b(-, v)$ linear ist.
     \item
-      Zeigen Sie die Gleihheit $\Mat_\mc{B}(b) = \Mat_{\mc{B}, \mc{B}^*}(B)$.
+      Zeigen Sie die Gleichheit $\Mat_\mc{B}(b) = \Mat_{\mc{B}, \mc{B}^*}(B)$.
       (Beachten Sie, dass auf der linken Seite die darstellende Matrix einer Bilinearform steht, und auf der rechten Seite die darstellende Matrix einer linearen Abbildung.)
   \end{enumerate}
 \end{question}
@@ -293,7 +314,7 @@
     \item
       Zeigen Sie, dass die Abbildung $b \colon V \times V \to \Rbb$ mit $b(p, q) \coloneqq \int_{-1}^1 p(t) q'(t) \dd{t}$ eine Bilinearform ist.
     \item
-      Geben Sie den symmtrischen Anteil $b_s$ in einer Form an, in der kein Integral vorkommt.
+      Geben Sie den symmetrischen Anteil $b_s$ in einer Form an, in der kein Integral vorkommt.
 %     \item
 %       Geben Sie eine Basis von $V_n$ an, bezüglich der $b_s$ durch eine Diagonalmatrix mit Einträgen $0, 1, -1$ beschrieben wird, und bestimmen Sie die Signatur von $b_s$ auf $V_n$.
   \end{enumerate}
@@ -310,7 +331,7 @@
     \item
       Zeigen Sie, dass $\sigma$ auch in dem Sinne assoziativ ist, dass $\sigma([A,B],C) = \sigma(A,[B,C])$ für alle $A, B, C \in \Mat_n(K)$.
     \item
-      Zeigen sie, dass $\sigma$ nicht entartet ist, d.h.\ dass es für jedes $A \in \Mat_n(K)$ mit $A \neq 0$ ein $B \in \Mat_n(K)$ mit $\sigma(A, B) \neq 0$ gibt.
+      Zeigen sie, dass $\sigma$ nicht-entartet ist, d.h.\ dass es für jedes $A \in \Mat_n(K)$ mit $A \neq 0$ ein $B \in \Mat_n(K)$ mit $\sigma(A, B) \neq 0$ gibt.
       
       (\emph{Hinweis}:
        Betrachten Sie die Matrizen $E_{ij} \in \Mat_n(K)$.)
@@ -372,6 +393,18 @@
       eine Involution ist.
     \item
       Unter welchen Namen kennen Sie Basen von $V$, die bezüglich $(-)^\circ$ selbstdual sind, die also $\mc{B}^\circ = \mc{B}$ erfüllen?
+  \end{enumerate}
+\end{question}
+
+
+\begin{question}[subtitle = Existenz raumartiger Vektoren]{3}
+  Es sei $n \geq 1$ und $V$ ein $(n+1)$-dimensionaler reeller Vektorraum und $\beta \colon V \times V \to \Rbb$ eine symmetrische Bilinearform vom Typ $(n,1)$.
+  \begin{enumerate}[leftmargin=*]
+    \item
+      Es seien $u, v \in V$ zwei linear unabhängige Vektoren mit $\beta(u,u), \beta(v,v) \leq 0$.
+      Zeigen Sie, dass es $w \in \Ell(u,v)$ mit $\beta(w, w) > 0$ gibt.
+    \item
+      Folgern Sie, dass es für jeden zweidimensionalen Untervektorraum $U \subseteq V$ einen Vektor $w \in U$ mit $\beta(w,w) > 0$ gibt.
   \end{enumerate}
 \end{question}
 
@@ -477,7 +510,7 @@
       \]
       ein Isomorphismus von $K$-Vektorräumen ist.
     \item
-      Konstruieren Sie mithilfe der vorherigen Aufgabenteile einen Isomorphismus von $K$-Vektorräumen $T_{V,W} \colon \Hom(V, W^*) \to \Hom(W, V^*)$, so dass das folgende Diagram kommutiert:
+      Konstruieren Sie mithilfe der vorherigen Aufgabenteile einen Isomorphismus von $K$-Vektorräumen $T_{V,W} \colon \Hom(V, W^*) \to \Hom(W, V^*)$, so dass das folgende Diagramm kommutiert:
       \[
         \begin{tikzcd}[row sep = large, column sep = large, ampersand replacement = \&]
                 \Bil(V, W)    \arrow{r}{F_{V,W}}
