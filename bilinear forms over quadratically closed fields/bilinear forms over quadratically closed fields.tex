@@ -490,6 +490,164 @@ Mithilfe der zu $f$ dualen Abbildung $f^T \colon V^* \to V^*$, $\varphi \mapsto 
 und somit $f^T \circ B = B \circ g$.
 Also muss $g = B^{-1} f^T B$, was Existenz und Eindeutigkeit zeigt.
 
+Für alle $v_1, v_2 \in V$ gilt
+\[
+    \beta(f^*(v_1), v_2)
+  = \beta(v_2, f^*(v_1))
+  = \beta(f(v_2), v_1)
+  = \beta(v_1, f^(v_2)),
+\]
+also erfüllt $f$ die definierende Eigenschaft von $f^{**}$.
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+Es sei
+\[
+  I \colon V \to V^{**},
+  \quad
+  v \mapsto e_v
+  \quad\text{mit}\quad
+  e_v(\varphi) = \varphi(v)
+  \quad
+  \text{für alle $\varphi \in V^*$}
+\]
+der natürliche Isomorphismus von $V$ nach $V^{**}$.
+Für $f \colon V \times V^* \to V \times V^*$ mit
+\[
+  f
+  =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+\]
+und $a \colon V \to V$, $b \colon V^* \to V$, $c \colon V \to V^*$, $d \colon V^* \to V^*$ gilt es zu zeigen, dass
+\[
+  g
+  =
+  \begin{pmatrix}
+    I^{-1} d^* I  & I^{-1} b^*  \\
+    c^* I           & a^*.
+  \end{pmatrix},
+\]
+der zu $f$ bezüglich $\beta \colon (V \times V^*) \times (V \times V^*) \to K$ mit
+\[
+    \beta((v_1, \varphi_1), (v_2, \varphi_2))
+  = \frac{ \varphi_1(v_2) + \varphi_2(v_1) }{2}
+  \quad
+  \text{für alle $(v_1, \varphi_1), (v_2, \varphi_2) \in V \times V^*$}
+\]
+adjungierte Endomorphismus ist; dass dieser existiert und eindeutig ist folgt aus Aufgabe~2 und Aufgabe~4.
+(Auf dem Zettel wurden die entsprechenden Identifikationen nicht explizit ausgeschrieben, wir tun dies hier aber.)
+
+Für alle $(v_1, \varphi_1), (v_2, \varphi_2) \in V$ ist auf der einen Seite
+\begin{align*}
+      2\beta(f(v_1, \varphi_1), (v_2, \varphi_2))
+  &=  2\beta((a(v_1) + b(\varphi_1), c(v_1) + d(\varphi_1)), (v_2, \varphi_2) )     \\
+  &=  ( c(v_1) + d(\varphi_1) )(v_2) + \varphi_2( (a(v_1) + b(\varphi_1)) )         \\
+  &=  c(v_1)(v_2) + d(\varphi_1)(v_2) + \varphi_2(a(v_1)) + \varphi_2(b(\varphi_1))
+\end{align*}
+und auf der anderen Seite
+\begin{align*}
+   &\,  2\beta( (v_1, \varphi_1), g(v_2, \varphi_2) )                                                                 \\
+  =&\,  2\beta( (v_1, \varphi_1), ((I^{-1} d^* I)(v_2) + (I^{-1} b^*)(\varphi_2), (c^* I)(v_2) + a^*(\varphi_2)) )    \\
+  =&\,  \varphi_1( (I^{-1} d^* I)(v_2) + (I^{-1} b^*)(\varphi_2) ) + ( (c^* I)(v_2) + a^*(\varphi_2) )(v_1)           \\
+  =&\,  \varphi_1((I^{-1} d^* I)(v_2)) + \varphi_1((I^{-1} b^*)(\varphi_2)) + (c^* I)(v_2)(v_1) + a^*(\varphi_2)(v_1).
+\end{align*}
+Der einzige Unterschied zwischen den beiden Summen besteht darin, dass der Isomorphismus $I$ und das Dualisieren $(-)^*$ einer Abbildung genutzt wurden, um die einzelnen Summanden umzuschreiben.
+Dabei haben wir für alle $v \in V$ und $\varphi \in V^*$, dass
+\begin{align*}
+      \varphi( (I^{-1} d^* I)(v) )
+  &=  \varphi( I^{-1}( d^*( I( v ) ) ) )
+   =  \varphi( I^{-1}( d^*( e_v ) )
+   =  \varphi( I^{-1}( e_v d ) )        \\
+  &=  I(I^{-1}(e_v d))(\varphi)
+   =  (e_v d)(\varphi)
+   =  e_v(d(\varphi))
+   =  d(\varphi)(e),
+\end{align*}
+wobei wir beim Übergang in die zweite Zeile nutzen, dass $\varphi(w) = e_w(\varphi) = I(w)(\varphi)$ für alle $w \in W$ und $\varphi$.
+Ähnlich erhalten wir für alle $\varphi, \psi \in V^*$, dass
+\begin{align*}
+      \varphi((I^{-1} b^*)(\psi))
+  &=  \varphi( I^{-1}( b^*(\psi) ) )
+   =  \varphi( I^{-1} (\psi b) )      \\
+  &=  I( I^{-1}(\psi b) )(\varphi)
+   =  (\psi b)(\varphi)
+   =  \psi(b(\varphi)).
+\end{align*}
+Außerdem haben wir für alle $v, w \in V$, dass
+\begin{gather*}
+    (c^* I)(w)(v)
+  = (c^*(I(w)))(v)
+  = c^*(e_w)(v)
+  = (e_w c)(v)
+  = e_w(c(v))
+  = c(v)(w),
+\end{gather*}
+und für alle $v \in V$ und $\varphi \in V^*$, dass
+\[
+    a^*(\varphi)(v)
+  = (\varphi a)(v)
+  = \varphi(a(v)).
+\]
+Damit sind insgesamt beide Summen gleich.
+
+
+
+
+
+\section{}
+
+
+Um zu Umgehen, dass Körper-Shenanigans wie die Charakteristik oder unendliche Dimension an den Gegenbeispielen Schuld sind, werden wir alle Gegenbeispiele über endlichdimensionalen $\Cbb$-Vektorräumen konstruieren; dabei beschränken wir uns o.B.d.A.\ auf $\Cbb^n$.
+Tatsächlich werden wir jeweils Gegenbeispiele für $\Cbb^2$ angeben, die Herleitung funktioniert aber jeweils für allgemeines $n$.
+
+Nach Theorem~\ref{thrm: existence of orthonormalbases} wissen wir, dass jede nicht-entartete symmetrische Bilinearform auf $\Cbb^n$ eine Orthonormalbasis besitzt.
+Es genügt daher, die Standardbilinearform
+\[
+  \beta \colon \Cbb^n \times \Cbb^n \to \Cbb,
+  \quad\text{mit}\quad
+    \beta(x,y)
+  = x^T y
+  = \sum_{i=1}^n x_i y_i
+  \quad
+  \text{für alle $x, y \in \Cbb^n$}
+\]
+zu betrachten.
+Die Bilinearität ergibt sich durch einfaches Nachrechnen.
+Dass sie nicht entartet ist ergibt sich daraus, dass die Standardbasis $(e_1, \dotsc, e_n)$ eine Orthonormalbasis bezüglich $\beta$ ist.
+Für eine lineare Abbildung $f \colon \Cbb^n \to \Cbb^n$ bezeichne im Folgenden $f^\ad$ die $\beta$-adjungierte Abbildung zu $f$.
+
+
+\begin{remark}
+  Die Standardbilinearform ist \emph{nicht} mit dem Standardskalarprodukt zu verwechseln!
+\end{remark}
+
+
+Um die Aufgabenteile methodisch lösen zu können (statt wild herumzuraten) wollen wir zunächst das $\beta$-Adjungierte in Matrizenform beschreiben.
+Ist $f \colon \Cbb^n \to \Cbb^n$ eine lineare Abbildung und $A \in \Mat_n(\Cbb)$ die eindeutige Matrix mit $f(x) = Ax$ für alle $x \in \Cbb^n$, so gilt für die eindeutige Matrix $A^\ad \in \Mat_n(\Cbb)$ mit $f^\ad(x) = A^\ad x$ für alle $x \in \Cbb^n$, dass
+\[
+    A^\ad_{ij}
+  = \beta(e_i, A^\ad e_j)
+  = \beta(e_i f^\ad(e_j))
+  = \beta(f(e_i), e_j)
+  = \beta(A e_i, e_j)
+  = A_{ji}
+\]
+für alle $i,j = 1, \dotsc, n$.
+Es ist also $A^\ad = A^T$.
+Die symmetrischen Matrizen entsprechen also genau dann $\beta$-selbstadjungierten Endomorphismen, und die schiefsymmetrischen Matrizen entsprechen genau denn $\beta$-schiefsymmetrischen Matrizen.
 
 
 
