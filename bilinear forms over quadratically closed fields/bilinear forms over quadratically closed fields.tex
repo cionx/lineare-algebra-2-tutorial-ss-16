@@ -607,6 +607,11 @@ Damit sind insgesamt beide Summen gleich.
 
 
 
+
+
+
+
+
 \section{}
 
 
@@ -625,29 +630,193 @@ Es genügt daher, die Standardbilinearform
   \text{für alle $x, y \in \Cbb^n$}
 \]
 zu betrachten.
-Die Bilinearität ergibt sich durch einfaches Nachrechnen.
-Dass sie nicht entartet ist ergibt sich daraus, dass die Standardbasis $(e_1, \dotsc, e_n)$ eine Orthonormalbasis bezüglich $\beta$ ist.
-Für eine lineare Abbildung $f \colon \Cbb^n \to \Cbb^n$ bezeichne im Folgenden $f^\ad$ die $\beta$-adjungierte Abbildung zu $f$.
-
+Die Bilinearität ergibt sich durch einfaches Nachrechnen, dass $\beta$ nicht entartet ist2 ergibt sich daraus, dass die Standardbasis $(e_1, \dotsc, e_n)$ eine Orthonormalbasis bezüglich $\beta$ ist.
 
 \begin{remark}
   Die Standardbilinearform ist \emph{nicht} mit dem Standardskalarprodukt zu verwechseln!
 \end{remark}
 
-
+Für eine lineare Abbildung $f \colon \Cbb^n \to \Cbb^n$ bezeichne im Folgenden $f^\ad$ die $\beta$-adjungierte Abbildung zu $f$.
 Um die Aufgabenteile methodisch lösen zu können (statt wild herumzuraten) wollen wir zunächst das $\beta$-Adjungierte in Matrizenform beschreiben.
 Ist $f \colon \Cbb^n \to \Cbb^n$ eine lineare Abbildung und $A \in \Mat_n(\Cbb)$ die eindeutige Matrix mit $f(x) = Ax$ für alle $x \in \Cbb^n$, so gilt für die eindeutige Matrix $A^\ad \in \Mat_n(\Cbb)$ mit $f^\ad(x) = A^\ad x$ für alle $x \in \Cbb^n$, dass
 \[
     A^\ad_{ij}
   = \beta(e_i, A^\ad e_j)
-  = \beta(e_i f^\ad(e_j))
+  = \beta(e_i, f^\ad(e_j))
   = \beta(f(e_i), e_j)
   = \beta(A e_i, e_j)
   = A_{ji}
 \]
 für alle $i,j = 1, \dotsc, n$.
 Es ist also $A^\ad = A^T$.
-Die symmetrischen Matrizen entsprechen also genau dann $\beta$-selbstadjungierten Endomorphismen, und die schiefsymmetrischen Matrizen entsprechen genau denn $\beta$-schiefsymmetrischen Matrizen.
+Die symmetrischen Matrizen entsprechen also genau den $\beta$-selbstadjungierten Endomorphismen, und die schiefsymmetrischen Matrizen entsprechen genau den $\beta$-schiefsymmetrischen Matrizen.
+
+% Wir wollen auch normale Endomorphismen über ihre Matrizen beschreiben:
+% Ist $f \colon \Cbb^n \to \Cbb^n$ ein beliebiger Endomorphismus, und $M \in \Mat_n(\Cbb)$ die eindeutige Matrix mit $f(x) = Mx$ für alle $x \in \Cbb^n$.
+% 
+% 
+% \begin{lemma}
+%   Ist $K$ ein Körper mit $\ringchar K \neq 2$, so gibt es für jede Matrix $M \in \Mat_n(K)$ eine eindeutige symmetrische Matrix $S \in \Mat_n(K)$ und eine eindeutige schiefsymmetrische Matrix $A \in \Mat_n(K)$, so dass $M = S + A$.
+% \end{lemma}
+% \begin{proof}
+%   Die Abbildung
+%   \[
+%     e \colon \Mat_n(K) \to \Mat_n(K),
+%     \quad
+%     A \mapsto \frac{A + A^T}{2}
+%   \]
+%   ist linear und idempotent.
+%   Deshalb ist $\Mat_n(K) = \im e \oplus \ker e$, und für den ersten Summanden gilt \mbox{$\im e = \{A \in \Mat_n(K) \mid e(A) = A\}$}.
+%   Dass $e(A) = A$ ist äquivalent dazu, dass $A$ symmetrisch ist, also ist $\im e$ der Untervektorraum der symmetrischen Matrizen.
+%   Dass $e(A)= 0$ ist äquivalent dazu, dass $A$ schiefsymmetrisch ist, also ist $\ker e$ der Untervektorraum der schiefsymmetrischen Matrizen.
+% \end{proof}
+% 
+% 
+% Nach dem Lemma können wir $M$ eindeutig als Summe $M = S + A$ schreiben, wobei $S \in \Mat_n(K)$ eine symmetrische Matrix und $A \in \Mat_n(K)$ eine schiefsymmetrische Matrix ist.
+% Dass $f$ normal ist, also $f$ und $f^\ad$ kommutieren, ist äquivalent dazu, dass $M$ und $M^\ad = M^T$ kommutieren.
+% Da $M^T = S - A$ ist
+% \begin{gather*}
+%     M M^T
+%   = (S + A)(S - A)
+%   = S^2 + AS - SA - A^2
+% \shortintertext{und}
+%     M^T M
+%   = (S - A)(S + A)
+%   = S^2 - AS + SA - A^2.
+% \end{gather*}
+% Also ist $f$ genau normal, wenn
+% \[
+%      AS - SA
+%   = -AS + SA
+%   = -(AS - SA)
+% \]
+% wenn also $AS - SA = 0$.
+% Also ist $f$ genau dann normal, wenn $S$ und $A$, der symmetrische und schiefsymmetrische Anteil der entsprechenden Matrix $M$, kommutieren.
+
+
+
+
+
+\subsection{}
+
+Es genügt eine Matrix $A \in \Mat_2(\Cbb)$ mit $A \neq 0$ zu finden, die symmetrisch und nilpotent ist.
+Man beachte, dass $A$ nicht reell seien darf, denn sonst wäre $A$ als reelle symmetrische Matrix diagonalisierbar, kann also wegen $A \neq 0$ nicht nilpotent sein.
+Dass $A \neq 0$ nilpotent ist, ist äquivalent dazu, dass die Jordannormal von $A$ durch
+\[
+  \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+  \end{pmatrix}
+\]
+gegeben ist, d.h.\ es gibt eine Matrix $S \in \GL_2(\Cbb)$ mit
+\[
+  A
+  =
+  S
+  \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+  \end{pmatrix}
+  S^{-1}.
+\]
+Wir wollen also $S$ so wählen, dass die Matrix auf der rechten Seite symmetrisch ist.
+Ist
+\begin{gather*}
+  S
+  =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix},
+\shortintertext{so ist}
+  S^{-1}
+  =
+  \frac{1}{ad-bc}
+  \begin{pmatrix}
+     d  & -b  \\
+    -c  &  a
+  \end{pmatrix},
+\shortintertext{und somit}
+  A
+  =
+  S
+  \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+  \end{pmatrix}
+  S^{-1}
+  =
+  \frac{1}{ad-bc}
+  \begin{pmatrix}
+    -ac   & a^2 \\
+    -c^2  & ac
+  \end{pmatrix}.
+\end{gather*}
+Damit die rechte Seite symmetrisch ist, wählen wir $c = i$ und $a = 1$.
+Wir wählen außerdem $d = 1/2$ und $b = i/2$, damit $\det S = ad-bc = 1$.
+Wir erhalten damit die symmetrische, nilpotente Matrix
+\[
+  A
+  =
+  \begin{pmatrix*}[r]
+    -i & 1 \\
+     1 & i
+  \end{pmatrix*}.
+\]
+Damit ist $f \colon \Cbb^2 \to \Cbb^2$, $x \mapsto Ax$ ein nilpotenter, $\beta$-selbstadjungierter Endomorphismus mit $f \neq 0$.
+
+
+
+
+
+\subsection{}
+
+Hierfür habe ich noch kein Beispiel gefunden.
+
+
+
+
+
+\subsection{}
+
+Wir betrachten den Endomorphismus $f \colon \Cbb^2 \to \Cbb^2$, $x \mapsto Ax$ für die Matrix
+\[
+  A
+  =
+  \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+  \end{pmatrix}.
+\]
+Es ist also $f$ der Endomorphismus, der $e_2$ auf $e_1$ schiebt, und $e_1$ auf $0$.
+Das Adjungierte $f^\ad$ ist durch Linksmultiplikation mit der Matrix
+\[
+    A^\ad
+  = A^T
+  =
+  \begin{pmatrix}
+    0 & 0 \\
+    1 & 0
+  \end{pmatrix}
+\]
+gegeben.
+Also ist $f^\ad$ der Endomorphismus, der $e_1$ auf $e_2$ schiebt, und $e_2$ auf $0$.
+(Man kann auch direkt sehen, dass $f^\ad$ so aussehen muss:
+$f$ wirkt auf $(x_1, x_2) \in \Cbb^2$, indem es die Koordinaten nach rechts schiebt.
+Da $\beta$ durch eintragsweisen Multiplizieren funktioniert, ist ein Rechtsshift in einem Argument von $\beta$ äquivalent zum Linksshift im anderen Argument.)
+
+Betrachten man nun $U \coloneqq \Ell(e_1)$, so ist $U = \ker f$ invariant unter $f$.
+Da aber $f^\ad(e_1) = e_2 \notin U$ ist $U$ nicht invariant unter $f^\ad$.
+
+
+
+
+
+
+
+
+
+
 
 
 
